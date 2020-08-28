@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sk-SK">
+<head>
+  	<meta property="og:title" content="DOMINATOR Airsoft | Paintball - RFID stopky cez Arduino" />
+  	<meta property="og:locale" content="sk_SK" />    	
+	<meta name="robots" content="index, follow">
+    	<meta name='revisit-after' content='2 days'>
+    	<title>DOMINATOR Airsoft | Paintball - RFID stopky cez Arduino</title>
+    	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="description" content="RFID DOMINATOR - stopky cez Arduino pre Airsoft, Paintball. Stopky s využitím znakového displeja">
+      <meta name="keywords" content="rfid, rc522, arduino, dominator, stopky, čas, tím, tag, čítačka, 14443-A, iso/iec, nfc, arduino, nano, SPI, I2C, displej, LCD, 20x4"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+  		<div class="row">
+    			<div class="col-sm-12">
+				<div class="alert alert-success">
+					<strong>Projekt k repozitáru - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - RFID DOMINATOR - Arduino</a>
+				</div>	
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">RFID, NFC</span>
+<span class="label label-info">RC522</span>
+<span class="label label-warning">Stopwatch</span>
+<span class="label label-danger">Schematics</span>
+<span class="label label-default">Airsoft</span>
+<span class="label label-primary">Paintball</span>
+<span class="label label-success">DOMINATOR</span>
+<hr><center><h2>RFID DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
+      <div class="alert alert-danger">
+      <strong>Pozor na RFID čítačky RC522 s falošným (neoriginálnym NXP RC522) čipom! - hlásia verziu softvéru 0x12 - counterfeit (nefunguje pre projekt DOMINATOR!)</strong>
+      </div>
+      <h4>Princíp funkčnosti:</h4>
+      <li>Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre Tím 1 (RED), Tím 2, (BLUE).</li>
+      <li>Každý hráč tímu má jednu RFID kartu/ náramok / tag.</ĺi>
+      <li>Po priložení karty zapípa hlásič (indikátor priloženia karty), rozsvieti sa LED dióda daného tímu a začne sa počítať čas tomuto tímu.</li>
+      <li>Čas sa počíta do momentu, kým nepriloží kartu hráč druhého tímu. Týmto sa čas prvého tímu zastaví, začne sa počítať druhému tímu, zmení sa indikačná LED dióda aktívne tímu na bode - DOMINATOR-e.</li>
+      <li>V prípade, že kartu priloží rozhodca, časy sa zastavia, LED dióda zhasnú. Čas je zastavený až do momentu, kým kartu nepriloží hráč iného tímu.</li>
+      <li>Ak priloží kartu eraser, časy sa vynulujú, zastavia sa. Nástáva reštart hry - príprava na novú hru.</li>
+      <h4>Hardvér pre projekt - RFID DOMINATOR:</h4> 
+      <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto;"></li>
+			<li><b>RFID čítačka RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto;"></li>
+			<li><b>Kľúčenky/karty/náramky štandardu ISO/IEC 14443-A</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" title="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" style="display: block; max-width: 100%; height: auto;"></li>
+			<li><b>Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto;"></li>
+			<li><b>2x LED diódy</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto;"></li>
+      <h4>Princíp funkčnosti po hardvérovej stránke:</h4>
+      <li>RFID čítačka RC522 komunikuje s Arduinom po SPI zbernici. Načítava UID (identifikátor) RFID kariet v dosahu, preposiela ich Arduinu. Reaguje na vzdialenosť čipu cca 3cm od antény.</li>
+      <li>Arduino načítanú adresu karty porovná v multipodmienke, aplikuje digitálne stavy na diódy, beží na ňom univerzálne počítadlo každých 100ms, riadi počítanie oboch časov.</li>
+      <li>Čas je posielaný po I2C zbernici na znakový displej 20x4, kde je vykreslený. Výpis trvá do 30ms.</li>
+      <div class="alert alert-success">
+      <strong>Maximálny rozsah času: </strong>99 hodín, 59 minút a 59 sekúnd
+      </div>
+      <div class="alert alert-info">
+      <strong>Spotreba: cca 110mAh pri 5V napájaní. </strong>Vhodné napájať cez powerbanku, nabíjačku od telefónu s USB výstupom.
+      </div>
+      <h4>Určenie projektu:</h4>
+      <li>Projekt je vhodný pre tímy, kluby, športové areály, akcie.</li>
+      <li>Vhodný pre herné módy DOMINATION, Capture Point.</li>
+      <li>Využitie pre športy Airsoft, Paintball, Nerf Wars</li>
+      <hr><h4>Ukážka funkčnosti - RFID DOMINATOR:</h4><hr><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<h2>Doska plošných spojov - (DPS) - RFID DOMINATOR - GERBER</h2>
+<img src="https://i.imgur.com/YMe2Y4L.png" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOSKA PLOŠNÝCH SPOJOV - DPS - PCB - RC522, Arduino - Nano, buzzer, LED, stopky, stopwatch" title="RFID DOMINATOR - DPS - PCB - RC522, Arduino Nano, buzzer, LED, stopky, stopwatch">  
+<h2>Schéma zapojenia - RFID DOMINATOR:</h2>
+<img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
+<h3><font color="#52BE80">Program pre načítanie adries RFID kariet pre DOMINATOR (<font color='red'>Toto nie je program pre RFID DOMINATOR!</font>)</font></h3>
+<li>Tieto adresy sa vkladajú do DOMINATOR-a - plateného projektu. Program slúži iba na ich načítanie, neobsahuje programovanú logiku DOMINATOR-a, stopky...</li>
+<li>Výpis adresy karty sa realizuje do sériového (UART) monitoru - 9600 baud/s.</li><pre style="background: #52BE80;">
+//PROGRAM PRE NACITANIE UID RFID KARIET PRE DALSIE POUZITIE V DOMINATOR-e
+//https://arduino.php5.sk/airsoft-dominator.php
+//PRE PROJEKT RFID DOMINATOR (Airsoft, Paintball, Nerf Wars)
+//Autor: Bc. Martin Chlebovec
+
+#include &lt;SPI.h>
+#include &lt;MFRC522.h>
+#define RST_PIN         9
+#define SS_1_PIN        10
+#define NR_OF_READERS   1
+byte ssPins[] = {SS_1_PIN};
+MFRC522 mfrc522[NR_OF_READERS];
+void setup() {
+  Serial.begin(9600);
+  while (!Serial);
+  SPI.begin();
+  for (uint8_t reader = 0; reader &lt; NR_OF_READERS; reader++) {
+    mfrc522[reader].PCD_Init(ssPins[reader], RST_PIN);
+    mfrc522[reader].PCD_SetAntennaGain(112); // set to max (00001110)
+    Serial.print(F("Reader "));
+    Serial.print(reader);
+    Serial.print(F(": "));
+    mfrc522[reader].PCD_DumpVersionToSerial();
+  }
+}
+
+void loop() {
+  for (uint8_t reader = 0; reader &lt; NR_OF_READERS; reader++) {
+    if (mfrc522[reader].PICC_IsNewCardPresent() && mfrc522[reader].PICC_ReadCardSerial()) {
+      Serial.print(F("Reader "));
+      Serial.print(reader);
+      Serial.print(F(": Card UID:"));
+      dump_byte_array(mfrc522[reader].uid.uidByte, mfrc522[reader].uid.size);
+      Serial.println();
+      Serial.print(F("PICC type: "));
+      MFRC522::PICC_Type piccType = mfrc522[reader].PICC_GetType(mfrc522[reader].uid.sak);
+      Serial.println(mfrc522[reader].PICC_GetTypeName(piccType));
+      mfrc522[reader].PICC_HaltA();
+      mfrc522[reader].PCD_StopCrypto1();
+    }
+  }
+}
+
+void dump_byte_array(byte *buffer, byte bufferSize) {
+  for (byte i = 0; i &lt; bufferSize; i++) {
+  }
+  Serial.print("Kod:");
+  unsigned long kod = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
+  Serial.print(kod);
+}
+</pre>
+<h2>Knižnice pre projekt RFID DOMINATOR</h2> 
+<li>RFID --> <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
+<li>LCD - I2C --> <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>
+<hr><h4>Tlačidlový DOMINATOR</h4><hr>
+<li>Využíva tlačidlový vstup pre tímy, rozhodcu a erasera.</li>
+<li>Program je možné modifikovať, overovať dĺžku stlačení, držanie tlačidiel.</li>
+<li>Tlačidlá nahrádzajú RFID čítačku v metóde vstupu pre DOMINATOR.</li>
+<li>Logika, počítadlo, výpis na displej je identické ako pre RFID DOMINATOR.</li><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<h2>Schéma zapojenia - Tlačidlový DOMINATOR:</h2>
+<img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
+			  </div>
+					</div>
+</body>
+</html>
