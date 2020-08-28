@@ -1,4 +1,6 @@
 # Airsoft-DOMINATOR-RFID
+* Kontakt na autora: martinius96@gmail.com
+
 **Popis:**
 * DOMINATOR je zariadenie - stopky, ktoré využívajú RFID vstup
 * Využíva riadiaci mikrokontróler (Arduino Uno, Nano, alebo Mega 2560).
