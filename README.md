@@ -19,6 +19,7 @@
 * LCD displej 16x2/20x4 s I2C prevodníkom
 * kompatibilné karty a kľúčenky štandardu ISO/IEC 14443 A
 
-![Štart Airsoft Hry - RFID DOMINATOR](https://i.imgur.com/OY0geF2.jpg)
-![DPS - GERBER - RFID DOMINATOR](https://i.imgur.com/YMe2Y4L.png)
-![Schéma zapojenia - RFID DOMINATOR](https://i.imgur.com/g5ufkBO.png)
+![Štart Airsoft Hry - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/OY0geF2.jpg)
+![DPS - GERBER - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/YMe2Y4L.png)
+![DPS - Výroba fotocestou - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/YMe2Y4L.png)
+![Schéma zapojenia - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/g5ufkBO.png)
