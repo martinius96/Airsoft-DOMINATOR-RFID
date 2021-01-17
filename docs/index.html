@@ -81,7 +81,8 @@
 <li><b>Kľúčenky/karty/náramky štandardu ISO/IEC 14443-A</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" title="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" style="display: block; max-width: 100%; height: auto;"></li>
 <li><b>Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto;"></li>
 <li><b>2x LED diódy</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto;"></li>
-      <h4>Princíp funkčnosti po hardvérovej stránke:</h4>
+ <img src="https://i.imgur.com/IDWLuOr.png" style="display: block; max-width: 100%; height: auto;" alt="ZAP/VYP regulácia kotla s hysterézou" title="ZAP/VYP regulácia kotla s hysterézou">        
+<h4>Princíp funkčnosti po hardvérovej stránke:</h4>
       <li>RFID čítačka RC522 komunikuje s Arduinom po SPI zbernici. Načítava UID (identifikátor) RFID kariet v dosahu, preposiela tento identifikátor Arduinu, ktorý vykoná programovú logiku. Čítačka reaguje na vzdialenosť čipu cca 3cm od antény.</li>
       <li>Arduino načítanú adresu karty porovná v multipodmienke, aplikuje digitálne stavy na diódy, beží na ňom univerzálne počítadlo každých 100ms (počíta po desatinách sekundy), riadi počítanie oboch časov.</li>
       <li>Čas je posielaný po I2C zbernici na znakový displej 20x4, kde je vykreslený. Výpis na displej trvá do 30ms pri rýchlosti I2C zbernice 100 kHz - Standard speed.</li>
@@ -157,11 +158,15 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 <h2>Knižnice pre projekt RFID DOMINATOR</h2> 
 <li>RFID --> <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
 <li>LCD - I2C --> <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>
-<hr><h4>Tlačidlový DOMINATOR</h4><hr>
-<li>Využíva tlačidlový vstup pre tímy, rozhodcu a erasera.</li>
-<li>V základnej verzii reaguje Arduino ihneď zmenou na danom stanovišti - DOMINATOR bode (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).</li>
-<li>Tlačidlá nahrádzajú RFID čítačku v metóde vstupu pre DOMINATOR.</li>
-<li>Logika, počítadlo, výpis na displej je identické ako pre RFID DOMINATOR.</li><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<hr><center><h2>Tlačidlový DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
+<li>Využíva tlačidlový vstup pre tímy, rozhodcu a erasera, celkom 4 tlačidlá.</li>
+<li>Tlačidlá nahrádzajú RFID čítačku v metóde vstupu pre DOMINATOR.</li>				
+<li>Zapojenie tlačidiel je v režime INPUT_PULLUP, stlačením sa privedie GND na vstupný vývod Arduina (Active-LOW signál).</li>
+<li>Používajú sa spínacie tlačidlá, nie rozpínacie (nereagovali by na logiku systému, boli by vždy všetky softvérovo "stlačené").</li>				
+<li>V základnej verzii DOMINATOR reaguje okamžite na stlačenie - aktivuje sa počítanie času pre daný tím (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).</li>
+<li>Časy sú vypísané na LCD znakový displej rozmeru 16x2, prípadne 20x4</li>
+<li>Logika systému, počítadlo je identické ako pre RFID DOMINATOR.</li>
+<center><iframe width="50%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <h2>Schéma zapojenia - Tlačidlový DOMINATOR:</h2>
 <img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
 			  </div>
