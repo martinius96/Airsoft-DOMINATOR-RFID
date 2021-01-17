@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- Primary Meta Tags -->
+	<title>DOMINATOR Airsoft | Paintball - RFID and push-button stopwatches on the Arduino platform</title>
+	<meta name="title" content="DOMINATOR Airsoft | Paintball - RFID and push-button stopwatches on the Arduino platform">
+	<meta name="description" content="RFID DOMINATOR - stopwatch via Arduino for Airsoft, Paintball. Stopwatch using the character display on the I2C bus. Button and RFID input.">
+	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/index.html">
+	<meta property="og:title" content="DOMINATOR Airsoft | Paintball - RFID and push-button stopwatches on the Arduino platform">
+	<meta property="og:description" content="RFID DOMINATOR - stopwatch via Arduino for Airsoft, Paintball. Stopwatch using the character display on the I2C bus. Button and RFID input.">
+	<meta property="og:image" content="">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/index.html">
+	<meta property="twitter:title" content="DOMINATOR Airsoft | Paintball - RFID and push-button stopwatches on the Arduino platform">
+	<meta property="twitter:description" content="RFID DOMINATOR - stopwatch via Arduino for Airsoft, Paintball. Stopwatch using the character display on the I2C bus. Button and RFID input.">
+	<meta property="twitter:image" content="">
+	
+	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
+	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    		window.smartlook||(function(d) {
+    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+    		})(document);
+    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
+	</script>    
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">RFID DOMINATOR</a>
+    </div>
+    <ul class="nav navbar-nav">
+      	<li class="active"><a href="index.html">Info</a></li>
+<li><a href="../index.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299857.svg" alt="Slovak flag.png, 2,2kB" title="Slovakia" height="32" width="32"></a></a></li>
+<li><a href="de/index.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299786.svg" alt="Germany.png, 2,2kB" title="Germany" height="32" width="32"></a></li>
+<li><a href="ru/index.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299700.svg" alt="russia.png, 2,2kB" title="Russia" height="32" width="32"></a></li>	    
+ </div>
+</nav>  
+  		<div class="row">
+    			<div class="col-sm-12">
+<div class="alert alert-success">
+	<strong>Repository project - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - RFID DOMINATOR - Arduino</a>
+</div>	
+<div class="alert alert-info">
+	<strong>If you are interested in purchasing software or testing a trial (Shareware) version with your hardware, contact:</strong> martinius96@gmail.com
+	<p>The shareware version (.hex) can be uploaded to the Arduino microcontroller via the AVRDUDE software, or with a GUI interface via the XLoader.</p>
+</div>	
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">RFID, NFC</span>
+<span class="label label-info">RC522</span>
+<span class="label label-warning">Stopwatch</span>
+<span class="label label-danger">Schematics</span>
+<span class="label label-default">Airsoft</span>
+<span class="label label-primary">Paintball</span>
+<span class="label label-success">DOMINATOR</span>
+<hr><center><h2>RFID DOMINATOR - stopwatch for Airsoft | Paintball</h2></center><hr>
+      <div class="alert alert-danger">
+      <strong>Beware of RFID readers RC522 with fake (non-original NXP RC522) chip! - In the project on the UART it reports the chip version 0x12 - counterfeit (does not work for the DOMINATOR project, the original NXP chip with which the library cooperates is required!)</strong>
+      </div>
+<h2>Libraries for the RFID DOMINATOR project</h2> 
+<li>RFID --> <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
+<li>LCD - I2C --> <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>				
+<h4>Project description:</h4>
+<li> Device - DOMINATOR includes a control microcontroller (Arduino Uno, Nano, or Mega 2560). </li>
+<li> The LCD character display shows the times of the individual teams (RF and GDP team, respectively BLU and RED team.) </li>
+<li> In the basic version of the software, there are 2 teams that play against each other and occupy this particular point! </li>
+<li> At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for Team 1 (RED), Team 2, (BLUE). </li>
+<li> Each member of the team is equipped with a card or key fob that communicates on the frequency 13.56MHz with an RFID reader. </li>
+<li> Keychains can be color-coded (blue, red by team and feature ...) </li>
+<li> If a team scores a point, any player on that team attaches their card to the reader, thereby awarding the point. </li>
+<li> The diode of the given team (red / blue) will light up at this station and the time will start to be added to the given team (the change can also be announced by a buzzer - a detector, if it is used in the system). </li>
+<li> If a point is occupied by the other team and a member of that team attaches his card, that team's LED will light up, the other team's time will be paused, and the time of the team that scored the point will be counted. </li>
+<li> If the card / keychain is attached by the organizer (referee), both times will be paused until one of the teams introduces the card. </li>
+<li> This type of card is also suitable for ending the game, when time stops and the winner is decided. </li>
+<li> The last possible card in the system is to use the so-called eraser card that pauses and resets both times. </li>
+<li> The project is suitable for Airsoft events and sports facilities. </li>
+<li> The system is tested, functional, works smoothly, the ability to measure and display time in tenths of a second (programmatically counts but does not display, display in seconds). </li>
+<li> The RC522 reader operates at a frequency of 13.56MHz, registers RFID tags at about 3 centimeters (almost physical contact with the reader is required), compatible ISO / IEC 14443 A tag format. </li>
+<h4> Hardware for the project - RFID DOMINATOR: </h4>
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto;"></li>
+<li><b>RFID reader RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID reader RC522" title="RFID reader RC522" style="display: block; max-width: 100%; height: auto;"></li>
+<li><b>Standard keychains / cards / bracelets ISO/IEC 14443-A</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Keychains, cards, bracelets on 13.56MHz standard ISO / IEC 14443-A" title="Keychains, cards, bracelets on 13.56MHz standard ISO / IEC 14443-A" style="display: block; max-width: 100%; height: auto;"></li>
+<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Buzzer" title="Buzzer" style="display: block; max-width: 100%; height: auto;"></li>
+<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LEDs - indicator of the active team at the point" title="LEDs - indicator of the active team at the point" style="display: block; max-width: 100%; height: auto;"></li>
+ <img src="https://i.imgur.com/IDWLuOr.png" style="display: block; max-width: 100%; height: auto;" alt="ZAP/VYP regulácia kotla s hysterézou" title="ZAP/VYP regulácia kotla s hysterézou">        
+<h4>Principle of functionality on the hardware side:</h4>
+      <li> The RF5 reader RC522 communicates with the Arduino via the SPI bus. It reads the UID (identifier) of RFID cards in range, forwards this identifier to Arduino, which executes the program logic. The reader responds to the distance of the chip about 3 cm from the antenna. </li>
+       <li> Arduino compares the read card address in a multi-condition, applies digital states to diodes, runs a universal counter every 100ms (counts in tenths of a second), controls the counting of both times. </li>
+       <li> The time is sent via the I2C bus to the 20x4 character display, where it is plotted. The display takes up to 30ms at I2C bus speed 100 kHz - Standard speed. </li>
+      <div class="alert alert-success">
+      <strong>Maximum time range that can be listed in the system: </strong>99 hours, 59 minutes and 59 seconds
+      </div>
+      <div class="alert alert-info">
+      <strong>Consumption: approx. 110mAh with 5V power supply. </strong>Suitable to power via power bank, charger from a phone with USB output.
+      </div>
+      <h4> Project ID: </h4>
+       <li> The project is suitable for teams, clubs, sports facilities, events. </li>
+       <li> Suitable for DOMINATION, Capture Point game modes (more than one DOMINATOR can be used in the game). </li>
+       <li> Use for sports Airsoft, Paintball, Nerf Wars. </li>
+       <hr> <h4> Functional Demonstration - RFID DOMINATOR: </h4><hr><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<h2>Printed circuit board - (PCB) - RFID DOMINATOR - GERBER</h2>
+<img src="https://i.imgur.com/YMe2Y4L.png" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOSKA PLOŠNÝCH SPOJOV - DPS - PCB - RC522, Arduino - Nano, buzzer, LED, stopky, stopwatch" title="RFID DOMINATOR - DPS - PCB - RC522, Arduino Nano, buzzer, LED, stopky, stopwatch">  
+<h2>Wiring diagram - RFID DOMINATOR:</h2>
+<img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
+<h3><font color="#52BE80">Program for reading UID addresses of RFID cards for DOMINATOR (<font color='red'>This is not a program for RFID DOMINATOR, it only obtains data for the final DOMINATOR project!</font>)</font></h3>
+<li>These addresses are inserted into the DOMINATOR - a paid project. The program is used only to load them, it does not contain programmed logic of DOMINATOR, stopwatch ...</li>
+<li>The card address is listed in the serial (UART) monitor - 9600 baud / s.</li><pre style="background: #52BE80;">
+//PROGRAM FOR LOADING UID RFID CARDS FOR FURTHER USE IN THE DOMINATOR (NOT REPRESENTED BY THE DOMINATOR, IT IS ALSO SERVED FOR LOADING UID CARDS FOR FINAL APPLICATION !!!!!)
+//http://arduino.clanweb.eu/airsoft-dominator.php?lang=en
+//Autor: Bc. Martin Chlebovec (martinius96@gmail.com)
+
+#include &lt;SPI.h>
+#include &lt;MFRC522.h>
+#define RST_PIN         9
+#define SS_1_PIN        10
+#define NR_OF_READERS   1
+byte ssPins[] = {SS_1_PIN};
+MFRC522 mfrc522[NR_OF_READERS];
+void setup() {
+  Serial.begin(9600);
+  while (!Serial);
+  SPI.begin();
+  for (uint8_t reader = 0; reader &lt; NR_OF_READERS; reader++) {
+    mfrc522[reader].PCD_Init(ssPins[reader], RST_PIN);
+    mfrc522[reader].PCD_SetAntennaGain(112); // set to max (00001110)
+    Serial.print(F("Reader "));
+    Serial.print(reader);
+    Serial.print(F(": "));
+    mfrc522[reader].PCD_DumpVersionToSerial();
+  }
+}
+
+void loop() {
+  for (uint8_t reader = 0; reader &lt; NR_OF_READERS; reader++) {
+    if (mfrc522[reader].PICC_IsNewCardPresent() && mfrc522[reader].PICC_ReadCardSerial()) {
+      Serial.print(F("Reader "));
+      Serial.print(reader);
+      Serial.print(F(": Card UID:"));
+      dump_byte_array(mfrc522[reader].uid.uidByte, mfrc522[reader].uid.size);
+      Serial.println();
+      Serial.print(F("PICC type: "));
+      MFRC522::PICC_Type piccType = mfrc522[reader].PICC_GetType(mfrc522[reader].uid.sak);
+      Serial.println(mfrc522[reader].PICC_GetTypeName(piccType));
+      mfrc522[reader].PICC_HaltA();
+      mfrc522[reader].PCD_StopCrypto1();
+    }
+  }
+}
+
+void dump_byte_array(byte *buffer, byte bufferSize) {
+  for (byte i = 0; i &lt; bufferSize; i++) {
+  }
+  Serial.print("Kod:");
+  unsigned long kod = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
+  Serial.print(kod);
+}
+</pre>
+<hr><center> <h2> Button DOMINATOR - stopwatch for Airsoft | Paintball </h2> </center> <hr>
+<li> Uses button input for teams, referee and eraser, a total of 4 buttons. </li>
+<li> The buttons replace the RFID reader in the input method for DOMINATOR. </li>
+<li> Button connection is in INPUT_PULLUP mode, pressing will bring GND to the Arduino input terminal (Active-LOW signal). </li>
+<li> Use toggle buttons are used, not toggle buttons (they would not respond to system logic, all software would always be "pressed"). </li>
+<li> In the basic version, DOMINATOR responds immediately to a press - the time counting for the given team is activated (the length of the press, the number of presses, etc. are not verified ...). </li>
+<li> Times are displayed on a 16x2 or 20x4 LCD character display </li>
+<li> System logic, counter is identical to RFID DOMINATOR. </li>
+<center><iframe width="50%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<h2>Wiring diagram - Button DOMINATOR:</h2>
+<img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Wiring diagram - button - push-button DOMINATOR with Arduino Uno microcontroller - stopwatch for Airsoft" title="Wiring diagram - button - push-button DOMINATOR with Arduino Uno microcontroller - stopwatch for Airsoft">        			
+			  </div>
+		</div>
+</div>
+</body>
+</html>
