@@ -44,7 +44,8 @@
 	<strong>Projekt k repozitáru - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - RFID DOMINATOR - Arduino</a>
 </div>	
 <div class="alert alert-info">
-	<strong>Pri záujme o kúpu softvéru, alebo vyskúšanie testovacej (Shareware) verzie s vašim hardvérom:</strong> martinius96@gmail.com
+	<strong>Pri záujme o kúpu softvéru, alebo vyskúšanie testovacej (Shareware) verzie s vašim hardvérom kontaktujte na:</strong> martinius96@gmail.com
+	<p>Shareware verziu (.hex) je možné nahrať do mikrokontroléru Arduino cez softvér AVRDUDE, prípadne s GUI rozhraním cez XLoader.</p>
 </div>	
 <span class="label label-default">Arduino</span>
 <span class="label label-primary">LCD</span>
@@ -57,9 +58,12 @@
 <span class="label label-success">DOMINATOR</span>
 <hr><center><h2>RFID DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
       <div class="alert alert-danger">
-      <strong>Pozor na RFID čítačky RC522 s falošným (neoriginálnym NXP RC522) čipom! - V projekte na UART hlási verziu čipu 0x12 - counterfeit (nefunguje pre projekt DOMINATOR!)</strong>
+      <strong>Pozor na RFID čítačky RC522 s falošným (neoriginálnym NXP RC522) čipom! - V projekte na UART hlási verziu čipu 0x12 - counterfeit (nefunguje pre projekt DOMINATOR, vyžaduje sa originálny NXP čip s ktorým spolupracuje knižnica!)</strong>
       </div>
-      <h4>Popis projektu:</h4>
+<h2>Knižnice pre projekt RFID DOMINATOR</h2> 
+<li>RFID --> <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
+<li>LCD - I2C --> <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>				
+<h4>Popis projektu:</h4>
 <li>Zariadenie - DOMINATOR obsahuje riadiaci mikrokontróler (Arduino Uno, Nano, alebo Mega 2560).</li>
 <li>Na LCD znakovom displeji sa vyobrazujú časy jednotlivých tímov (RF a GDP tím, respektíve BLU a RED tím.)</li>
 <li>V základnej verzii softvéru existujú 2 tímy, ktoré proti sebe hrajú a zaberajú tento konkrétny bod!</li>				
@@ -155,9 +159,6 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
   Serial.print(kod);
 }
 </pre>
-<h2>Knižnice pre projekt RFID DOMINATOR</h2> 
-<li>RFID --> <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
-<li>LCD - I2C --> <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>
 <hr><center><h2>Tlačidlový DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
 <li>Využíva tlačidlový vstup pre tímy, rozhodcu a erasera, celkom 4 tlačidlá.</li>
 <li>Tlačidlá nahrádzajú RFID čítačku v metóde vstupu pre DOMINATOR.</li>				
