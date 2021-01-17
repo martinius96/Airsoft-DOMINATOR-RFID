@@ -75,26 +75,26 @@
 <h2>Bibliotheken für das RFID DOMINATOR-Projekt</h2> 
 <li>RFID --> <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
 <li>LCD - I2C --> <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>				
-<h4> Projektbeschreibung: </ h4>
-<li> Gerät - DOMINATOR enthält einen Steuer-Mikrocontroller (Arduino Uno, Nano oder Mega 2560). </ Li>
-<li> Die LCD-Zeichenanzeige zeigt die Zeiten der einzelnen Teams (RF- und GDP-Team bzw. BLU- und RED-Team) an. </ Li>
-<li> In der Basisversion der Software gibt es 2 Teams, die gegeneinander spielen und diesen bestimmten Punkt belegen! </ Li>
-<li> Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für Team 1 (ROT), Team 2 (BLAU) an. </ Li>
-<li> Jedes Mitglied des Teams ist mit einer Karte oder einem Schlüsselanhänger ausgestattet, die mit einem RFID-Lesegerät auf der Frequenz 13,56 MHz kommunizieren. </ li> </ ul>
-<li> Schlüsselanhänger können farbcodiert sein (blau, rot nach Team und Funktion ...) </ li>
-<li> Wenn ein Team einen Punkt erzielt, hängt jeder Spieler dieses Teams seine Karte an den Leser an und vergibt dabei den Punkt. </ li> </ ul>
-<li> Die Diode des gegebenen Teams (rot / blau) leuchtet an dieser Station auf und die Zeit wird dem gegebenen Team hinzugefügt (die Änderung kann auch durch einen Summer angekündigt werden - einen Detektor, falls er im System verwendet wird). </ li> </ ul>
-<li> Wenn ein Punkt vom anderen Team besetzt ist und ein Mitglied dieses Teams seine Karte anbringt, leuchtet die LED dieses Teams auf, die Zeit des anderen Teams wird angehalten und die Zeit des Teams, das den Punkt besetzt hat, wird gezählt. </ Li>
-<li> Wenn die Karte / der Schlüsselbund vom Veranstalter (Schiedsrichter) angebracht wird, werden beide Male angehalten, bis eines der Teams die Karte einführt. </ Li>
-<li> Diese Art von Karte eignet sich auch zum Beenden des Spiels, wenn die Zeit stehen bleibt und der Gewinner ermittelt wird. </ Li>
-<li> Die letzte mögliche Karte im System ist die Verwendung der sogenannten Radiergummikarte, die beide Male angehalten und zurückgesetzt wird. </ li>
-<li> Das Projekt eignet sich für Airsoft-Veranstaltungen und Sportanlagen. </ Li>
-<li> Das System ist getestet, funktionsfähig, funktioniert ohne Probleme und kann die Zeit in Zehntelsekunden messen und anzeigen (programmgesteuert, aber nicht angezeigt, Anzeige in Sekunden). </ Li>
-<li> Der RC522-Leser arbeitet mit einer Frequenz von 13,56 MHz, registriert RFID-Tags bei etwa 3 Zentimetern (fast physischer Kontakt mit dem Leser ist erforderlich), kompatibles ISO / IEC 14443 A-Tag-Format. </ Li>
-<h4> Hardware für das Projekt - RFID DOMINATOR: </ h4>
+<h4> Projektbeschreibung: </h4>
+<li> Gerät - DOMINATOR enthält einen Steuer-Mikrocontroller (Arduino Uno, Nano oder Mega 2560). </li>
+<li> Die LCD-Zeichenanzeige zeigt die Zeiten der einzelnen Teams (RF- und GDP-Team bzw. BLU- und RED-Team) an. </li>
+<li> In der Basisversion der Software gibt es 2 Teams, die gegeneinander spielen und diesen bestimmten Punkt belegen! </li>
+<li> Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für Team 1 (ROT), Team 2 (BLAU) an. </li>
+<li> Jedes Mitglied des Teams ist mit einer Karte oder einem Schlüsselanhänger ausgestattet, die mit einem RFID-Lesegerät auf der Frequenz 13,56 MHz kommunizieren. </li>
+<li> Schlüsselanhänger können farbcodiert sein (blau, rot nach Team und Funktion ...) </li>
+<li> Wenn ein Team einen Punkt erzielt, hängt jeder Spieler dieses Teams seine Karte an den Leser an und vergibt dabei den Punkt. </li>
+<li> Die Diode des gegebenen Teams (rot / blau) leuchtet an dieser Station auf und die Zeit wird dem gegebenen Team hinzugefügt (die Änderung kann auch durch einen Summer angekündigt werden - einen Detektor, falls er im System verwendet wird). </li> </ ul>
+<li> Wenn ein Punkt vom anderen Team besetzt ist und ein Mitglied dieses Teams seine Karte anbringt, leuchtet die LED dieses Teams auf, die Zeit des anderen Teams wird angehalten und die Zeit des Teams, das den Punkt besetzt hat, wird gezählt. </li>
+<li> Wenn die Karte / der Schlüsselbund vom Veranstalter (Schiedsrichter) angebracht wird, werden beide Male angehalten, bis eines der Teams die Karte einführt. </li>
+<li> Diese Art von Karte eignet sich auch zum Beenden des Spiels, wenn die Zeit stehen bleibt und der Gewinner ermittelt wird. </li>
+<li> Die letzte mögliche Karte im System ist die Verwendung der sogenannten Radiergummikarte, die beide Male angehalten und zurückgesetzt wird. </li>
+<li> Das Projekt eignet sich für Airsoft-Veranstaltungen und Sportanlagen. </li>
+<li> Das System ist getestet, funktionsfähig, funktioniert ohne Probleme und kann die Zeit in Zehntelsekunden messen und anzeigen (programmgesteuert, aber nicht angezeigt, Anzeige in Sekunden). </li>
+<li> Der RC522-Leser arbeitet mit einer Frequenz von 13,56 MHz, registriert RFID-Tags bei etwa 3 Zentimetern (fast physischer Kontakt mit dem Leser ist erforderlich), kompatibles ISO / IEC 14443 A-Tag-Format. </li>
+<h4> Hardware für das Projekt - RFID DOMINATOR: </h4>
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>RFID Leser RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>ISO / IEC 14443-A Standard-Schlüsselanhänger / Karten / Armbänder</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" title="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" style="display: block; max-width: 100%; height: auto;"></li>
+<li><b>RFID Leser RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID Leser RC522" title="RFID Leser RC522" style="display: block; max-width: 100%; height: auto;"></li>
+<li><b>ISO / IEC 14443-A Standard-Schlüsselanhänger / Karten / Armbänder</b><img src="https://i.imgur.com/9lqEfhO.png" alt="ISO / IEC 14443-A Standard-Schlüsselanhänger / Karten / Armbänder" title="ISO / IEC 14443-A Standard-Schlüsselanhänger / Karten / Armbänder" style="display: block; max-width: 100%; height: auto;"></li>
 <li><b>Detektor (passiver Summer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto;"></li>
 <li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto;"></li>
  <img src="https://i.imgur.com/IDWLuOr.png" style="display: block; max-width: 100%; height: auto;" alt="ZAP/VYP regulácia kotla s hysterézou" title="ZAP/VYP regulácia kotla s hysterézou">        
