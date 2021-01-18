@@ -57,9 +57,9 @@
 	<strong>Projekt k repozitáru - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - RFID DOMINATOR - Arduino</a>
 </div>	
 <div class="alert alert-info">
-	<strong>Pri záujme o kúpu softvéru, alebo vyskúšanie testovacej (Shareware) verzie s vašim hardvérom kontaktujte na:</strong> martinius96@gmail.com
-	<p>Shareware verziu (.hex) je možné nahrať do mikrokontroléru Arduino cez softvér AVRDUDE, prípadne s GUI rozhraním cez XLoader.</p>
-</div>	
+	<strong>Pri záujme o kúpu softvéru pre DOMINATOR kontaktujte na:</strong> martinius96@gmail.com
+	
+</div>					
 <span class="label label-default">Arduino</span>
 <span class="label label-primary">LCD</span>
 <span class="label label-success">RFID, NFC</span>
@@ -186,7 +186,22 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 <center><iframe width="50%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <h2>Schéma zapojenia - Tlačidlový DOMINATOR:</h2>
 <img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
-			  </div>
+<div class="alert alert-info">
+<p>K projektu Tlačidlový DOMINATOR je dostupná Shareware verzia (.hex). Verzia umožňuje merať maximálne 15 sekúnd hry pre každý tím.
+Cieľom verzie je overiť kompatibilitu s vašim hardvérom. V Github repozitári sú dostupné strojové kódy na základe I2C adresy prevodníka pre LCD displej.
+Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
+Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez XLoader - ľahšie na použitie.</p>
+<li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<li>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</li>
+<li>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
+<li>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
+</div>			
+<center>
+	<img src="https://i.imgur.com/dgrSH1E.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Termostat - Ethernet" title="XLoader - Arduino - AVRDUDE - Termostat - Ethernet">	
+</center>			
+			
+			
+			</div>
 		</div>
 </div>
 </body>
