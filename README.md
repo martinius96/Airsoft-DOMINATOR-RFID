@@ -29,7 +29,7 @@
 * LCD displej 16x2/20x4 s I2C prevodníkom
 * Buzzer (hlásič)
 * kompatibilné karty a kľúčenky štandardu ISO/IEC 14443-A
-
+# Screenshoty projektu RFID DOMINATOR
 ![Štart Airsoft Hry - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/OY0geF2.jpg)
 ![DPS - GERBER - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/YMe2Y4L.png)
 ![DPS - Výroba fotocestou - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/cbZssQT.png)
@@ -53,7 +53,8 @@
 * Nahrať do Arduino Uno dosky je možné firmvér cez nástroj Xloader (dostupný v repozitári).
 * Firmvér je iba per Arduino Uno dosku, pre iné dosky nebude fungovať!
 * Testovací firmvér je založený na schéme zapojenia pre Tlačidlový DOMINATOR bez buzzera (LED diódy fungujú a vizualizujú stav, rovnako displej vypisuje čas)
+# Použitie nástroja XLoader pre nahratie strojového kódu do Arduina
 ![Použitie programu XLoader](https://i.imgur.com/jpKuhTc.png)
-
+# Screenshoty projektu Tlačidlový DOMINATOR
 ![Tlačidlový DOMINATOR - Arduino - Airsoft - bežiaca hra](https://i.imgur.com/yuHmpZa.jpg)
 ![Schéma zapojenia - Tlačidlový DOMINATOR - Arduino - Airsoft](https://i.imgur.com/D9KcneX.png)
