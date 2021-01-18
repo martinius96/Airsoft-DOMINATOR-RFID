@@ -18,14 +18,17 @@
 * Očakávaná verzia RFID čítačky vypísaná na UART monitor: 0x92 (version 2) 
 * Program UID_GET.ino v priečinku examples je možné použiť pre načítanie kódov z RFID kariet, ktoré chcete použiť vo finálnej aplikácii DOMINATOR-a.
 * Vhodné je adresy spísať do Excel tabuľky a farebne odlíšiť, aby ste mali adresy k dispozícii aj do budúcna
+* K projektu existuje DPS návrh GERBER (s vŕtaním a strojovou výrobou DPS), alebo DPS pre výrobu fotocestou
+* Obe DPS sú obojstranné a s prekovmi. Rozmer 100x105mm.
+* Sú k projektu dodávané GRÁTIS
 
 ![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/LvXPxVq.png)
 
-**Hardvér použitý pre projekt:**
+**Hardvér použitý pre projekt RFID DOMINATOR:**
 * Arduino Uno/Nano/Mega (DPS je výhradne navrhnutá pre Arduino Nano)
 * RFID RC522
 * 2x LED diódy
-* 2x predradný rezistor pre LED (možno aj 2x I2C pullup rezistor - použitý v DPS)
+* 2x predradný rezistor pre LED (možno použiť aj 2x I2C pullup rezistor - použitý v DPS)
 * LCD displej 16x2/20x4 s I2C prevodníkom
 * Buzzer (hlásič)
 * kompatibilné karty a kľúčenky štandardu ISO/IEC 14443-A
@@ -43,7 +46,7 @@
 * Rozhodca má svoje tlačidlo, ktorým dokáže čas zastaviť - vykonať pauzu. Pauza hry, obed, koniec hry, spočítanie času a vyhodnotenie herného kola.
 * Posledným tlačidlom v systéme je možnosť erasera, ktorý čas zastaví a vynuluje (reštart hry, nová hra). 
 * LED diódy je možné nahradiť za relé pre možnosť spínať výkonnejšie svietidlá pre lepšiu viditeľnosť aktuálnej farby DOMINATOR-a
-* K projekte neexistuje DPS návrh
+* K projektu nie je dostupný DPS návrh (neplánuje sa)
 
 # Shareware verzia - Tlačidlový DOMINATOR
 **K projektu Tlačidlový DOMINATOR existuje Shareware verzia, kde je možné vyskúšať funkčnosť celého systému s vašim hardvérom.**
@@ -55,6 +58,15 @@
 * Testovací firmvér je založený na schéme zapojenia pre Tlačidlový DOMINATOR bez buzzera (LED diódy fungujú a vizualizujú stav, rovnako displej vypisuje čas)
 # Použitie nástroja XLoader pre nahratie strojového kódu do Arduina
 ![Použitie programu XLoader](https://i.imgur.com/jpKuhTc.png)
+
+**Hardvér použitý pre projekt Tlačidlový DOMINATOR:**
+* Arduino Uno/Nano/Mega (DPS je výhradne navrhnutá pre Arduino Nano)
+* 2x LED diódy
+* 2x predradný rezistor pre LED (možno použiť aj 2x I2C pullup rezistor)
+* LCD displej 16x2/20x4 s I2C prevodníkom
+* Buzzer (hlásič)
+* 4x spínacie tlačidlá (pushbutton)
+
 # Screenshoty projektu Tlačidlový DOMINATOR
 ![Tlačidlový DOMINATOR - Arduino - Airsoft - bežiaca hra](https://i.imgur.com/yuHmpZa.jpg)
 ![Schéma zapojenia - Tlačidlový DOMINATOR - Arduino - Airsoft](https://i.imgur.com/D9KcneX.png)
