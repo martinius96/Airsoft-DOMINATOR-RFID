@@ -1,5 +1,5 @@
 # RFID DOMINATOR - Airsoft / Paintball
-* Kontakt na autora: martinius96@gmail.com
+* Pri záujme o plnú verziu projektu kontaktujte na: martinius96@gmail.com
 
 **Popis:**
 * DOMINATOR je zariadenie - stopky, ktoré využívajú RFID vstup
@@ -14,12 +14,14 @@
 * Poslednou možnou kartou v systéme je použitie tzv. eraser karty, ktorá oba časy zapauzuje a vynuluje (reštart hry, nová hra).
 * Maximálny časový rozsah systému je: 99 hodín 99 minút 59 sekúnd, vhodné teda aj pre akcie a športové areály zaoberajúce sa Airsoftom, Paintballom. 
 * Čítačka NXP RC522 pracuje na frekvencii 13.56MHz, RFID tagy registruje na cca 3 centimetre (nutný skoro až fyzický dotyk s čítačkou), kompatibilný formát tagov ISO/IEC 14443 A.
-* **Pre projekt je kompatibilná čítačka RC522 s originálnym NXP čipom!** Counterfeit (0x12) čip nie je v systéme podporovaný.
+* **Pre projekt je kompatibilná čítačka RC522 s originálnym NXP čipom!** Counterfeit (0x12) čip nie je v systéme podporovaný a je knižnicou dátovo ukončená komunikácia s čítačkou.
 * Program UID_GET.ino v priečinku examples je možné použiť pre načítanie kódov z RFID kariet, ktoré chcete použiť vo finálnej aplikácii DOMINATOR-a.
 * Vhodné je adresy spísať do Excel tabuľky a farebne odlíšiť, aby ste mali adresy k dispozícii aj do budúcna
+
 ![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/LvXPxVq.png)
+
 **Hardvér použitý pre projekt:**
-* Arduino Uno/Nano/Mega (DPS pre Arduino Nano)
+* Arduino Uno/Nano/Mega (DPS je výhradne navrhnutá pre Arduino Nano)
 * RFID RC522
 * 2x LED diódy
 * 2x predradný rezistor pre LED (možno aj 2x I2C pullup rezistor - použitý v DPS)
@@ -40,6 +42,7 @@
 * Rozhodca má svoje tlačidlo, ktorým dokáže čas zastaviť - vykonať pauzu. Pauza hry, obed, koniec hry, spočítanie času a vyhodnotenie herného kola.
 * Posledným tlačidlom v systéme je možnosť erasera, ktorý čas zastaví a vynuluje (reštart hry, nová hra). 
 * LED diódy je možné nahradiť za relé pre možnosť spínať výkonnejšie svietidlá pre lepšiu viditeľnosť aktuálnej farby DOMINATOR-a
+* K projekte neexistuje DPS návrh
 
 # Shareware verzia - Tlačidlový DOMINATOR
 **K projektu Tlačidlový DOMINATOR existuje Shareware verzia, kde je možné vyskúšať funkčnosť celého systému s vašim hardvérom.**
@@ -49,3 +52,7 @@
 * Nahrať do Arduino Uno dosky je možné firmvér cez nástroj Xloader (dostupný v repozitári).
 * Firmvér je iba per Arduino Uno dosku, pre iné dosky nebude fungovať!
 * Testovací firmvér je založený na schéme zapojenia pre Tlačidlový DOMINATOR bez buzzera (LED diódy fungujú a vizualizujú stav, rovnako displej vypisuje čas)
+![Použitie programu XLoader](https://i.imgur.com/jpKuhTc.png)
+
+![Tlačidlový DOMINATOR - Arduino - Airsoft - bežiaca hra](https://i.imgur.com/yuHmpZa.jpg)
+![Schéma zapojenia - Tlačidlový DOMINATOR - Arduino - Airsoft](https://i.imgur.com/D9KcneX.png)
