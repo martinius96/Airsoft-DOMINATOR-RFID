@@ -15,7 +15,9 @@
 * Maximálny časový rozsah systému je: 99 hodín 99 minút 59 sekúnd, vhodné teda aj pre akcie a športové areály zaoberajúce sa Airsoftom, Paintballom. 
 * Čítačka NXP RC522 pracuje na frekvencii 13.56MHz, RFID tagy registruje na cca 3 centimetre (nutný skoro až fyzický dotyk s čítačkou), kompatibilný formát tagov ISO/IEC 14443 A.
 * **Pre projekt je kompatibilná čítačka RC522 s originálnym NXP čipom!** Counterfeit (0x12) čip nie je v systéme podporovaný.
-
+* Program UID_GET.ino v priečinku examples je možné použiť pre načítanie kódov z RFID kariet, ktoré chcete použiť vo finálnej aplikácii DOMINATOR-a.
+* Vhodné je adresy spísať do Excel tabuľky a farebne odlíšiť, aby ste mali adresy k dispozícii aj do budúcna
+![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/LvXPxVq.png)
 **Hardvér použitý pre projekt:**
 * Arduino Uno/Nano/Mega (DPS pre Arduino Nano)
 * RFID RC522
