@@ -186,6 +186,7 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 <center><iframe width="50%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <h2>Schéma zapojenia - Tlačidlový DOMINATOR:</h2>
 <img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
+<hr><center><h2>Testovací program (Shareware) - Tlačidlový DOMINATOR so strojovým kódom</h2></center><hr>
 <div class="alert alert-info">
 <p>K projektu Tlačidlový DOMINATOR je dostupná Shareware verzia (.hex). Verzia umožňuje merať maximálne 15 sekúnd hry pre každý tím.
 Cieľom verzie je overiť kompatibilitu s vašim hardvérom. V Github repozitári sú dostupné strojové kódy na základe I2C adresy prevodníka pre LCD displej.
@@ -195,7 +196,8 @@ Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér A
 <li>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</li>
 <li>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
 <li>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
-</div>			
+<b>Firmvér je možné stiahnuť z repozitára projektu: <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">TU</a>. Firmvér je v priečinku /firmware/ rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).</b>
+				</div>			
 <center>
 	<img src="https://i.imgur.com/dgrSH1E.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Termostat - Ethernet" title="XLoader - Arduino - AVRDUDE - Termostat - Ethernet">	
 </center>			
