@@ -118,9 +118,12 @@
 <img src="https://i.imgur.com/YMe2Y4L.png" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOSKA PLOŠNÝCH SPOJOV - DPS - PCB - RC522, Arduino - Nano, buzzer, LED, stopky, stopwatch" title="RFID DOMINATOR - DPS - PCB - RC522, Arduino Nano, buzzer, LED, stopky, stopwatch">  
 <h2>Schéma zapojenia - RFID DOMINATOR:</h2>
 <img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
-<h3><font color="#52BE80">Program pre načítanie adries RFID kariet pre DOMINATOR (<font color='red'>Toto nie je program pre RFID DOMINATOR!</font>)</font></h3>
-<li>Tieto adresy sa vkladajú do DOMINATOR-a - plateného projektu. Program slúži iba na ich načítanie, neobsahuje programovanú logiku DOMINATOR-a, stopky...</li>
-<li>Výpis adresy karty sa realizuje do sériového (UART) monitoru - 9600 baud/s.</li><pre style="background: #52BE80;">
+<hr><center><h3><font color="#52BE80">Program pre načítanie UID adries RFID kariet pre DOMINATOR</font></h3></center><hr>
+<li>Program slúži na načítanie fyzických adries RFID tagov, kariet, ktoré budú použité v programe pre DOMINATOR (RFID / Tlačidlový)</li>
+<li>Výpis adresy karty sa realizuje do sériového (UART) monitoru - 9600 baud/s.</li>
+<li>Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám</li>				
+<center><img src="https://i.imgur.com/LvXPxVq.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
+<pre style="background: #52BE80;">
 //PROGRAM PRE NACITANIE UID RFID KARIET PRE DALSIE POUZITIE V DOMINATOR-e (NEREPREZENTUJE DOMINATOR, SLUZI IBA NANACITANIE UID KARTY PRE FINALNU APLIKACIU!!!!!)
 //http://arduino.clanweb.eu/airsoft-dominator.php
 //PRE PROJEKT RFID DOMINATOR (Airsoft, Paintball, Nerf Wars)
@@ -172,7 +175,66 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
   Serial.print(kod);
 }
 </pre>
-<hr><center><h2>Tlačidlový DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
+<hr>				
+<center><h3><font color="#C0392B">I2C Scanner - program pre načítanie adresy I2C prevodníka pre LCD displej</font></h3></center>				
+<hr>
+<pre style="background: #C0392B;">
+#include &lt;Wire.h>
+ 
+ 
+void setup()
+{
+  Wire.begin();
+ 
+  Serial.begin(9600);
+  while (!Serial);             // Leonardo: wait for serial monitor
+  Serial.println("\nI2C Scanner");
+}
+ 
+ 
+void loop()
+{
+  byte error, address;
+  int nDevices;
+ 
+  Serial.println("Scanning...");
+ 
+  nDevices = 0;
+  for(address = 1; address &lt; 127; address++ )
+  {
+    // The i2c_scanner uses the return value of
+    // the Write.endTransmisstion to see if
+    // a device did acknowledge to the address.
+    Wire.beginTransmission(address);
+    error = Wire.endTransmission();
+ 
+    if (error == 0)
+    {
+      Serial.print("I2C device found at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.print(address,HEX);
+      Serial.println("  !");
+ 
+      nDevices++;
+    }
+    else if (error==4)
+    {
+      Serial.print("Unknown error at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.println(address,HEX);
+    }    
+  }
+  if (nDevices == 0)
+    Serial.println("No I2C devices found\n");
+  else
+    Serial.println("done\n");
+ 
+  delay(5000);           // wait 5 seconds for next scan
+}
+</pre>
+<center><h2>Tlačidlový DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
 <li>Využíva tlačidlový vstup pre tímy, rozhodcu a erasera, celkom 4 tlačidlá.</li>
 <li>Tlačidlá nahrádzajú RFID čítačku v metóde vstupu pre DOMINATOR.</li>				
 <li>Zapojenie tlačidiel je v režime INPUT_PULLUP, stlačením sa privedie GND na vstupný vývod Arduina (Active-LOW signál).</li>
