@@ -71,9 +71,8 @@
 <span class="label label-success">DOMINATOR</span>
 <hr><center><h2>RFID DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
       <div class="alert alert-danger">
-      <strong>Pozor na RFID čítačky RC522 s falošným (neoriginálnym NXP RC522) čipom! - V projekte na UART hlási verziu čipu 0x12 - counterfeit (nefunguje pre projekt DOMINATOR, vyžaduje sa originálny NXP čip s ktorým spolupracuje knižnica!). 
-Testované a funkčné s NXP RFID čítačkou RC522, ktorá hlási 0x92 (Version 2.0).
-</strong>
+      <strong>Pozor na RFID čítačky RC522 s falošným (neoriginálnym NXP RC522) čipom! - V projekte na UART hlási verziu čipu 0x12 - counterfeit (nefunguje pre projekt DOMINATOR). </strong>
+	Testované a funkčné s NXP RFID čítačkou RC522, ktorá hlási verziu firmvéru 0x92 (Version 2.0).
       </div>
 <!---<h2>Knižnice pre projekt RFID DOMINATOR</h2> 
 <li>RFID  <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
@@ -96,11 +95,11 @@ Testované a funkčné s NXP RFID čítačkou RC522, ktorá hlási 0x92 (Version
 <li>Čítačka RC522 pracuje na frekvencii 13.56MHz, RFID tagy registruje na cca 3 centimetre (nutný skoro až fyzický dotyk s čítačkou), kompatibilný formát tagov ISO/IEC 14443-A.</li>
 <li>RFID čítačka NXP RC522 registruje aj bankomatové, ISIC, autobusové karty, ktoré fungujú ako NFC karty a dokážu oznámiť svoju fyzickú adresu čítačke v dosahu.</li>
 <h4>Hardvér pre projekt - RFID DOMINATOR:</h4> 
-<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>RFID čítačka RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>Kľúčenky/karty/náramky štandardu ISO/IEC 14443-A</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" title="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>2x LED diódy</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto;"></li>
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>RFID čítačka RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>Kľúčenky/karty/náramky štandardu ISO/IEC 14443-A</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" title="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>2x LED diódy</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
 <center><img src="https://i.imgur.com/TeQXCCp.jpg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION" title="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION"></center>        
 <h4>Princíp funkčnosti po hardvérovej stránke:</h4>
       <li>RFID čítačka RC522 komunikuje s Arduinom po SPI zbernici. Načítava UID (identifikátor) RFID kariet v dosahu, preposiela tento identifikátor Arduinu, ktorý vykoná programovú logiku. Čítačka reaguje na vzdialenosť čipu cca 3cm od antény.</li>
@@ -268,6 +267,11 @@ void loop()
 <li>V základnej verzii DOMINATOR reaguje okamžite na stlačenie - aktivuje sa počítanie času pre daný tím (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).</li>
 <li>Časy sú vypísané na LCD znakový displej rozmeru 16x2, prípadne 20x4</li>
 <li>Logika systému, počítadlo je identické ako pre RFID DOMINATOR.</li>
+<h4>Hardvér pre projekt - Tlačidlový DOMINATOR:</h4> 
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>2x LED diódy</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>4x spínacie tlačidlo (pushbutton)</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
 <hr><center><h3>Tlačidlový DOMINATOR za behu v Airsoft hre</h3></center><hr>
 <center><img src="https://i.imgur.com/yuHmpZa.jpg" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Airsoft DOMINATOR s tlačidlovým vstupom - stopky" title="Airsoft DOMINATOR s tlačidlovým vstupom - stopky"></center>        			
 <hr><center><h3>Tlačidlový DOMINATOR - ukážka funkčnosti a logiky systému</h3></center><hr>
