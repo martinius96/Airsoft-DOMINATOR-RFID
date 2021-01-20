@@ -83,7 +83,7 @@
 <li>RFID  <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
 <li>LCD - I2C  <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>	--->			
 <h4>Popis projektu:</h4>
-<li>Zariadenie - DOMINATOR obsahuje riadiaci mikrokontróler (Arduino Uno, Nano, alebo Mega 2560).</li>
+<li>Zariadenie - DOMINATOR obsahuje riadiaci mikrokontróler (Arduino Uno / Nano).</li>
 <li>Na LCD znakovom displeji rozmeru 16x2, respektíve 20x4 sa vyobrazujú časy jednotlivých tímov (RED a GRE tím)</li>
 <li>V systéme sú tak 2 tímy, ktoré proti sebe hrajú a zaberajú tento konkrétny bod, ktorý tvorí DOMINATOR.</li>				
 <li>Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre Tím 1 (RED), Tím 2, (GREEN).</li>				
@@ -310,6 +310,7 @@ void loop()
 Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
 Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez XLoader - ľahšie na použitie.</p>
 <li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<li><b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (AtMega328P):</center></b></li>
 <li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
 <li><b>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
 <li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
