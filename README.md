@@ -3,7 +3,7 @@
 
 **Popis:**
 * DOMINATOR je zariadenie - stopky, ktoré využívajú RFID vstup
-* Využíva riadiaci mikrokontróler (Arduino Uno, Nano, alebo Mega 2560).
+* Využíva riadiaci mikrokontróler (Arduino Uno / Nano).
 * Na znakovom LCD displeji sa vyobrazujú časy jednotlivých tímov (RED a GRE tím.)
 * Každý z členov tímu je vybavený kartou, alebo kľúčenkou, ktorá komunikuje na 13.56MHz. Kľúčenky môžu byť farebné odlíšené (modré, červené pre ich ľahšie pridelenie hráčom...)
 * Ak tím obsadí bod, hociktorý hráč tohto tímu priloží svoju kartu k čítačke. 
@@ -25,7 +25,7 @@
 ![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/LvXPxVq.png)
 
 **Hardvér použitý pre projekt RFID DOMINATOR:**
-* Arduino Uno/Nano/Mega (DPS je výhradne navrhnutá pre Arduino Nano)
+* Arduino Uno / Nano (DPS je výhradne navrhnutá pre Arduino Nano)
 * RFID RC522
 * 2x LED diódy
 * 2x predradný rezistor pre LED (možno použiť aj 2x I2C pullup rezistor - použitý v DPS)
@@ -60,7 +60,7 @@
 ![Použitie programu XLoader](https://i.imgur.com/jpKuhTc.png)
 
 **Hardvér použitý pre projekt Tlačidlový DOMINATOR:**
-* Arduino Uno/Nano/Mega
+* Arduino Uno / Nano
 * 2x LED diódy
 * 2x predradný rezistor pre LED (možno použiť aj 2x I2C pullup rezistor)
 * LCD displej 16x2/20x4 s I2C prevodníkom
