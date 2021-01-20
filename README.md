@@ -60,7 +60,7 @@
 ![Použitie programu XLoader](https://i.imgur.com/jpKuhTc.png)
 
 **Hardvér použitý pre projekt Tlačidlový DOMINATOR:**
-* Arduino Uno/Nano/Mega (DPS je výhradne navrhnutá pre Arduino Nano)
+* Arduino Uno/Nano/Mega
 * 2x LED diódy
 * 2x predradný rezistor pre LED (možno použiť aj 2x I2C pullup rezistor)
 * LCD displej 16x2/20x4 s I2C prevodníkom
