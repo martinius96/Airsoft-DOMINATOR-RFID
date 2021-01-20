@@ -128,10 +128,11 @@
 Jeden z najpopulárnejších a najlacnejších výrobcov je: JLCPCB. 
 GERBER súbory je možné rovno nahrať ako archív, pričom sa DPS vizualizuje, automaticky sa nastavia vrsty, ktoré zaznamená, nastaví rozmery DPS. 
 Výroba trvá 1-2 dni. Kedysi sa tento výrobca preslávil akciou výroby 10 kusov PCB za 2 doláre. 
-Dnes je možné nechať si vyrobiť 5 kusov tejto DPS pre RFID DOMINATOR za 6.96€, 10 kusov za 10.16€.
-Preprava - je možné vybrať si z najlacnejšej alternatívy za 7.44€ až po DHL s doručením do 3-5 dní, pričom cena prepravy je 23.16€. 
-JLCPCB automaticky aplikuje zľavový kupón na 8€ pre prepravu. Teda s najlacnejšou prepravnou alternatívou s doručením do 25 dní je táto preprava pri prvom nákupe zdarma.
-je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay, AllPCB, NextPCB, SeeedStudio.
+Dnes JLCPCB umožňuje vyrobiť 5 kusov tejto DPS pre RFID DOMINATOR za 6.96€, 10 kusov za 10.16€.
+Preprava - dostupná najlacnejšia alternatíva za 7.44€ až po DHL s doručením do 3-5 pracovných dní, pričom cena prepravy je 23.16€. 
+JLCPCB automaticky aplikuje zľavový kupón na 8€ pre prepravu, ktorý vám pridelí po registrácii. 
+Teda s najlacnejšou prepravnou alternatívou s doručením do 25 dní je táto preprava pri prvom nákupe zdarma.
+Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay, AllPCB, NextPCB, SeeedStudio, ktorí majú technológiu pre výrobu DPS strojovou metódou z GERBER súborov.
 </p>				
 <h4>Pin headre v DPS návrhu:</h4>
 <li>2x female pin-header 15-pin (pre Arduino Nano)</li>
@@ -155,10 +156,17 @@ je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay, AllPCB,
 <li>Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám</li>				
 <center><img src="https://i.imgur.com/LvXPxVq.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
 <pre style="background: #52BE80;">
-//PROGRAM PRE NACITANIE UID RFID KARIET PRE DALSIE POUZITIE V DOMINATOR-e (NEREPREZENTUJE DOMINATOR, SLUZI IBA NANACITANIE UID KARTY PRE FINALNU APLIKACIU!!!!!)
-//http://arduino.clanweb.eu/airsoft-dominator.php
-//PRE PROJEKT RFID DOMINATOR (Airsoft, Paintball, Nerf Wars)
-//Autor: Bc. Martin Chlebovec
+/*|-------------------------------------------------|*/
+/*|Názov: Načítanie UID RFID kariet                 |*/
+/*|Popis: Načíta prostredníctvom RFID čítačky RC522 |*/
+/*|adresu RFID karty, ktorá je priložená a vypíše   |*/
+/*|UID na UART rozhranie.                           |*/
+/*|Zaznamenané UID kariet sa použijú v DOMINATOR-e  |*/
+/*|Autor: Martin Chlebovec                          |*/
+/*|E-mail: martinius96@gmail.com                    |*/
+/*|Licencia pouzitia: MIT                           |*/
+/*|Revízia: 12. August 2020                         |*/
+/*|-------------------------------------------------|*/
 
 #include &lt;SPI.h>
 #include &lt;MFRC522.h>
