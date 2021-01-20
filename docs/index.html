@@ -309,10 +309,31 @@ Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér A
 <li><b>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
 <li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
 <b>Firmvér je možné stiahnuť z repozitára projektu:</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">TU</a>. Firmvér je v priečinku /firmware/ rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
-</div>	
-      <div class="alert alert-danger">
-      <strong>V prípade najnovších čínskych klonov Arduino Nano, ktoré majú "Old Bootloader" je nutné nahrávať rýchlosťou 57600 baud/s! Pri iných verziách s novším Bootloaderom 115200 baud/s.</strong>
-      </div>				
+</div>
+				<h4>Dostupný firmvér</h4>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2980B9"><strong>Názov firmvéru</strong></td>
+				<td align="right" style="background-color:#2980B9"><strong>Určené pre</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">0x27.ino.hex</td>
+				<td align="right">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x27</b></td>
+				</tr>
+				<tr>
+				<td align="left">0x3F.ino.hex</td>
+				<td align="right">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x3F</b></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>				
+<div class="alert alert-danger">
+      <strong>V prípade najnovších čínskych klonov Arduino Nano, ktoré majú "Old Bootloader" je nutné nahrávať rýchlosťou 57600 baud/s! Pri iných verziách s novším Bootloaderom 115200 baud/s (táto rýchlosť je použitá aj v AVRDUDE príkaze pre nahratie strojového kódu).</strong>
+ </div>				
 <hr><center><h2>Nahrávanie Shareware verzie projektu Tlačidlový DOMINATOR do Arduina cez XLoader</h2></center><hr>				
 <center>
 	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
