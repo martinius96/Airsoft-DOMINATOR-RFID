@@ -111,17 +111,19 @@
       <div class="alert alert-info">
       <strong>Spotreba: cca 110mAh pri 5V napájaní. </strong>Vhodné napájať cez powerbanku, nabíjačku od telefónu s USB výstupom.
       </div>
-      <h4>Určenie projektu:</h4>
+      <h4>Určenie projektu RFID DOMINATOR:</h4>
       <li>Projekt je vhodný pre tímy, kluby, športové areály, akcie.</li>
-      <li>Vhodný pre herné módy DOMINATION, Capture Point (môže byť použitých aj viac DOMINATOR-ov v hre).</li>
-      <li>Využitie pre športy Airsoft, Paintball, Nerf Wars.</li>
+      <li>Ak sú RFID karty, náramky, respektíve kľúčenky farebne odlíšené, je veľmi ľahké a univerzálne ich distribuovať hráčom.</li>
+      <li>Použitie kariet je ľahké pre všetky vekové kategórie. Čip je chránený v plastovom puzdre, nevadí mu špina, voda...</li>
+      <li>Vhodný pre herné módy DOMINATION, Capture Point (môže byť použitých aj viac DOMINATOR-ov v hre), teda herný mód, ktorý má vyrovnaný počet hráčov.</li>
+      <li>Využitie je predovšetkým pre športy Airsoft, Paintball, Nerf Wars.</li>
       <hr><h4>Ukážka funkčnosti - RFID DOMINATOR:</h4><hr><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <hr><center><h2>Doska plošných spojov - (DPS) - RFID DOMINATOR - GERBER / výroba fotocestou</h2></center><hr>
 <div class="alert alert-info">
 	<strong>DPS návrh počíta s využitím dosky Arduino Nano</strong>
 </div>					
 <li>DPS je obojstranná s prekovmi, rozmery: 100x105mm</li>				
-<b>Výroba DPS v Číne</b>
+<h4>Výroba DPS v Číne</h4>
 <p>DPS je možné nechať si vyrobiť aj v Číne - strojovou výrobou z GERBER súborov. 
 Jeden z najpopulárnejších a najlacnejších výrobcov je: JLCPCB. 
 GERBER súbory je možné rovno nahrať ako archív, pričom sa DPS vizualizuje, automaticky sa nastavia vrsty, ktoré zaznamená, nastaví rozmery DPS. 
@@ -131,15 +133,15 @@ Preprava - je možné vybrať si z najlacnejšej alternatívy za 7.44€ až po 
 JLCPCB automaticky aplikuje zľavový kupón na 8€ pre prepravu. Teda s najlacnejšou prepravnou alternatívou s doručením do 25 dní je táto preprava pri prvom nákupe zdarma.
 je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay, AllPCB, NextPCB, SeeedStudio.
 </p>				
-<b>Pin headre v DPS návrhu:</b>
+<h4>Pin headre v DPS návrhu:</h4>
 <li>2x female pin-header 15-pin (pre Arduino Nano)</li>
 <li>1x female pin-header 8-pin (pre RFID čítačku RC522)</li>
 <li>1x female 90° pin-header 4-pin (pre I2C prevodník LCD displeja 20x4)</li>
 
-<b>Distančné stĺpiky v DPS návrhu:</b>
+<h4>Distančné stĺpiky v DPS návrhu:</h4>
 <li>4x distančný stĺpik pre znakový LCD displej 20x4 (Ø max 2.5 mm)</li>
 <li>2x distančný stĺpik pre RFID RC522 (Ø max 3.5 mm)</li>
-<b>Rozmery súčiastok:</b>
+<h4>Rozmery súčiastok:</h4>
 <div class="alert alert-danger">
 	<strong>PDF dokument s rozmermi súčiastok je dostupný: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/docs/pdf/Rozmery_SUCIASTOK.pdf">TU</a>
 </div>
@@ -276,6 +278,12 @@ void loop()
 <li><b>Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
 <li><b>2x LED diódy</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
 <li><b>4x spínacie tlačidlo (pushbutton)</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+      <div class="alert alert-success">
+      <strong>Maximálny rozsah času, ktorý môže byť vypísaný v systéme: </strong>99 hodín, 59 minút a 59 sekúnd
+      </div>
+      <div class="alert alert-info">
+      <strong>Spotreba: cca 20mAh pri 5V napájaní. </strong>Vhodné napájať cez powerbanku, nabíjačku od telefónu s USB výstupom.
+      </div>
 <hr><center><h3>Tlačidlový DOMINATOR za behu v Airsoft hre</h3></center><hr>
 <center><img src="https://i.imgur.com/yuHmpZa.jpg" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Airsoft DOMINATOR s tlačidlovým vstupom - stopky" title="Airsoft DOMINATOR s tlačidlovým vstupom - stopky"></center>        			
 <hr><center><h3>Tlačidlový DOMINATOR - ukážka funkčnosti a logiky systému</h3></center><hr>
@@ -293,16 +301,17 @@ Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér A
 <li><b>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
 <li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
 <b>Firmvér je možné stiahnuť z repozitára projektu:</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">TU</a>. Firmvér je v priečinku /firmware/ rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
-				</div>		
+</div>	
+      <div class="alert alert-danger">
+      <strong>V prípade najnovších čínskych klonov Arduino Nano, ktoré majú "Old Bootloader" je nutné nahrávať rýchlosťou 57600 baud/s! Pri iných verziách s novším Bootloaderom 115200 baud/s.</strong>
+      </div>				
 <hr><center><h2>Nahrávanie Shareware verzie projektu Tlačidlový DOMINATOR do Arduina cez XLoader</h2></center><hr>				
 <center>
 	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
 </center>	
 <hr><center><h2>Všeobecný videonávod pre upload firmvéru do Arduina cez XLoader</h2></center><hr>
 <center><iframe width="50%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>					
-			
-			
-			</div>
+</div>
 		</div>
 </div>
 </body>
