@@ -130,7 +130,7 @@
 </div>					
 <li>DPS je obojstranná s prekovmi, rozmery: 100x105mm</li>				
 <h4>Výroba DPS v Číne</h4>
-<p>DPS je možné nechať si vyrobiť aj v Číne - strojovou výrobou z GERBER súborov. 
+<p>DPS je možné nechať si vyrobiť na Slovensku u <a href="https://www.pbspoj.sk/">PB Spoj</a>, alebo aj v Číne - strojovou výrobou z GERBER súborov. 
 Jeden z najpopulárnejších a najlacnejších výrobcov je: JLCPCB. 
 GERBER súbory je možné rovno nahrať ako archív, pričom sa DPS vizualizuje, automaticky sa nastavia vrsty, ktoré zaznamená, nastaví rozmery DPS. 
 Výroba trvá 1-2 dni. Kedysi sa tento výrobca preslávil akciou výroby 10 kusov PCB za 2 doláre. 
@@ -161,7 +161,11 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <li>Program slúži na načítanie fyzických adries RFID tagov, kariet, ktoré budú použité v programe pre DOMINATOR (RFID / Tlačidlový)</li>
 <li>Výpis adresy karty sa realizuje do sériového (UART) monitoru - 9600 baud/s.</li>
 <li>Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám</li>				
-<center><img src="https://i.imgur.com/LvXPxVq.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
+<div class="alert alert-info">
+Pre úspešné nahratie zdrojového kódu pre načítanie UID kariet je nutné importovať knižnicu MFRC522 do vášho prostredia Arduino IDE. 
+Stiahnite si repozitár (odkaz úplne hore), obsah zložky /src/ --> <strong>celý priečinok MFRC522 nakopírovať do priečinka Arduino/libraries/</strong>
+</div>	
+				<center><img src="https://i.imgur.com/LvXPxVq.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
 <pre style="background: #52BE80;">
 /*|-------------------------------------------------|*/
 /*|Názov: Načítanie UID RFID kariet                 |*/
