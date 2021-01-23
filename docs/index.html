@@ -158,14 +158,17 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <hr><center><h2>Schéma zapojenia - RFID DOMINATOR:</h2></center><hr>
 <img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
 <hr><center><h3><font color="#52BE80">Program pre načítanie UID adries RFID kariet pre DOMINATOR</font></h3></center><hr>
-<li>Program slúži na načítanie fyzických adries RFID tagov, kariet, ktoré budú použité v programe pre DOMINATOR (RFID / Tlačidlový)</li>
-<li>Výpis adresy karty sa realizuje do sériového (UART) monitoru - 9600 baud/s.</li>
+<li>Program slúži na načítanie identifikátorov (UID) RFID tagov, kariet, ktoré budú použité v programe pre RFID DOMINATOR</li>
+<li>Výpis adresy karty sa realizuje do sériového (UART) monitoru - použitá rýchlosť 9600 baud/s.</li>
 <li>Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám</li>				
 <div class="alert alert-info">
 Pre úspešné nahratie zdrojového kódu pre načítanie UID kariet je nutné importovať knižnicu MFRC522 do vášho prostredia Arduino IDE. 
 Stiahnite si repozitár (odkaz úplne hore), obsah zložky /src/ --> <strong>celý priečinok MFRC522 nakopírovať do priečinka Arduino/libraries/</strong>
 </div>	
-				<center><img src="https://i.imgur.com/LvXPxVq.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
+<h4>Príklad uložených UID RFID kariet:</h4>				
+<center><img src="https://i.imgur.com/LvXPxVq.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
+<h4>Výstup programu na UART rozhranie:</h4>
+<center><img src="https://i.imgur.com/zacr30a.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis UID RFID tagu, karty na UART rozhranie s vypísaním typu karty" title="Výpis UID RFID tagu, karty na UART rozhranie s vypísaním typu karty"></center>
 <pre style="background: #52BE80;">
 /*|-------------------------------------------------|*/
 /*|Názov: Načítanie UID RFID kariet                 |*/
@@ -228,6 +231,8 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 <hr>				
 <center><h3><font color="#C0392B">I2C Scanner - program pre načítanie adresy I2C prevodníka pre LCD displej</font></h3></center>				
 <hr>
+<h4>Očakávaný výstup programu I2C Scanner:</h4>
+<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
 <pre style="background: #C0392B;">
 #include &lt;Wire.h>
  
