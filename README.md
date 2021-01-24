@@ -54,7 +54,8 @@
 * Verzia využíva 30 sekundovú inicializáciou systému pred jeho možným použitím. 
 * Testovací firmvér je v strojovom kóde (.hex)
 * Nahrať do Arduino Uno dosky je možné firmvér cez nástroj Xloader (dostupný v repozitári).
-* Firmvér je iba per Arduino Uno dosku, pre iné dosky nebude fungovať!
+* Firmvér je iba pre Arduino Uno / Nano dosku (AtMega328P), pre iné dosky nebude fungovať!
+* Pre Arduino Nano s Old Bootloaderom je nutné zvoliť nahrávaciu rýchlosť 57600 baud/s. Pre Uno a Nano s novším Bootloaderom 115200 baud/s.
 * Testovací firmvér je založený na schéme zapojenia pre Tlačidlový DOMINATOR bez buzzera (LED diódy fungujú a vizualizujú stav, rovnako displej vypisuje čas)
 # Použitie nástroja XLoader pre nahratie strojového kódu do Arduina
 ![Použitie programu XLoader](https://i.imgur.com/jpKuhTc.png)
