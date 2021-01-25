@@ -160,7 +160,7 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <table class="table" style="border: 1px solid black;">
 				<thead>
 <tr>
-<td align="left" style="background-color:#27AE60"><strong>Arduino</strong></td>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#27AE60"><strong>NXP RFID RC522</strong></td>
 </tr>
 <tr>
@@ -192,7 +192,7 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <td align="right">SCK</td>
 </tr>					
 <tr>
-<td align="left" style="background-color:#C0392B"><strong>Arduino</strong></td>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#C0392B"><strong>I2C prevodník pre LCD displej</strong></td>
 </tr>
 <tr>
@@ -212,7 +212,7 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <td align="right">SCL</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#F8C471"><strong>Arduino</strong></td>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#F8C471"><strong>Buzzer (hlásič)</strong></td>
 </tr>
 <tr>
@@ -228,7 +228,7 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <td align="right">IN</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#5DADE2"><strong>Arduino</strong></td>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#5DADE2"><strong>LED diódy</strong></td>
 </tr>
 <tr>
@@ -411,7 +411,7 @@ void loop()
 <table class="table" style="border: 1px solid black;">
 				<thead>		
 <tr>
-<td align="left" style="background-color:#27AE60"><strong>Arduino</strong></td>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#27AE60"><strong>I2C prevodník pre LCD displej</strong></td>
 </tr>
 <tr>
@@ -431,7 +431,7 @@ void loop()
 <td align="right">SCL</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#C0392B"><strong>Arduino</strong></td>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#C0392B"><strong>Buzzer (hlásič)</strong></td>
 </tr>
 <tr>
@@ -447,7 +447,7 @@ void loop()
 <td align="right">IN</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#F8C471"><strong>Arduino</strong></td>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#F8C471"><strong>LED diódy</strong></td>
 </tr>
 <tr>
@@ -462,7 +462,7 @@ void loop()
 <td align="left">D3</td>
 <td align="right">IN (GREEN)</td>
 </tr>
-<td align="left" style="background-color:#5DADE2"><strong>Arduino</strong></td>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#5DADE2"><strong>Tlačidlá (INPUT_PULLUP)</strong></td>
 </tr>
 <tr>
@@ -496,7 +496,7 @@ void loop()
 Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
 Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez XLoader - ľahšie na použitie.</p>
 <li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<li><b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (AtMega328P):</center></b></li>
+<b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (AtMega328P):</center></b>
 <li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
 <li><b>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
 <li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
