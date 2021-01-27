@@ -313,9 +313,9 @@ void loop() {
 void dump_byte_array(byte *buffer, byte bufferSize) {
   for (byte i = 0; i &lt; bufferSize; i++) {
   }
-  Serial.print("Kod:");
+  Serial.print("Nacitany kod: ");
   unsigned long kod = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
-  Serial.print(kod);
+  Serial.println(kod);
 }
 </pre>
 <hr>				
