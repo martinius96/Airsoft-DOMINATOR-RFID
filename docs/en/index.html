@@ -71,59 +71,198 @@
 <span class="label label-success">DOMINATOR</span>
 <hr><center><h2>RFID DOMINATOR - stopwatch for Airsoft | Paintball</h2></center><hr>
       <div class="alert alert-danger">
-      <strong>Beware of RFID readers RC522 with fake (non-original NXP RC522) chip! - In the project on the UART it reports the chip version 0x12 - counterfeit (does not work for the DOMINATOR project, the original NXP chip with which the library cooperates is required!)</strong>
+      <strong>Beware of RFID readers RC522 with fake (non-original NXP RC522) chip! - In the project on the UART it reports: Firmware version: 0x12 - counterfeit chip. The project with the fake chip does not work. </strong>
+Tested and functional with NXP RFID reader RC522, which reports firmware version: Firmware version 0x92 (Version 2.0).
       </div>
-<h2>Libraries for the RFID DOMINATOR project</h2> 
-<li>RFID --> <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
-<li>LCD - I2C --> <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>				
-<h4>Project description:</h4>
-<li> Device - DOMINATOR includes a control microcontroller (Arduino Uno, Nano, or Mega 2560). </li>
-<li> The LCD character display shows the times of the individual teams (RF and GDP team, respectively BLU and RED team.) </li>
-<li> In the basic version of the software, there are 2 teams that play against each other and occupy this particular point! </li>
-<li> At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for Team 1 (RED), Team 2, (BLUE). </li>
+<!---<h2>Knižnice pre projekt RFID DOMINATOR</h2> 
+<li>RFID  <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
+<li>LCD - I2C  <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>	--->			
+<h4> Project description: </h4>
+<li> Device - DOMINATOR is a stopwatch for Airsoft, Paintball, which allows you to calculate and visualize times for two teams. </li>
+<li> They use the Arduino control microcontroller (Arduino Uno / Nano). </li>
+<li> The 16x2 and 20x4 LCD characters display the times of the individual teams (RED and GRE team). </li>
+<li> There are 2 teams in the system that play against each other and occupy this particular point, which is DOMINATOR. </li>
+<li> At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for Team 1 (RED), Team 2, (GREEN). </li>
 <li> Each member of the team is equipped with a card or key fob that communicates on the frequency 13.56MHz with an RFID reader. </li>
-<li> Keychains can be color-coded (blue, red by team and feature ...) </li>
-<li> If a team scores a point, any player on that team attaches their card to the reader, thereby awarding the point. </li>
-<li> The diode of the given team (red / blue) will light up at this station and the time will start to be added to the given team (the change can also be announced by a buzzer - a detector, if it is used in the system). </li>
-<li> If a point is occupied by the other team and a member of that team attaches his card, that team's LED will light up, the other team's time will be paused, and the time of the team that scored the point will be counted. </li>
-<li> If the card / keychain is attached by the organizer (referee), both times will be paused until one of the teams introduces the card. </li>
-<li> This type of card is also suitable for ending the game, when time stops and the winner is decided. </li>
+<li> Keychains can be color-coded (blue, red by team and feature ...), allowing them to be distributed more efficiently to players </li>
+<li> If a team scores a point, that team's player attaches his or her card to the reader, thereby awarding the point. </li>
+<li> The LED of the team (red / green) on this station will light up and the time will be added to the team (the change can also be announced by a buzzer - a detector, if used in the system). </li>
+<li> If the point is occupied by the other team and a member of that team attaches his card, that team's LED will light up, the other team's time will be paused, and the time of the team that occupied the point will be counted. </li>
+<li> If the card / keychain is attached by the organizer (referee), both times are paused until one of the teams presents the card. </li>
+<li> This type of card is also suitable for a break, the end of the game, when time stops and the winner is decided. </li>
 <li> The last possible card in the system is to use the so-called eraser card that pauses and resets both times. </li>
-<li> The project is suitable for Airsoft events and sports facilities. </li>
-<li> The system is tested, functional, works smoothly, the ability to measure and display time in tenths of a second (programmatically counts but does not display, display in seconds). </li>
-<li> The RC522 reader operates at a frequency of 13.56MHz, registers RFID tags at about 3 centimeters (almost physical contact with the reader is required), compatible ISO / IEC 14443 A tag format. </li>
+<li> The project is suitable for Airsoft events, sports facilities, or Airsoft teams. </li>
+<li> The system is tested, functional, works smoothly, the ability to measure and display time even in tenths of a second (they programmatically count but do not display, display in the resolution of seconds in the basic version). </li>
+<li> The RC522 reader works at a frequency of 13.56MHz, registers RFID tags at about 3 centimeters (almost physical contact with the reader is required), compatible ISO / IEC 14443-A tag format. </li>
+<li> The NXP RC522 RFID reader also registers ATM, ISIC, bus cards that act as NFC cards and can communicate their physical address to a reader within range. </li>
 <h4> Hardware for the project - RFID DOMINATOR: </h4>
-<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>RFID reader RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID reader RC522" title="RFID reader RC522" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>Standard keychains / cards / bracelets ISO/IEC 14443-A</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Keychains, cards, bracelets on 13.56MHz standard ISO / IEC 14443-A" title="Keychains, cards, bracelets on 13.56MHz standard ISO / IEC 14443-A" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Buzzer" title="Buzzer" style="display: block; max-width: 100%; height: auto;"></li>
-<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LEDs - indicator of the active team at the point" title="LEDs - indicator of the active team at the point" style="display: block; max-width: 100%; height: auto;"></li>
-<center><img src="https://i.imgur.com/TeQXCCp.jpg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - running stopwatch in Airsoft game for two teams - Capture Point - DOMINATION" title="RFID DOMINATOR - running stopwatch in Airsoft game for two teams - Capture Point - DOMINATION"></center>           
-<h4>Principle of functionality on the hardware side:</h4>
-      <li> The RF5 reader RC522 communicates with the Arduino via the SPI bus. It reads the UID (identifier) of RFID cards in range, forwards this identifier to Arduino, which executes the program logic. The reader responds to the distance of the chip about 3 cm from the antenna. </li>
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>RFID reader RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>Keychains / cards / wristbands compatible with standard ISO/IEC 14443-A</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" title="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<center><img src="https://i.imgur.com/TeQXCCp.jpg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION" title="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION"></center>        
+<h4> Principle of hardware functionality: </h4>
+       <li> The RF5 reader RC522 communicates with the Arduino via the SPI bus. It reads the UID (identifier) of RFID cards in range, forwards this identifier to Arduino, which executes the program logic. The reader responds to the distance of the chip about 3 cm from the antenna. </li>
        <li> Arduino compares the read card address in a multi-condition, applies digital states to diodes, runs a universal counter every 100ms (counts in tenths of a second), controls the counting of both times. </li>
-       <li> The time is sent via the I2C bus to the 20x4 character display, where it is plotted. The display takes up to 30ms at I2C bus speed 100 kHz - Standard speed. </li>
+       <li> The time is sent via the I2C bus to the 20x4 character display, where it is plotted. The display takes up to 30ms at an I2C bus speed of 100 kHz - Standard speed. </li>
       <div class="alert alert-success">
-      <strong>Maximum time range that can be listed in the system: </strong>99 hours, 59 minutes and 59 seconds
+      <strong> Maximum time range that can be listed on the system: </strong> 99 hours, 59 minutes, and 59 seconds
       </div>
       <div class="alert alert-info">
-      <strong>Consumption: approx. 110mAh with 5V power supply. </strong>Suitable to power via power bank, charger from a phone with USB output.
+      <strong> Consumption: approx. 110mAh with 5V power supply. </strong> Convenient to power via power bank, charger from a phone with USB output.
       </div>
-      <h4> Project ID: </h4>
+      <h4> To specify an RFID DOMINATOR project: </h4>
        <li> The project is suitable for teams, clubs, sports facilities, events. </li>
-       <li> Suitable for DOMINATION, Capture Point game modes (more than one DOMINATOR can be used in the game). </li>
-       <li> Use for sports Airsoft, Paintball, Nerf Wars. </li>
-       <hr> <h4> Functional Demonstration - RFID DOMINATOR: </h4><hr><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-<h2>Printed circuit board - (PCB) - RFID DOMINATOR - GERBER</h2>
+       <li> If RFID cards, bracelets or key fobs are color-coded, they are very easy and universally distributed to players. </li>
+       <li> Tabs are easy to use for all ages. The chip is protected in a plastic case, it does not mind dirt, water ... </li>
+       <li> Suitable for DOMINATION game modes, Capture Point (more than one DOMINATOR can be used in the game), a game mode that has a balanced number of players. </li>
+       <li> The use is mainly for sports Airsoft, Paintball, Nerf Wars. </li>
+      <hr><h4>Demonstration of functionality - RFID DOMINATOR:</h4><hr><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<hr><center><h2>Printed circuit board - (PCB) - RFID DOMINATOR - GERBER / production by photo route</h2></center><hr>
+<div class="alert alert-info">
+	<strong>The PCB design envisages the use of the Arduino Nano board!</strong>
+</div>					
+<li> PCB is double-sided with overlays, dimensions: 100x105mm </li>
+<h4> PCB production in China </h4>
+<p> PCBs can be made in Slovakia at <a href="https://www.pbspoj.sk/"> PB Spoj </a>, or in China - by machine production from GERBER files.
+One of the most popular and cheapest manufacturers is: JLCPCB.
+GERBER files can be uploaded directly as an archive, while the PCB is visualized, the layers it records are automatically set, the dimensions of the PCB are set.
+Production takes 1-2 days. This manufacturer used to be famous for the action of producing 10 pieces of PCBs for $ 2.
+Today JLCPCB allows you to produce 5 pieces of this PCB for RFID DOMINATOR for 6.96 €, 10 pieces for 10.16 €.
+Transport - the cheapest alternative is available for 7.44 € up to DHL with delivery in 3-5 working days, while the cost of transport is 23.16 €.
+JLCPCB will automatically apply a discount coupon of € 8 for shipping, which will be assigned to you after registration.
+Thus, with the cheapest shipping alternative with delivery within 25 days, this shipping is free with the first purchase.
+It is also possible to use other available manufacturers, for example: PCBWay, AllPCB, NextPCB, SeeedStudio, which have the technology for PCB production by machine method from GERBER files.
+</p>
+<center><img src="https://i.imgur.com/rFyRB50.png" alt="DPS pre Airsoft DOMINATOR - JLCPCB" style="display: block; max-width: 100%; height: auto;" title="DPS pre Airsoft DOMINATOR - JLCPCB"></center>        							
+<h4> Pin headers in PCB design: </h4>
+<li> 2x female pin-header 15-pin (for Arduino Nano) </li>
+<li> 1x female pin-header 8-pin (for RFID reader RC522) </li>
+<li> 1x female 90 ° pin-header 4-pin (for I2C LCD display converter 20x4) </li>
+
+<h4> Spacers in the design PCB: </h4>
+<li> 4x spacer for character LCD display 20x4 (Ø max 2.5 mm) </li>
+<li> 2x spacer for RFID RC522 (Ø max 3.5 mm) </li>
+<h4> Part dimensions: </h4>
+<div class="alert alert-danger">
+	<strong>A PDF document with part dimensions is available: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/docs/pdf/Rozmery_SUCIASTOK.pdf">HERE</a>
+</div>
 <img src="https://i.imgur.com/YMe2Y4L.png" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOSKA PLOŠNÝCH SPOJOV - DPS - PCB - RC522, Arduino - Nano, buzzer, LED, stopky, stopwatch" title="RFID DOMINATOR - DPS - PCB - RC522, Arduino Nano, buzzer, LED, stopky, stopwatch">  
-<h2>Wiring diagram - RFID DOMINATOR:</h2>
+<center><img src="https://i.imgur.com/8KE9eBX.png" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOSKA PLOŠNÝCH SPOJOV - DPS - Výroba fotocestou" title="RFID DOMINATOR - DOSKA PLOŠNÝCH SPOJOV - DPS - Výroba fotocestou"></center> 				
+<h3> Table connection of terminals - RFID DOMINATOR - fully corresponds to the wiring diagram: </h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+				<thead>
+<tr>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#27AE60"><strong>NXP RFID RC522</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">3V3</td>
+<td align="right">3V3</td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="right">RST</td>
+</tr>
+<tr>
+<td align="left">D10</td>
+<td align="right">SDA (SS)</td>
+</tr>
+<tr>
+<td align="left">D11</td>
+<td align="right">MOSI</td>
+</tr>
+<tr>
+<td align="left">D12</td>
+<td align="right">MISO</td>
+</tr>
+<tr>
+<td align="left">D13</td>
+<td align="right">SCK</td>
+</tr>					
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>I2C converter for LCD display</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">A4</td>
+<td align="right">SDA</td>
+</tr>
+<tr>
+<td align="left">A5</td>
+<td align="right">SCL</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>Buzzer</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">IN</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>LED diodes</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center> <h2> Wiring diagram - RFID DOMINATOR: </h2> </center> <hr>
 <img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
-<h3><font color="#52BE80">Program for reading UID addresses of RFID cards for DOMINATOR (<font color='red'>This is not a program for RFID DOMINATOR, it only obtains data for the final DOMINATOR project!</font>)</font></h3>
-<li>These addresses are inserted into the DOMINATOR - a paid project. The program is used only to load them, it does not contain programmed logic of DOMINATOR, stopwatch ...</li>
-<li>The card address is listed in the serial (UART) monitor - 9600 baud / s.</li><pre style="background: #52BE80;">
-//PROGRAM FOR LOADING UID RFID CARDS FOR FURTHER USE IN THE DOMINATOR (NOT REPRESENTED BY THE DOMINATOR, IT IS ALSO SERVED FOR LOADING UID CARDS FOR FINAL APPLICATION !!!!!)
-//http://arduino.clanweb.eu/airsoft-dominator.php?lang=en
-//Autor: Bc. Martin Chlebovec (martinius96@gmail.com)
+<hr><center> <h3> <font color = "# 52BE80"> Program for retrieving UID of RFID card addresses for DOMINATOR </font> </h3> </center> <hr>
+<li> The program is used to retrieve identifiers (UID) of RFID tags, cards that will be used in the program for RFID DOMINATOR </li>
+<li> The card address is listed in the serial (UART) monitor - 9600 baud / s used. </li>
+<li> It's a good idea to save and overwrite the report in a clear .xls (EXCEL) document that makes it easier to manage the assigned RFID cards for specific teams and entities </li>			
+<div class="alert alert-info">
+<b> You must import the MFRC522 library into your Arduino IDE to successfully load the source code to load UID cards. </b>
+Download the RFID DOMINATOR project repository (referenced by the first link at the top of the page), copy the contents of the / src / <strong> folder (MFRC522 folder) to the / Arduino / libraries / folder (the path to the folder depends on where you have the Arduino IDE installed), most commonly in Documents / Program Files on older Windows operating systems. </strong>
+</div>
+<h4> Example of stored UID RFID cards in an .xls document: </h4>				
+<center><img src="https://i.imgur.com/LvXPxVq.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
+<h4> Program output to UART interface: </h4>
+<center><img src="https://i.imgur.com/zacr30a.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis UID RFID tagu, karty na UART rozhranie s vypísaním typu karty" title="Výpis UID RFID tagu, karty na UART rozhranie s vypísaním typu karty"></center>
+<pre style="background: #52BE80;">
+/*|-------------------------------------------------|*/
+/*|Name: Sketch for reading UID of RFID cards       |*/
+/*|Description: Reads via RFID reader RC522         |*/
+/*|Author: Martin Chlebovec                         |*/
+/*|E-mail: martinius96@gmail.com                    |*/
+/*|License of usage: MIT                            |*/
+/*|Revision: 12. August 2020                        |*/
+/*|-------------------------------------------------|*/
 
 #include &lt;SPI.h>
 #include &lt;MFRC522.h>
@@ -166,23 +305,227 @@ void loop() {
 void dump_byte_array(byte *buffer, byte bufferSize) {
   for (byte i = 0; i &lt; bufferSize; i++) {
   }
-  Serial.print("Kod:");
+  Serial.print("Code: ");
   unsigned long kod = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
   Serial.print(kod);
 }
 </pre>
+<hr>				
+<center> <h3> <font color = "# C0392B"> I2C Scanner - program for reading the address of I2C converter for LCD display </font> </h3> </center>				
+<hr>
+<h4> Expected I2C Scanner output: </h4>
+<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
+<div class="alert alert-info">
+<b> The Wire library is built into the Arduino IDE, no installation is required. </b>
+The program can be uploaded immediately. It is advisable to connect the hardware - I2C converter for 16x2 / 20x4 display, even without a display, before starting the program.
+</div>	
+<pre style="background: #C0392B;">
+#include &lt;Wire.h>
+ 
+ 
+void setup()
+{
+  Wire.begin();
+ 
+  Serial.begin(9600);
+  while (!Serial);             // Leonardo: wait for serial monitor
+  Serial.println("\nI2C Scanner");
+}
+ 
+ 
+void loop()
+{
+  byte error, address;
+  int nDevices;
+ 
+  Serial.println("Scanning...");
+ 
+  nDevices = 0;
+  for(address = 1; address &lt; 127; address++ )
+  {
+    // The i2c_scanner uses the return value of
+    // the Write.endTransmisstion to see if
+    // a device did acknowledge to the address.
+    Wire.beginTransmission(address);
+    error = Wire.endTransmission();
+ 
+    if (error == 0)
+    {
+      Serial.print("I2C device found at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.print(address,HEX);
+      Serial.println("  !");
+ 
+      nDevices++;
+    }
+    else if (error==4)
+    {
+      Serial.print("Unknown error at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.println(address,HEX);
+    }    
+  }
+  if (nDevices == 0)
+    Serial.println("No I2C devices found\n");
+  else
+    Serial.println("done\n");
+ 
+  delay(5000);           // wait 5 seconds for next scan
+}
+</pre>
 <hr><center> <h2> Button DOMINATOR - stopwatch for Airsoft | Paintball </h2> </center> <hr>
-<li> Uses button input for teams, referee and eraser, a total of 4 buttons. </li>
-<li> The buttons replace the RFID reader in the input method for DOMINATOR. </li>
+<li> Uses button input for teams, referee and eraser, a total of 4 buttons with a switching function. </li>
+<li> Buttons replace the RFID reader in the input method for DOMINATOR. </li>
 <li> Button connection is in INPUT_PULLUP mode, pressing will bring GND to the Arduino input terminal (Active-LOW signal). </li>
 <li> Use toggle buttons are used, not toggle buttons (they would not respond to system logic, all software would always be "pressed"). </li>
-<li> In the basic version, DOMINATOR responds immediately to a press - the time counting for the given team is activated (the length of the press, the number of presses, etc. are not verified ...). </li>
+<li> In the basic version, DOMINATOR responds immediately to a press - time counting for a given team is activated (the length of the press, the number of presses, etc. are not verified ...). </li>
 <li> Times are displayed on a 16x2 or 20x4 LCD character display </li>
 <li> System logic, counter is identical to RFID DOMINATOR. </li>
+<h4> Hardware for the project - Button DOMINATOR: </h4>
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>4x pushbutton</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+      <div class="alert alert-success">
+      <strong> Maximum time range that can be listed on the system: </strong> 99 hours, 59 minutes, and 59 seconds
+      </div>
+      <div class="alert alert-info">
+     <strong> Consumption: approx. 20mAh with 5V power supply. </strong> Convenient to power via power bank, charger from a phone with USB output.
+      </div>
+<hr><center> <h3> Button DOMINATOR at runtime in Airsoft game </h3> </center> <hr>
+<center><img src="https://i.imgur.com/yuHmpZa.jpg" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Airsoft DOMINATOR s tlačidlovým vstupom - stopky" title="Airsoft DOMINATOR s tlačidlovým vstupom - stopky"></center>        			
+<hr><center> <h3> Button DOMINATOR - demonstration of system functionality and logic </h3> </center> <hr>
 <center><iframe width="50%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-<h2>Wiring diagram - Button DOMINATOR:</h2>
-<img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Wiring diagram - button - push-button DOMINATOR with Arduino Uno microcontroller - stopwatch for Airsoft" title="Wiring diagram - button - push-button DOMINATOR with Arduino Uno microcontroller - stopwatch for Airsoft">        			
-			  </div>
+<h3> Table connection of terminals - Button DOMINATOR - fully corresponds to the wiring diagram: </h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+				<thead>		
+<tr>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#27AE60"><strong>I2C converter for LCD display</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">A4</td>
+<td align="right">SDA</td>
+</tr>
+<tr>
+<td align="left">A5</td>
+<td align="right">SCL</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>Buzzer</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">IN</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>LED diodes</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>Pushbuttons (INPUT_PULLUP)</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D6</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<tr>
+<td align="left">D7</td>
+<td align="right">IN (ERASER)</td>
+</tr>
+<tr>
+<td align="left">D8</td>
+<td align="right">IN (Rozhodca)</td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="right">IN (RED)</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center> <h2> Wiring diagram - Button DOMINATOR: </h2> </center> <hr>
+<img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
+<hr><center> <h2> Test Program (Shareware) - Button DOMINATOR with machine code </h2> </center> <hr>
+<div class="alert alert-info">
+<p> <b> A Shareware version (.hex) is available for the Button DOMINATOR project. </b> The version allows you to measure a maximum of 15 seconds of play for each team.
+<b> The goal of the version is to verify compatibility with your hardware. </b> Machine codes based on the I2C converter address for the LCD display are available in the Github repository.
+The most used addresses are 0x27 and 0x3F. If you do not know the address of your converter, use the built-in example in Arduino IDE -> I2C Scanner, which will write the address to the UART interface (Serial monitor).
+Machine code can be uploaded to the Arduino Uno microcontroller via AVRDUDE software - part of the Arduino IDE, or with a GUI interface via XLoader - easier to use. </p>
+<li> AVRDUDE must be run via the CMD (command line) installed with the Arduino IDE. Located in C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
+<b> <center> Sample command to upload a program to Arduino Uno / Nano (AtMega328P): </center> </b>
+<li> <b> avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash: w: sketch.ino.hex: i </b> </li>
+<li> <b> XLoader is a Windows application (executable .exe tool) with a simple graphical interface </b>, which allows you to select the firmware - machine code (.hex), the target platform and can dynamically show the COM port on which the device located. </li>
+<li> <b> By simply clicking on Upload, machine code can be uploaded automatically </b> (XLoader uses the AVRDUDE tool similar to the Arduino IDE). The XLoader window informs about the successful upload in the form of a list of bytes uploaded. </li>
+<b> Firmware can be downloaded from the project repository: </b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">HERE</a>. The firmware is in the / firmware / folder divided according to the address of the I2C converter (you found out from the I2C scanner output on the UART interface).
+</div>
+				<h4> Available firmware - Button DOMINATOR </h4>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>Firmware name</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>Designed for</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">0x27.ino.hex</td>
+				<td align="right">LCD character display size 16x2 or 20x4 with <b> I2C converter, which communicates at address 0x27</b></td>
+				</tr>
+				<tr>
+				<td align="left">0x3F.ino.hex</td>
+				<td align="right">LCD character display size 16x2 or 20x4 with <b> I2C converter, which communicates at address 0x3F</b></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>				
+<div class="alert alert-danger">
+      <strong> For the latest Chinese Arduino Nano clones that have an "Old Bootloader", you need to upload at 57600 baud / s! For other versions with the newer Bootloader 115200 baud / s (this speed is also used in the AVRDUDE command to load machine code). </strong>
+ </div>				
+<hr><center> <h2> Uploading the Shareware version of the Button DOMINATOR project to Arduino via XLoader </h2> </center> <hr>			
+<center>
+	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
+</center>	
+<hr><center> <h2> General video tutorial for uploading firmware to Arduino via XLoader </h2> </center> <hr>
+<center><iframe width="50%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>					
+
+			</div>
 		</div>
 </div>
 </body>
