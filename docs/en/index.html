@@ -389,7 +389,6 @@ At the beginning of the game, the display shows the times 00 hours, 00 minutes, 
 Button DOMINATOR uses button input for the action of occupying a point by a team member, as well as for input of a referee and eraser entity.
 Thus, a total of 4 buttons for 4 system entities, the switching buttons connected in the INPUT_PULLUP mode are used.
 Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal).
-Switch buttons are used, not switch buttons (they would not react to the system logic, all software would always be "pressed").
 In the basic version, DOMINATOR responds immediately to a press - the time counting for a given team is activated (the length of the press, the number of presses, etc. are not verified ...).
 The times are displayed on an LCD character display measuring 16x2 or 20x4, which communicates with the control microcontroller via the I2C bus.
 <b> <font color = "#C0392B"> If a team member of the RED team occupies a point by pressing a button, a buzzer is triggered, which announces a change in the point with a short beep.
