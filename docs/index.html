@@ -94,7 +94,7 @@ Kľúčenky a náramky môžu byť farebné odlíšené (zelené, červené pod�
 <b><font color="#C0392B">Ak tím RED obsadí bod, hráč tímu priloží svoju kartu k čítačke, čím bod obsadí. Táto akcia spustí buzzer, ktorý ohlási zmenu na bode.
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím.</font></b>
 <b><font color="#27AE60">V prípade, že bod obsadí druhý tím - GRE a kartu priloží k čítačke člen tohto tímu, opäť sa ozve buzzer, rozsvieti sa dióda tohto tímu, čas tímu RED sa pauzuje a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
-<b><font color="#F4D03F">Ak kartu / kľúčenku priloží organizátor (rozhodca), oba časy sa zapauzujú až do momentu, kým nepriloží kartu niektorý z tímov. 
+<b><font color="#F39C12">Ak kartu / kľúčenku priloží organizátor (rozhodca), oba časy sa zapauzujú až do momentu, kým nepriloží kartu niektorý z tímov. 
 Tento typ karty je tak vhodný pre spustenie prestávky, ale môže byť využitá aj pri ukončení hry, kedy je nutné čas zastaviť pre vyhodnotenie hry.</font></b>
 <b><font color="#3498DB">V systéme DOMINATOR ešte existuje štvrtý typ karty - eraser, ktorá oba časy zapauzuje a vynuluje na počiatočné hodnoty ako po spustení stopiek DOMINATOR.
 Slúži pre reštart hry, inicializáciu novej hry.</font></b>
@@ -389,13 +389,14 @@ void loop()
 }
 </pre>
 <hr><center><h2>Tlačidlový DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
-<li>Využíva tlačidlový vstup pre tímy, rozhodcu a erasera, celkom 4 tlačidlá so spínacou funkciou.</li>
-<li>Tlačidlá nahrádzajú RFID čítačku v metóde vstupu pre DOMINATOR.</li>				
-<li>Zapojenie tlačidiel je v režime INPUT_PULLUP, stlačením sa privedie GND na vstupný vývod Arduina (Active-LOW signál).</li>
-<li>Používajú sa spínacie tlačidlá, nie rozpínacie (nereagovali by na logiku systému, boli by vždy všetky softvérovo "stlačené").</li>				
-<li>V základnej verzii DOMINATOR reaguje okamžite na stlačenie - aktivuje sa počítanie času pre daný tím (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).</li>
-<li>Časy sú vypísané na LCD znakový displej rozmeru 16x2, prípadne 20x4</li>
-<li>Logika systému, počítadlo je identické ako pre RFID DOMINATOR.</li>
+<p style="text-align: justify;">
+Tlačidlový DOMINATOR využíva tlačidlový vstup pre akciu obsadenia bodu tímami, rovnako pre rozhodcu a erasera, celkom 4 tlačidlá so spínacou funkciou.		
+Zapojenie tlačidiel je v režime INPUT_PULLUP, stlačením sa privedie GND na vstupný vývod Arduina (Active-LOW signál).
+Používajú sa spínacie tlačidlá, nie rozpínacie (nereagovali by na logiku systému, boli by vždy všetky softvérovo "stlačené").				
+V základnej verzii DOMINATOR reaguje okamžite na stlačenie - aktivuje sa počítanie času pre daný tím (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).
+Časy sú vypísané na LCD znakový displej rozmeru 16x2, prípadne 20x4. Displej komunikuje s riadiacim mikrokontrolérom po I2C zbernici.
+Logika systému, počítadlo je identické ako pre RFID DOMINATOR.
+</p> 
 <h4>Hardvér pre projekt - Tlačidlový DOMINATOR:</h4> 
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
 <li><b>Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
@@ -496,7 +497,8 @@ void loop()
 <img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
 <hr><center><h2>Testovací program (Shareware) - Tlačidlový DOMINATOR so strojovým kódom</h2></center><hr>
 <div class="alert alert-info">
-<p><b>K projektu Tlačidlový DOMINATOR je dostupná Shareware verzia (.hex).</b> Verzia umožňuje merať maximálne 15 sekúnd hry pre každý tím.
+<p style="text-align: justify;">
+<b>K projektu Tlačidlový DOMINATOR je dostupná Shareware verzia (.hex).</b> Verzia umožňuje merať maximálne 15 sekúnd hry pre každý tím.
 <b>Cieľom verzie je overiť kompatibilitu s vašim hardvérom.</b> V Github repozitári sú dostupné strojové kódy na základe I2C adresy prevodníka pre LCD displej.
 Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
 Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez XLoader - ľahšie na použitie.</p>
