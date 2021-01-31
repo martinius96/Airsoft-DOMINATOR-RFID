@@ -81,7 +81,7 @@ Tested and functional with NXP RFID reader RC522, which reports firmware version
 DOMINATOR is a device - stopwatch for sports such as Airsoft, Paintball.
 The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) AtMega328P, which controls the entire system logic.
 The stopwatch includes an LCD character display measuring 16x2 (16 characters x 2 lines), or 20x4, on which the times of individual teams are displayed.
-There are 2 teams in the game - <b> <font color="#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </ b > that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.
+There are 2 teams in the game - <b> <font color="#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b > that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
 Each member of the team is equipped with a card, bracelet or key fob, which communicates on the frequency 13.56MHz with an RFID reader, if it is within its range.
 Keychains and bracelets can be color-coded (green, red according to team and function ...), which allows them to be distributed more efficiently to players, but also their archiving and storage.
@@ -383,7 +383,7 @@ void loop()
 Button DOMINATOR is a device - stopwatch for sports such as Airsoft, Paintball.
 The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) AtMega328P, which controls the entire system logic.
 The stopwatch includes an LCD character display measuring 16x2 (16 characters x 2 lines), or 20x4, on which the times of individual teams are displayed.
-There are 2 teams in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </ b > that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.
+There are 2 teams in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b > that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
 Button DOMINATOR uses button input for the action of occupying a point by a team member, as well as for input of a referee and eraser entity.
 Thus, a total of 4 buttons for 4 system entities, the switching buttons connected in the INPUT_PULLUP mode are used.
@@ -502,8 +502,9 @@ Players can thus score more points in the game, while at the end of the game the
 <img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
 <hr><center> <h2> Test Program (Shareware) - Button DOMINATOR with machine code </h2> </center> <hr>
 <div class="alert alert-info">
-<p> <b> A Shareware version (.hex) is available for the Button DOMINATOR project. </b> The version allows you to measure a maximum of 15 seconds of play for each team.
-<b> The goal of the version is to verify compatibility with your hardware. </b> Machine codes based on the I2C converter address for the LCD display are available in the Github repository.
+<p style="text-align: justify;">
+<b> Shareware version (.hex) is available for free for Button DOMINATOR project. </b> The version allows you to measure a maximum of 15 seconds of captured time at point for each team.
+<b> The main goal of the version is to verify compatibility with your hardware. </b> Machine codes based on the I2C converter address for the LCD display are available in the Github repository.
 The most used addresses are 0x27 and 0x3F. If you do not know the address of your converter, use the built-in example in Arduino IDE -> I2C Scanner, which will write the address to the UART interface (Serial monitor).
 Machine code can be uploaded to the Arduino Uno microcontroller via AVRDUDE software - part of the Arduino IDE, or with a GUI interface via XLoader - easier to use. </p>
 <li> AVRDUDE must be run via the CMD (command line) installed with the Arduino IDE. Located in C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
