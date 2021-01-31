@@ -77,23 +77,27 @@ Tested and functional with NXP RFID reader RC522, which reports firmware version
 <li>RFID  <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
 <li>LCD - I2C  <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>	--->			
 <h4> Project description: </h4>
-<li> Device - DOMINATOR is a stopwatch for Airsoft, Paintball, which allows you to calculate and visualize times for two teams. </li>
-<li> They use the Arduino control microcontroller (Arduino Uno / Nano). </li>
-<li> The 16x2 and 20x4 LCD characters display the times of the individual teams (RED and GRE team). </li>
-<li> There are 2 teams in the system that play against each other and occupy this particular point, which is DOMINATOR. </li>
-<li> At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for Team 1 (RED), Team 2, (GREEN). </li>
-<li> Each member of the team is equipped with a card or key fob that communicates on the frequency 13.56MHz with an RFID reader. </li>
-<li> Keychains can be color-coded (blue, red by team and feature ...), allowing them to be distributed more efficiently to players </li>
-<li> If a team scores a point, that team's player attaches his or her card to the reader, thereby awarding the point. </li>
-<li> The LED of the team (red / green) on this station will light up and the time will be added to the team (the change can also be announced by a buzzer - a detector, if used in the system). </li>
-<li> If the point is occupied by the other team and a member of that team attaches his card, that team's LED will light up, the other team's time will be paused, and the time of the team that occupied the point will be counted. </li>
-<li> If the card / keychain is attached by the organizer (referee), both times are paused until one of the teams presents the card. </li>
-<li> This type of card is also suitable for a break, the end of the game, when time stops and the winner is decided. </li>
-<li> The last possible card in the system is to use the so-called eraser card that pauses and resets both times. </li>
-<li> The project is suitable for Airsoft events, sports facilities, or Airsoft teams. </li>
-<li> The system is tested, functional, works smoothly, the ability to measure and display time even in tenths of a second (they programmatically count but do not display, display in the resolution of seconds in the basic version). </li>
-<li> The RC522 reader works at a frequency of 13.56MHz, registers RFID tags at about 3 centimeters (almost physical contact with the reader is required), compatible ISO / IEC 14443-A tag format. </li>
-<li> The NXP RC522 RFID reader also registers ATM, ISIC, bus cards that act as NFC cards and can communicate their physical address to a reader within range. </li>
+<p style="text-align: justify;">
+DOMINATOR is a device - stopwatch for sports such as Airsoft, Paintball.
+The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) AtMega328P, which controls the entire system logic.
+The stopwatch includes an LCD character display measuring 16x2 (16 characters x 2 lines), or 20x4, on which the times of individual teams are displayed.
+There are 2 teams in the game - <b> <font color="#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </ b > that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.
+At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
+Each member of the team is equipped with a card, bracelet or key fob, which communicates on the frequency 13.56MHz with an RFID reader, if it is within its range.
+Keychains and bracelets can be color-coded (green, red according to team and function ...), which allows them to be distributed more efficiently to players, but also their archiving and storage.
+<b> <font color ="#C0392B"> If the RED team occupies a point, the team player attaches his card to the reader, thus occupying the point. This action triggers a buzzer that announces a change in the point.
+Then the RED team's LED at this station will light up and the display will start adding time for that team. </font> </b>
+<b> <font color ="#27AE60"> If a GRE team occupies a point and a member of that team attaches the card to the reader, a buzzer sounds again, that team's LED lights up, RED's team time is paused, and team time counts. GRE, which occupied the point. </font> </b>
+<b> <font color ="#F39C12"> If the card / key fob is attached by the organizer (referee), both times are paused until one of the teams inserts the card.
+This type of card is thus suitable for starting a break, but can also be used at the end of the game, when it is necessary to stop time to evaluate the game. </font> </b>
+<b> <font color ="#3498DB"> There is still a fourth type of card in DOMINATOR - eraser, which pauses both times and resets to initial values as after starting the DOMINATOR stopwatch.
+Used to restart the game, initialize a new game. </font> </b>
+The project is suitable for Airsoft events, sports facilities, or Airsoft teams, which can build the equipment.
+The advantage of the DOMINATOR system is that the system can be cloned and create X points with the same configuration via machine code, which can be fought independently in the game, while the RFID cards will work fully on all DOMINATOR devices.
+The system is tested, functional, easy to maintain.
+The NXP RC522 reader works at a frequency of 13.56MHz, registers RFID tags at approx. 3 centimeters (almost physical contact with the reader is required), compatible ISO / IEC 14443-A tag format.
+The given tag standard also includes ISIC, bus cards, which function as NFC cards and can communicate their physical address - UID to a reader within range.
+</p>
 <h4> Hardware for the project - RFID DOMINATOR: </h4>
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
 <li><b>RFID reader RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
@@ -375,13 +379,29 @@ void loop()
 }
 </pre>
 <hr><center> <h2> Button DOMINATOR - stopwatch for Airsoft | Paintball </h2> </center> <hr>
-<li> Uses button input for teams, referee and eraser, a total of 4 buttons with a switching function. </li>
-<li> Buttons replace the RFID reader in the input method for DOMINATOR. </li>
-<li> Button connection is in INPUT_PULLUP mode, pressing will bring GND to the Arduino input terminal (Active-LOW signal). </li>
-<li> Use toggle buttons are used, not toggle buttons (they would not respond to system logic, all software would always be "pressed"). </li>
-<li> In the basic version, DOMINATOR responds immediately to a press - time counting for a given team is activated (the length of the press, the number of presses, etc. are not verified ...). </li>
-<li> Times are displayed on a 16x2 or 20x4 LCD character display </li>
-<li> System logic, counter is identical to RFID DOMINATOR. </li>
+<p style="text-align: justify;">
+Button DOMINATOR is a device - stopwatch for sports such as Airsoft, Paintball.
+The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) AtMega328P, which controls the entire system logic.
+The stopwatch includes an LCD character display measuring 16x2 (16 characters x 2 lines), or 20x4, on which the times of individual teams are displayed.
+There are 2 teams in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </ b > that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.
+At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
+Button DOMINATOR uses button input for the action of occupying a point by a team member, as well as for input of a referee and eraser entity.
+Thus, a total of 4 buttons for 4 system entities, the switching buttons connected in the INPUT_PULLUP mode are used.
+Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal).
+Switch buttons are used, not switch buttons (they would not react to the system logic, all software would always be "pressed").
+In the basic version, DOMINATOR responds immediately to a press - the time counting for a given team is activated (the length of the press, the number of presses, etc. are not verified ...).
+The times are displayed on an LCD character display measuring 16x2 or 20x4, which communicates with the control microcontroller via the I2C bus.
+<b> <font color = "#C0392B"> If a team member of the RED team occupies a point by pressing a button, a buzzer is triggered, which announces a change in the point with a short beep.
+Then the RED team's LED at this station will light up and the display will start adding time for that team. </font> </b>
+<b> <font color = "#27AE60"> If the point is occupied by the GRE team and a team member presses the appropriate button, the buzzer sounds again, the GRE team LED lights up, the RED team time is paused and the GRE team time is calculated, which point he occupied. </font> </b>
+<b> <font color = "#F39C12"> If the organizer (referee) presses his button, both times are paused until a member of one of the teams makes user input.
+This type of input is thus suitable for starting a break, but can also end the game for evaluation. </font> </b>
+<b> <font color = "#3498DB"> Button DOMINATOR has a fourth button for the eraser entity, which pauses and resets both times to initial values as after starting the Button DOMINATOR stopwatch.
+Used to restart the game, initialize a new game. </font> </b>
+The project is suitable for Airsoft events, sports facilities, or Airsoft teams, which can build the equipment.
+The advantage of the Button DOMINATOR system is that it can be cloned and create X points with the same configuration via machine code, which can be loaded into an unlimited number of Arduino boards and chips and guarantees identical application operation.
+Players can thus score more points in the game, while at the end of the game the time is added up as long as which point was occupied by which team.
+</p> 
 <h4> Hardware for the project - Button DOMINATOR: </h4>
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
 <li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
