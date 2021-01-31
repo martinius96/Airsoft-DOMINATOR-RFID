@@ -78,23 +78,27 @@ Getestet und funktionsfähig mit dem NXP-RFID-Lesegerät RC522, das die Firmware
 <li>RFID  <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
 <li>LCD - I2C  <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>	--->			
 <h4> Projektbeschreibung: </h4>
-<li> Gerät - DOMINATOR ist eine Stoppuhr für Airsoft, Paintball, mit der Sie Zeiten für zwei Teams berechnen und visualisieren können. </li>
-<li> Sie verwenden den Arduino Control-Mikrocontroller (Arduino Uno / Nano). </li>
-<li> Die LCD-Zeichen 16x2 und 20x4 zeigen die Zeiten der einzelnen Teams (RED- und GRE-Team) an. </li>
-<li> Es gibt 2 Teams im System, die gegeneinander spielen und diesen bestimmten Punkt besetzen, nämlich DOMINATOR. </li>
-<li> Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für Team 1 (ROT), Team 2 (GRÜN) an. </li>
-<li> Jedes Mitglied des Teams ist mit einer Karte oder einem Schlüsselanhänger ausgestattet, die mit einem RFID-Lesegerät auf der Frequenz 13,56 MHz kommunizieren. </li>
-<li> Schlüsselanhänger können farbcodiert sein (blau, rot nach Team und Funktion ...), sodass sie effizienter an die Spieler verteilt werden können </li>
-<li> Wenn ein Team einen Punkt erzielt, hängt der Spieler des Teams seine Karte an den Leser an und vergibt damit den Punkt. </li>
-<li> Die LED des Teams (rot / grün) auf dieser Station leuchtet auf und die Zeit wird dem Team hinzugefügt (die Änderung kann auch durch einen Summer angekündigt werden - einen Detektor, falls im System verwendet). </li>
-<li> Wenn ein Punkt vom anderen Team besetzt ist und ein Mitglied dieses Teams seine Karte anbringt, leuchtet die LED dieses Teams auf, die Zeit des anderen Teams wird angehalten und die Zeit des Teams, das den Punkt erzielt hat, wird gezählt . </li>
-<li> Wenn die Karte / der Schlüsselbund vom Veranstalter (Schiedsrichter) angehängt wird, werden beide Male angehalten, bis eines der Teams die Karte vorlegt. </li>
-<li> Diese Art von Karte eignet sich auch für eine Pause, das Ende des Spiels, wenn die Zeit stehen bleibt und der Gewinner ermittelt wird. </li>
-<li> Die letzte mögliche Karte im System ist die Verwendung der sogenannten Radiergummikarte, die beide Male angehalten und zurückgesetzt wird. </li>
-<li> Das Projekt eignet sich für Airsoft-Veranstaltungen, Sportanlagen oder Airsoft-Teams. </li>
-<li> Das System ist getestet, funktionsfähig, funktioniert reibungslos und kann die Zeit selbst in Zehntelsekunden messen und anzeigen (sie zählen programmgesteuert, werden jedoch nicht angezeigt und in der Basisversion in der Auflösung von Sekunden angezeigt). </li>
-<li> Der RC522-Leser arbeitet mit einer Frequenz von 13,56 MHz, registriert RFID-Tags bei etwa 3 Zentimetern (fast physischer Kontakt mit dem Leser ist erforderlich) und ist mit dem ISO / IEC 14443-A-Tag-Format kompatibel. </li>
-<li> Der RFID-Leser NXP RC522 registriert auch ATM-, ISIC- und Buskarten, die als NFC-Karten fungieren und ihre physikalische Adresse einem Leser in Reichweite mitteilen können. </li>
+<p style="text-align: justify;">
+DOMINATOR ist eine Gerätestoppuhr für Sportarten wie Airsoft, Paintball.
+Die Stoppuhr verwendet einen Arduino Control-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Systemlogik steuert.
+Die Stoppuhr enthält eine 16 x 2 (16 Zeichen x 2 Zeilen) oder 20 x 4 große LCD-Zeichenanzeige, auf der die Zeiten einzelner Teams angezeigt werden.
+Es gibt 2 Teams im Spiel - <b> <font color = "#C0392B"> ROTES Team </font> </b> und <b> <font color = "#27AE60"> GRE-Team </font> </b> die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.
+Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> ROTES Team </font> </b>, <b> <font color = "#27AE60"> GRE-Team </font> </b>.
+Jedes Mitglied des Teams ist mit einer Karte, einem Armband oder einem Schlüsselanhänger ausgestattet, der mit einem RFID-Lesegerät auf der Frequenz 13,56 MHz kommuniziert, wenn es sich in Reichweite befindet.
+Schlüsselanhänger und Armbänder können farbcodiert werden (grün, rot je nach Team und Funktion ...), wodurch sie effizienter an die Spieler verteilt werden können, aber auch deren Archivierung und Speicherung.
+<b> <font color = "#C0392B"> Wenn das ROTE Team einen Punkt belegt, hängt der Teamspieler seine Karte an den Leser an und belegt damit den Punkt. Diese Aktion löst einen Summer aus, der eine Änderung des Punkts ankündigt.
+Dann leuchtet die LED des ROTEN Teams an dieser Station auf und die Anzeige fügt Zeit für dieses Team hinzu. </font> </b>
+<b> <font color = "#27AE60"> Wenn ein GRE-Team einen Punkt belegt und ein Mitglied dieses Teams die Karte am Lesegerät anbringt, ertönt erneut ein Summer, die LED des Teams leuchtet auf, die Teamzeit von RED wird angehalten und Teamzeit zählt. GRE, das den Punkt besetzte. </font> </b>
+<b> <font color = "#F39C12"> Wenn die Karte / der Schlüsselanhänger vom Veranstalter (Schiedsrichter) angebracht wird, werden beide Male angehalten, bis eines der Teams die Karte einlegt.
+Dieser Kartentyp eignet sich daher zum Starten einer Pause, kann aber auch am Ende des Spiels verwendet werden, wenn die Zeit angehalten werden muss, um das Spiel zu bewerten. </font> </b>
+<b> <font color = "#3498DB"> Es gibt noch einen vierten Kartentyp in DOMINATOR - Radiergummi, der beide Male pausiert und wie nach dem Starten der DOMINATOR-Stoppuhr auf die Anfangswerte zurückgesetzt wird.
+Zum Neustarten des Spiels wird ein neues Spiel initialisiert. </font> </b>
+Das Projekt eignet sich für Airsoft-Veranstaltungen, Sportanlagen oder Airsoft-Teams, die die Ausrüstung bauen können.
+Der Vorteil des DOMINATOR-Systems besteht darin, dass das System geklont werden und X-Punkte mit derselben Konfiguration über einen Maschinencode erstellen kann, der unabhängig im Spiel bekämpft werden kann, während die RFID-Karten auf allen DOMINATOR-Geräten vollständig funktionieren.
+Das System ist getestet, funktionsfähig und wartungsfreundlich.
+Der NXP RC522-Leser arbeitet mit einer Frequenz von 13,56 MHz, registriert RFID-Tags bei ca. 3 Zentimetern (fast physischer Kontakt mit dem Leser ist erforderlich) und kompatibles ISO / IEC 14443-A-Tag-Format.
+Der angegebene Tag-Standard umfasst auch ISIC-Buskarten, die als NFC-Karten fungieren und ihre physische Adresse - UID - an einen Leser in Reichweite übermitteln können.
+</p>
 <h4> Hardware für das Projekt - RFID DOMINATOR: </h4>
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
 <li><b>RFID Leser RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
@@ -125,7 +129,8 @@ Getestet und funktionsfähig mit dem NXP-RFID-Lesegerät RC522, das die Firmware
 </div>					
 <li>Die Leiterplatte ist doppelseitig mit Überzügen, Abmessungen: 100 x 105 mm</li>				
 <h4>Leiterplattenproduktion in China</h4>
-<p>PCBs können in der Slowakei unter hergestellt werden <a href="https://www.pbspoj.sk/">PB Spoj</a>, oder auch in China - Maschinenproduktion aus GERBER-Dateien.
+<p style="text-align: justify;">
+PCBs können in der Slowakei unter hergestellt werden <a href="https://www.pbspoj.sk/">PB Spoj</a>, oder auch in China - Maschinenproduktion aus GERBER-Dateien.
 Einer der beliebtesten und billigsten Hersteller ist: JLCPCB.
 GERBER-Dateien können direkt als Archiv hochgeladen werden, während die Leiterplatte visualisiert wird, die von ihr aufgezeichneten Schichten automatisch festgelegt werden und die Abmessungen der Leiterplatte festgelegt werden.
 Die Produktion dauert 1-2 Tage. Dieser Hersteller war berühmt für die Herstellung von 10 Stück Leiterplatten für 2 US-Dollar.
@@ -379,13 +384,28 @@ void loop()
 }
 </pre>
 <hr> <center> <h2> Taste DOMINATOR - Stoppuhr für Airsoft | Paintball </h2> </center> <hr>
-<li> Verwendet die Tasteneingabe für Teams, Schiedsrichter und Radiergummi, insgesamt 4 Tasten mit Schaltfunktion. </li>
-<li> Die Tasten ersetzen den RFID-Leser in der Eingabemethode für DOMINATOR. </li>
-<li> Die Tastenverbindung befindet sich im INPUT_PULLUP-Modus. Durch Drücken von GND wird GND an den Arduino-Eingangsanschluss gebracht (Active-LOW-Signal). </li>
-<li> Umschalttasten verwenden werden verwendet, keine Umschalttasten (sie würden nicht auf die Systemlogik reagieren, die gesamte Software würde immer "gedrückt" werden). </li>
-<li> In der Basisversion reagiert DOMINATOR sofort auf eine Presse - die Zeitzählung für ein bestimmtes Team ist aktiviert (die Länge der Presse, die Anzahl der Pressen usw. werden nicht überprüft ...). </li>
-<li> Die Zeiten werden auf einer 16x2- oder 20x4-LCD-Zeichenanzeige angezeigt</li>
-<li> Systemlogik, Zähler ist identisch mit RFID DOMINATOR. </li>
+<p style="text-align: justify;">
+Taste DOMINATOR ist eine Gerätestoppuhr für Sportarten wie Airsoft, Paintball.
+Die Stoppuhr verwendet einen Arduino Control-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Systemlogik steuert.
+Die Stoppuhr enthält eine 16 x 2 (16 Zeichen x 2 Zeilen) oder 20 x 4 große LCD-Zeichenanzeige, auf der die Zeiten einzelner Teams angezeigt werden.
+Es gibt 2 Teams im Spiel - <b> <font color = "#C0392B"> ROTES Team </font> </b> und <b> <font color = "#27AE60"> GRE-Team </font> </b> die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.
+Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> ROTES Team </font> </b>, <b> <font color = "#27AE60"> GRE-Team </font> </b>.
+Taste DOMINATOR verwendet die Tasteneingabe für die Besetzung eines Punktes durch ein Teammitglied sowie für die Eingabe einer Schiedsrichter- und Radiergummi-Entität.
+Somit werden insgesamt 4 Tasten für 4 Systementitäten verwendet, wobei die im INPUT_PULLUP-Modus verbundenen Schalttasten verwendet werden.
+Durch Drücken der Taste wird das GND-Signal dem digitalen Arduino-Eingangsanschluss (Active-LOW-Schaltsignal) zugeführt.
+In der Basisversion reagiert DOMINATOR sofort auf eine Presse - die Zeitzählung für ein bestimmtes Team ist aktiviert (die Länge der Presse, die Anzahl der Pressen usw. werden nicht überprüft ...).
+Die Zeiten werden auf einer 16x2- oder 20x4-LCD-Zeichenanzeige angezeigt, die über den I2C-Bus mit dem Steuermikrocontroller kommuniziert.
+<b> <font color = "#C0392B"> Wenn ein Teammitglied des ROTEN Teams per Knopfdruck einen Punkt belegt, wird ein Summer ausgelöst, der mit einem kurzen Piepton eine Änderung des Punktes ankündigt.
+Dann leuchtet die LED des ROTEN Teams an dieser Station auf und die Anzeige fügt Zeit für dieses Team hinzu. </font> </b>
+<b> <font color = "#27AE60"> Wenn der Punkt vom GRE-Team belegt ist und das Teammitglied die entsprechende Taste drückt, ertönt erneut der Summer, die GRE-Team-LED leuchtet auf, die ROTE Teamzeit wird angehalten und die Die GRE-Teamzeit wird berechnet, welchen Punkt er belegt hat. </font> </b>
+<b> <font color = "#F39C12"> Wenn der Organisator (Schiedsrichter) seinen Knopf drückt, werden beide Male angehalten, bis ein Mitglied eines der Teams Benutzereingaben macht.
+Diese Art der Eingabe eignet sich daher zum Starten einer Pause, kann aber auch das Spiel zur Auswertung beenden. </font> </b>
+<b> <font color = "#3498DB"> Schaltfläche DOMINATOR verfügt über eine vierte Schaltfläche für die Radiergummi-Entität, die beide Male angehalten und auf die Anfangswerte zurückgesetzt wird, wie nach dem Starten der Stoppuhr Taste DOMINATOR.
+Zum Neustarten des Spiels wird ein neues Spiel initialisiert. </font> </b>
+Das Projekt eignet sich für Airsoft-Veranstaltungen, Sportanlagen oder Airsoft-Teams, die die Ausrüstung bauen können.
+Der Vorteil des Taste DOMINATOR-Systems besteht darin, dass es geklont werden und X-Punkte mit derselben Konfiguration über Maschinencode erstellen kann, der in eine unbegrenzte Anzahl von Arduino-Boards und -Chips geladen werden kann und einen identischen Anwendungsbetrieb garantiert.
+Die Spieler können somit mehr Punkte im Spiel erzielen, während am Ende des Spiels die Zeit addiert wird, solange welcher Punkt von welchem Team belegt wurde.
+</p> 
 <h4> Hardware für das Projekt - Taste DOMINATOR: </h4>
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
 <li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
@@ -486,7 +506,8 @@ void loop()
 <img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
 <hr><center><h2>Testprogramm (Shareware) - Taste DOMINATOR mit Maschinencode</h2></center><hr>
 <div class="alert alert-info">
-<p> <b> Für das Taste DOMINATOR-Projekt ist eine Shareware-Version (.hex) verfügbar. </b> Mit dieser Version können Sie für jedes Team maximal 15 Sekunden Spielzeit messen.
+<p style="text-align: justify;">
+<b> Für das Taste DOMINATOR-Projekt ist eine Shareware-Version (.hex) verfügbar. </b> Mit dieser Version können Sie für jedes Team maximal 15 Sekunden Spielzeit messen.
 <b> Ziel der Version ist es, die Kompatibilität mit Ihrer Hardware zu überprüfen. </b> Maschinencodes, die auf der I2C-Konverteradresse für das LCD-Display basieren, sind im Github-Repository verfügbar.
 Die am häufigsten verwendeten Adressen sind 0x27 und 0x3F. Wenn Sie die Adresse Ihres Konverters nicht kennen, verwenden Sie das in Arduino IDE -> I2C Scanner integrierte Beispiel, das die Adresse in die UART-Schnittstelle (serieller Monitor) schreibt.
 Der Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder mit einer GUI-Schnittstelle über XLoader - einfacher in den Arduino Uno-Mikrocontroller hochgeladen werden. </p>
@@ -521,7 +542,7 @@ Der Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder 
 <div class="alert alert-danger">
       <strong>Für die neuesten chinesischen Arduino Nano-Klone mit einem "alten Bootloader" muss der Maschinencode mit 57600 Baud / s hochgeladen werden! Für andere Versionen mit dem neueren Bootloader 115200 Baud / s (diese Geschwindigkeit wird auch im Befehl AVRDUDE zum Laden des Maschinencodes verwendet).</strong>
  </div>				
-<hr><center><h2>Hochladen der Shareware-Version des Button DOMINATOR-Projekts auf Arduino über XLoader</h2></center><hr>				
+<hr><center><h2>Hochladen der Shareware-Version des Taste DOMINATOR-Projekts auf Arduino über XLoader</h2></center><hr>				
 <center>
 	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
 </center>	
