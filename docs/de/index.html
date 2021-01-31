@@ -82,13 +82,13 @@ Getestet und funktionsfähig mit dem NXP-RFID-Lesegerät RC522, das die Firmware
 DOMINATOR ist eine Gerätestoppuhr für Sportarten wie Airsoft, Paintball.
 Die Stoppuhr verwendet einen Arduino Control-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Systemlogik steuert.
 Die Stoppuhr enthält eine 16 x 2 (16 Zeichen x 2 Zeilen) oder 20 x 4 große LCD-Zeichenanzeige, auf der die Zeiten einzelner Teams angezeigt werden.
-Es gibt 2 Teams im Spiel - <b> <font color = "#C0392B"> ROTES Team </font> </b> und <b> <font color = "#27AE60"> GRE-Team </font> </b> die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.
-Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> ROTES Team </font> </b>, <b> <font color = "#27AE60"> GRE-Team </font> </b>.
+Es gibt 2 Teams im Spiel - <b> <font color = "#C0392B"> RED Mannschaft </font> </b> und <b> <font color = "#27AE60"> GRE Mannschaft </font> </b> die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.
+Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> RED Mannschaft </font> </b>, <b> <font color = "#27AE60"> GRE Mannschaft </font> </b>.
 Jedes Mitglied des Teams ist mit einer Karte, einem Armband oder einem Schlüsselanhänger ausgestattet, der mit einem RFID-Lesegerät auf der Frequenz 13,56 MHz kommuniziert, wenn es sich in Reichweite befindet.
 Schlüsselanhänger und Armbänder können farbcodiert werden (grün, rot je nach Team und Funktion ...), wodurch sie effizienter an die Spieler verteilt werden können, aber auch deren Archivierung und Speicherung.
-<b> <font color = "#C0392B"> Wenn das ROTE Team einen Punkt belegt, hängt der Teamspieler seine Karte an den Leser an und belegt damit den Punkt. Diese Aktion löst einen Summer aus, der eine Änderung des Punkts ankündigt.
+<b> <font color = "#C0392B"> Wenn das RED Mannschaft einen Punkt belegt, hängt der Teamspieler seine Karte an den Leser an und belegt damit den Punkt. Diese Aktion löst einen Summer aus, der eine Änderung des Punkts ankündigt.
 Dann leuchtet die LED des ROTEN Teams an dieser Station auf und die Anzeige fügt Zeit für dieses Team hinzu. </font> </b>
-<b> <font color = "#27AE60"> Wenn ein GRE-Team einen Punkt belegt und ein Mitglied dieses Teams die Karte am Lesegerät anbringt, ertönt erneut ein Summer, die LED des Teams leuchtet auf, die Teamzeit von RED wird angehalten und Teamzeit zählt. GRE, das den Punkt besetzte. </font> </b>
+<b> <font color = "#27AE60"> Wenn ein GRE Mannschaft einen Punkt belegt und ein Mitglied dieses Teams die Karte am Lesegerät anbringt, ertönt erneut ein Summer, die LED des Teams leuchtet auf, die Teamzeit von RED wird angehalten und Teamzeit zählt. GRE, das den Punkt besetzte. </font> </b>
 <b> <font color = "#F39C12"> Wenn die Karte / der Schlüsselanhänger vom Veranstalter (Schiedsrichter) angebracht wird, werden beide Male angehalten, bis eines der Teams die Karte einlegt.
 Dieser Kartentyp eignet sich daher zum Starten einer Pause, kann aber auch am Ende des Spiels verwendet werden, wenn die Zeit angehalten werden muss, um das Spiel zu bewerten. </font> </b>
 <b> <font color = "#3498DB"> Es gibt noch einen vierten Kartentyp in DOMINATOR - Radiergummi, der beide Male pausiert und wie nach dem Starten der DOMINATOR-Stoppuhr auf die Anfangswerte zurückgesetzt wird.
@@ -388,16 +388,16 @@ void loop()
 Taste DOMINATOR ist eine Gerätestoppuhr für Sportarten wie Airsoft, Paintball.
 Die Stoppuhr verwendet einen Arduino Control-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Systemlogik steuert.
 Die Stoppuhr enthält eine 16 x 2 (16 Zeichen x 2 Zeilen) oder 20 x 4 große LCD-Zeichenanzeige, auf der die Zeiten einzelner Teams angezeigt werden.
-Es gibt 2 Teams im Spiel - <b> <font color = "#C0392B"> ROTES Team </font> </b> und <b> <font color = "#27AE60"> GRE-Team </font> </b> die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.
-Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> ROTES Team </font> </b>, <b> <font color = "#27AE60"> GRE-Team </font> </b>.
+Es gibt 2 Teams im Spiel - <b> <font color = "#C0392B"> RED Mannschaft </font> </b> und <b> <font color = "#27AE60"> GRE Mannschaft </font> </b> die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.
+Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> RED Mannschaft </font> </b>, <b> <font color = "#27AE60">GRE Mannschaft </font> </b>.
 Taste DOMINATOR verwendet die Tasteneingabe für die Besetzung eines Punktes durch ein Teammitglied sowie für die Eingabe einer Schiedsrichter- und Radiergummi-Entität.
 Somit werden insgesamt 4 Tasten für 4 Systementitäten verwendet, wobei die im INPUT_PULLUP-Modus verbundenen Schalttasten verwendet werden.
 Durch Drücken der Taste wird das GND-Signal dem digitalen Arduino-Eingangsanschluss (Active-LOW-Schaltsignal) zugeführt.
 In der Basisversion reagiert DOMINATOR sofort auf eine Presse - die Zeitzählung für ein bestimmtes Team ist aktiviert (die Länge der Presse, die Anzahl der Pressen usw. werden nicht überprüft ...).
 Die Zeiten werden auf einer 16x2- oder 20x4-LCD-Zeichenanzeige angezeigt, die über den I2C-Bus mit dem Steuermikrocontroller kommuniziert.
-<b> <font color = "#C0392B"> Wenn ein Teammitglied des ROTEN Teams per Knopfdruck einen Punkt belegt, wird ein Summer ausgelöst, der mit einem kurzen Piepton eine Änderung des Punktes ankündigt.
-Dann leuchtet die LED des ROTEN Teams an dieser Station auf und die Anzeige fügt Zeit für dieses Team hinzu. </font> </b>
-<b> <font color = "#27AE60"> Wenn der Punkt vom GRE-Team belegt ist und das Teammitglied die entsprechende Taste drückt, ertönt erneut der Summer, die GRE-Team-LED leuchtet auf, die ROTE Teamzeit wird angehalten und die Die GRE-Teamzeit wird berechnet, welchen Punkt er belegt hat. </font> </b>
+<b> <font color = "#C0392B"> Wenn ein Teammitglied des RED Mannschaft per Knopfdruck einen Punkt belegt, wird ein Summer ausgelöst, der mit einem kurzen Piepton eine Änderung des Punktes ankündigt.
+Dann leuchtet die LED des RED Mannschafts an dieser Station auf und die Anzeige fügt Zeit für dieses Team hinzu. </font> </b>
+<b> <font color = "#27AE60"> Wenn der Punkt vom GRE Mannschaft belegt ist und das Teammitglied die entsprechende Taste drückt, ertönt erneut der Summer, die GRE-Team-LED leuchtet auf, die ROTE Teamzeit wird angehalten und die Die GRE-Teamzeit wird berechnet, welchen Punkt er belegt hat. </font> </b>
 <b> <font color = "#F39C12"> Wenn der Organisator (Schiedsrichter) seinen Knopf drückt, werden beide Male angehalten, bis ein Mitglied eines der Teams Benutzereingaben macht.
 Diese Art der Eingabe eignet sich daher zum Starten einer Pause, kann aber auch das Spiel zur Auswertung beenden. </font> </b>
 <b> <font color = "#3498DB"> Schaltfläche DOMINATOR verfügt über eine vierte Schaltfläche für die Radiergummi-Entität, die beide Male angehalten und auf die Anfangswerte zurückgesetzt wird, wie nach dem Starten der Stoppuhr Taste DOMINATOR.
