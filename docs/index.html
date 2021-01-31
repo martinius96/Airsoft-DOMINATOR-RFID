@@ -88,12 +88,12 @@ DOMINATOR je zariadenie - stopky pre športy typu Airsoft, Paintball.
 Stopky využívajú riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) AtMega328P, ktorý ovláda celú logiku systému.
 Súčasťou stopiek je LCD znakový displej rozmeru 16x2 (16 znakov x 2 riadky), respektíve 20x4, na ktorom sa vyobrazujú časy jednotlivých tímov.
 V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a zaberajú pomyselný bod, ktorý je tvorený týmto zariadením - DOMINATOR.				
-Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre Tím 1 (RED), Tím 2 (GRE).			
+Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.			
 Každý z členov tímu je vybavený kartou, náramkom, prípadne kľúčenkou, ktorá komunikuje na frekvencii 13.56MHz s RFID čítačkou, ak je v jej dosahu.
 Kľúčenky a náramky môžu byť farebné odlíšené (zelené, červené podľa tímu a funkcie...), čo umožňuje ich efektívnejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie.
 <b><font color="#C0392B">Ak tím RED obsadí bod, hráč tímu priloží svoju kartu k čítačke, čím bod obsadí. Táto akcia spustí buzzer, ktorý ohlási zmenu na bode.
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím.</font></b>
-<b><font color="#27AE60">V prípade, že bod obsadí druhý tím - GRE a kartu priloží k čítačke člen tohto tímu, opäť sa ozve buzzer, rozsvieti sa dióda tohto tímu, čas tímu RED sa pauzuje a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
+<b><font color="#27AE60">V prípade, že bod obsadí tím GRE a kartu priloží k čítačke člen tohto tímu, opäť sa ozve buzzer, rozsvieti sa dióda tohto tímu, čas tímu RED sa pauzuje a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
 <b><font color="#F39C12">Ak kartu / kľúčenku priloží organizátor (rozhodca), oba časy sa zapauzujú až do momentu, kým nepriloží kartu niektorý z tímov. 
 Tento typ karty je tak vhodný pre spustenie prestávky, ale môže byť využitá aj pri ukončení hry, kedy je nutné čas zastaviť pre vyhodnotenie hry.</font></b>
 <b><font color="#3498DB">V systéme DOMINATOR ešte existuje štvrtý typ karty - eraser, ktorá oba časy zapauzuje a vynuluje na počiatočné hodnoty ako po spustení stopiek DOMINATOR.
@@ -390,12 +390,27 @@ void loop()
 </pre>
 <hr><center><h2>Tlačidlový DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
 <p style="text-align: justify;">
-Tlačidlový DOMINATOR využíva tlačidlový vstup pre akciu obsadenia bodu tímami, rovnako pre rozhodcu a erasera, celkom 4 tlačidlá so spínacou funkciou.		
-Zapojenie tlačidiel je v režime INPUT_PULLUP, stlačením sa privedie GND na vstupný vývod Arduina (Active-LOW signál).
+Tlačidlový DOMINATOR je zariadenie - stopky pre športy typu Airsoft, Paintball.
+Stopky využívajú riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) AtMega328P, ktorý ovláda celú logiku systému.
+Súčasťou stopiek je LCD znakový displej rozmeru 16x2 (16 znakov x 2 riadky), respektíve 20x4, na ktorom sa vyobrazujú časy jednotlivých tímov.
+V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a zaberajú pomyselný bod, ktorý je tvorený týmto zariadením - DOMINATOR.				
+Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.
+Tlačidlový DOMINATOR využíva tlačidlový vstup pre akciu obsadenia bodu členom tímu, rovnako aj pre vstup entity rozhodcu a erasera.
+Celkom teda 4 tlačidlá pre 4 entity systému, využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
+Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).
 Používajú sa spínacie tlačidlá, nie rozpínacie (nereagovali by na logiku systému, boli by vždy všetky softvérovo "stlačené").				
 V základnej verzii DOMINATOR reaguje okamžite na stlačenie - aktivuje sa počítanie času pre daný tím (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).
-Časy sú vypísané na LCD znakový displej rozmeru 16x2, prípadne 20x4. Displej komunikuje s riadiacim mikrokontrolérom po I2C zbernici.
-Logika systému, počítadlo je identické ako pre RFID DOMINATOR.
+Časy sú vypísané na LCD znakový displej rozmeru 16x2, prípadne 20x4, ktorý komunikuje s riadiacim mikrokontrolérom po I2C zbernici.
+<b><font color="#C0392B">Ak tím člen tímu RED obsadí bod stlačením tlačidla, spustí sa buzzer, ktorý krátkym pípnutím ohlási zmenu na bode.
+Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím.</font></b>
+<b><font color="#27AE60">V prípade, že bod obsadí tím GRE a člen tímu stlačí príslušné tlačidlo, opäť sa ozve buzzer, rozsvieti sa dióda tímu GRE, čas tímu RED sa pauzuje a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
+<b><font color="#F39C12">Ak svoje tlačidlo stlačí organizátor (rozhodca), oba časy sa zapauzujú až do momentu, kým nevykoná používateľský vstup člen niektorého z tímov.
+Tento typ vstupu je tak vhodný pre spustenie prestávky, ale môže taktiež ukončiť hru pre jej vyhodnotenie.</font></b>
+<b><font color="#3498DB">Tlačidlový DOMINATOR má ešte štvrté tlačidlo pre entitu eraser, ktorá oba časy zapauzuje a vynuluje na počiatočné hodnoty ako po spustení stopiek Tlačidlový DOMINATOR.
+Slúži pre reštart hry, inicializáciu novej hry.</font></b>
+Projekt je vhodný pre Airsoft akcie, športové areály, čí Airsoft tímy, ktoré si môžu dané zariadenie zostrojiť.
+Výhodou systému Tlačidlový DOMINATOR je, že ho je možné klonovať a vytvoriť si X bodov s totožnou konfiguráciou prostredníctvom strojového kódu, ktorý je možné nahrávať do neobmedzeného počtu Arduino dosiek a čipov a zaručuje totožný chod aplikácie. 
+Hráči tak môžu v hre obsadzovať viacero bodov, pričom sa na konci hry sčíta čas, ako dlho bol ktorý bod obsadený ktorým tímom. 
 </p> 
 <h4>Hardvér pre projekt - Tlačidlový DOMINATOR:</h4> 
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
