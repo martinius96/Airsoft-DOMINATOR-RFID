@@ -111,12 +111,14 @@ The NXP RC522 reader works at a frequency of 13.56MHz, registers RFID tags at ap
 The given tag standard also includes ISIC, bus cards, which function as NFC cards and can communicate their physical address - UID to a reader within range.
 </p>
 <h4> Hardware for the project - RFID DOMINATOR: </h4>
-<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>RFID reader RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>LCD character display 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>I2C converter for LCD display</b><img src="https://i.imgur.com/ORAwjHo.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>RFID reader RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>Keychains / cards / wristbands compatible with standard ISO/IEC 14443-A</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" title="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<center><img src="https://i.imgur.com/TeQXCCp.jpg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION" title="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION"></center>        
+<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<center><img src="https://i.imgur.com/TeQXCCp.jpg" style="display: block; width: 128px; height: 128px;" alt="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION" title="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION"></center>        
 <h4> Principle of hardware functionality: </h4>
        <li> The RF5 reader RC522 communicates with the Arduino via the SPI bus. It reads the UID (identifier) of RFID cards in range, forwards this identifier to Arduino, which executes the program logic. The reader responds to the distance of the chip about 3 cm from the antenna. </li>
        <li> Arduino compares the read card address in a multi-condition, applies digital states to diodes, runs a universal counter every 100ms (counts in tenths of a second), controls the counting of both times. </li>
@@ -415,10 +417,12 @@ The advantage of the Button DOMINATOR system is that it can be cloned and create
 Players can thus score more points in the game, while at the end of the game the time is added up as long as which point was occupied by which team.
 </p> 
 <h4> Hardware for the project - Button DOMINATOR: </h4>
-<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>4x pushbutton</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>LCD character display 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>I2C converter for LCD display</b><img src="https://i.imgur.com/ORAwjHo.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; mwidth: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>4x pushbutton</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
       <div class="alert alert-success">
       <strong> Maximum time range that can be listed on the system: </strong> 99 hours, 59 minutes, and 59 seconds
       </div>
