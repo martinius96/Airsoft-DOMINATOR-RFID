@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<!-- Primary Meta Tags -->
+	<title>統治者氣槍| 彩彈射擊-Arduino平台上的RFID和印刷秒錶</title>
+	<meta name="title" content="統治者氣槍| 彩彈射擊-Arduino平台上的RFID和印刷秒錶">
+	<meta name="description" content="RFID統治者-秒錶，通過Arduino用於Airsoft，Paintball。 使用I2C總線上的字符顯示秒錶。 按鈕和RFID輸入。">
+	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/cn/index.html">
+	<meta property="og:title" content="統治者氣槍| 彩彈射擊-Arduino平台上的RFID和印刷秒錶">
+	<meta property="og:description" content="RFID統治者-秒錶，通過Arduino用於Airsoft，Paintball。 使用I2C總線上的字符顯示秒錶。 按鈕和RFID輸入。">
+	<meta property="og:image" content="">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/cn/index.html">
+	<meta property="twitter:title" content="統治者氣槍| 彩彈射擊-Arduino平台上的RFID和印刷秒錶">
+	<meta property="twitter:description" content="RFID統治者-秒錶，通過Arduino用於Airsoft，Paintball。 使用I2C總線上的字符顯示秒錶。 按鈕和RFID輸入。">
+	<meta property="twitter:image" content="">
+	
+	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
+	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    		window.smartlook||(function(d) {
+    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+    		})(document);
+    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
+	</script>    
+	<style>
+		table td {
+  			border: 1px solid black; 
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">RFID統治者</a>
+    </div>
+    <ul class="nav navbar-nav">
+	<li class="active"><a href="index.html">信息</a></li>
+<li><a href="../index.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299857.svg" alt="Slovak flag.png, 2,2kB" title="Slovakia" height="32" width="32"></a></a></li>
+<li><a href="../de/index.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299786.svg" alt="Germany.png, 2,2kB" title="Germany" height="32" width="32"></a></li>
+<li><a href="../ru/index.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299700.svg" alt="russia.png, 2,2kB" title="Russia" height="32" width="32"></a></li>	
+<li><a href="../en/index.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299688.svg" alt="English.png, 2,2kB" title="English" height="32" width="32"></a></li>
+<li><a href="../it/index.html"><img src="https://www.flaticon.com/premium-icon/icons/svg/3015/3015784.svg" alt="Italy.png, 2,2kB" title="Italy" height="32" width="32"></a></li>
+<li><a href="../fr/index.html"><img src="https://i.imgur.com/FhQFRIv.png" alt="French.png, 2,2kB" title="French" height="32" width="32"></a></li>  
+<li class="active"><a href="index.html"><img src="https://i.imgur.com/FhQFRIv.png" alt="Chinese.png, 2,2kB" title="Chinese" height="32" width="32"></a></li>  	    
+ </div>
+</nav>  
+  		<div class="row">
+    			<div class="col-sm-12">
+<div class="alert alert-success">
+	<strong>帶有項目的存儲庫-接線圖，用於測試的機器代碼-Github： </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">氣槍-RFID統治者-Arduino</a>
+</div>	
+<div class="alert alert-info">
+	<strong>如果您有興趣購買用於DOMINATOR的固件，請使用英語與我們聯繫：</strong> martinius96@gmail.com
+	
+</div>					
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">RFID, NFC</span>
+<span class="label label-info">RC522</span>
+<span class="label label-warning">Stopwatch</span>
+<span class="label label-danger">Schematics</span>
+<span class="label label-default">Airsoft</span>
+<span class="label label-primary">Paintball</span>
+<span class="label label-success">DOMINATOR</span>
+<hr><center><h2>RFID DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
+      <div class="alert alert-danger">
+     <strong>當心帶有假冒（非原裝NXP RC522）芯片的RC522 RFID讀取器！ -在UART的項目中報告：固件版本：0x12-仿冒芯片。 帶有假芯片的項目不起作用。 </strong>
+經過NXP RFID閱讀器RC522的測試和功能，該報告器報告固件版本：固件版本0x92（2.0版）。
+      </div>
+<!---<h2>Knižnice pre projekt RFID DOMINATOR</h2> 
+<li>RFID  <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
+<li>LCD - I2C  <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>	--->			
+<h4>RFID DOMINATOR項目中的實體：</h4>
+ <div class="row">
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/Ez2zobn.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID手鐲標準ISO / IEC 14443-A-紅色團隊" title="RFID手鐲標準ISO / IEC 14443-A-紅色團隊"><br><b>紅隊</b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/d8D1ZrG.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID手鐲ISO / IEC 14443-A-GREEN團隊" title="RFID手鐲ISO / IEC 14443-A-綠色團隊"><br><b>綠色團隊</b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/Mye11fr.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID手鐲ISO / IEC 14443-A-裁判" title="RFID手鐲ISO / IEC 14443-A-裁判"><br><b>裁判</b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/laTDaGg.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID手鐲標準ISO / IEC 14443-A-橡皮擦" title="RFID手鐲標準ISO / IEC 14443-A-橡皮擦"><br><b>橡皮</b></center></div>
+</div>	
+<h4>Popis projektu:</h4>
+<p style="text-align: justify;">
+DOMINATOR是一種設備-用於氣槍，彩彈射擊等運動的秒錶。
+秒錶使用Arduino控制微控制器（Arduino Uno / Nano）或單獨的芯片（Atmel）AtMega328P，它控制整個系統邏輯。
+該秒錶包括一個LCD字符顯示屏，其尺寸為16x2（16個字符x 2行）或20x4，在其上顯示各個團隊的時間。
+遊戲中有2個團隊-<b> <font color ="＃C0392B"> RED隊</ font> </b>和<b> <font color ="＃27AE60"> GRE隊</font> </b>互相作用並佔據該設備-DOMINATOR形成的虛點。
+在遊戲開始時，顯示屏顯示<b> <font color ="＃C0392B"> RED隊</font> </b>，<b> <font color的時間00小時00分00秒=“＃27AE60”> GRE小組</font> </b>。
+團隊中的每個成員都配備有卡，手鐲或密鑰卡，如果在範圍內，它們可以與RFID讀取器以13.56MHz的頻率進行通信。
+鑰匙鍊和手鐲可以用顏色編碼（根據團隊和功能，用綠色，紅色表示），從而可以更有效地將其分配給玩家，也可以對其進行存檔和存儲。
+<b> <font color ="＃C0392B!>如果RED團隊佔據了一個分數，則團隊玩家將其卡貼在讀取器上，從而佔據了該分數。此操作將觸發蜂鳴器，宣布該點發生變化。
+然後RED小組在此站點上的LED會亮起，並且顯示屏將開始為該小組增加時間。</font> </b>
+<b> <font color ="＃27AE60">如果GRE小組佔據了一個分數，並且該小組的成員將卡附在讀取器上，蜂鳴器會再次響起，該小組的LED會亮起，RED的小組時間會暫停，並且團隊時間很重要GRE佔據了重點。</font> </b>
+<b> <font color ="＃F39C12">如果組織者（裁判員）附加了卡片/密鑰卡，則兩次暫停，直到其中一個團隊插入卡片為止。
+因此，這種類型的卡牌適合開始休息，但也可以在遊戲結束時需要停止評估遊戲的時間時使用。</font> </b>
+<b> <font color =“＃3498DB”>在DOMINATOR中還有第四種類型的卡-橡皮擦，在啟動DOMINATOR秒錶後，這兩種卡都會暫停兩次並重置為初始值。
+用來重新啟動遊戲，初始化新遊戲。</font> </b>
+該項目適用於可以建造設備的Airsoft活動，體育設施或Airsoft團隊。
+DOMINATOR系統的優點是可以克隆該系統，並通過機器代碼以相同的配置創建X點，這些代碼可以在遊戲中獨立進行，而RFID卡將在所有DOMINATOR設備上完全起作用。
+該系統經過測試，功能齊全，易於維護。
+恩智浦RC522閱讀器的工作頻率為13.56MHz，註冊RFID標籤的距離約為3厘米（需要與閱讀器進行幾乎物理接觸），兼容ISO / IEC 14443-A標籤格式。
+給定的標籤標準還包括ISIC，充當NFC卡並可以將其物理地址-UID傳達給范圍內的讀取器的總線卡。
+</p>
+<h4>項目硬件-RFID統治者：</h4> 
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>RFID 讀者 RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>ISO / IEC 14443-A標準鑰匙扣/卡片/手鍊</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" title="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>蜂鳴器</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>2x 發光二極管</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<center><img src="https://i.imgur.com/TeQXCCp.jpg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION" title="RFID DOMINATOR - bežiace stopky v Airsoft hre pre dva tímy - Capture Point - DOMINATION"></center>        
+<h4>硬件方面的功能原理：</h4>
+      <li>RC522 RFID閱讀器通過SPI總線與Arduino通信。 它讀取範圍內的RFID卡的UID（標識符），將此標識符轉發給Arduino，後者執行程序邏輯。 讀取器對芯片距離天線約3 cm的距離作出響應。</li>
+      <li>Arduino在多種情況下比較卡的讀取地址，將數字狀態應用於二極管，每100毫秒（十分之一秒的計數）運行一個通用計數器，控制兩次計數。</li>
+      <li>時間通過I2C總線發送到20x4字符顯示器，在此處進行繪製。 在100 kHz的I2C總線速度-標準速度下，顯示可持續長達30ms。</li>
+      <div class="alert alert-success">
+      <strong>可以在系統中列出的最大時間範圍： </strong>99小時59分59秒
+      </div>
+      <div class="alert alert-info">
+      <strong>消耗：5V電源時約110mAh。 </strong>適用於通過移動電源，帶有USB輸出的手機的充電器供電。
+      </div>
+      <h4>RFID主導者項目名稱：</h4>
+      <p style="text-align: justify;">
+      就其多功能性而言，RFID DOMINATOR項目適用於Airsoft動作，並且有可能克隆固件，因此可以在遊戲領域安裝X DOMINATOR，可以使用相同的RFID芯片進行遊戲。
+      DOMINATOR也適用於團隊，體育設施，可以使用此設備擴展單個遊戲的遊戲模式。
+      如果RFID卡，手鐲或密鑰卡使用顏色編碼，則非常容易，並且可以根據其團隊將其普遍分發給玩家。
+      他們的存檔也很簡單。卡片，手鐲或鑰匙圈的使用非常簡單，可以適應所有年齡段的人。
+      RFID芯片本身被保護在塑料盒中，它不介意灰塵，水，不需要維護。它沒有電池，芯片激活一個RFID讀取器，該讀取器用它發送的電場為它充電。
+      DOMINATOR適用於兩個團隊中玩家人數相同的遊戲模式，例如支配，捕獲點（遊戲中可以使用多個支配者）。
+      該用途主要用於運動氣槍，彩彈射擊遊戲，但DOMINATOR也可以用於其他體育活動，例如可以用於划船，定向越野等。
+      </p>
+      <hr><h4>功能演示-RFID支配器：</h4><hr><center><iframe width="80%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<hr><center><h2>印刷電路板-（PCB）-RFID DOMINATOR-GERBER /按照片生產</h2></center><hr>
+<div class="alert alert-info">
+	<strong>PCB設計設想使用Arduino Nano板</strong>
+</div>					
+<li>PCB雙面覆蓋，尺寸：100x105mm</li>				
+<h4>中國PCB生產</h4>
+<p style="text-align: justify;">
+PCB可以在斯洛伐克的<a href="https://www.pbspoj.sk/"> PB Spoj </a>或中國製造-通過GERBER文件中的機器生產。
+最受歡迎和最便宜的製造商之一是：JLCPCB。
+可以將GERBER文件直接作為檔案上傳，而在PCB可視化時，自動設置它記錄的層，以及PCB的尺寸。
+生產需要1-2天。該製造商以前以2美元的PCB生產促銷而聞名。
+如今，JLCPCB可以讓您以RFID的價格生產5片這種用於PCB DOMINATOR的PCB，價格為6.96€，10件，價格為10.16€。
+運輸-最便宜的替代品價格為7.44€（含DHL），可在3-5個工作日內交貨，而運輸成本為23.16€。
+JLCPCB將自動為您提供8歐元的折扣優惠券，該優惠券將在註冊後分配給您。
+因此，採用最便宜的運輸方式（可在25天內交貨），首次購買即可免費送貨。
+也可以使用其他可用的製造商，例如：PCBWay，AllPCB，NextPCB，SeeedStudio，這些製造商具有通過GERBER文件通過機器方法生產PCB的技術。
+</p>
+<center><img src="https://i.imgur.com/rFyRB50.png" alt="DPS pre Airsoft DOMINATOR - JLCPCB" style="display: block; max-width: 100%; height: auto;" title="DPS pre Airsoft DOMINATOR - JLCPCB"></center>        							
+<h4> PCB設計中的針腳：</h4>
+<li> 2個15針母頭（針對Arduino Nano）</li>
+<li> 1個8針母頭針（用於RFID讀取器RC522）</li>
+<li> 1個90度母頭針式4針母頭（用於I2C LCD顯示轉換器20x4）</li>
+
+<h4>設計PCB中的墊片：</ h4>
+<li>用於字符LCD顯示屏的20x4（最大2.5 mm直徑）的4個墊片</li>
+<li> 2個用於RFID RC522的墊片（最大3.5 mm直徑）</li>
+<h4>零件尺寸：</h4>
+<div class="alert alert-danger">
+	<strong>提供具有零件尺寸的PDF文檔： </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/docs/pdf/Rozmery_SUCIASTOK.pdf">這裡</a>
+</div>
+<img src="https://i.imgur.com/YMe2Y4L.png" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOSKA PLOŠNÝCH SPOJOV - DPS - PCB - RC522, Arduino - Nano, buzzer, LED, stopky, stopwatch" title="RFID DOMINATOR - DPS - PCB - RC522, Arduino Nano, buzzer, LED, stopky, stopwatch">  
+<center><img src="https://i.imgur.com/8KE9eBX.png" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOSKA PLOŠNÝCH SPOJOV - DPS - Výroba fotocestou" title="RFID DOMINATOR - DOSKA PLOŠNÝCH SPOJOV - DPS - Výroba fotocestou"></center> 				
+<h3>端子的接線-RFID DOMINATOR-完全對應於接線圖：</h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+				<thead>
+<tr>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#27AE60"><strong>NXP RFID RC522</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">3V3</td>
+<td align="right">3V3</td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="right">RST</td>
+</tr>
+<tr>
+<td align="left">D10</td>
+<td align="right">SDA (SS)</td>
+</tr>
+<tr>
+<td align="left">D11</td>
+<td align="right">MOSI</td>
+</tr>
+<tr>
+<td align="left">D12</td>
+<td align="right">MISO</td>
+</tr>
+<tr>
+<td align="left">D13</td>
+<td align="right">SCK</td>
+</tr>					
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>用於LCD顯示屏的I2C轉換器</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">A4</td>
+<td align="right">SDA</td>
+</tr>
+<tr>
+<td align="left">A5</td>
+<td align="right">SCL</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>蜂鳴器</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">IN</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>發光二極管</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center><h2>接線圖-RFID支配器：</h2></center><hr>
+<img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
+<hr><center><h3><font color="#52BE80">用於為DOMINATOR讀取RFID卡的UID地址的程序</font></h3></center><hr>
+<li>該程序用於讀取RFID標籤的標識符（UID），這些標籤將在RFID DOMINATOR程序中使用</li>
+<li>卡地址在串行（UART）監視器中列出-使用的速度為9600波特/秒。</li>
+<li>該聲明應保存並重寫為清晰的.xls（EXCEL）文檔，這將有助於管理為特定團隊和實體分配的RFID卡。</li>				
+<div class="alert alert-info">
+<b>您必須將MFRC522庫導入Arduino IDE才能成功加載源代碼以加載UID卡。</b>
+下載RFID DOMINATOR項目存儲庫（頁面頂部第一個鏈接引用），將/ src / <strong>文件夾（MFRC522文件夾）的內容複製到/ Arduino / libraries /文件夾（該文件夾的路徑）取決於您安裝Arduino IDE的位置），最常見的是舊版Windows操作系統上的文檔/程序文件。</strong>
+</div>	
+<h4>存儲的UID RFID卡示例-Excel文檔.xls：</h4>				
+<center><img src="https://i.imgur.com/LvXPxVq.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
+<h4>程序輸出到UART接口：</h4>
+<center><img src="https://i.imgur.com/zacr30a.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis UID RFID tagu, karty na UART rozhranie s vypísaním typu karty" title="Výpis UID RFID tagu, karty na UART rozhranie s vypísaním typu karty"></center>
+<pre style="background: #52BE80;">
+/*|---------------------------------------------|*/
+/*|標題：加載UID RFID卡                          |*/
+/*|說明：通過RFID讀取器RC522讀取                  |*/
+/*|粘貼並打印的RFID卡的地址                       |*/
+/*|UART接口上的UID。                             |*/
+/*|記錄的UID卡用於DOMINATOR                      |*/
+/*|作者: Martin Chlebovec                       |*/
+/*|E-mail (English only): martinius96@gmail.com |*/
+/*|使用許可證: MIT                               |*/
+/*|修訂版: 12. August 2020                       |*/
+/*|---------------------------------------------|*/
+
+#include &lt;SPI.h>
+#include &lt;MFRC522.h>
+#define RST_PIN         9
+#define SS_1_PIN        10
+#define NR_OF_READERS   1
+byte ssPins[] = {SS_1_PIN};
+MFRC522 mfrc522[NR_OF_READERS];
+void setup() {
+  Serial.begin(9600);
+  while (!Serial);
+  SPI.begin();
+  for (uint8_t reader = 0; reader &lt; NR_OF_READERS; reader++) {
+    mfrc522[reader].PCD_Init(ssPins[reader], RST_PIN);
+    mfrc522[reader].PCD_SetAntennaGain(112); // set to max (00001110)
+    Serial.print(F("Reader "));
+    Serial.print(reader);
+    Serial.print(F(": "));
+    mfrc522[reader].PCD_DumpVersionToSerial();
+  }
+}
+
+void loop() {
+  for (uint8_t reader = 0; reader &lt; NR_OF_READERS; reader++) {
+    if (mfrc522[reader].PICC_IsNewCardPresent() && mfrc522[reader].PICC_ReadCardSerial()) {
+      Serial.print(F("Reader "));
+      Serial.print(reader);
+      Serial.print(F(": Card UID:"));
+      dump_byte_array(mfrc522[reader].uid.uidByte, mfrc522[reader].uid.size);
+      Serial.println();
+      Serial.print(F("PICC type: "));
+      MFRC522::PICC_Type piccType = mfrc522[reader].PICC_GetType(mfrc522[reader].uid.sak);
+      Serial.println(mfrc522[reader].PICC_GetTypeName(piccType));
+      mfrc522[reader].PICC_HaltA();
+      mfrc522[reader].PCD_StopCrypto1();
+    }
+  }
+}
+
+void dump_byte_array(byte *buffer, byte bufferSize) {
+  for (byte i = 0; i &lt; bufferSize; i++) {
+  }
+  Serial.print("Code for DOMINATOR: ");
+  unsigned long kod = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
+  Serial.println(kod);
+}
+</pre>
+<hr>				
+<center><h3><font color="#C0392B">I2C掃描儀-用於讀取LCD顯示屏的I2C轉換器地址的程序</font></h3></center>				
+<hr>
+<h4>I2C掃描儀的預期輸出：</h4>
+<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
+<div class="alert alert-info">
+<b>Wire庫內置在Arduino IDE中，無需安裝。</b>
+該程序可以立即上傳。 建議在啟動程序之前連接硬件-用於16x2 / 20x4顯示屏的I2C轉換器，即使沒有顯示屏也是如此。
+</div>	
+<pre style="background: #C0392B;">
+#include &lt;Wire.h>
+ 
+ 
+void setup()
+{
+  Wire.begin();
+ 
+  Serial.begin(9600);
+  while (!Serial);             // Leonardo: wait for serial monitor
+  Serial.println("\nI2C Scanner");
+}
+ 
+ 
+void loop()
+{
+  byte error, address;
+  int nDevices;
+ 
+  Serial.println("Scanning...");
+ 
+  nDevices = 0;
+  for(address = 1; address &lt; 127; address++ )
+  {
+    // The i2c_scanner uses the return value of
+    // the Write.endTransmisstion to see if
+    // a device did acknowledge to the address.
+    Wire.beginTransmission(address);
+    error = Wire.endTransmission();
+ 
+    if (error == 0)
+    {
+      Serial.print("I2C device found at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.print(address,HEX);
+      Serial.println("  !");
+ 
+      nDevices++;
+    }
+    else if (error==4)
+    {
+      Serial.print("Unknown error at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.println(address,HEX);
+    }    
+  }
+  if (nDevices == 0)
+    Serial.println("No I2C devices found\n");
+  else
+    Serial.println("done\n");
+ 
+  delay(5000);           // wait 5 seconds for next scan
+}
+</pre>
+<hr><center><h2>Button Dominator-氣槍秒錶 彩彈射擊</h2></center><hr>
+<p style="text-align: justify;">
+Button DOMINATOR是一種設備-用於氣槍，彩彈射擊等運動的秒錶。
+秒錶使用Arduino控制微控制器（Arduino Uno / Nano）或單獨的芯片（Atmel）AtMega328P，它控制整個系統邏輯。
+該秒錶包括一個LCD字符顯示屏，其尺寸為16x2（16個字符x 2行）或20x4，在其上顯示各個團隊的時間。
+遊戲中有2個團隊-<b> <font color ="＃C0392B"> RED隊</ font> </b>和<b> <font color ="＃27AE60"> GRE隊</font> </b>互相作用並佔據該設備-DOMINATOR形成的虛點。
+在遊戲開始時，顯示屏顯示<b> <font color ="＃C0392B"> RED隊</font> </b>，<b> <font color的時間00小時00分00秒="＃27AE60"> GRE小組</font> </b>。
+按鈕DOMINATOR使用按鈕輸入來執行團隊成員佔據點的動作，以及輸入裁判和橡皮擦實體。
+因此，總共使用了4個系統實體的4個按鈕，即以INPUT_PULLUP模式連接的切換按鈕。
+按下按鈕會將GND信號饋送到Arduino數字輸入端子（低電平有效開關信號）。
+使用的是切換按鈕，而不是切換按鈕（它們不會對系統邏輯做出反應，所有軟件都將始終被“按下”）。
+在基本版本中，DOMINATOR會立即對新聞作出反應-給定團隊的計時被激活（新聞長度，新聞次數等未得到驗證...）。
+時間顯示在16x2或20x4的LCD字符顯示屏上，該顯示屏通過I2C總線與控制微控制器通信。
+<b> <font color ="＃C0392B">如果RED團隊的成員通過按一個按鈕佔據一個點，則會觸發蜂鳴器，並發出一聲短促的嗶嗶聲來宣布該點的變化。
+然後RED小組在此站點上的LED會亮起，並且顯示屏將開始為該小組增加時間。</font> </b>
+<b> <font color ="＃27AE60">如果該點已被GRE團隊佔用，並且團隊成員按下相應的按鈕，則蜂鳴器會再次響起，GRE團隊LED會亮起，RED團隊時間會暫停，並且GRE小組的時間是根據他佔據的時間來計算的。</font> </b>
+<b> <font color ="＃F39C12">如果組織者（裁判員）按下他的按鈕，則兩個時間都將暫停，直到其中一個團隊的成員進行用戶輸入為止。
+因此，這種類型的輸入適合開始休息，但也可以結束遊戲進行評估。</font> </b>
+<b> <font color ="＃3498DB"> Button DOMINATOR具有用於橡皮擦實體的第四個按鈕，該按鈕在啟動Button DOMINATOR秒錶後會暫停並將兩個時間都重置為初始值。
+用來重新啟動遊戲，初始化新遊戲。</font> </b>
+該項目適用於可以建造設備的Airsoft活動，體育設施或Airsoft團隊。
+Button DOMINATOR系統的優點是可以通過機器代碼克隆並創建具有相同配置的X點，可以將其加載到無限數量的Arduino開發板和芯片中，並保證相同的應用程序操作。
+因此，玩家可以在遊戲中獲得更多的積分，而在遊戲結束時，只要哪個得分被哪個團隊佔用，時間就會累加。
+</p> 
+<h4>項目的硬件-按鈕主導者：</h4> 
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>探測器 (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>2x 發光二極管</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>4x 開關按鈕</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+      <div class="alert alert-success">
+      <strong>系統中可以列出的最大時間範圍：</strong> 99小時59分59秒
+      </div>
+      <div class="alert alert-info">
+      <strong>消耗：5V電源時約20mAh。 </strong>適用於通過移動電源，帶有USB輸出的手機的充電器供電。
+      </div>
+<hr><center><h3>在Airsoft遊戲中即時按下按鈕統治者</h3></center><hr>
+<center><img src="https://i.imgur.com/yuHmpZa.jpg" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Airsoft DOMINATOR s tlačidlovým vstupom - stopky" title="Airsoft DOMINATOR s tlačidlovým vstupom - stopky"></center>        			
+<hr><center><h3>Button DOMINATOR-系統功能和邏輯演示</h3></center><hr>
+<center><iframe width="80%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<h3>端子的表連接-按鈕DOMINATOR-完全對應於接線圖：</h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+				<thead>		
+<tr>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#27AE60"><strong>用於LCD顯示屏的I2C轉換器</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">A4</td>
+<td align="right">SDA</td>
+</tr>
+<tr>
+<td align="left">A5</td>
+<td align="right">SCL</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>蜂鳴器</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">IN</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>發光二極管</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>鈕扣 (INPUT_PULLUP)</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D6</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<tr>
+<td align="left">D7</td>
+<td align="right">IN (ERASER)</td>
+</tr>
+<tr>
+<td align="left">D8</td>
+<td align="right">IN (Rozhodca)</td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="right">IN (RED)</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center><h2>接線圖-按鈕調節器：</h2></center><hr>
+<img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
+<hr><center><h2>測試程序（共享軟件）-帶有機器代碼的按鈕統治者</h2></center><hr>
+<div class="alert alert-info">
+<p style="text-align: justify;">
+<b>可以為Button DOMINATOR項目提供一個共享軟件版本（.hex）</b>該版本允許您評估每個團隊最多15秒的比賽時間。
+<b>該版本的目標是驗證與您的硬件的兼容性。</b> Github存儲庫中提供了基於LCD轉換器I2C地址的機器代碼。
+最常用的地址是0x27和0x3F。如果您不知道轉換器的地址，請使用Arduino IDE-> I2C Scanner中的內置示例，該示例會將地址寫入UART接口（串行監視器）。
+可以通過AVRDUDE軟件（是Arduino IDE的一部分）或通過XLoader的GUI界面將機器代碼上傳到Arduino Uno微控制器，更易於使用。</p>
+<li> AVRDUDE必須通過與Arduino IDE一起安裝的CMD（命令行）運行。位於C中：/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
+<b> <center>用於將程序上傳到Arduino Uno / Nano（AtMega328P）的示例命令：</center> </b>
+<li> <b> avrdude -CC：avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash：w：sketch.ino.hex:i </b> </li>
+<li> <b> XLoader是具有簡單圖形界面的Windows應用程序（可執行.exe工具）</b>，它允許選擇固件-機器碼（.hex），目標平台並可以動態顯示COM設備所在的端口。</li>
+<li> <b>只需單擊“上傳”，即可自動上傳機器代碼</ b>（XLoader使用類似於Arduino IDE的AVRDUDE工具）。 XLoader窗口以上傳字節列表的形式通知成功上傳。</li>
+<b>可以從項目存儲庫下載固件：</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">這裡</a>。根據I2C轉換器的地址（位於UART接口上的I2C掃描儀輸出中找到），固件位於/ firmware /文件夾中。
+</div>
+				<h4>可用固件-按鈕DOMINATOR</h4>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>固件名稱</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>專為</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">0x27.ino.hex</td>
+				<td align="right">LCD字符顯示尺寸為16x2或20x4，帶有<b> I2C轉換器，在地址0x27處進行通信</b></td>
+				</tr>
+				<tr>
+				<td align="left">0x3F.ino.hex</td>
+				<td align="right">LCD字符顯示尺寸為16x2或20x4，帶有<b> I2C轉換器，在地址0x3F進行通信</b></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>				
+<div class="alert alert-danger">
+      <strong>對於具有“舊引導程序”的最新中文Arduino Nano克隆，必須以57600波特/秒的速度記錄！ 對於具有較新Bootloader 115200 baud / s的其他版本（此速度在AVRDUDE命令中也用於加載機器代碼）。</strong>
+ </div>				
+<hr><center><h2>通過XLoader將Button DOMINATOR項目的共享軟件版本上傳到Arduino</h2></center><hr>				
+<center>
+	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
+</center>	
+<hr><center><h2>通過XLoader將固件上傳到Arduino的常規視頻教程</h2></center><hr>
+<center><iframe width="80%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>					
+</div>
+		</div>
+</div>
+</body>
+</html>
