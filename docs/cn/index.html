@@ -78,7 +78,7 @@
 <span class="label label-default">Airsoft</span>
 <span class="label label-primary">Paintball</span>
 <span class="label label-success">DOMINATOR</span>
-<hr><center><h2>RFID DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
+<hr><center><h2>RFID DOMINATOR-秒錶，用於氣槍| 彩彈射擊</h2></center><hr>
       <div class="alert alert-danger">
      <strong>當心帶有假冒（非原裝NXP RC522）芯片的RC522 RFID讀取器！ -在UART的項目中報告：固件版本：0x12-仿冒芯片。 帶有假芯片的項目不起作用。 </strong>
 經過NXP RFID閱讀器RC522的測試和功能，該報告器報告固件版本：固件版本0x92（2.0版）。
@@ -93,21 +93,21 @@
   <div class="col-sm-3"><center><img src="https://i.imgur.com/Mye11fr.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID手鐲ISO / IEC 14443-A-裁判" title="RFID手鐲ISO / IEC 14443-A-裁判"><br><b>裁判</b></center></div>
   <div class="col-sm-3"><center><img src="https://i.imgur.com/laTDaGg.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID手鐲標準ISO / IEC 14443-A-橡皮擦" title="RFID手鐲標準ISO / IEC 14443-A-橡皮擦"><br><b>橡皮</b></center></div>
 </div>	
-<h4>Popis projektu:</h4>
+<h4>項目描述：</h4>
 <p style="text-align: justify;">
 DOMINATOR是一種設備-用於氣槍，彩彈射擊等運動的秒錶。
 秒錶使用Arduino控制微控制器（Arduino Uno / Nano）或單獨的芯片（Atmel）AtMega328P，它控制整個系統邏輯。
 該秒錶包括一個LCD字符顯示屏，其尺寸為16x2（16個字符x 2行）或20x4，在其上顯示各個團隊的時間。
 遊戲中有2個團隊-<b> <font color ="＃C0392B"> RED隊</ font> </b>和<b> <font color ="＃27AE60"> GRE隊</font> </b>互相作用並佔據該設備-DOMINATOR形成的虛點。
-在遊戲開始時，顯示屏顯示<b> <font color ="＃C0392B"> RED隊</font> </b>，<b> <font color的時間00小時00分00秒=“＃27AE60”> GRE小組</font> </b>。
+在遊戲開始時，顯示屏顯示<b> <font color ="＃C0392B"> RED隊</font> </b>，<b> <font color的時間00小時00分00秒="＃27AE60"> GRE小組</font> </b>。
 團隊中的每個成員都配備有卡，手鐲或密鑰卡，如果在範圍內，它們可以與RFID讀取器以13.56MHz的頻率進行通信。
 鑰匙鍊和手鐲可以用顏色編碼（根據團隊和功能，用綠色，紅色表示），從而可以更有效地將其分配給玩家，也可以對其進行存檔和存儲。
-<b> <font color ="＃C0392B!>如果RED團隊佔據了一個分數，則團隊玩家將其卡貼在讀取器上，從而佔據了該分數。此操作將觸發蜂鳴器，宣布該點發生變化。
+<b> <font color ="＃C0392B">如果RED團隊佔據了一個分數，則團隊玩家將其卡貼在讀取器上，從而佔據了該分數。此操作將觸發蜂鳴器，宣布該點發生變化。
 然後RED小組在此站點上的LED會亮起，並且顯示屏將開始為該小組增加時間。</font> </b>
 <b> <font color ="＃27AE60">如果GRE小組佔據了一個分數，並且該小組的成員將卡附在讀取器上，蜂鳴器會再次響起，該小組的LED會亮起，RED的小組時間會暫停，並且團隊時間很重要GRE佔據了重點。</font> </b>
 <b> <font color ="＃F39C12">如果組織者（裁判員）附加了卡片/密鑰卡，則兩次暫停，直到其中一個團隊插入卡片為止。
 因此，這種類型的卡牌適合開始休息，但也可以在遊戲結束時需要停止評估遊戲的時間時使用。</font> </b>
-<b> <font color =“＃3498DB”>在DOMINATOR中還有第四種類型的卡-橡皮擦，在啟動DOMINATOR秒錶後，這兩種卡都會暫停兩次並重置為初始值。
+<b> <font color ="＃3498DB">在DOMINATOR中還有第四種類型的卡-橡皮擦，在啟動DOMINATOR秒錶後，這兩種卡都會暫停兩次並重置為初始值。
 用來重新啟動遊戲，初始化新遊戲。</font> </b>
 該項目適用於可以建造設備的Airsoft活動，體育設施或Airsoft團隊。
 DOMINATOR系統的優點是可以克隆該系統，並通過機器代碼以相同的配置創建X點，這些代碼可以在遊戲中獨立進行，而RFID卡將在所有DOMINATOR設備上完全起作用。
