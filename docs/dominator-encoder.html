@@ -205,50 +205,6 @@ Eraser v tomto type DOMINATOR-a neexistuje.
 </table>				</div>
 <hr><center><h2>Schéma zapojenia - Tlačidlový DOMINATOR:</h2></center><hr>
 <img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
-<hr><center><h2>Testovací program (Shareware) - Tlačidlový DOMINATOR so strojovým kódom</h2></center><hr>
-<div class="alert alert-info">
-<p style="text-align: justify;">
-<b>K projektu Tlačidlový DOMINATOR je dostupná Shareware verzia (.hex).</b> Verzia umožňuje merať maximálne 15 sekúnd hry pre každý tím.
-<b>Cieľom verzie je overiť kompatibilitu s vašim hardvérom.</b> V Github repozitári sú dostupné strojové kódy na základe I2C adresy prevodníka pre LCD displej.
-Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
-Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez XLoader - ľahšie na použitie.</p>
-<li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (AtMega328P):</center></b>
-<li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
-<li><b>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
-<li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
-<b>Firmvér je možné stiahnuť z repozitára projektu:</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">TU</a>. Firmvér je v priečinku /firmware/ rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
-</div>
-				<h4>Dostupný firmvér - Tlačidlový DOMINATOR</h4>
-				<div class="table-responsive">          
- 				<table class="table" style="border: 1px solid black;">
-				<thead>
-				<tr>
-				<td align="left" style="background-color:#2ECC71"><strong>Názov firmvéru</strong></td>
-				<td align="right" style="background-color:#2ECC71"><strong>Určené pre</strong></td>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-				<td align="left">0x27.ino.hex</td>
-				<td align="right">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x27</b></td>
-				</tr>
-				<tr>
-				<td align="left">0x3F.ino.hex</td>
-				<td align="right">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x3F</b></td>
-				</tr>
-				</tbody>
-				</table>
-				</div>				
-<div class="alert alert-danger">
-      <strong>V prípade najnovších čínskych klonov Arduino Nano, ktoré majú "Old Bootloader" je nutné nahrávať rýchlosťou 57600 baud/s! Pri iných verziách s novším Bootloaderom 115200 baud/s (táto rýchlosť je použitá aj v AVRDUDE príkaze pre nahratie strojového kódu).</strong>
- </div>				
-<hr><center><h2>Nahrávanie Shareware verzie projektu Tlačidlový DOMINATOR do Arduina cez XLoader</h2></center><hr>				
-<center>
-	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
-</center>	
-<hr><center><h2>Všeobecný videonávod pre upload firmvéru do Arduina cez XLoader</h2></center><hr>
-<center><iframe width="80%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>					
 </div>
 		</div>
 </div>
