@@ -91,6 +91,10 @@ Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Ardu
 Dĺžka stlačenia / počet stlačení sa neovuje a nie je konfigurovateľný. Bod reaguje okamžite na stlačenie.
 Hra sa končí v momente, kedy sú obsadené oba body rovnakým tímom.
 Zmenu na bode indikuje hlásič, pri konci hry oba hlásiče pípajú v nekonečnej slučke a zároveň sa preruší WiFi komunikácia medzi modulmi nRF24L01.
+WiFi moduly nRF24l01 komunikujú na 2,4 GHz. nRF24l01 (bez + PA + LNA) komunikujú na cca 70 metrov, nRF24l01 + PA + LNA aj na kilometer, respektíve v lese a inak zarušenom prostredí na úrovni 450-700 metrov. 
+Pri externom napájaní je nutné použiť adaptér s 3.3V prevodníkom a napájať cez externý adaptér. 
+Nepoužívať 5V napájanie z Arduina, hrozí zničenie regulátora, rovnako tak ani 3V3 vývod nie je vhodný pre napájanie modulu, nakoľko má vysoký prúdový odber vo výkonnejších vysielacích režimoch. 
+Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnutím a pripojením napájania (power-on cyklus).
 </p>
 <h4>Hardvér pre projekt - WiFi body:</h4> 
 <li><b>2x Arduino Uno / Nano / AtMega328P</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
