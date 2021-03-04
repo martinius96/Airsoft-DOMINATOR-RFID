@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="sk-SK">
+<head>
+	<!-- Primary Meta Tags -->
+	<title>WiFi body - Airsoft | Paintball</title>
+	<meta name="title" content="WiFi body - Airsoft | Paintball">
+	<meta name="description" content="WiFi body pre Airsoft, Paintball. Herný režim Capture points, body komunikujúce až na 1100 metrov.">
+	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/capture-points.html">
+	<meta property="og:title" content="WiFi body - Airsoft | Paintball">
+	<meta property="og:description" content="WiFi body pre Airsoft, Paintball. Herný režim Capture points, body komunikujúce až na 1100 metrov.">
+	<meta property="og:image" content="">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/capture-points.html">
+	<meta property="twitter:title" content="WiFi body - Airsoft | Paintball">
+	<meta property="twitter:description" content="WiFi body pre Airsoft, Paintball. Herný režim Capture points, body komunikujúce až na 1100 metrov.">
+	<meta property="twitter:image" content="">
+	
+	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
+	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    		window.smartlook||(function(d) {
+    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+    		})(document);
+    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
+	</script>    
+	<style>
+		table td {
+  			border: 1px solid black; 
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      	<li><a href="index.html">RFID DOMINATOR</a></li>
+<li><a href="dominator-encoder.html">Konfigurovateľný DOMINATOR</a></li>
+<li class=""><a href="button-dominator.html">Tlačidlový DOMINATOR</a></li> 
+<li class="active"><a href="capture-points.html">WiFi body</a></li>			    
+ </div>
+</nav>  
+  		<div class="row">
+    			<div class="col-sm-12">
+<div class="alert alert-success">
+	<strong>Repozitár s projektom - schémami zapojenia, strojovými kódmi pre testovanie - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - RFID DOMINATOR - Arduino</a>
+</div>	
+<div class="alert alert-info">
+	<strong>Pri záujme o kúpu firmvéru pre WiFi body kontaktujte na:</strong> martinius96@gmail.com
+</div>					
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">Rotačný enkóder</span>
+<span class="label label-info">Stopky</span>
+<span class="label label-warning">Schéma</span>
+<span class="label label-danger">Tlačidlo</span>
+<span class="label label-default">Menu</span>
+<span class="label label-primary">Paintball</span>
+<span class="label label-success">DOMINATOR</span>
+<hr><center><h2>WiFi body pre Airsoft | Paintball</h2></center><hr>
+<h4>Entity v projekte WiFi body:</h4>
+ <div class="row">
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b>Tím RED</b></center></div>
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/bBzcrj0.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b>Tím GRE</b></center></div>
+</div>
+<h4>Popis projektu WiFi body:</h4>
+<p style="text-align: justify;">
+Herný režim Capture Points pre športy Airsoft, Paintball.
+Body medzi sebou komunikujú prostredníctvom WiFi modulov z rady nRF24L01, pričom si medzi sebou vymieňajú informácie o stave bodu (či je obsadený a akým tímom).
+
+
+Jeden bod je permanentný vysielač a vyžaduje komunikáciu od druhého bodu. Druhý bod je prijímačom a odpovedá na prijatie dát vysielaču, tým sa zamedzuje kolíziám pri komunikácii na WiFi frekvencii 2.4 GHz.
+Každý z bodov využíva riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) AtMega328P, ktorý ovláda celú logiku systému.
+V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa obsadiť oba body stlačením príslušného tlačidla.				
+Tlačidlový vstup indikuje akciu obsadenia bodu členom tímu RED, alebo GRE.
+Využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
+Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).	
+Dĺžka stlačenia / počet stlačení sa neovuje a nie je konfigurovateľný. Bod reaguje okamžite na stlačenie.
+Hra sa končí v momente, kedy sú obsadené oba body rovnakým tímom.
+Zmenu na bode indikuje hlásič, pri konci hry oba hlásiče pípajú v nekonečnej slučke a zároveň sa preruší WiFi komunikácia medzi modulmi nRF24L01.
+</p>
+<h4>Hardvér pre projekt - WiFi body:</h4> 
+<li><b>2x Arduino Uno / Nano / AtMega328P</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x WiFi modul nRF24L01 / nRF24L01 + PA + LNA</b><img src="https://i.imgur.com/1cykMkD.png" alt="nRF24L01 / nRF24L01 + PA + LNA" title="nRF24L01 / nRF24L01 + PA + LNA0" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x LED diódy</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x spínacie tlačidlo (pushbutton)</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<hr><center><h3>Schéma zapojenia - Konfigurovateľný DOMINATOR</h3></center><hr>
+<center><img src="https://i.imgur.com/jfk1d8y.png" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
+<hr><center><h3>Konfigurovateľný DOMINATOR za behu - testovanie</h3></center><hr>
+<center><img src="https://i.imgur.com/R0wwJjD.jpeg" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball" title="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball"></center>        			
+<h3>Tabuľkové zapojenie vývodov - Konfigurovateľný DOMINATOR - plne odpovedá schéme zapojenia:</h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+				<thead>		
+
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>Rotačný enkóder - KY-040</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">+</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">CLK</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">DT</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">SW</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>LED diódy</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D6</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D7</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>Tlačidlá (INPUT_PULLUP)</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D8</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="right">IN (GRE)</td>
+</tr>
+<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#AF7AC5"><strong>Buzzer</strong></td>
+</tr>
+<tr>
+<td align="left">D10</td>
+<td align="right">IO</td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center><h2>Testovací program (Shareware) - Konfigurovateľný DOMINATOR so strojovým kódom</h2></center><hr>
+<div class="alert alert-info">
+<p style="text-align: justify;">
+<b>K projektu Konfigurovateľný DOMINATOR je dostupná Shareware verzia (.hex).</b> Verzia umožňuje merať maximálne 60 sekúnd pre každý tím. Po dosiahnutí tohto času sa stopky zastavia.
+<b>Cieľom verzie je overiť kompatibilitu s vašim hardvérom.</b> V Github repozitári sú dostupné strojové kódy na základe I2C adresy prevodníka pre LCD displej.
+Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
+Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez XLoader - ľahšie na použitie.</p>
+<li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (AtMega328P):</center></b>
+<li>Pre firmvér s I2C adresou displeja 0x27 (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
+<li>Pre firmvér s I2C adresou displeja 0x3F (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
+<li><b>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
+<li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
+<b>Firmvér je možné stiahnuť nájsť v repozitári:</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">TU</a>. Firmvér je rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
+</div>
+				<h4>Dostupný firmvér - Konfigurovateľný tlačidlový DOMINATOR</h4>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>Názov firmvéru (v priečinku encoder_dominator)</strong></td>
+				<td align="center" style="background-color:#2ECC71"><strong>Určené pre</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>Stiahnuť</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">encoder_0x27.ino.hex</td>
+				<td align="center">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x27</b></td>
+				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/encoder_dominator/encoder_0x27.ino.hex" class="btn btn-danger" role="button">Stiahnuť firmvér</a></td>
+				<tr>
+				<td align="left">encoder_0x3F.ino.hex</td>
+				<td align="center">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x3F</b></td>
+				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/encoder_dominator/encoder_0x3F.ino.hex" class="btn btn-danger" role="button">Stiahnuť firmvér</a></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>		
+
+
+
+</div>
+		</div>
+</div>
+</body>
+</html>
