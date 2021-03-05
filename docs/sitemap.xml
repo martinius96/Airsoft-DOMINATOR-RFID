@@ -9,48 +9,88 @@
 
 <url>
   <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/</loc>
-  <lastmod>2021-02-06T16:15:23+00:00</lastmod>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/index.html</loc>
-  <lastmod>2021-02-06T16:15:23+00:00</lastmod>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/dominator-encoder.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/button-dominator.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/capture-points.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/de/index.html</loc>
-  <lastmod>2021-02-06T16:15:23+00:00</lastmod>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/ru/index.html</loc>
-  <lastmod>2021-02-06T16:15:23+00:00</lastmod>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/index.html</loc>
-  <lastmod>2021-02-06T16:15:23+00:00</lastmod>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/it/index.html</loc>
-  <lastmod>2021-02-06T16:15:23+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/de/dominator-encoder.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/fr/index.html</loc>
-  <lastmod>2021-02-06T16:15:23+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/ru/dominator-encoder.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/nl/index.html</loc>
-  <lastmod>2021-02-06T16:15:23+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/dominator-encoder.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/cn/index.html</loc>
-  <lastmod>2021-02-06T16:15:23+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/de/button-dominator.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/ru/button-dominator.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/button-dominator.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/de/capture-points.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/ru/capture-points.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/capture-points.html</loc>
+  <lastmod>2021-03-05T12:49:54+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
