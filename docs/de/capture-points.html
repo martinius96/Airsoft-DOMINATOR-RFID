@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+	<!-- Primary Meta Tags -->
+	<title>WiFi-Punkte - Airsoft | Paintball</title>
+	<meta name="title" content="WiFi-Punkte - Airsoft | Paintball">
+	<meta name="description" content="WiFi-Punkte für Airsoft, Paintball. Erfassen Sie Punkte im Spielmodus, Punkte, die bis zu 1100 Meter kommunizieren.">
+	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/de/capture-points.html">
+	<meta property="og:title" content="WiFi-Punkte - Airsoft | Paintball">
+	<meta property="og:description" content="WiFi-Punkte für Airsoft, Paintball. Erfassen Sie Punkte im Spielmodus, Punkte, die bis zu 1100 Meter kommunizieren.">
+	<meta property="og:image" content="">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/de/capture-points.html">
+	<meta property="twitter:title" content="WiFi-Punkte - Airsoft | Paintball">
+	<meta property="twitter:description" content="WiFi-Punkte für Airsoft, Paintball. Erfassen Sie Punkte im Spielmodus, Punkte, die bis zu 1100 Meter kommunizieren.">
+	<meta property="twitter:image" content="">
+	
+	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
+	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    		window.smartlook||(function(d) {
+    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+    		})(document);
+    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
+	</script>    
+	<style>
+		table td {
+  			border: 1px solid black; 
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      	<li><a href="index.html">Information</a></li>
+<li class=""><a href="dominator-encoder.html">Konfigurierbarer DOMINATOR</a></li>
+<li class=""><a href="button-dominator.html">Taste DOMINATOR</a></li> 	
+<li class="active"><a href="capture-points.html">WiFi Punkte</a></li>			    
+ </div>
+</nav>  
+  		<div class="row">
+    			<div class="col-sm-12">
+<div class="alert alert-success">
+	<strong>Repository mit Testsoftware-Implementierungen für Airsoft WiFi-Punkte: </strong><a href="https://github.com/martinius96/Capture_Points_Arduino_nRF24L01_Airsoft_Paintball">Airsoft - WiFi-Punkte - Arduino</a>
+</div>	
+<div class="alert alert-info">
+	<strong>Wenn Sie Firmware für WiFi-Punkte erwerben möchten, wenden Sie sich an:</strong> martinius96@gmail.com
+</div>					
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">WiFi</span>
+<span class="label label-info">Stoppuhr</span>
+<span class="label label-warning">Planen</span>
+<span class="label label-danger">Taste</span>
+<span class="label label-default">Capture Points</span>
+<span class="label label-primary">Paintball</span>
+<span class="label label-success">DOMINATOR</span>
+<hr><center><h2>WiFi Punkte für Airsoft | Paintball</h2></center><hr>
+<h4>Entitäten im WiFi-Punkte-Projekt:</h4>
+ <div class="row">
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b>Tím RED</b></center></div>
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/bBzcrj0.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b>Tím GRE</b></center></div>
+</div>
+<h4>Projektbeschreibung für WiFi-Punkte:</h4>
+<p style="text-align: justify;">
+Capture Points-Spielmodus für Airsoft- und Paintball-Sportarten.
+Die Punkte kommunizieren über WLAN-Module aus der nRF24L01-Serie miteinander, während sie Informationen über den Status des Punkts austauschen (ob er besetzt ist und von welchem Team).
+Ein Punkt ist ein permanenter Sender und erfordert die Kommunikation vom anderen Punkt. Der zweite Punkt ist der Empfänger und reagiert auf die vom Sender empfangenen Daten, wodurch Kollisionen bei der Kommunikation auf der WiFi-Frequenz von 2,4 GHz vermieden werden.
+Jeder der Punkte verwendet einen Arduino-Steuerungs-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Logik des Systems steuert.
+Es gibt 2 Teams im Spiel - <b><font color="#C0392B">RED mannschaft</font></b> a <b><font color="#27AE60">GRE mannschaft</font></b>die gegeneinander spielen und versuchen, beide Punkte durch Drücken der entsprechenden Taste zu besetzen.				
+Die Tasteneingabe gibt an, wie ein Mitglied des RED- oder GRE-Teams einen Punkt belegt.
+Die im INPUT_PULLUP-Modus verbundenen Drucktasten werden verwendet.
+Durch Drücken der Taste wird das GND-Signal dem digitalen Arduino-Eingangsanschluss (Active-LOW-Schaltsignal) zugeführt.
+Die Druckdauer / Anzahl der Druckmaschinen wird nicht gesteuert und ist nicht konfigurierbar. Der Punkt reagiert sofort auf einen Tastendruck.
+Das Spiel endet, wenn beide Punkte von derselben Mannschaft besetzt sind.
+Die Änderung des Punktes wird vom Detektor angezeigt, am Ende des Spiels piepen beide Detektoren in einer Endlosschleife und gleichzeitig wird die WiFi-Kommunikation zwischen den nRF24L01-Modulen unterbrochen.
+Die WiFi-Module nRF24l01 kommunizieren mit 2,4 GHz. nRF24l01 (ohne + PA + LNA) kommunizieren auf etwa 70 Metern, nRF24l01 + PA + LNA auch pro Kilometer im Wald bzw. in einer sonst gestörten Umgebung auf einer Höhe von 450-700 Metern bei maximaler Sendeleistung.
+Für die externe Stromversorgung muss ein YL-Adapter mit einem 3,3-V-Wandler verwendet und über einen externen Adapter mit Strom versorgt werden.
+Verwenden Sie kein 5-V-Netzteil vom Arduino, da die Gefahr besteht, dass der Controller zerstört wird. Das 3-V3-Terminal ist nicht für die Stromversorgung des Moduls geeignet, da es in leistungsstärkeren Übertragungsmodi einen hohen Stromverbrauch aufweist.
+Der Neustart beider Punkte erfolgt durch Zurücksetzen der Arduín-Taste oder durch Herausziehen und Anschließen der Stromversorgung (Einschaltzyklus).
+</p>
+<div class="alert alert-info">
+  <strong>Drahtlose Module kommunizieren mit 2,4 GHz, es handelt sich nicht um WiFi-Technologie, sie benötigen keinen Router oder Zugangspunkt!</strong> Die Module verfügen über einen eigenen Kommunikationskanal mit einer Auswahl von bis zu 140 Kanälen.
+</div>
+<h4>Unterstützte Modulgeschwindigkeiten nRF24L01:</h4> 
+<li>250 kbps - <font color="red"><b>Diese Option wird für ältere nRF24L01 nicht unterstützt!</b></font></li>
+<li>1 Mbps</li>
+<li>2 Mbps</li>
+<h4>Leistungsmodi von nRF24L01-Modulen:</h4> 
+<li>RF24_PA_MIN=-18dBm</li> 
+<li>RF24_PA_LOW=-12dBm</li>
+<li>RF24_PA_MED=-6dBM</li>
+<li>RF24_PA_HIGH=0dBm</li>
+<h4>Blockdiagramm - WiFi-Punkte - Airsoft:</h4>
+<center><img src="https://i.imgur.com/hglnwgX.jpg" style="display: block; max-width: 100%; height: auto;" alt="Bloková schéma / Block scheme - Capture Points - Airsoft / Paintball, Arduino, nRF24L01" title="Bloková schéma / Block scheme - Capture Points - Airsoft / Paintball, Arduino, nRF24L01"></center>	
+<h4>Hardware für das Projekt - WiFi-Punkte:</h4> 
+<li><b>2x Arduino Uno / Nano / AtMega328P</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x WiFi Modul nRF24L01 / nRF24L01 + PA + LNA</b><img src="https://i.imgur.com/1cykMkD.png" alt="nRF24L01 / nRF24L01 + PA + LNA" title="nRF24L01 / nRF24L01 + PA + LNA0" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x Summer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x LED Dioden</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x Schaltertaste (pushbutton)</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<hr><center><h3>Schaltplan - WiFi-Punkte</h3></center><hr>
+<center><img src="https://i.imgur.com/noWoy6S.png" style="display: block; max-width: 100%; height: auto;" alt="WiFi body - DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="WiFi body - - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
+<hr><center><h3>WiFi-Punkte - Verbindung testen</h3></center><hr>
+<center><img src="https://i.imgur.com/bx6mj2V.png" style="display: block; max-width: 100%; height: auto;" alt="WiFi body - - Arduino pre Airsoft, Paintball" title="WiFi body - - Arduino pre Airsoft, Paintball"></center>        			
+<h3>Die Verdrahtung der Klemmen - Konfigurierbarer DOMINATOR - entspricht vollständig dem Schaltplan:</h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+<thead>		
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B">nRF24L01<strong></strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">3V3 / externý zdroj</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">CSN</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">CE</td>
+</tr>
+<tr>
+<td align="left">D11</td>
+<td align="right">MOSI</td>
+</tr>
+<tr>
+<td align="left">D12</td>
+<td align="right">MISO</td>
+</tr>
+<tr>
+<td align="left">D13</td>
+<td align="right">SCK</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>LED Dioden</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D7</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D8</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>Taste (INPUT_PULLUP)</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D6</td>
+<td align="right">IN (GRE)</td>
+</tr>
+<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#AF7AC5"><strong>Summer</strong></td>
+</tr>
+<tr>
+<td align="left">D2</td>
+<td align="right">IO</td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center><h2>Testprogramm - WiFi-Punkte</h2></center><hr>
+<p style="text-align: justify;">
+Ziel des Testprogramms ist es, die Hardwarekompatibilität zu testen (Versionen von nRF24L01-Modulen mit einer Übertragungsrate von 250 kbps, da nicht alle diese unterstützen).
+Testen und implementieren Sie eine Verbindung zwischen dem Sender und dem Empfänger mit einem Rückruf des Empfängers, der die an den Sender gesendeten Daten zurückgibt.
+Der Empfänger verfügt über einen integrierten Summer, der piept, wenn bestimmte Daten erkannt werden. Er zeigt an, dass eine Verbindung zum Sender besteht und die Daten fließen.
+Der Tester eignet sich auch zur Verwendung im Airsoft-Spiel zum ersten Testen der Reichweite und der Kommunikation zwischen den beiden Knoten.
+Der Sender sendet immer, der Empfänger nur als Antwort auf den Sender nach dem Empfang der Daten.
+Es ist möglich, unterschiedliche Daten in der Struktur zu übertragen, größere Pakete.
+</p>
+<h3><font color="#2ECC71">Sendertester</font> <font color="red">(Dies ist kein Programm für das Airsoft WiFi-Projekt! - Das Projekt ist bezahlt)</font></h3>					   
+<pre style="background: #2ECC71;">
+//nRF24L01 + PA + LNA - Transmitter tester
+//Author: Martin Chlebovec (martinius96)
+//Web: https://arduino.php5.sk
+//Donate: https://paypal.me/chlebovec
+
+#include &lt;SPI.h>
+#include "RF24.h"
+// nastavení propojovacích pinů
+#define CE 4
+#define CS 3
+// inicializace nRF s piny CE a CS
+RF24 nRF(CE, CS);
+// nastavení adres pro přijímač a vysílač,
+// musí být nastaveny stejně v obou programech!
+byte adresaPrijimac[]= "prijimac00";
+byte adresaVysilac[]= "vysilac00";
+void setup() {
+  // komunikace přes sériovou linku rychlostí 9600 baud
+  Serial.begin(9600);
+  // zapnutí komunikace nRF modulu
+  nRF.begin();
+  nRF.setDataRate( RF24_250KBPS );
+  // nastavení výkonu nRF modulu,
+  // možnosti jsou RF24_PA_MIN, RF24_PA_LOW, RF24_PA_HIGH and RF24_PA_MAX,
+  // pro HIGH a MAX je nutnýv externí 3,3V zdroj
+  nRF.setPALevel(RF24_PA_LOW);
+  // nastavení zapisovacího a čtecího kanálu
+  nRF.openWritingPipe(adresaVysilac);
+  nRF.openReadingPipe(1,adresaPrijimac);
+  // začátek příjmu dat
+  nRF.startListening();
+}
+
+void loop() {
+  // for smyčka pro postupné odeslání
+  // hodnot 0 až 3 pro načtení všech dat
+  // z přijímače
+  for (int i=0; i &lt; 4; i++ ) {
+    // ukončení příjmu dat
+    nRF.stopListening();
+    // vytisknutí aktuální volby po sériové lince
+    Serial.print("Posilam volbu ");
+    Serial.println(i);
+    // uložení startovního času komunikace
+    unsigned long casZacatek = micros();
+    // odeslání aktuální volby, v případě selhání
+    // vytištění chybové hlášky na sériovou linku
+    if (!nRF.write( &i, sizeof(i) )){
+       Serial.println("Chyba při odeslání!");
+    }
+    nRF.startListening();
+    unsigned long casCekaniOdezvy = micros();
+    boolean timeout = false;
+    while ( ! nRF.available() ){
+    if (micros() - casCekaniOdezvy > 200000 ){
+          timeout = true;
+          break;
+      }      
+    }
+    if ( timeout ){
+      Serial.println("Chyba při prijmu, vyprseni casu na odezvu!");
+    }
+    else{
+     
+        unsigned long prijataData;
+        nRF.read( &prijataData, sizeof(prijataData) );
+        unsigned long casKonec = micros();
+        Serial.print("Odeslana volba: ");
+        Serial.print(i);
+        Serial.print(", prijata data: ");
+        Serial.println(prijataData);
+        Serial.print("Delka spojeni: ");
+        Serial.print(casKonec - casZacatek);
+        Serial.println(" mikrosekund.");
+    }
+    delay(200);
+  }
+}
+</pre>   
+<h3><font color="#CB4335">Empfängertester</font> <font color="red">Dies ist kein Programm für das Airsoft WiFi-Projekt! - Das Projekt ist bezahlt)</font></h3>					   
+<pre style="background: #CB4335;">
+//nRF24L01 + PA + LNA - Receiver tester
+//Author: Martin Chlebovec (martinius96)
+//Web: https://arduino.php5.sk
+//Donate: https://paypal.me/chlebovec
+
+#include &lt;SPI.h>
+#include "RF24.h"
+int prijem;
+const int buzzer = 2;
+#define CE 4
+#define CS 3
+RF24 nRF(CE, CS);
+byte adresaPrijimac[] = "prijimac00";
+byte adresaVysilac[] = "vysilac00";
+void setup() {
+  Serial.begin(9600);
+  pinMode(buzzer, OUTPUT);
+  nRF.begin();
+  nRF.setDataRate( RF24_250KBPS );
+  nRF.setPALevel(RF24_PA_LOW);
+  nRF.openWritingPipe(adresaPrijimac);
+  nRF.openReadingPipe(1, adresaVysilac);
+  nRF.startListening();
+}
+
+void loop() {
+  unsigned long odezva;
+  if ( nRF.available()) {
+    // čekání na příjem dat
+    while (nRF.available()) {
+      nRF.read( &prijem, sizeof(prijem) );
+    }
+    Serial.print("Prijata volba: ");
+    Serial.print(prijem);
+    switch ( prijem ) {
+      case 1:
+
+        odezva = millis();
+
+        tone(buzzer, 50, 500);
+
+        break;
+      case 2:
+        odezva = millis() / 1000;
+        break;
+      case 3:
+        odezva = micros();
+        break;
+      default:
+        odezva = 0;
+        break;
+    }
+    nRF.stopListening();
+    nRF.write( &odezva, sizeof(odezva) );
+    nRF.startListening();
+  }
+}
+</pre>       
+
+
+
+</div>
+		</div>
+</div>
+</body>
+</html>
