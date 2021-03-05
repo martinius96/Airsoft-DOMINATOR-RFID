@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- Primary Meta Tags -->
+	<title>DOMINATOR Airsoft | Paintball - configurable stopwatch via encoder</title>
+	<meta name="title" content="DOMINATOR Airsoft | Paintball - configurable stopwatch via encoder">
+	<meta name="description" content="Button DOMINATOR using an encoder for configurable game mode. Stopwatch for Airsoft, Paintball.">
+	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/dominator-encoder.html">
+	<meta property="og:title" content="DOMINATOR Airsoft | Paintball - configurable stopwatch via encoder">
+	<meta property="og:description" content="Button DOMINATOR using an encoder for configurable game mode. Stopwatch for Airsoft, Paintball">
+	<meta property="og:image" content="">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/dominator-encoder.html">
+	<meta property="twitter:title" content="DOMINATOR Airsoft | Paintball - configurable stopwatch via encoder">
+	<meta property="twitter:description" content="Button DOMINATOR using an encoder for configurable game mode. Stopwatch for Airsoft, Paintball">
+	<meta property="twitter:image" content="">
+	
+	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
+	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    		window.smartlook||(function(d) {
+    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+    		})(document);
+    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
+	</script>    
+<script type="text/javascript">
+  function downloadFile(data, fileName, type="text/plain") {
+    // Create an invisible A element
+    const a = document.createElement("a");
+    a.style.display = "none";
+    document.body.appendChild(a);
+
+    // Set the HREF to a Blob representation of the data to be downloaded
+    a.href = window.URL.createObjectURL(
+      new Blob([data], { type })
+    );
+
+    // Use download attribute to set set desired file name
+    a.setAttribute("download", fileName);
+
+    // Trigger the download by simulating click
+    a.click();
+
+    // Cleanup
+    window.URL.revokeObjectURL(a.href);
+    document.body.removeChild(a);
+  }
+</script>
+	<style>
+		table td {
+  			border: 1px solid black; 
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      	<li><a href="index.html">RFID DOMINATOR</a></li>
+<li class="active"><a href="dominator-encoder.html">Configurable DOMINATOR</a></li>
+<li><a href="button-dominator.html">Button DOMINATOR</a></li> 
+<li><a href="capture-points.html">WiFi points</a></li>	    
+ </div>
+</nav>  
+  		<div class="row">
+    			<div class="col-sm-12">
+<div class="alert alert-success">
+	<strong>Repository with project - wiring diagrams, machine codes for testing - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - DOMINATOR - Arduino</a>
+</div>	
+<div class="alert alert-info">
+	<strong>If you are interested in purchasing firmware for the Configurable DOMINATOR, contact:</strong> martinius96@gmail.com
+	
+</div>					
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">Rotary Encoder</span>
+<span class="label label-info">Stopwatch</span>
+<span class="label label-warning">Schematics</span>
+<span class="label label-danger">Button</span>
+<span class="label label-default">Menu</span>
+<span class="label label-primary">Paintball</span>
+<span class="label label-success">DOMINATOR</span>
+<hr><center><h2>onfigurable DOMINATOR - stopwatch for Airsoft | Paintball</h2></center><hr>
+<h4>Entities in the project configurable DOMINATOR:</h4>
+ <div class="row">
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b>Tím RED</b></center></div>
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/bBzcrj0.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b>Tím GRE</b></center></div>
+</div>
+<h4>Project description:</h4>
+<p style="text-align: justify;">
+DOMINATOR is a device - a stopwatch for sports such as Airsoft, Paintball, which allow you to measure the time of occupying a point with a resolution of seconds.
+The stopwatch is equipped with a 16x2 / 20x4 LCD character display. After switching on the device, it is possible to switch between menu items on the display using the rotary encoder - KY-040.
+Through the items, it is possible to start the DOMINATOR game mode, which responds to user buttons (inputs), or it is possible to set the time of team occupancy before the game in the configurable mode.
+This parameter represents the required length of holding the button until the team successfully occupies the point. This configurable parameter is implemented for the number of seconds.
+The second configurable parameter is the automatic end of the game to reach a certain number of hours of the stopwatch with the UNLIMITED option - when the stopwatch counts to infinity, or after the maximum display time on the display - 99 hours, 59 minutes, 59 seconds.
+The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) AtMega328P, which controls the entire system logic.
+There are 2 teams in the game - <b><font color="#C0392B">RED team</font></b> and <b><font color="#27AE60">GRE team</font></b>, which play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.				
+At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b><font color="#C0392B">RED team</font></b>, <b><font color="#27AE60">GRE team</font></b>.
+Button DOMINATOR uses button input for the action of occupying a point by a team member, as well as for input of a referee entity.
+Thus, a total of 2 buttons for 3 system entities, the switching buttons connected in the INPUT_PULLUP mode are used.
+Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal).
+Switch buttons are used, not switch buttons (they would not react to the system logic, all software would always be "pressed").
+The configurable DOMINATOR responds to the length of the press, which is set in the configuration menu via an encoder.
+It is required to hold the button for a given time. The system does not respond to short presses.
+<b> In the extended version, it is also possible to set point neutralization (stopping the time of the active team at the point if a member of the other team holds the button at least 50% of the required time) </b>
+The times are displayed on an LCD character display measuring 16x2 or 20x4, which communicates with the control microcontroller via the I2C bus.
+<b><font color="#C0392B">If a team member of the RED team occupies a point by pressing a button, a buzzer is launched, which announces a change in the point with a short beep.
+Then the RED team's LED at this station will light up and the display will start adding time for that team.</font></b>
+<b><font color="#27AE60">If the point is occupied by the GRE team and the team member presses the appropriate button, the buzzer sounds again, the GRE team LED lights up, the RED time is paused and the time of the GRE team that occupied the point is counted.</font></b>
+<b><font color="#F39C12">The referee must stop both buttons at the same time to stop both times. Times are stopped until the point is reoccupied by some of the teams in the system
+This type of input is thus suitable for starting a break, but it can also end the game for its evaluation.</font></b>
+The new game is implemented by resetting the entire Arduino board via the RST button, or by disconnecting and reconnecting the power supply.
+In the menu it is also possible to configure the activity / inactivity of the buzzer, which can also be included in the game.
+DOMINATOR game mode uses a buzzer to announce the current occupation of a point.
+Eraser does not exist in this type of DOMINATOR.
+A second game can be implemented in the system - countdown, which allows you to set a minute countdown while it must be stopped.
+The player stops the countdown by holding both buttons for a certain time (based on the configuration menu for the length of pressing from DOMINATOR). 
+</p>
+<h4>Project hardware - Configurable DOMINATOR:</h4> 
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>Rotary 360° encoder (KY-040)</b><img src="https://i.imgur.com/sPFfayL.png" alt="Rotačný enkóder - KY-040" title="Rotačný enkóder - KY-040" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>LCD character display 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>I2C converter for LCD display</b><img src="https://i.imgur.com/ORAwjHo.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x pushbutton</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<hr><center><h3>Wiring diagram - Configurable DOMINATOR</h3></center><hr>
+<center><img src="https://i.imgur.com/jfk1d8y.png" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
+<hr><center><h3>Configurable DOMINATOR at runtime - testing</h3></center><hr>
+<center><img src="https://i.imgur.com/R0wwJjD.jpeg" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball" title="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball"></center>        			
+<h3>The wiring of the terminals - Configurable DOMINATOR - fully corresponds to the wiring diagram:</h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+				<thead>		
+<tr>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#27AE60"><strong>I2C converter for LCD display</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">A4</td>
+<td align="right">SDA</td>
+</tr>
+<tr>
+<td align="left">A5</td>
+<td align="right">SCL</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>Rotary encoder - KY-040</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">+</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">CLK</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">DT</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">SW</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>LED diodes</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D6</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D7</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>Pushbuttons (INPUT_PULLUP)</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D8</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="right">IN (GRE)</td>
+</tr>
+<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#AF7AC5"><strong>Buzzer</strong></td>
+</tr>
+<tr>
+<td align="left">D10</td>
+<td align="right">IO</td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center><h2>Test program (Shareware) - Configurable DOMINATOR with machine code</h2></center><hr>
+<div class="alert alert-info">
+<p style="text-align: justify;">
+<b>Shareware version (.hex) available for Configurable DOMINATOR project.</b>The version allows you to measure a maximum of 60 seconds for each team. When this time is reached, the stopwatch stops.
+<b>The goal of the version is to verify compatibility with your hardware.</b> Machine codes based on the I2C address of the converter for the LCD display are available in the Github repository.
+The most used addresses are 0x27 and 0x3F. If you do not know the address of your converter, use the built-in example in Arduino IDE -> I2C Scanner, which will write the address to the UART interface (Serial monitor).
+Machine code can be uploaded to the Arduino Uno microcontroller via the AVRDUDE software - part of the Arduino IDE, or with a GUI interface via the XLoader - easier to use.</p>
+<li>AVRDUDE must be run via the CMD (command line) installed with the Arduino IDE. Located in C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<b><center>Sample command for uploading a program to Arduino Uno / Nano (AtMega328P):</center></b>
+<li>For firmware with I2C display address 0x27 (example COM port 21 and 115200 baud / s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
+<li>For firmware with I2C display address 0x3F (example COM port 21 and 115200 baud / s):<b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
+<li><b>XLoader is a Windows application (executable .exe tool) with a simple graphical interface</b>, which allows the selection of firmware - machine code (.hex), the target platform and can dynamically show the COM port on which the device is located.</li> 
+<li><b>By simply clicking on Upload, the machine code can be uploaded automatically</b> (XLoader uses the AVRDUDE tool similar to the Arduino IDE). The XLoader window informs about the successful upload in the form of a list of the number of bytes uploaded.</li>	
+<b>The firmware can be downloaded from the repository:</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">HERE</a>. The firmware is divided according to the address of the I2C converter (you found out from the I2C scanner output on the UART interface).
+</div>
+				<h4>Available firmware - Configurable push-button DOMINATOR</h4>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>Firmware name (in folder encoder_dominator)</strong></td>
+				<td align="center" style="background-color:#2ECC71"><strong>Designed for</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>Download</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">encoder_0x27.ino.hex</td>
+				<td align="center">LCD character display size 16x2 or 20x4 with <b> I2C converter, which communicates at address 0x27</b></td>
+				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/encoder_dominator/encoder_0x27.ino.hex" class="btn btn-danger" role="button">Download firmware</a></td>
+				<tr>
+				<td align="left">encoder_0x3F.ino.hex</td>
+				<td align="center">LCD character display size 16x2 or 20x4 with <b> I2C converter, which communicates at address 0x3F</b></td>
+				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/encoder_dominator/encoder_0x3F.ino.hex" class="btn btn-danger" role="button">Download firmware</a></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>		
+
+
+
+</div>
+		</div>
+</div>
+</body>
+</html>
