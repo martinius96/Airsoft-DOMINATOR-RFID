@@ -56,7 +56,7 @@
   		<div class="row">
     			<div class="col-sm-12">
 <div class="alert alert-success">
-	<strong>Repozitár s projektom - schémami zapojenia, strojovými kódmi pre testovanie - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - RFID DOMINATOR - Arduino</a>
+	<strong>Repozitár s testovacími programovými implementáciami pre Airsoft body: </strong><a href="https://github.com/martinius96/Capture_Points_Arduino_nRF24L01_Airsoft_Paintball">Airsoft - WiFi body - Arduino</a>
 </div>	
 <div class="alert alert-info">
 	<strong>Pri záujme o kúpu firmvéru pre WiFi body kontaktujte na:</strong> martinius96@gmail.com
@@ -198,44 +198,156 @@ Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnut
 </tr>
 </tbody>
 </table>				</div>
-<hr><center><h2>Testovací program (Shareware) - Konfigurovateľný DOMINATOR so strojovým kódom</h2></center><hr>
-<div class="alert alert-info">
+<hr><center><h2>Testovací program - WiFi body</h2></center><hr>
 <p style="text-align: justify;">
-<b>K projektu Konfigurovateľný DOMINATOR je dostupná Shareware verzia (.hex).</b> Verzia umožňuje merať maximálne 60 sekúnd pre každý tím. Po dosiahnutí tohto času sa stopky zastavia.
-<b>Cieľom verzie je overiť kompatibilitu s vašim hardvérom.</b> V Github repozitári sú dostupné strojové kódy na základe I2C adresy prevodníka pre LCD displej.
-Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
-Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez XLoader - ľahšie na použitie.</p>
-<li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (AtMega328P):</center></b>
-<li>Pre firmvér s I2C adresou displeja 0x27 (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
-<li>Pre firmvér s I2C adresou displeja 0x3F (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
-<li><b>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
-<li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
-<b>Firmvér je možné stiahnuť nájsť v repozitári:</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">TU</a>. Firmvér je rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
-</div>
-				<h4>Dostupný firmvér - Konfigurovateľný tlačidlový DOMINATOR</h4>
-				<div class="table-responsive">          
- 				<table class="table" style="border: 1px solid black;">
-				<thead>
-				<tr>
-				<td align="left" style="background-color:#2ECC71"><strong>Názov firmvéru (v priečinku encoder_dominator)</strong></td>
-				<td align="center" style="background-color:#2ECC71"><strong>Určené pre</strong></td>
-				<td align="right" style="background-color:#2ECC71"><strong>Stiahnuť</strong></td>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-				<td align="left">encoder_0x27.ino.hex</td>
-				<td align="center">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x27</b></td>
-				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/encoder_dominator/encoder_0x27.ino.hex" class="btn btn-danger" role="button">Stiahnuť firmvér</a></td>
-				<tr>
-				<td align="left">encoder_0x3F.ino.hex</td>
-				<td align="center">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x3F</b></td>
-				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/encoder_dominator/encoder_0x3F.ino.hex" class="btn btn-danger" role="button">Stiahnuť firmvér</a></td>
-				</tr>
-				</tbody>
-				</table>
-				</div>		
+Cieľom testovacieho programu je otestovať kompatibilitu hardvéru (verzie nRF24L01 modulov s prenosovou rýchlosťou 250kbps, nakoľko ju nie všetky podporujú).
+Test a realizácia spojenia medzi vysielačom a prijímačom s callbackom prijímača, ktorý vráti vysielaču odoslané dáta.
+Prijímač má integrovaný buzzer, ktorý pípa v prípade, že zaznamená určité dáta - oznamuje tak, že existuje spojenie s vysielačom a dáta tečú.
+Tester je vhodné používať aj v Airsoft hre pre prvotné otestovanie dosahu a komunikácie medzi oboma uzlami.
+Vysielač vysiela vždy, prijímač iba ako odpoveď vysielaču po prijatí dát.
+Možno prenášať rôzne dáta v štruktúre, väčšie pakety. 
+</p>
+<h3><font color="#2ECC71">Tester pre vysielač</font> <font color="red">(Toto nie je program pre Airsoft WiFi projekt! - Projekt je platený)</font></h3>					   
+<pre style="background: #2ECC71;">
+//nRF24L01 + PA + LNA - Transmitter tester
+//Author: Martin Chlebovec (martinius96)
+//Web: https://arduino.php5.sk
+//Donate: https://paypal.me/chlebovec
+
+#include &lt;SPI.h>
+#include "RF24.h"
+// nastavení propojovacích pinů
+#define CE 4
+#define CS 3
+// inicializace nRF s piny CE a CS
+RF24 nRF(CE, CS);
+// nastavení adres pro přijímač a vysílač,
+// musí být nastaveny stejně v obou programech!
+byte adresaPrijimac[]= "prijimac00";
+byte adresaVysilac[]= "vysilac00";
+void setup() {
+  // komunikace přes sériovou linku rychlostí 9600 baud
+  Serial.begin(9600);
+  // zapnutí komunikace nRF modulu
+  nRF.begin();
+  nRF.setDataRate( RF24_250KBPS );
+  // nastavení výkonu nRF modulu,
+  // možnosti jsou RF24_PA_MIN, RF24_PA_LOW, RF24_PA_HIGH and RF24_PA_MAX,
+  // pro HIGH a MAX je nutnýv externí 3,3V zdroj
+  nRF.setPALevel(RF24_PA_LOW);
+  // nastavení zapisovacího a čtecího kanálu
+  nRF.openWritingPipe(adresaVysilac);
+  nRF.openReadingPipe(1,adresaPrijimac);
+  // začátek příjmu dat
+  nRF.startListening();
+}
+
+void loop() {
+  // for smyčka pro postupné odeslání
+  // hodnot 0 až 3 pro načtení všech dat
+  // z přijímače
+  for (int i=0; i &lt; 4; i++ ) {
+    // ukončení příjmu dat
+    nRF.stopListening();
+    // vytisknutí aktuální volby po sériové lince
+    Serial.print("Posilam volbu ");
+    Serial.println(i);
+    // uložení startovního času komunikace
+    unsigned long casZacatek = micros();
+    // odeslání aktuální volby, v případě selhání
+    // vytištění chybové hlášky na sériovou linku
+    if (!nRF.write( &i, sizeof(i) )){
+       Serial.println("Chyba při odeslání!");
+    }
+    nRF.startListening();
+    unsigned long casCekaniOdezvy = micros();
+    boolean timeout = false;
+    while ( ! nRF.available() ){
+    if (micros() - casCekaniOdezvy > 200000 ){
+          timeout = true;
+          break;
+      }      
+    }
+    if ( timeout ){
+      Serial.println("Chyba při prijmu, vyprseni casu na odezvu!");
+    }
+    else{
+     
+        unsigned long prijataData;
+        nRF.read( &prijataData, sizeof(prijataData) );
+        unsigned long casKonec = micros();
+        Serial.print("Odeslana volba: ");
+        Serial.print(i);
+        Serial.print(", prijata data: ");
+        Serial.println(prijataData);
+        Serial.print("Delka spojeni: ");
+        Serial.print(casKonec - casZacatek);
+        Serial.println(" mikrosekund.");
+    }
+    delay(200);
+  }
+}
+</pre>   
+<h3><font color="#CB4335">Prijímač tester</font> <font color="red">(Toto nie je program pre Airsoft WiFi projekt! - Projekt je platený)</font></h3>					   
+<pre style="background: #CB4335;">
+//nRF24L01 + PA + LNA - Receiver tester
+//Author: Martin Chlebovec (martinius96)
+//Web: https://arduino.php5.sk
+//Donate: https://paypal.me/chlebovec
+
+#include &lt;SPI.h>
+#include "RF24.h"
+int prijem;
+const int buzzer = 2;
+#define CE 4
+#define CS 3
+RF24 nRF(CE, CS);
+byte adresaPrijimac[] = "prijimac00";
+byte adresaVysilac[] = "vysilac00";
+void setup() {
+  Serial.begin(9600);
+  pinMode(buzzer, OUTPUT);
+  nRF.begin();
+  nRF.setDataRate( RF24_250KBPS );
+  nRF.setPALevel(RF24_PA_LOW);
+  nRF.openWritingPipe(adresaPrijimac);
+  nRF.openReadingPipe(1, adresaVysilac);
+  nRF.startListening();
+}
+
+void loop() {
+  unsigned long odezva;
+  if ( nRF.available()) {
+    // čekání na příjem dat
+    while (nRF.available()) {
+      nRF.read( &prijem, sizeof(prijem) );
+    }
+    Serial.print("Prijata volba: ");
+    Serial.print(prijem);
+    switch ( prijem ) {
+      case 1:
+
+        odezva = millis();
+
+        tone(buzzer, 50, 500);
+
+        break;
+      case 2:
+        odezva = millis() / 1000;
+        break;
+      case 3:
+        odezva = micros();
+        break;
+      default:
+        odezva = 0;
+        break;
+    }
+    nRF.stopListening();
+    nRF.write( &odezva, sizeof(odezva) );
+    nRF.startListening();
+  }
+}
+</pre>       
 
 
 
