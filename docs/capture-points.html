@@ -63,11 +63,11 @@
 </div>					
 <span class="label label-default">Arduino</span>
 <span class="label label-primary">LCD</span>
-<span class="label label-success">Rotačný enkóder</span>
+<span class="label label-success">WiFi</span>
 <span class="label label-info">Stopky</span>
 <span class="label label-warning">Schéma</span>
 <span class="label label-danger">Tlačidlo</span>
-<span class="label label-default">Menu</span>
+<span class="label label-default">Capture Points</span>
 <span class="label label-primary">Paintball</span>
 <span class="label label-success">DOMINATOR</span>
 <hr><center><h2>WiFi body pre Airsoft | Paintball</h2></center><hr>
@@ -80,37 +80,48 @@
 <p style="text-align: justify;">
 Herný režim Capture Points pre športy Airsoft, Paintball.
 Body medzi sebou komunikujú prostredníctvom WiFi modulov z rady nRF24L01, pričom si medzi sebou vymieňajú informácie o stave bodu (či je obsadený a akým tímom).
-
-
 Jeden bod je permanentný vysielač a vyžaduje komunikáciu od druhého bodu. Druhý bod je prijímačom a odpovedá na prijatie dát vysielaču, tým sa zamedzuje kolíziám pri komunikácii na WiFi frekvencii 2.4 GHz.
 Každý z bodov využíva riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) AtMega328P, ktorý ovláda celú logiku systému.
 V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa obsadiť oba body stlačením príslušného tlačidla.				
 Tlačidlový vstup indikuje akciu obsadenia bodu členom tímu RED, alebo GRE.
 Využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
 Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).	
-Dĺžka stlačenia / počet stlačení sa neovuje a nie je konfigurovateľný. Bod reaguje okamžite na stlačenie.
+Dĺžka stlačenia / počet stlačení sa neovuje a nie je konfigurovateľný. Bod reaguje okamžite na stlačenie tlačidla.
 Hra sa končí v momente, kedy sú obsadené oba body rovnakým tímom.
 Zmenu na bode indikuje hlásič, pri konci hry oba hlásiče pípajú v nekonečnej slučke a zároveň sa preruší WiFi komunikácia medzi modulmi nRF24L01.
-WiFi moduly nRF24l01 komunikujú na 2,4 GHz. nRF24l01 (bez + PA + LNA) komunikujú na cca 70 metrov, nRF24l01 + PA + LNA aj na kilometer, respektíve v lese a inak zarušenom prostredí na úrovni 450-700 metrov. 
+WiFi moduly nRF24l01 komunikujú na 2,4 GHz. nRF24l01 (bez + PA + LNA) komunikujú na cca 70 metrov, nRF24l01 + PA + LNA aj na kilometer, respektíve v lese a inak zarušenom prostredí na úrovni 450-700 metrov pri maximálnom vysielacom výkone. 
 Pri externom napájaní je nutné použiť adaptér YL-s 3.3V prevodníkom a napájať cez externý adaptér.  
 Nepoužívať 5V napájanie z Arduina, hrozí zničenie regulátora, rovnako tak ani 3V3 vývod nie je vhodný pre napájanie modulu, nakoľko má vysoký prúdový odber vo výkonnejších vysielacích režimoch. 
 Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnutím a pripojením napájania (power-on cyklus).
 </p>
+<div class="alert alert-info">
+  <strong>Bezdrôtové moduly komunikujú na 2.4GHz, nie je to technológia WiFi, nevyžadujú router, alebo prístupový bod!</strong> Moduly majú vlastný komunikačný kanál s možnosťou voľby až 140 kanálov.
+</div>
+<h4>Podporované rýchlosti modulov nRF24L01:</h4> 
+<li>250 kbps - <font color="red"><b>u starších nRF24L01 nie je táto možnosť podporovaná!</b></font></li>
+<li>1 Mbps</li>
+<li>2 Mbps</li>
+<h4>Výkonové režimy modulov nRF24L01:</h4> 
+<li>RF24_PA_MIN=-18dBm</li> 
+<li>RF24_PA_LOW=-12dBm</li>
+<li>RF24_PA_MED=-6dBM</li>
+<li>RF24_PA_HIGH=0dBm</li>
+<h4>Bloková schéma - WiFi body - Airsoft:</h4>
+<center><img src="https://i.imgur.com/hglnwgX.jpg" style="display: block; max-width: 100%; height: auto;" alt="Bloková schéma / Block scheme - Capture Points - Airsoft / Paintball, Arduino, nRF24L01" title="Bloková schéma / Block scheme - Capture Points - Airsoft / Paintball, Arduino, nRF24L01"></center>	
 <h4>Hardvér pre projekt - WiFi body:</h4> 
 <li><b>2x Arduino Uno / Nano / AtMega328P</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>2x WiFi modul nRF24L01 / nRF24L01 + PA + LNA</b><img src="https://i.imgur.com/1cykMkD.png" alt="nRF24L01 / nRF24L01 + PA + LNA" title="nRF24L01 / nRF24L01 + PA + LNA0" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>2x Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>2x LED diódy</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>2x spínacie tlačidlo (pushbutton)</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<hr><center><h3>Schéma zapojenia - Konfigurovateľný DOMINATOR</h3></center><hr>
-<center><img src="https://i.imgur.com/jfk1d8y.png" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
-<hr><center><h3>Konfigurovateľný DOMINATOR za behu - testovanie</h3></center><hr>
-<center><img src="https://i.imgur.com/R0wwJjD.jpeg" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball" title="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball"></center>        			
+<hr><center><h3>Schéma zapojenia - WiFi body</h3></center><hr>
+<center><img src="https://i.imgur.com/noWoy6S.png" style="display: block; max-width: 100%; height: auto;" alt="WiFi body - DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="WiFi body - - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
+<hr><center><h3>WiFi body - testovacie zapojenie</h3></center><hr>
+<center><img src="https://i.imgur.com/bx6mj2V.png" style="display: block; max-width: 100%; height: auto;" alt="WiFi body - - Arduino pre Airsoft, Paintball" title="WiFi body - - Arduino pre Airsoft, Paintball"></center>        			
 <h3>Tabuľkové zapojenie vývodov - Konfigurovateľný DOMINATOR - plne odpovedá schéme zapojenia:</h3>
 <div class="table-responsive">   
 <table class="table" style="border: 1px solid black;">
-				<thead>		
-
+<thead>		
 <tr>
 <td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#C0392B">nRF24L01<strong></strong></td>
@@ -120,20 +131,28 @@ Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnut
 <td align="right">GND</td>
 </tr>
 <tr>
-<td align="left">5V</td>
-<td align="right">+</td>
+<td align="left">3V3 / externý zdroj</td>
+<td align="right">Vcc</td>
 </tr>
 <tr>
 <td align="left">D3</td>
-<td align="right">CLK</td>
+<td align="right">CSN</td>
 </tr>
 <tr>
 <td align="left">D4</td>
-<td align="right">DT</td>
+<td align="right">CE</td>
 </tr>
 <tr>
-<td align="left">D5</td>
-<td align="right">SW</td>
+<td align="left">D11</td>
+<td align="right">MOSI</td>
+</tr>
+<tr>
+<td align="left">D12</td>
+<td align="right">MISO</td>
+</tr>
+<tr>
+<td align="left">D13</td>
+<td align="right">SCK</td>
 </tr>
 <tr>
 <td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
@@ -144,11 +163,11 @@ Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnut
 <td align="right">GND</td>
 </tr>
 <tr>
-<td align="left">D6</td>
+<td align="left">D7</td>
 <td align="right">IN (RED)</td>
 </tr>
 <tr>
-<td align="left">D7</td>
+<td align="left">D8</td>
 <td align="right">IN (GREEN)</td>
 </tr>
 <td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
@@ -159,18 +178,18 @@ Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnut
 <td align="right">GND</td>
 </tr>
 <tr>
-<td align="left">D8</td>
+<td align="left">D5</td>
 <td align="right">IN (RED)</td>
 </tr>
 <tr>
-<td align="left">D9</td>
+<td align="left">D6</td>
 <td align="right">IN (GRE)</td>
 </tr>
 <td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#AF7AC5"><strong>Buzzer</strong></td>
 </tr>
 <tr>
-<td align="left">D10</td>
+<td align="left">D2</td>
 <td align="right">IO</td>
 </tr>
 <tr>
