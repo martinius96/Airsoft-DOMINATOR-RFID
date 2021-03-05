@@ -92,7 +92,7 @@ Dĺžka stlačenia / počet stlačení sa neovuje a nie je konfigurovateľný. B
 Hra sa končí v momente, kedy sú obsadené oba body rovnakým tímom.
 Zmenu na bode indikuje hlásič, pri konci hry oba hlásiče pípajú v nekonečnej slučke a zároveň sa preruší WiFi komunikácia medzi modulmi nRF24L01.
 WiFi moduly nRF24l01 komunikujú na 2,4 GHz. nRF24l01 (bez + PA + LNA) komunikujú na cca 70 metrov, nRF24l01 + PA + LNA aj na kilometer, respektíve v lese a inak zarušenom prostredí na úrovni 450-700 metrov. 
-Pri externom napájaní je nutné použiť adaptér s 3.3V prevodníkom a napájať cez externý adaptér. 
+Pri externom napájaní je nutné použiť adaptér YL-s 3.3V prevodníkom a napájať cez externý adaptér.  
 Nepoužívať 5V napájanie z Arduina, hrozí zničenie regulátora, rovnako tak ani 3V3 vývod nie je vhodný pre napájanie modulu, nakoľko má vysoký prúdový odber vo výkonnejších vysielacích režimoch. 
 Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnutím a pripojením napájania (power-on cyklus).
 </p>
@@ -113,7 +113,7 @@ Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnut
 
 <tr>
 <td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
-<td align="right" style="background-color:#C0392B"><strong>Rotačný enkóder - KY-040</strong></td>
+<td align="right" style="background-color:#C0392B">nRF24L01<strong></strong></td>
 </tr>
 <tr>
 <td align="left">GND</td>
