@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+	<!-- Primary Meta Tags -->
+	<title>Airsoft DOMINATOR - Tastenversion</title>
+	<meta name="title" content="Airsoft DOMINATOR - Tastenversion">
+	<meta name="description" content="Stoppuhr für Airsoft mit Druckknopf-Eingang. Messung der Zeit, in der ein Punkt in Airosft geworfen wurde, Paintball-Spielzähler, Stoppuhr.">
+	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/de/button-dominator.html">
+	<meta property="og:title" content="Airsoft DOMINATOR - Tastenversion">
+	<meta property="og:description" content="Stoppuhr für Airsoft mit Druckknopf-Eingang. Messung der Zeit, in der ein Punkt in Airosft geworfen wurde, Paintball-Spielzähler, Stoppuhr.">
+	<meta property="og:image" content="">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/de/button-dominator.html">
+	<meta property="twitter:title" content="Airsoft DOMINATOR - Tastenversion">
+	<meta property="twitter:description" content="Stoppuhr für Airsoft mit Druckknopf-Eingang. Messung der Zeit, in der ein Punkt in Airosft geworfen wurde, Paintball-Spielzähler, Stoppuhr.">
+	<meta property="twitter:image" content="">
+	
+	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
+	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    		window.smartlook||(function(d) {
+    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+    		})(document);
+    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
+	</script>    
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">RFID DOMINATOR</a>
+    </div>
+    <ul class="nav navbar-nav">
+      	<li class="active"><a href="index.html">Information</a></li>
+<li><a href="../button-dominator.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299857.svg" alt="Slovak flag.png, 2,2kB" title="Slovakia" height="32" width="32"></a></a></li>
+<li class="active"><a href="button-dominator.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299786.svg" alt="Germany.png, 2,2kB" title="Germany" height="32" width="32"></a></li>
+<li><a href="../ru/button-dominator.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299700.svg" alt="russia.png, 2,2kB" title="Russia" height="32" width="32"></a></li>	
+<li><a href="../en/button-dominator.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299688.svg" alt="English.png, 2,2kB" title="English" height="32" width="32"></a></li>
+</div>
+</nav>  
+  		<div class="row">
+    			<div class="col-sm-12">
+<div class="alert alert-success">
+	<strong>Repository mit Projekt - Schaltplänen, Maschinencodes zum Testen - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - RFID DOMINATOR - Arduino</a>
+</div>	
+<div class="alert alert-info">
+	<strong>Wenn Sie Software für DOMINATOR kaufen möchten, wenden Sie sich an:</strong> martinius96@gmail.com
+	
+</div>					
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">RFID, NFC</span>
+<span class="label label-info">RC522</span>
+<span class="label label-warning">Stopwatch</span>
+<span class="label label-danger">Schematics</span>
+<span class="label label-default">Airsoft</span>
+<span class="label label-primary">Paintball</span>
+<span class="label label-success">DOMINATOR</span>
+<hr> <center> <h2> Taste DOMINATOR - Stoppuhr für Airsoft | Paintball </h2> </center> <hr>
+<p style="text-align: justify;">
+Taste DOMINATOR ist eine Gerätestoppuhr für Sportarten wie Airsoft, Paintball.
+Die Stoppuhr verwendet einen Arduino Control-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Systemlogik steuert.
+Die Stoppuhr enthält eine 16 x 2 (16 Zeichen x 2 Zeilen) oder 20 x 4 große LCD-Zeichenanzeige, auf der die Zeiten einzelner Teams angezeigt werden.
+Es gibt 2 Teams im Spiel - <b> <font color = "#C0392B"> RED Mannschaft </font> </b> und <b> <font color = "#27AE60"> GRE Mannschaft </font> </b> die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.
+Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> RED Mannschaft </font> </b>, <b> <font color = "#27AE60">GRE Mannschaft </font> </b>.
+Taste DOMINATOR verwendet die Tasteneingabe für die Besetzung eines Punktes durch ein Teammitglied sowie für die Eingabe einer Schiedsrichter- und Radiergummi-Entität.
+Somit werden insgesamt 4 Tasten für 4 Systementitäten verwendet, wobei die im INPUT_PULLUP-Modus verbundenen Schalttasten verwendet werden.
+Durch Drücken der Taste wird das GND-Signal dem digitalen Arduino-Eingangsanschluss (Active-LOW-Schaltsignal) zugeführt.
+In der Basisversion reagiert DOMINATOR sofort auf eine Presse - die Zeitzählung für ein bestimmtes Team ist aktiviert (die Länge der Presse, die Anzahl der Pressen usw. werden nicht überprüft ...).
+Die Zeiten werden auf einer 16x2- oder 20x4-LCD-Zeichenanzeige angezeigt, die über den I2C-Bus mit dem Steuermikrocontroller kommuniziert.
+<b> <font color = "#C0392B"> Wenn ein Teammitglied des RED Mannschaft per Knopfdruck einen Punkt belegt, wird ein Summer ausgelöst, der mit einem kurzen Piepton eine Änderung des Punktes ankündigt.
+Dann leuchtet die LED des RED Mannschafts an dieser Station auf und die Anzeige fügt Zeit für dieses Team hinzu. </font> </b>
+<b> <font color = "#27AE60"> Wenn der Punkt vom GRE Mannschaft belegt ist und das Teammitglied die entsprechende Taste drückt, ertönt erneut der Summer, die GRE-Team-LED leuchtet auf, die ROTE Teamzeit wird angehalten und die Die GRE-Teamzeit wird berechnet, welchen Punkt er belegt hat. </font> </b>
+<b> <font color = "#F39C12"> Wenn der Organisator (Schiedsrichter) seinen Knopf drückt, werden beide Male angehalten, bis ein Mitglied eines der Teams Benutzereingaben macht.
+Diese Art der Eingabe eignet sich daher zum Starten einer Pause, kann aber auch das Spiel zur Auswertung beenden. </font> </b>
+<b> <font color = "#3498DB"> Schaltfläche DOMINATOR verfügt über eine vierte Schaltfläche für die Radiergummi-Entität, die beide Male angehalten und auf die Anfangswerte zurückgesetzt wird, wie nach dem Starten der Stoppuhr Taste DOMINATOR.
+Zum Neustarten des Spiels wird ein neues Spiel initialisiert. </font> </b>
+Das Projekt eignet sich für Airsoft-Veranstaltungen, Sportanlagen oder Airsoft-Teams, die die Ausrüstung bauen können.
+Der Vorteil des Taste DOMINATOR-Systems besteht darin, dass es geklont werden und X-Punkte mit derselben Konfiguration über Maschinencode erstellen kann, der in eine unbegrenzte Anzahl von Arduino-Boards und -Chips geladen werden kann und einen identischen Anwendungsbetrieb garantiert.
+Die Spieler können somit mehr Punkte im Spiel erzielen, während am Ende des Spiels die Zeit addiert wird, solange welcher Punkt von welchem Team belegt wurde.
+</p> 
+<h4> Hardware für das Projekt - Taste DOMINATOR: </h4>
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>2x LED Dioden</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+<li><b>4x Schaltertaste</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
+      <div class="alert alert-success">
+      <strong> Maximaler Zeitbereich, der im System aufgelistet werden kann: </strong> 99 Stunden, 59 Minuten und 59 Sekunden
+      </div>
+      <div class="alert alert-info">
+      <strong> Verbrauch: ca. 20mAh mit 5V Stromversorgung. </strong> Praktische Stromversorgung über Power Bank, Ladegerät von einem Telefon mit USB-Ausgang.
+      </div>
+<hr><center><h3>Taste DOMINATOR im laufenden Betrieb im Airsoft-Spiel</h3></center><hr>
+<center><img src="https://i.imgur.com/yuHmpZa.jpg" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Airsoft DOMINATOR s tlačidlovým vstupom - stopky" title="Airsoft DOMINATOR s tlačidlovým vstupom - stopky"></center>        			
+<hr><center><h3>Taste DOMINATOR - Demonstration der Systemfunktionalität und logik</h3></center><hr>
+<center><iframe width="50%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<h3>Der Tabellenanschluss der Klemmen - Taste DOMINATOR - entspricht vollständig dem Schaltplan:</h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+				<thead>		
+<tr>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#27AE60"><strong>I2C-Wandler für LCD-Anzeige</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">A4</td>
+<td align="right">SDA</td>
+</tr>
+<tr>
+<td align="left">A5</td>
+<td align="right">SCL</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>Buzzer</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">IN</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>LED Dioden</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>Tasten (INPUT_PULLUP)</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D6</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<tr>
+<td align="left">D7</td>
+<td align="right">IN (ERASER)</td>
+</tr>
+<tr>
+<td align="left">D8</td>
+<td align="right">IN (Rozhodca)</td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="right">IN (RED)</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center><h2>Schaltplan - Taste DOMINATOR:</h2></center><hr>
+<img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
+<hr><center><h2>Testprogramm (Shareware) - Taste DOMINATOR mit Maschinencode</h2></center><hr>
+<div class="alert alert-info">
+<p style="text-align: justify;">
+<b> Für das Taste DOMINATOR-Projekt ist eine Shareware-Version (.hex) verfügbar. </b> Mit dieser Version können Sie für jedes Team maximal 15 Sekunden Spielzeit messen.
+<b> Ziel der Version ist es, die Kompatibilität mit Ihrer Hardware zu überprüfen. </b> Maschinencodes, die auf der I2C-Konverteradresse für das LCD-Display basieren, sind im Github-Repository verfügbar.
+Die am häufigsten verwendeten Adressen sind 0x27 und 0x3F. Wenn Sie die Adresse Ihres Konverters nicht kennen, verwenden Sie das in Arduino IDE -> I2C Scanner integrierte Beispiel, das die Adresse in die UART-Schnittstelle (serieller Monitor) schreibt.
+Der Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder mit einer GUI-Schnittstelle über XLoader - einfacher in den Arduino Uno-Mikrocontroller hochgeladen werden. </p>
+<li> AVRDUDE muss über das CMD (Befehlszeile) ausgeführt werden, das mit der Arduino IDE installiert ist. Befindet sich in C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
+<b> <center> Beispielbefehl zum Hochladen eines Programms auf Arduino Uno / Nano (AtMega328P): </center> </b>
+<li> <b> avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash: w: scale.ino.hex: i </b> </li>
+<li> <b> XLoader ist eine Windows-Anwendung (ausführbares EXE-Tool) mit einer einfachen grafischen Oberfläche </b>, mit der Sie die Firmware auswählen können - Maschinencode (.hex), die Zielplattform und die dynamisch anzeigen können COM-Anschluss, an dem sich das Gerät befindet. </li>
+<li> <b> Durch einfaches Klicken auf Hochladen kann der Maschinencode automatisch hochgeladen werden </b> (XLoader verwendet das AVRDUDE-Tool ähnlich der Arduino IDE). Das XLoader-Fenster informiert über den erfolgreichen Upload in Form einer Liste der hochgeladenen Bytes. </li>
+<b> Firmware kann aus dem Projekt-Repository heruntergeladen werden: </b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">HIER</a>. Die Firmware befindet sich im Ordner / firmware /, unterteilt nach der Adresse des I2C-Konverters (Sie haben dies anhand der Ausgabe des I2C-Scanners auf der UART-Schnittstelle herausgefunden).
+</div>
+				<h4>Firmware verfügbar - Taste DOMINATOR</h4>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>Firmware-Name</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>Designed für</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">0x27.ino.hex</td>
+				<td align="right">LCD-Zeichenanzeige Größe 16x2 oder 20x4 mit <b> I2C-Wandler, der unter der Adresse 0x27 kommuniziert</b></td>
+				</tr>
+				<tr>
+				<td align="left">0x3F.ino.hex</td>
+				<td align="right">LCD-Zeichenanzeigegröße 16x2 oder 20x4 mit <b> I2C-Wandler, der unter der Adresse 0x3F kommuniziert</b></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>				
+<div class="alert alert-danger">
+      <strong>Für die neuesten chinesischen Arduino Nano-Klone mit einem "alten Bootloader" muss der Maschinencode mit 57600 Baud / s hochgeladen werden! Für andere Versionen mit dem neueren Bootloader 115200 Baud / s (diese Geschwindigkeit wird auch im Befehl AVRDUDE zum Laden des Maschinencodes verwendet).</strong>
+ </div>				
+<hr><center><h2>Hochladen der Shareware-Version des Taste DOMINATOR-Projekts auf Arduino über XLoader</h2></center><hr>				
+<center>
+	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
+</center>	
+<hr><center><h2>Allgemeines Video-Tutorial zum Hochladen von Firmware auf Arduino über XLoader</h2></center><hr>
+<center><iframe width="50%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>					
+			</div>
+		</div>
+</div>
+</body>
+</html>
