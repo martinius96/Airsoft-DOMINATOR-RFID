@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="sk-SK">
+<head>
+	<!-- Primary Meta Tags -->
+	<title>DOMINATOR Airsoft | Paintball - konfigurovateľné stopky cez enkóder</title>
+	<meta name="title" content="DOMINATOR Airsoft | Paintball - konfigurovateľné stopky cez enkóder">
+	<meta name="description" content="Tlačidlový DOMINATOR využívajúci enkóder pre konfigurovateľný herný režim. Stopky pre Airsoft, Paintball.">
+	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/dominator-encoder.html">
+	<meta property="og:title" content="DOMINATOR Airsoft | Paintball - konfigurovateľné stopky cez enkóder">
+	<meta property="og:description" content="Tlačidlový DOMINATOR využívajúci enkóder pre konfigurovateľný herný režim. Stopky pre Airsoft, Paintball.">
+	<meta property="og:image" content="">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/dominator-encoder.html">
+	<meta property="twitter:title" content="DOMINATOR Airsoft | Paintball - konfigurovateľné stopky cez enkóder">
+	<meta property="twitter:description" content="Tlačidlový DOMINATOR využívajúci enkóder pre konfigurovateľný herný režim. Stopky pre Airsoft, Paintball.">
+	<meta property="twitter:image" content="">
+	
+	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
+	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    		window.smartlook||(function(d) {
+    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+    		})(document);
+    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
+	</script>    
+<script type="text/javascript">
+  function downloadFile(data, fileName, type="text/plain") {
+    // Create an invisible A element
+    const a = document.createElement("a");
+    a.style.display = "none";
+    document.body.appendChild(a);
+
+    // Set the HREF to a Blob representation of the data to be downloaded
+    a.href = window.URL.createObjectURL(
+      new Blob([data], { type })
+    );
+
+    // Use download attribute to set set desired file name
+    a.setAttribute("download", fileName);
+
+    // Trigger the download by simulating click
+    a.click();
+
+    // Cleanup
+    window.URL.revokeObjectURL(a.href);
+    document.body.removeChild(a);
+  }
+</script>
+	<style>
+		table td {
+  			border: 1px solid black; 
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+   	<li ><a href="index.html">RFID ДОМИНАТОР</a></li>
+<li class="active"><a href="dominator-encoder.html">Настраиваемый ДОМИНАТОР</a></li>
+<li><a href="button-dominator.html">Кнопка DOMINATOR</a></li> 
+<li class=""><a href="capture-points.html">Точки WiFi</a></li>
+<a href="../dominator-encoder.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299857.svg" alt="Slovak flag.png, 2,2kB" title="Slovakia" height="32" width="32"></a>
+<a href="../de/dominator-encoder.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299786.svg" alt="Germany.png, 2,2kB" title="Germany" height="32" width="32"></a>
+<a href="dominator-encoder.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299700.svg" alt="russia.png, 2,2kB" title="Russia" height="32" width="32"></a>	
+<a href="../en/dominator-encoder.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299688.svg" alt="English.png, 2,2kB" title="English" height="32" width="32"></a>   
+ </div>
+</nav>  
+  		<div class="row">
+    			<div class="col-sm-12">
+<div class="alert alert-success">
+	<strong>Репозиторий проекта - схемы подключения, машинные коды для тестирования - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - RFID DOMINATOR - Arduino</a>
+</div>	
+<div class="alert alert-info">
+	<strong>Если вы заинтересованы в покупке прошивки для конфигурируемого ДОМИНАТОРА, пожалуйста, обращайтесь (на английском языке) по адресу:</strong> martinius96@gmail.com
+	
+</div>					
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">Поворотный энкодер</span>
+<span class="label label-info">Секундомер</span>
+<span class="label label-warning">Схема</span>
+<span class="label label-danger">Кнопка</span>
+<span class="label label-default">Menu</span>
+<span class="label label-primary">Paintball</span>
+<span class="label label-success">DOMINATOR</span>
+<hr><center><h2>Настраиваемый ДОМИНАТОР - секундомер для страйкбола | Paintball</h2></center><hr>
+<h4>Сущности в проекте настраиваемый DOMINATOR:</h4>
+ <div class="row">
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b>Tím RED</b></center></div>
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/bBzcrj0.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b>Tím GRE</b></center></div>
+</div>
+<h4>Описание Проекта:</h4>
+<p style="text-align: justify;">
+DOMINATOR - это устройство - секундомер для таких видов спорта, как страйкбол, пейнтбол, которые позволяют измерять время нахождения точки с разрешением до секунд.
+Секундомер оснащен символьным ЖК-дисплеем 16x2 / 20x4. После включения устройства можно переключаться между пунктами меню на дисплее с помощью поворотного энкодера - KY-040.
+С помощью предметов можно запустить игровой режим DOMINATOR, который реагирует на пользовательские кнопки (вводы), или можно установить время пребывания команды перед игрой в настраиваемом режиме.
+Этот параметр представляет собой требуемую продолжительность удерживания кнопки до тех пор, пока команда не займет точку. Этот настраиваемый параметр реализуется для количества секунд.
+Второй настраиваемый параметр - это автоматическое завершение игры для достижения определенного количества часов секундомера с опцией UNLIMITED - когда секундомер ведет счет до бесконечности или после максимального времени отображения на дисплее - 99 часов, 59 минут, 59 секунд.
+В секундомере используется управляющий микроконтроллер Arduino (Arduino Uno / Nano) или отдельный чип (Atmel) AtMega328P, который контролирует всю системную логику.
+В игре 2 команды - <b><font color="#C0392B">RED команда</font></b> a <b><font color="#27AE60">GRE команда</font></b>, которые играют друг против друга и занимают воображаемую точку, образованную этим устройством - ДОМИНАТОР.
+В начале игры на дисплее отображается время 00 часов, 00 минут, 00 секунд для <b><font color="#C0392B">RED команда</font></b>, <b><font color="#27AE60">GRE команда</font></b>.
+Кнопка ДОМИНАТОР использует ввод кнопки для действия по занятию точки членом команды, а также для ввода объекта судьи.
+Таким образом, всего используются 2 кнопки для 3 сущностей системы, кнопки переключения, подключенные в режиме INPUT_PULLUP.
+Нажатие кнопки подает сигнал GND на цифровой входной терминал Arduino (сигнал переключения Active-LOW).
+Используются кнопки переключения, а не кнопки переключения (они не будут реагировать на системную логику, все программное обеспечение всегда будет «нажато»).
+Настраиваемый DOMINATOR реагирует на длину нажатия, которая устанавливается в меню конфигурации с помощью кодировщика.
+Требуется удерживать кнопку заданное время. Система не реагирует на короткие нажатия.
+<b> В расширенной версии также можно установить точку нейтрализации (остановка времени активной команды в точке, если член другой команды удерживает кнопку хотя бы 50% необходимого времени) </b>
+Время отображается на символьном ЖК-дисплее размером 16x2 или 20x4, который связывается с управляющим микроконтроллером через шину I2C.
+<b><font color="#C0392B">Если член команды КРАСНОЙ команды занимает точку, нажав кнопку, срабатывает зуммер, который сообщает об изменении точки коротким звуковым сигналом.
+Затем загорится светодиод КРАСНОЙ команды на этой станции, и на дисплее начнется добавление времени для этой команды.</font></b>
+<b><font color="#27AE60">Если точка занята командой GRE и член команды нажимает соответствующую кнопку, снова раздается звуковой сигнал, загорается светодиодный индикатор команды GRE, время КРАСНОГО цвета приостанавливается и вычисляется время команды GRE, занявшей точку.</font></b>
+<b><font color="#F39C12">Судья должен остановить обе кнопки одновременно, чтобы остановить оба раза. Время останавливается до тех пор, пока точка не будет повторно занята некоторыми командами в системе.
+Таким образом, этот тип ввода подходит для начала перерыва, но он также может завершить игру для ее оценки.</font></b>
+Новая игра реализована путем сброса всей платы Arduino с помощью кнопки RST или путем отключения и повторного подключения источника питания.
+В меню также есть возможность настроить активность / неактивность зуммера, который также можно включить в игру.
+В игровом режиме DOMINATOR используется зуммер, чтобы объявить о текущем занятии точки.
+Ластик не существует в DOMINATOR этого типа.
+В системе может быть реализована вторая игра - обратный отсчет, которая позволяет установить минутный обратный отсчет, пока он должен быть остановлен.
+Игрок останавливает обратный отсчет, удерживая обе кнопки в течение определенного времени (в зависимости от меню настройки продолжительности нажатия на DOMINATOR).
+</p>
+<h4>Аппаратное обеспечение проекта - настраиваемый DOMINATOR:</h4> 
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>Поворотный энкодер на 360° (KY-040)</b><img src="https://i.imgur.com/sPFfayL.png" alt="Rotačný enkóder - KY-040" title="Rotačný enkóder - KY-040" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>Cимвольный ЖК-дисплей 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>Конвертер I2C для ЖК-дисплея</b><img src="https://i.imgur.com/ORAwjHo.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>Зуммер</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x LED диоды</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x кнопка переключения (pushbutton)</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<hr><center><h3>Схема подключения - настраиваемый ДОМИНАТОР</h3></center><hr>
+<center><img src="https://i.imgur.com/jfk1d8y.png" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
+<hr><center><h3>Настраиваемый DOMINATOR во время выполнения - тестирование</h3></center><hr>
+<center><img src="https://i.imgur.com/R0wwJjD.jpeg" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball" title="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball"></center>        			
+<h3>Подключение клемм - Конфигурируемый ДОМИНАТОР - полностью соответствует схеме подключения:</h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+				<thead>		
+<tr>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#27AE60"><strong>Конвертер I2C для ЖК-дисплея</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">A4</td>
+<td align="right">SDA</td>
+</tr>
+<tr>
+<td align="left">A5</td>
+<td align="right">SCL</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>Поворотный энкодер - KY-040</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">+</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">CLK</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">DT</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">SW</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>LED диоды</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D6</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D7</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>Кнопки (INPUT_PULLUP)</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D8</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="right">IN (GRE)</td>
+</tr>
+<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#AF7AC5"><strong>Зуммер</strong></td>
+</tr>
+<tr>
+<td align="left">D10</td>
+<td align="right">IO</td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center><h2>Тестовая программа (условно-бесплатная) - Настраиваемый ДОМИНАТОР с машинным кодом</h2></center><hr>
+<div class="alert alert-info">
+<p style="text-align: justify;">
+<b>Для проекта Configurable DOMINATOR доступна условно-бесплатная версия (.hex).</b> Версия позволяет отмерить максимум 60 секунд для каждой команды. По достижении этого времени секундомер останавливается.
+<b>Цель версии - проверить совместимость с вашим оборудованием..</b>Машинные коды, основанные на I2C-адресе преобразователя для ЖК-дисплея, доступны в репозитории Github.
+Наиболее часто используемые адреса - 0x27 и 0x3F. Если вы не знаете адрес вашего преобразователя, используйте встроенный пример в Arduino IDE -> I2C Scanner, который запишет адрес в интерфейс UART (Serial monitor).
+Машинный код может быть загружен в микроконтроллер Arduino Uno через программное обеспечение AVRDUDE - часть Arduino IDE или с графическим интерфейсом через XLoader - проще в использовании.</p>
+<li>AVRDUDE должен запускаться через CMD (командную строку), установленную с Arduino IDE. Находится в C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<b><center>Пример команды для загрузки программы в Arduino Uno / Nano (AtMega328P):</center></b>
+<li>Для прошивки с отображаемым адресом I2C 0x27 (например, COM-порт 21 и 115200 бод / с): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
+<li>Для прошивки с отображаемым адресом I2C 0x3F (например, COM-порт 21 и 115200 бод / с): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
+<li><b>XLoader - это приложение Windows (исполняемый инструмент .exe) с простым графическим интерфейсом </b>, которое позволяет выбирать прошивку - машинный код (.hex), целевую платформу и может динамически отображать COM-порт, на котором установлено устройство. расположен.</li> 
+<li><b>Простым щелчком на «Загрузить» машинный код может быть загружен автоматически </b> (XLoader использует инструмент AVRDUDE, аналогичный Arduino IDE). Окно XLoader информирует об успешной загрузке в виде списка количества загруженных байтов.</li>	
+<b>Прошивку можно скачать из репозитория:</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">Здесь</a>. Прошивка разделена по адресу преобразователя I2C (вы узнали по выходу сканера I2C на интерфейс UART).
+</div>
+				<h4>Доступная прошивка - Настраиваемая кнопка DOMINATOR</h4>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>Название прошивки (в папке encoder_dominator)</strong></td>
+				<td align="center" style="background-color:#2ECC71"><strong>Предназначен для</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>Скачать</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">encoder_0x27.ino.hex</td>
+				<td align="center">Символьный ЖК-дисплей размером 16x2 или 20x4 с преобразователем <b> I2C, который обменивается данными по адресу 0x27</b></td>
+				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/encoder_dominator/encoder_0x27.ino.hex" class="btn btn-danger" role="button">Stiahnuť firmvér</a></td>
+				<tr>
+				<td align="left">encoder_0x3F.ino.hex</td>
+				<td align="center">Символьный ЖК-дисплей размером 16x2 или 20x4 с преобразователем <b> I2C, который обменивается данными по адресу 0x3F</b></td>
+				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/encoder_dominator/encoder_0x3F.ino.hex" class="btn btn-danger" role="button">Stiahnuť firmvér</a></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>		
+</div>
+		</div>
+</div>
+</body>
+</html>
