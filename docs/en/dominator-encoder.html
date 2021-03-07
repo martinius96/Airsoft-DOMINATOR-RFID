@@ -251,7 +251,7 @@ Machine code can be uploaded to the Arduino Uno microcontroller via the AVRDUDE 
 <li>For firmware with I2C display address 0x3F (example COM port 21 and 115200 baud / s):<b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
 <li><b>XLoader is a Windows application (executable .exe tool) with a simple graphical interface</b>, which allows the selection of firmware - machine code (.hex), the target platform and can dynamically show the COM port on which the device is located.</li> 
 <li><b>By simply clicking on Upload, the machine code can be uploaded automatically</b> (XLoader uses the AVRDUDE tool similar to the Arduino IDE). The XLoader window informs about the successful upload in the form of a list of the number of bytes uploaded.</li>	
-<b>The firmware can be downloaded from the repository:</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">HERE</a>. The firmware is divided according to the address of the I2C converter (you found out from the I2C scanner output on the UART interface).
+<b><font color="red">The firmware can be downloaded from the repository:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">HERE</a>. The firmware is in the /firmware/encoder_dominator folder divided  according to the address of the I2C converter (you found out from the I2C scanner output on the UART interface).
 </div>
 				<h4>Available firmware - Configurable push-button DOMINATOR</h4>
 				<div class="table-responsive">          
