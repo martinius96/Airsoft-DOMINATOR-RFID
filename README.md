@@ -2,25 +2,8 @@
 * Pri záujme o plnú verziu projektu kontaktujte na: martinius96@gmail.com
 
 **Popis:**
-* DOMINATOR je zariadenie - stopky, ktoré využívajú RFID vstup
-* Využíva riadiaci mikrokontróler (Arduino Uno / Nano).
-* Na znakovom LCD displeji sa vyobrazujú časy jednotlivých tímov (RED a GRE tím.)
-* Každý z členov tímu je vybavený kartou, alebo kľúčenkou, ktorá komunikuje na 13.56MHz. Kľúčenky môžu byť farebné odlíšené (modré, červené pre ich ľahšie pridelenie hráčom...)
-* Ak tím obsadí bod, hociktorý hráč tohto tímu priloží svoju kartu k čítačke. 
-* Rozsvieti sa dióda daného tímu (červená / zelená) na tomto stanovišti a začne sa pripočítavať čas danému tímu. 
-* Čas sa počíta až do momentu, kedy bod obsadí druhý tím 
-* Ak priloží člen druhého tímu svoju kartu, rozsvieti sa dióda toho daného tímu, čas druhého tímu sa pauzuje a počíta sa čas toho tímu, ktorý bod obsadil. 
-* Ak kartu / kľúčenku priloží organizátor (rozhodca), oba časy sa zapauzujú až do momentu, kým nepriloží kartu niektorý z tímov (pauza v hre, koniec hry, vyhodnotenie). 
-* Poslednou možnou kartou v systéme je použitie tzv. eraser karty, ktorá oba časy zapauzuje a vynuluje (reštart hry, nová hra).
-* Maximálny časový rozsah systému je: 99 hodín 99 minút 59 sekúnd, vhodné teda aj pre akcie a športové areály zaoberajúce sa Airsoftom, Paintballom. 
-* Čítačka NXP RC522 pracuje na frekvencii 13.56MHz, RFID tagy registruje na cca 3 centimetre (nutný skoro až fyzický dotyk s čítačkou), kompatibilný formát tagov ISO/IEC 14443 A.
-* **Pre projekt je kompatibilná čítačka RC522 s originálnym NXP čipom!** Counterfeit (0x12) čip nie je v systéme podporovaný a je knižnicou dátovo ukončená komunikácia s čítačkou.
-* Očakávaná verzia RFID čítačky vypísaná na UART monitor: 0x92 (version 2) 
-* Program UID_GET.ino v priečinku examples je možné použiť pre načítanie kódov z RFID kariet, ktoré chcete použiť vo finálnej aplikácii DOMINATOR-a.
-* Vhodné je adresy spísať do Excel tabuľky a farebne odlíšiť, aby ste mali adresy k dispozícii aj do budúcna
-* K projektu existuje DPS návrh GERBER (s vŕtaním a strojovou výrobou DPS), alebo DPS pre výrobu fotocestou
-* Obe DPS sú obojstranné a s prekovmi. Rozmer 100x105mm.
-* Sú k projektu dodávané GRÁTIS
+Popis projektu:
+DOMINATOR je zariadenie - stopky pre športy typu Airsoft, Paintball. Stopky využívajú riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) AtMega328P, ktorý ovláda celú logiku systému. Súčasťou stopiek je LCD znakový displej rozmeru 16x2 (16 znakov x 2 riadky), respektíve 20x4, na ktorom sa vyobrazujú časy jednotlivých tímov. V hre sú 2 tímy - RED tím a GRE tím, ktoré proti sebe hrajú a zaberajú pomyselný bod, ktorý je tvorený týmto zariadením - DOMINATOR. Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre RED tím, GRE tím. Každý z členov tímu je vybavený kartou, náramkom, prípadne kľúčenkou, ktorá komunikuje na frekvencii 13.56MHz s RFID čítačkou, ak je v jej dosahu. Kľúčenky a náramky môžu byť farebné odlíšené (zelené, červené podľa tímu a funkcie...), čo umožňuje ich efektívnejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie. Ak tím RED obsadí bod, hráč tímu priloží svoju kartu k čítačke, čím bod obsadí. Táto akcia spustí buzzer, ktorý ohlási zmenu na bode. Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím. V prípade, že bod obsadí tím GRE a kartu priloží k čítačke člen tohto tímu, opäť sa ozve buzzer, rozsvieti sa dióda tohto tímu, čas tímu RED sa pauzuje a počíta sa čas tímu GRE, ktorý bod obsadil. Ak kartu / kľúčenku priloží organizátor (rozhodca), oba časy sa zapauzujú až do momentu, kým nepriloží kartu niektorý z tímov. Tento typ karty je tak vhodný pre spustenie prestávky, ale môže byť využitá aj pri ukončení hry, kedy je nutné čas zastaviť pre vyhodnotenie hry. V systéme DOMINATOR ešte existuje štvrtý typ karty - eraser, ktorá oba časy zapauzuje a vynuluje na počiatočné hodnoty ako po spustení stopiek DOMINATOR. Slúži pre reštart hry, inicializáciu novej hry. Projekt je vhodný pre Airsoft akcie, športové areály, čí Airsoft tímy, ktoré si môžu dané zariadenie zostrojiť. Výhodou DOMINATOR systému je, že systém je možné klonovať a vytvoriť si X bodov s totožnou konfiguráciou prostredníctvom strojového kódu o ktoré sa v hre môže nezávisle na sebe bojovať, pričom dané RFID karty budú plne fungovať na všetky zariadenia DOMINATOR. Systém je otestovaný, funkčný, ľahko udržiavateľný. Čítačka NXP RC522 pracuje na frekvencii 13.56MHz, RFID tagy registruje na cca 3 centimetre (nutný skoro až fyzický dotyk s čítačkou), kompatibilný formát tagov ISO/IEC 14443-A. Pod danú normu tagov spadajú aj ISIC, autobusové karty, ktoré fungujú ako NFC karty a dokážu oznámiť svoju fyzickú adresu - UID čítačke v dosahu. K projektu existuje DPS návrh GERBER (s vŕtaním a strojovou výrobou DPS), alebo DPS pre výrobu fotocestou. Obe DPS sú obojstranné a s prekovmi. Rozmer 100x105mm. Sú k projektu dodávané GRÁTIS
 
 ![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/LvXPxVq.png)
 
