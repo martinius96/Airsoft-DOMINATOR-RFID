@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+	<!-- Primary Meta Tags -->
+	<title>DOMINATOR Airsoft | Paintball - Knapversion</title>
+	<meta name="title" content="DOMINATOR Airsoft | Paintball - Knapversion">
+	<meta name="description" content="Stopur til Airsoft med trykknapindgang. Måling af tidspunktet for at kaste et punkt i Airosft, et Paintball-spil for 2 hold. Fangstpunkt.">
+	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/da/button-dominator.html">
+	<meta property="og:title" content="DOMINATOR Airsoft | Paintball - Knapversion">
+	<meta property="og:description" content="Stopur til Airsoft med trykknapindgang. Måling af tidspunktet for at kaste et punkt i Airosft, et Paintball-spil for 2 hold. Fangstpunkt.">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/da/button-dominator.html">
+	<meta property="twitter:title" content="DOMINATOR Airsoft | Paintball - Knapversion">
+	<meta property="twitter:description" content="Stopur til Airsoft med trykknapindgang. Måling af tidspunktet for at kaste et punkt i Airosft, et Paintball-spil for 2 hold. Fangstpunkt.">
+	
+	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
+	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    		window.smartlook||(function(d) {
+    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+    		})(document);
+    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
+	</script>    
+	<style>
+		table td {
+  			border: 1px solid black; 
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      	<li><a href="index.html">RFID DOMINATOR</a></li>
+<li class=""><a href="dominator-encoder.html">Konfigurerbar DOMINATOR</a></li>
+<li class="active"><a href="button-dominator.html">Knap DOMINATOR</a></li> 
+<li><a href="capture-points.html">WiFi-punkter</a></li>	
+<a href="../button-dominator.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299857.svg" alt="Slovak flag.png, 2,2kB" title="Slovakia" height="32" width="32"></a>
+<a href="../de/button-dominator.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299786.svg" alt="Germany.png, 2,2kB" title="Germany" height="32" width="32"></a>
+<a href="../ru/button-dominator.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299700.svg" alt="russia.png, 2,2kB" title="Russia" height="32" width="32"></a>	
+<a href="../en/button-dominator.html"><img src="https://www.flaticon.com/svg/static/icons/svg/299/299688.svg" alt="English.png, 2,2kB" title="English" height="32" width="32"></a>	
+<a href="../it/button-dominator.html"><img src="https://www.flaticon.com/premium-icon/icons/svg/3015/3015784.svg" alt="Italy.png, 2,2kB" title="Italy" height="32" width="32"></a>    
+ </div>
+</nav>  
+  		<div class="row">
+    			<div class="col-sm-12">
+<div class="alert alert-success">
+	<strong>Project repository - ledningsdiagrammer, maskinkoder (firmware / Button-DOMINATOR) til test - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - DOMINATOR - Arduino</a>
+</div>	
+<div class="alert alert-info">
+	<strong>Hvis du er interesseret i at købe den fulde version af firmwaren til Button DOMINATOR, bedes du kontakte os på engelsk:</strong> martinius96@gmail.com
+</div>					
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">Knap</span>
+<span class="label label-info">Stopur</span>
+<span class="label label-warning">Ordning</span>
+<span class="label label-danger">I2C</span>
+<span class="label label-default">Paintball</span>
+<span class="label label-primary">DOMINATOR</span>
+<hr><center><h2>DOMINATOR med udskrivningsindgang - stopur til Airsoft | Paintball</h2></center><hr>
+<h4>Enheder i RFID DOMINATOR-projektet:</h4>
+ <div class="row">
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b>Det RØDE hold</b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/bBzcrj0.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b>Det GRE hold</b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/P9R7tzZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="Rozhodca - tlačidlo pre používateľský vstup" title="Rozhodca - tlačidlo pre používateľský vstup"><br><b>Dommer</b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/vo94xdC.png" width="128px" height="128px" style="border-radius: 50%;" alt="Eraser - tlačidlo pre používateľský vstup" title="Eraser - tlačidlo pre používateľský vstup"><br><b>Viskelæder</b></center></div>
+</div>
+<h4>Projektbeskrivelse Knap DOMINATOR</h4>
+<p style="text-align: justify;">
+DOMINATOR-print er en enhed - stopur til sportsgrene som Airsoft, Paintball.
+Stopuret bruger en Arduino-kontrolmikrocontroller (Arduino Uno / Nano) eller en separat chip (Atmel) AtMega328P, som styrer hele systemlogikken.
+Stopuret inkluderer et LCD-tegndisplay, der måler 16x2 (16 tegn x 2 linjer) eller 20x4, hvor tidspunkterne for de enkelte hold vises.
+Der er 2 hold i spillet - <b><font color="#C0392B">RØDT hold</font></b> a <b><font color="#27AE60">GRE hold</font></b>, som spiller mod hinanden og optager det imaginære punkt, der dannes af denne enhed - DOMINATOR.
+I begyndelsen af spillet viser displayet tidene 00 timer, 00 minutter, 00 sekunder for <b><font color="#C0392B">RØDT hold</font></b>, <b><font color="#27AE60">GRE hold</font></b>.
+Knap DOMINATOR bruger knapinput til handling ved at besætte et punkt af et teammedlem såvel som til input af en dommer og viskelæderenhed.
+Således anvendes i alt 4 knapper til 4 systemenheder, de switch-knapper, der er forbundet i INPUT_PULLUP-tilstand.
+Ved at trykke på knappen føjes GND-signalet til Arduino digitale indgangsterminal (Active-LOW switch signal).
+Omskifterknapper bruges, ikke afbryderknapper (de reagerer ikke på systemlogikken, al software vil altid blive "trykket").
+I den grundlæggende version reagerer DOMINATOR straks på et tryk - tidstællingen for et givet hold er aktiveret (pressens længde, antallet af tryk osv. Er ikke verificeret ...).
+Tiderne vises på et LCD-tegndisplay, der måler 16x2 eller 20x4, der kommunikerer med kontrolmikrocontrolleren via I2C-bussen.
+<b><font color="#C0392B">Hvis et teammedlem i det RØDE hold optager et punkt ved at trykke på en knap, startes en summer, der meddeler en ændring i punktet med et kort bip.
+Derefter lyser RED-holdets LED på denne station, og displayet begynder at tilføje tid til det hold.</font></b>
+<b><font color="#27AE60">Hvis punktet er optaget af GRE-teamet, og teammedlemmet trykker på den relevante knap, lyder summeren igen, GRE-teamets LED lyser, den RØDE tid er sat på pause, og tiden for det GRE-hold, der besatte punktet, tælles.</font></b>
+<b><font color="#F39C12">Hvis arrangøren (dommer) trykker på hans knap, er begge gange sat på pause, indtil et medlem af et af holdene giver brugerinput.
+Denne type input er således velegnet til at starte en pause, men den kan også afslutte spillet til evaluering.</font></b>
+<b><font color="#3498DB">Knappen DOMINATOR har en fjerde knap til viskelæderenheden, som pauser og nulstiller begge gange til startværdier som efter start af stopuret DOMINATOR stopur.
+Bruges til at genstarte spillet, initialisere et nyt spil.</font></b>
+Projektet er velegnet til Airsoft-begivenheder, sportsfaciliteter eller Airsoft-hold, som kan bygge udstyret.
+Fordelen ved Button DOMINATOR-systemet er, at det kan klones og oprette X-punkter med samme konfiguration via maskinkode, som kan indlæses i et ubegrænset antal Arduino-kort og chips og garanterer identisk applikationsfunktion.
+Spillere kan således score flere point i spillet, mens tiden i slutningen af spillet tilføjes, så længe hvilket punkt blev besat af hvilket hold.
+Det er også muligt at bruge knapper med et integreret gløderør, som forbedrer læsbarheden og afslører farven på de enkelte knapper i mørke.
+</p> 
+<h4>Hardware til projektet - Knap DOMINATOR:</h4> 
+<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>LCD karakter display 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>I2C-konverter til LCD-skærm</b><img src="https://i.imgur.com/ORAwjHo.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>Summer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>2x LED dioder</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<li><b>4x kontakten (pushbutton)</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+      <div class="alert alert-success">
+      <strong>Maksimalt tidsinterval, der kan vises i systemet: </strong>99 timer, 59 minutter og 59 sekunder
+      </div>
+      <div class="alert alert-info">
+      <strong>Forbrug: ca. 20mAh med 5V strømforsyning. </strong> Praktisk at strømme via powerbank, oplader fra en telefon med USB-udgang.
+      </div>
+<hr><center><h3>Knap DOMINATOR i farten i Airsoft-spil</h3></center><hr>
+<center><img src="https://i.imgur.com/yuHmpZa.jpg" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Airsoft DOMINATOR s tlačidlovým vstupom - stopky" title="Airsoft DOMINATOR s tlačidlovým vstupom - stopky"></center>        			
+<hr><center><h3>Knap DOMINATOR - demonstration af systemfunktionalitet og logik</h3></center><hr>
+<center><iframe width="80%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<h3>Terminalernes bordforbindelse - Knap DOMINATOR - svarer fuldt ud til ledningsdiagrammet:</h3>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+				<thead>		
+<tr>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#27AE60"><strong>I2C-konverter til LCD-skærm</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">A4</td>
+<td align="right">SDA</td>
+</tr>
+<tr>
+<td align="left">A5</td>
+<td align="right">SCL</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>Summer</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">5V</td>
+<td align="right">Vcc</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="right">IN</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>LED dioder</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="right">IN (RED)</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>Knapper (INPUT_PULLUP)</strong></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="right">GND</td>
+</tr>
+<tr>
+<td align="left">D6</td>
+<td align="right">IN (GREEN)</td>
+</tr>
+<tr>
+<td align="left">D7</td>
+<td align="right">IN (ERASER)</td>
+</tr>
+<tr>
+<td align="left">D8</td>
+<td align="right">IN (Rozhodca)</td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="right">IN (RED)</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center><h2>Ledningsdiagram - Knap DOMINATOR:</h2></center><hr>
+<img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
+<hr><center><h2>Testprogram (Shareware) - Knap DOMINATOR med maskinkode</h2></center><hr>
+<div class="alert alert-info">
+<p style="text-align: justify;">
+<b> En Shareware-version (.hex) er tilgængelig til Button DOMINATOR-projektet. </b> Versionen giver dig mulighed for at måle maksimalt 15 sekunders spil for hvert hold.
+<b> Målet med versionen er at kontrollere kompatibilitet med din hardware. </b> Maskinkoder baseret på I2C-konverteringsadressen til LCD-skærmen er tilgængelige i Github-arkivet.
+De mest anvendte adresser er 0x27 og 0x3F. Hvis du ikke kender adressen til din konverter, skal du bruge det indbyggede eksempel i Arduino IDE -> I2C Scanner, som skriver adressen til UART-grænsefladen (Serial monitor).
+Maskinkode kan uploades til Arduino Uno-microcontroller via AVRDUDE-software - en del af Arduino IDE eller med en GUI-grænseflade via XLoader - lettere at bruge. </p>
+<li> AVRDUDE skal køres via CMD (kommandolinje) installeret med Arduino IDE. Placeret i C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
+<b> <center> Eksempelkommando for at uploade et program til Arduino Uno / Nano (AtMega328P): </center> </b>
+<li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
+<li><b>XLoader er et Windows-program (eksekverbart .exe-værktøj) med en simpel grafisk grænseflade </b>, der giver dig mulighed for at vælge firmware - maskinkode (.hex), målplatformen og dynamisk kan vise den COM-port, som enheden er på placeret. </li>
+<li> <b> Ved blot at klikke på Upload kan maskinkode uploades automatisk </b> (XLoader bruger AVRDUDE-værktøjet svarende til Arduino IDE). XLoader-vinduet informerer om den vellykkede upload i form af en liste over byte, der er uploadet. </li>
+<b> <font color = "red"> Firmwaren kan downloades fra projektlageret:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">Her</a>. Firmwaren er i Github-mappen i projektopbevaringsområdet /firmware/button_dominator/ opdelt i henhold til adressen på I2C-konverteren (du fandt ud af fra I2C-scanneroutput til UART-grænsefladen).
+</div>
+				<h4>Tilgængelig firmware (Shareware) - Knap DOMINATOR</h4>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>Firmware-navn (i mappe button_dominator)</strong></td>
+				<td align="center" style="background-color:#2ECC71"><strong>Designet til</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>Hent</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">0x27.ino.hex</td>
+				<td align="center">LCD-tegn displaystørrelse 16x2 eller 20x4 med <b> I2C-konverter, der kommunikerer på adresse 0x27</b></td>
+				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/button_dominator/0x27.ino.hex" class="btn btn-danger" role="button" download>Download firmware</a></td>
+				</tr>
+				<tr>
+				<td align="left">0x3F.ino.hex</td>
+				<td align="center">LCD-tegn displaystørrelse 16x2 eller 20x4 med <b> I2C-konverter, der kommunikerer på adresse 0x3F</b></td>
+				<td align="right"><a href="https://raw.githubusercontent.com/martinius96/Airsoft-DOMINATOR-RFID/master/firmware/button_dominator/0x3F.ino.hex" class="btn btn-danger" role="button" download>Download firmware</a></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>				
+<div class="alert alert-danger">
+      <strong>I tilfælde af de nyeste kinesiske Arduino Nano-kloner, der har en "Old Bootloader", er det nødvendigt at optage med 57600 baud / s! For andre versioner med den nyere Bootloader 115200 baud / s (denne hastighed bruges også i AVRDUDE-kommandoen til at indlæse maskinkode).</strong>
+ </div>				
+<hr><center><h2>Upload af Shareware-versionen af Knap DOMINATOR-projektet til Arduino via XLoader</h2></center><hr>				
+<center>
+	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
+</center>	
+<hr><center><h2>Generel videovejledning til upload af firmware til Arduino via XLoader</h2></center><hr>
+<center><iframe width="80%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>	
+</div>
+		</div>
+</div>
+</body>
+</html>
