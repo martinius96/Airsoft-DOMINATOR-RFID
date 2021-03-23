@@ -10,6 +10,7 @@
 /*|Revízia: 12. Marec 2021                          |*/
 /*|-------------------------------------------------|*/
 
+//Wiring diagram: https://i.imgur.com/ROnQL9J.png (Compatible for Arduino Uno, Nano)
 #include <SPI.h>
 #include <MFRC522.h>
 #define SS_PIN 10
@@ -42,7 +43,7 @@ void loop() {
 void dump_byte_array(byte *buffer, byte bufferSize) {
   for (byte i = 0; i < bufferSize; i++) {
   }
-  Serial.print("Nacitany kod: ");
+  Serial.print("Code of CARD for DOMINATOR: ");
   unsigned long kod = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
   Serial.println(kod);
 }
