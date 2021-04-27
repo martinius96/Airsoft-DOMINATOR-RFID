@@ -209,11 +209,16 @@ Pod danú normu tagov spadajú aj ISIC, autobusové karty, ktoré fungujú ako N
 <center><img src="https://i.imgur.com/sngx37w.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER - Štart hry - počiatočný stav" title="RFID DOMINATOR - DOMINATION TIMER - Štart hry - počiatočný stav"></center>   
 <hr><h4>RFID DOMINATOR - počas hry:</h4><hr>
 <center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>   
-<hr><h4>Princíp funkčnosti po hardvérovej stránke:</h4><hr>
-      <li>RFID čítačka RC522 komunikuje s Arduinom po SPI zbernici s hodinovým signálom 4 MHz. Načítava UID (identifikátor) RFID kariet v dosahu, preposiela tento identifikátor Arduinu, ktorý vykoná programovú logiku. Čítačka reaguje na vzdialenosť čipu cca 3cm od antény.</li>
-      <li>Arduino načítanú adresu karty porovná v multipodmienke, aplikuje digitálne stavy na diódy, beží na ňom univerzálne počítadlo každých 100ms (počíta po desatinách sekundy), riadi počítanie oboch časov.</li>
-      <li>Čas je posielaný po I2C zbernici na znakový displej 20x4, kde je vykreslený. Výpis na displej trvá do 30ms pri rýchlosti I2C zbernice 100 kHz - Standard speed.</li>
-      <div class="alert alert-success">
+<hr><h4>Princíp funkčnosti projetku RFID DOMINATOR po hardvérovej stránke:</h4><hr>
+<p style="text-align: justify;">
+RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip AtMega328P) po SPI zbernici s hodinovým signálom 4 MHz.
+Čítačka reaguje na vzdialenosť čipu cca 3cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB.
+Načítava UID (identifikátor) RFID kariet v dosahu, preposiela tento identifikátor Arduinu,. 
+Arduino načítanú adresu karty porovná v multipodmienke, aplikuje digitálne stavy na diódy, beží na ňom univerzálne počítadlo každých 100ms (počíta po desatinách sekundy), riadi počítanie oboch časov.
+Čas je posielaný po I2C zbernici na znakový displej 20x4, kde je vykreslený. 
+Výpis na displej trvá do 30ms pri rýchlosti I2C zbernice 100 kHz - Standard speed.
+</p>
+<div class="alert alert-success">
       <strong>Maximálny rozsah času, ktorý môže byť vypísaný v systéme: </strong>99 hodín, 59 minút a 59 sekúnd
       </div>
       <div class="alert alert-info">
