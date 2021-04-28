@@ -214,7 +214,7 @@ Pod danú normu tagov spadajú aj ISIC, autobusové karty, ktoré fungujú ako N
 RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip AtMega328P) po SPI zbernici s hodinovým signálom 4 MHz.
 Čítačka reaguje na vzdialenosť čipu cca 3cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB.
 Načítava UID (identifikátor) RFID kariet v dosahu, preposiela tento identifikátor Arduinu,. 
-Arduino načítanú adresu karty porovná v multipodmienke, aplikuje digitálne stavy na diódy, beží na ňom univerzálne počítadlo každých 100ms (počíta po desatinách sekundy), riadi počítanie oboch časov.
+Arduino načítanú adresu karty porovná v multipodmienke, aplikuje digitálne stavy na diódy, beží na ňom univerzálne počítadlo riadené funkciou millis(), ktoré zodpovedá za počítanie oboch časov.
 Čas je posielaný po I2C zbernici na znakový displej 20x4, kde je vykreslený. 
 Výpis na displej trvá do 30ms pri rýchlosti I2C zbernice 100 kHz - Standard speed.
 </p>
