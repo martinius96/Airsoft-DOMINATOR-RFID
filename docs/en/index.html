@@ -2,22 +2,22 @@
 <html lang="en-US">
 <head>
 	<!-- Primary Meta Tags -->
-	<title>DOMINATOR Airsoft | Paintball - RFID and push-button stopwatches on the Arduino platform</title>
-	<meta name="title" content="DOMINATOR Airsoft | Paintball - RFID and push-button stopwatches on the Arduino platform">
+	<title>RFID DOMINATION Timer - Airsoft | Paintball- Arduino - AtMega</title>
+	<meta name="title" content="RFID DOMINATION Timer - Airsoft | Paintball- Arduino - AtMega">
 	<meta name="description" content="RFID DOMINATOR - stopwatch via Arduino for Airsoft, Paintball. Stopwatch using the character display on the I2C bus. Button and RFID input.">
 	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/index.html">
-	<meta property="og:title" content="DOMINATOR Airsoft | Paintball - RFID and push-button stopwatches on the Arduino platform">
+	<meta property="og:title" content="RFID DOMINATION Timer - Airsoft | Paintball- Arduino - AtMega">
 	<meta property="og:description" content="RFID DOMINATOR - stopwatch via Arduino for Airsoft, Paintball. Stopwatch using the character display on the I2C bus. Button and RFID input.">
 	<meta property="og:image" content="">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/index.html">
-	<meta property="twitter:title" content="DOMINATOR Airsoft | Paintball - RFID and push-button stopwatches on the Arduino platform">
+	<meta property="twitter:title" content="RFID DOMINATION Timer - Airsoft | Paintball- Arduino - AtMega">
 	<meta property="twitter:description" content="RFID DOMINATOR - stopwatch via Arduino for Airsoft, Paintball. Stopwatch using the character display on the I2C bus. Button and RFID input.">
 	<meta property="twitter:image" content="">
 	
@@ -203,7 +203,7 @@ The given tag standard also includes ISIC, bus cards, which function as NFC card
 <li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>   
 <h4> Principle of hardware functionality: </h4>
-       <li> The RF5 reader RC522 communicates with the Arduino via the SPI bus. It reads the UID (identifier) of RFID cards in range, forwards this identifier to Arduino, which executes the program logic. The reader responds to the distance of the chip about 3 cm from the antenna. </li>
+       <li> RFID NXP RC522 reader communicates with the Arduino via the SPI bus at clock 4 MHz. It reads the UID (identifier) of RFID cards in range, forwards this identifier to Arduino, which executes the program logic. The reader responds to the distance of the chip about 3 cm from the antenna. </li>
        <li> Arduino compares the read card address in a multi-condition, applies digital states to diodes, runs a universal counter every 100ms (counts in tenths of a second), controls the counting of both times. </li>
        <li> The time is sent via the I2C bus to the 20x4 character display, where it is plotted. The display takes up to 30ms at an I2C bus speed of 100 kHz - Standard speed. </li>
       <div class="alert alert-success">
