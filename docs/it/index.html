@@ -157,10 +157,12 @@ table,thead,tbody,tfoot,tr, td,th{
 <span class="label label-primary">Paintball</span>
 <span class="label label-success">DOMINATOR</span>
 <hr> <center> <h2> RFID DOMINATOR - cronometro per Airsoft | Paintball </h2> </center> <hr>
-       <div class = "alert alert-danger">
-       <strong> Attenzione ai lettori RFID RC522 con un chip falso (non originale NXP RC522)! - Nel progetto sull'UART riporta: Versione firmware: 0x12 - chip contraffatto. Il progetto con il falso chip non funziona. </strong>
-Testato e funzionante con il lettore RFID NXP RC522, che riporta la versione firmware: Firmware version 0x92 (Version 2.0).
-       </div>
+      <div class="alert alert-info">
+      <strong>La nuova versione del progetto RFID DOMINATOR (Domination Timer) supporta questi tipi di firmware lettori RFID NXP RC522:</strong>
+      <li>Firmware version: 0x12 = counterfeit chip - (chip NXP non originale, sostituzione)</li>
+      <li>Firmware version: 0x91 = Version 1.0 - (chip NXP originale)</li>      
+      <li>Firmware version: 0x92 = Version 2.0 - (chip NXP originale)</li>
+      </div>
 <!---<h2>Knižnice pre projekt RFID DOMINATOR</h2> 
 <li>RFID  <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a></li>
 <li>LCD - I2C  <a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library">https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library</a></li>	--->			
