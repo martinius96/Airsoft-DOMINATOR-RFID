@@ -377,10 +377,8 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <li><b><font color="red">Tento zdrojový kód nereprezentuje RFID DOMINATOR!</font><b></li>
 <li>Výpis adresy karty sa realizuje do sériového (UART) monitoru - použitá rýchlosť 9600 baud/s.</li>
 <li>Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám</li>				
-<div class="alert alert-info">
 <b>Pre úspešné nahratie zdrojového kódu pre načítanie UID kariet je nutné importovať knižnicu MFRC522 do vášho prostredia Arduino IDE. </b>
 Stiahnite si repozitár projektu RFID DOMINATOR (odkazuje naň prvý odkaz na vrchu stránky), obsah zložky /src/ <strong>(priečinok MFRC522) nakopírujte do priečinka /Arduino/libraries/ (cesta k zložke závisí od toho, kde máte v systéme Arduino IDE nainštalované), najčastejšie v Dokumentoch / Program Files u starších operačných systémov Windows.</strong>
-</div>	
 <hr><h4>Príklad uložených UID RFID kariet - Excel dokument .xls:</h4><hr>				
 <center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
 <hr><h4>Výstup programu na UART rozhranie:</h4><hr>
@@ -388,7 +386,7 @@ Stiahnite si repozitár projektu RFID DOMINATOR (odkazuje naň prvý odkaz na vr
 <hr><h4>Programová implementácia pre RFID DOMINATOR:</h4><hr>
 <li>Dáta o UID pre RED, GRE, rozhodcu a erasera vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov</li>
 <center><img src="https://i.imgur.com/FdQhPUx.png" style="display: block; max-width: 100%; height: auto;" alt="Programová implementácia - DOMINATION TIMER RFID" title="Programová implementácia - DOMINATION TIMER RFID"></center>
-<pre>
+<pre style="background: #52BE80;">
 /*|-------------------------------------------------|*/
 /*|Názov: Načítanie UID RFID kariet                 |*/
 /*|Popis: Načíta prostredníctvom RFID čítačky RC522 |*/
@@ -459,11 +457,9 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 <hr>
 <h4>Očakávaný výstup programu I2C Scanner:</h4><hr>
 <center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<div class="alert alert-info">
 <b>Knižnica Wire je vstavaná do Arduino IDE, nie je nutná jej inštalácia.</b>
 Program je možné ihneď nahrať. Je vhodné ešte pred začiatkom spustenia programu pripojiť hardvér - I2C prevodník pre displej 16x2 / 20x4, stačí aj bez displeja.
-</div>	
-<pre>
+<pre style="background: #C0392B;">
 #include &lt;Wire.h>
  
  
