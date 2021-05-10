@@ -373,12 +373,13 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
 <div style="background: #52BE80; ">
 <hr><center><h3>Program pre načítanie UID adries RFID kariet pre DOMINATOR</h3></center><hr>
-<li>Program slúži na načítanie identifikátorov (UID) RFID tagov, kariet, ktoré budú použité v programe pre RFID DOMINATOR</li>
-<li><b><font color="red">Tento zdrojový kód nereprezentuje RFID DOMINATOR!</font><b></li>
-<li>Výpis adresy karty sa realizuje do sériového (UART) monitoru - použitá rýchlosť 9600 baud/s.</li>
-<li>Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám</li>				
-<b>Pre úspešné nahratie zdrojového kódu pre načítanie UID kariet je nutné importovať knižnicu MFRC522 do vášho prostredia Arduino IDE. </b>
-Stiahnite si repozitár projektu RFID DOMINATOR (odkazuje naň prvý odkaz na vrchu stránky), obsah zložky /src/ <strong>(priečinok MFRC522) nakopírujte do priečinka /Arduino/libraries/ (cesta k zložke závisí od toho, kde máte v systéme Arduino IDE nainštalované), najčastejšie v Dokumentoch / Program Files u starších operačných systémov Windows.</strong>
+<p style="text-align: justify;">
+Program slúži na načítanie identifikátorov (UID) RFID tagov, kariet, ktoré budú použité v programe pre RFID DOMINATOR - <b><font color="red">tento zdrojový kód nereprezentuje RFID DOMINATOR, projekt nie je šírený zdarma!</font><b>.
+Výpis adresy karty sa realizuje do sériového (UART) monitoru - použitá rýchlosť 9600 baud/s (znakov za sekundu).
+Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám pre finálnu aplikáciu RFID DOMINATOR, ktorej strojový kód je viazaný na dodané UID kariet.				
+Pre úspešné nahratie zdrojového kódu pre načítanie UID kariet je nutné importovať knižnicu MFRC522 do vášho prostredia Arduino IDE.
+Stiahnite si repozitár projektu RFID DOMINATOR (odkazuje naň prvý odkaz na vrchu stránky), obsah zložky /src/ <strong>(priečinok MFRC522) nakopírujte do priečinka /Arduino/libraries/ (cesta k zložke závisí od toho, kde máte v systéme Arduino IDE nainštalované), najčastejšie v Dokumentoch / Program Files u starších operačných systémov Windows.
+</p>
 <hr><h4>Príklad uložených UID RFID kariet - Excel dokument .xls:</h4><hr>				
 <center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
 <hr><h4>Výstup programu na UART rozhranie:</h4><hr>
@@ -457,8 +458,10 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 <hr>
 <h4>Očakávaný výstup programu I2C Scanner:</h4><hr>
 <center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<b>Knižnica Wire je vstavaná do Arduino IDE, nie je nutná jej inštalácia.</b>
+<p style="text-align: justify;">
+Knižnica Wire je vstavaná do Arduino IDE, nie je nutná jej inštalácia.
 Program je možné ihneď nahrať. Je vhodné ešte pred začiatkom spustenia programu pripojiť hardvér - I2C prevodník pre displej 16x2 / 20x4, stačí aj bez displeja.
+</p>
 <pre style="background: #C0392B;">
 #include &lt;Wire.h>
  
