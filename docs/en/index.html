@@ -165,26 +165,25 @@ table,thead,tbody,tfoot,tr, td,th{
       </div>
 <h4>User entities in a color-coded RFID DOMINATOR project:</h4>
  <div class="row">
-  <div class="col-sm-3"><center><img src="https://i.imgur.com/Ez2zobn.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard - Team RED" title="RFID wristband of ISO / IEC 14443-A standard - Team RED"><br><b>Team RED</b></center></div>
-  <div class="col-sm-3"><center><img src="https://i.imgur.com/d8D1ZrG.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard - Team GRE" title="RFID wristband of ISO / IEC 14443-A standard - Team GRE"><br><b>Team GRE</b></center></div>
-  <div class="col-sm-3"><center><img src="https://i.imgur.com/Mye11fr.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard- Referee" title="RFID wristband of ISO / IEC 14443-A standard - Referee"><br><b>Referee</b></center></div>
-  <div class="col-sm-3"><center><img src="https://i.imgur.com/laTDaGg.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard - Eraser" title="RFID wristband of ISO / IEC 14443-A standard - Eraser"><br><b>Eraser</b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/Ez2zobn.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard - Team RED" title="RFID wristband of ISO / IEC 14443-A standard - Team RED"><br><b><font color="#C0392B">Team RED</font></b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/d8D1ZrG.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard - Team GRE" title="RFID wristband of ISO / IEC 14443-A standard - Team GRE"><br><b><font color="#27AE60">Team GRE</font></b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/Mye11fr.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard- Referee" title="RFID wristband of ISO / IEC 14443-A standard - Referee"><br><b><font color="#F39C12">Referee</font></b></center></div>
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/laTDaGg.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard - Eraser" title="RFID wristband of ISO / IEC 14443-A standard - Eraser"><br><b><font color="#3498DB">Eraser</font></b></center></div>
 </div>	
-<h4> Project description: </h4>
+<h4> RFID Domination Timer description: </h4>
 <p style="text-align: justify;">
-DOMINATOR is a device - stopwatch for sports such as Airsoft, Paintball.
-The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) AtMega328P, which controls the entire system logic.
+Domination Timer is a device (stopwatch) for Airsoft sports, Paintball with an Arduino microcontroller (Uno / Nano) with an AtMega328P AVR chip.
 The stopwatch includes an LCD character display measuring 16x2 (16 characters x 2 lines), or 20x4, on which the times of individual teams are displayed.
-There are 2 teams in the game - <b> <font color="#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b > that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.
+There are 2 teams in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b > that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
-Each member of the team is equipped with a card, bracelet or key fob, which communicates on the frequency 13.56MHz with an RFID reader, if it is within its range.
+Each member of the team is equipped with a card, bracelet or key fob, which communicates on the frequency 13.56MHz with an RFID reader, if it is within range.
 Keychains and bracelets can be color-coded (green, red according to team and function ...), which allows them to be distributed more efficiently to players, but also their archiving and storage.
-<b> <font color ="#C0392B"> If the RED team occupies a point, the team player attaches his card to the reader, thus occupying the point. This action triggers a buzzer that announces a change in the point.
+<b> <font color = "#C0392B"> If the RED team occupies a point, the team player attaches his card to the reader, thus occupying the point. This action triggers a buzzer that announces a change in the point.
 Then the RED team's LED at this station will light up and the display will start adding time for that team. </font> </b>
-<b> <font color ="#27AE60"> If a GRE team occupies a point and a member of that team attaches the card to the reader, a buzzer sounds again, that team's LED lights up, RED's team time is paused, and team time counts. GRE, which occupied the point. </font> </b>
-<b> <font color ="#F39C12"> If the card / key fob is attached by the organizer (referee), both times are paused until one of the teams inserts the card.
+<b> <font color = "#27AE60"> If a GRE team occupies a point and a member of that team attaches the card to the reader, a buzzer sounds again, that team's LED lights up, RED's team time is paused, and team time counts. GRE, which occupied the point. </font> </b>
+<b> <font color = "#F39C12"> If the card / key fob is attached by the organizer (referee), both times are paused until one of the teams inserts the card.
 This type of card is thus suitable for starting a break, but can also be used at the end of the game, when it is necessary to stop time to evaluate the game. </font> </b>
-<b> <font color ="#3498DB"> There is still a fourth type of card in DOMINATOR - eraser, which pauses both times and resets to initial values as after starting the DOMINATOR stopwatch.
+<b> <font color = "#3498DB"> If the card is attached by Eraser, both times are stopped and reset to the initial value of 00 hours, 00 minutes, 00 seconds at the same time.
 Used to restart the game, initialize a new game. </font> </b>
 The project is suitable for Airsoft events, sports facilities, or Airsoft teams, which can build the equipment.
 The advantage of the DOMINATOR system is that the system can be cloned and create X points with the same configuration via machine code, which can be fought independently in the game, while the RFID cards will work fully on all DOMINATOR devices.
@@ -192,6 +191,10 @@ The system is tested, functional, easy to maintain.
 The NXP RC522 reader works at a frequency of 13.56MHz, registers RFID tags at approx. 3 centimeters (almost physical contact with the reader is required), compatible ISO / IEC 14443-A tag format.
 The given tag standard also includes ISIC, bus cards, which function as NFC cards and can communicate their physical address - UID to a reader within range.
 </p>
+<hr><h4>LCD 16x2 output for RFID Domination Timer:</h4><hr>
+<center><img src="https://i.imgur.com/ZjOQzXh.png" alt="LCD character display 16x2 - Arduino Domination Timer - DOMINATOR" style="display: block; max-width: 100%; height: auto;" title="LCD character display 16x2 - Arduino Domination Timer - DOMINATOR"></center>
+<hr><h4>LCD 20x4 output for RFID Domination Timer:</h4><hr>
+<center><img src="https://i.imgur.com/xqqKdEF.png" alt="LCD character display 20x4 - Arduino Domination Timer - DOMINATOR" style="display: block; max-width: 100%; height: auto;" title="LCD character display 20x4 - Arduino Domination Timer - DOMINATOR"></center>
 <h4> Hardware for the project - RFID DOMINATOR: </h4>
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>LCD character display 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
@@ -201,22 +204,32 @@ The given tag standard also includes ISIC, bus cards, which function as NFC card
 <li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>   
-<h4> Principle of hardware functionality: </h4>
-       <li> RFID NXP RC522 reader communicates with the Arduino via the SPI bus at clock 4 MHz. It reads the UID (identifier) of RFID cards in range, forwards this identifier to Arduino, which executes the program logic. The reader responds to the distance of the chip about 3 cm from the antenna. </li>
-       <li> Arduino compares the read card address in a multi-condition, applies digital states to diodes, runs a universal counter every 100ms (counts in tenths of a second), controls the counting of both times. </li>
-       <li> The time is sent via the I2C bus to the 20x4 character display, where it is plotted. The display takes up to 30ms at an I2C bus speed of 100 kHz - Standard speed. </li>
+<h4> How RFID Domination Timer works (hardware side): </h4>
+<p style="text-align: justify;">
+The NXP RC522 RFID reader communicates with a microcontroller (Arduino / stand-alone AtMega328P chip) via an SPI bus with a 4 MHz clock signal.
+The reader responds to the distance of the chip about 3 cm from the antenna, while it has a configurable gain of the antenna in the range of 18 to 48 dB (48 dB is used in the final application).
+Retrieves the UID (identifier) of RFID cards in range, forwards this identifier to Arduino.
+Arduino compares the read card address in a multi-condition, applies digital states to diodes, runs a universal counter controlled by the millis() function, which is responsible for counting both times.
+Based on the fulfilled condition, the counter will be applied to the given team to which the UID belongs.
+The time is sent via the I2C bus to the 20x4 character display, where it is plotted on a specific line.
+Display on the display lasts up to 30ms at I2C bus speed 100 kHz - Standard speed, which is used.
+In case of serious interest, it is possible to create firmware in machine code for AtMega328P to measure also for other types of RFID readers: RDM6300, PN532, Wiegand W26. 
+</p>
       <div class="alert alert-success">
       <strong> Maximum time range that can be listed on the system: </strong> 99 hours, 59 minutes, and 59 seconds
       </div>
       <div class="alert alert-info">
       <strong> Consumption: approx. 110mAh with 5V power supply. </strong> Convenient to power via power bank, charger from a phone with USB output.
       </div>
-      <h4> To specify an RFID DOMINATOR project: </h4>
-       <li> The project is suitable for teams, clubs, sports facilities, events. </li>
-       <li> If RFID cards, bracelets or key fobs are color-coded, they are very easy and universally distributed to players. </li>
-       <li> Tabs are easy to use for all ages. The chip is protected in a plastic case, it does not mind dirt, water ... </li>
-       <li> Suitable for DOMINATION game modes, Capture Point (more than one DOMINATOR can be used in the game), a game mode that has a balanced number of players. </li>
-       <li> The use is mainly for sports Airsoft, Paintball, Nerf Wars. </li>
+      <hr> <h4> The RFID Domination Timer project is for: </h4> <hr>
+<p style="text-align: justify;">
+The RFID DOMINATOR project is, in terms of its versatility, suitable for implementation in Airsoft actions, and with the possibility of cloning the firmware, it is possible to install X DOMINATOR points in the game field with identical firmware, which players can play with the same RFID cards. 
+DOMINATOR is also suitable for teams, sports grounds and playgrounds, which can use this device to expand the services and game modes offered for different numbers of players. If RFID cards, bracelets or key fobs are color-coded, it is very easy and universally distributed to players based on their team. 
+Their archiving is also simple. Using cards, bracelets or key rings is easy and can handle all ages in Airsoft games. The RFID chip itself is protected in a plastic case, it does not mind dirt, water, does not require maintenance. 
+It has no battery, the chip is activatd by RFID reader, which charges it with the transmitted electromagnetic field. 
+DOMINATOR is suitable for game modes with the same number of players in both teams, e.g. DOMINATION, Capture Point (Points for multiple cloned DOMINATOR points). 
+It is mainly used for Airsoft sports, Paintball games, but DOMINATOR can also be used for other sports activities, where it can be used (boat running, orienteering, etc.).
+</p>
       <hr><h4>Demonstration of functionality - RFID DOMINATOR:</h4><hr><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <hr><center><h2>Printed circuit board - (PCB) - RFID DOMINATOR - GERBER / production by photo route</h2></center><hr>
 <div class="alert alert-info">
