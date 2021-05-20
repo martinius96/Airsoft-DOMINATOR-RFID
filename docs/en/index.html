@@ -355,33 +355,46 @@ It is also possible to use other available manufacturers, for example: PCBWay, A
 </table>				</div>
 <hr><center> <h2> Wiring diagram - RFID DOMINATOR: </h2> </center> <hr>
 <img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
-<hr><center> <h3> <font color = "#52BE80"> Program for retrieving UID of RFID card addresses for DOMINATOR </font> </h3> </center> <hr>
-<li> The program is used to retrieve identifiers (UID) of RFID tags, cards that will be used in the program for RFID DOMINATOR </li>
-<li><b><font color="red"> This is not source code for RFID DOMINATOR main app project! </font><b></li>
-<li> The card address is listed in the serial (UART) monitor - 9600 baud / s used. </li>
-<li> It's a good idea to save and overwrite the report in a clear .xls (EXCEL) document that makes it easier to manage the assigned RFID cards for specific teams and entities </li>			
-<div class="alert alert-info">
-<b> You must import the MFRC522 library into your Arduino IDE to successfully load the source code to load UID cards. </b>
-Download the RFID DOMINATOR project repository (referenced by the first link at the top of the page), copy the contents of the / src / <strong> folder (MFRC522 folder) to the / Arduino / libraries / folder (the path to the folder depends on where you have the Arduino IDE installed), most commonly in Documents / Program Files on older Windows operating systems. </strong>
-</div>
-<h4> Example of stored UID RFID cards in an .xls document: </h4>				
+<hr><center><h3>Program for reading UID addresses of RFID cards for Domination Timer</h3></center><hr>
+<p style="text-align: justify;">
+The program is used to read identifiers (UID) of RFID tags, cards that will be used in the program for RFID DOMINATOR - <b> <font color="red"> this source code does not represent RFID DOMINATOR, the project is not distributed for free! </font> </b>.
+The card address is written to the serial (UART) monitor - the used speed is 9600 baud / s (characters per second).
+The statement should be saved and rewritten in a clear .xls (EXCEL) document, which will facilitate the management of assigned RFID cards to specific teams and entities for the final RFID DOMINATOR application, whose machine code is tied to the supplied UID cards.
+You must import the MFRC522 library into your Arduino IDE to successfully load the source code to load UID cards.
+Download the RFID DOMINATOR project repository (referenced by the first link at the top of the page), copy the contents of the / src / folder (MFRC522 folder) to the / Arduino / libraries / folder (the path to the folder depends on where you have the Arduino IDE installed), most commonly in Documents / Program Files on older Windows operating systems.
+</p>
+<hr><h4>Example of stored UID RFID cards - Excel document .xls:</h4><hr>				
 <center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
-<h4>Software implementation for RFID DOMINATOR:</h4>
-<li>UID data for RED, GRE, referee and eraser embedded in fields that can be easily scalable to expand the number of players</li>
-<center><img src="https://i.imgur.com/FdQhPUx.png" style="display: block; max-width: 100%; height: auto;" alt="Software implementation - DOMINATION TIMER RFID" title="Software implementation - DOMINATION TIMER RFID"></center>
+<hr><h4>Software implementation for RFID DOMINATOR:</h4><hr>
+<li>UID data for RED, GRE, Referee and Eraser embedded in fields that can be easily scaled to expand the number of players</li>
+<center><img src="https://i.imgur.com/FdQhPUx.png" style="display: block; max-width: 100%; height: auto;" alt="Programová implementácia - DOMINATION TIMER RFID" title="Programová implementácia - DOMINATION TIMER RFID"></center>
 <pre style="background: #52BE80;">
-/*|-------------------------------------------------|*/
-/*|Názov: Načítanie UID RFID kariet                 |*/
-/*|Popis: Načíta prostredníctvom RFID čítačky RC522 |*/
-/*|adresu RFID karty, ktorá je priložená a vypíše   |*/
-/*|UID na UART rozhranie.                           |*/
-/*|Zaznamenané UID kariet sa použijú v DOMINATOR-e  |*/
-/*|Autor: Martin Chlebovec                          |*/
-/*|E-mail: martinius96@gmail.com                    |*/
-/*|Licencia pouzitia: MIT                           |*/
-/*|Revízia: 12. Marec 2021                          |*/
-/*|-------------------------------------------------|*/
+/*|--------------------------------------------------|*/
+/*|Title: Loading UID RFID cards                     |*/
+/*|Desc: Reads via RFID reader NXP RC522             |*/
+/*|the address of the RFID card that is attached and |*/
+/*|printed UID on the UART interface.                |*/
+/*|The recorded UID cards will be used for DOMINATOR |*/
+/*|Author: Bc. Martin Chlebovec                      |*/
+/*|E-mail: martinius96@gmail.com                     |*/
+/*|License: MIT                                      |*/
+/*|Revision: 12. March 2021                          |*/
+/*|--------------------------------------------------|*/
 
+/*
+ * Typical pin layout used:
+ * -----------------------------------------------------------------------------------------
+ *             MFRC522      Arduino       Arduino   Arduino    Arduino          Arduino
+ *             Reader/PCD   Uno/101       Mega      Nano v3    Leonardo/Micro   Pro Micro
+ * Signal      Pin          Pin           Pin       Pin        Pin              Pin
+ * -----------------------------------------------------------------------------------------
+ * RST/Reset   RST          9             5         D9         RESET/ICSP-5     RST
+ * SPI SS      SDA(SS)      10            53        D10        10               10
+ * SPI MOSI    MOSI         11 / ICSP-4   51        D11        ICSP-4           16
+ * SPI MISO    MISO         12 / ICSP-1   50        D12        ICSP-1           14
+ * SPI SCK     SCK          13 / ICSP-3   52        D13        ICSP-3           15
+ *
+ */
 #include &lt;SPI.h>
 #include &lt;MFRC522.h>
 #define SS_PIN 10
@@ -419,16 +432,20 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
   Serial.println(kod);
 }
 </pre>
+</div>
+<div style="background: #F8C471;">
 <hr>				
-<center> <h3> <font color = "#C0392B"> I2C Scanner - program for reading the address of I2C converter for LCD display </font> </h3> </center>				
+<center><h3>I2C Scanner - a program for reading the address of the I2C converter for the LCD display</h3></center>				
 <hr>
-<h4> Expected I2C Scanner output: </h4>
+<h4>Expected output of I2C Scanner:</h4><hr>
 <center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<div class="alert alert-info">
-<b> The Wire library is built into the Arduino IDE, no installation is required. </b>
-The program can be uploaded immediately. It is advisable to connect the hardware - I2C converter for 16x2 / 20x4 display, even without a display, before starting the program.
-</div>	
-<pre style="background: #C0392B;">
+<p style="text-align: justify;">
+The Wire library is built into the Arduino IDE, no installation is required.
+The program can be compiled and verified communication via the I2C bus with an LCD character display.
+I2C converter should be connected to Arduino to hardware I2C outlets (SCL to A5, SDA to A4) before loading the program, it is enough even without display.
+The retrieved display address must be provided for a successful build for Arduino along with the UID of the RFID cards.
+</p>
+<pre style="background: #F8C471;">
 #include &lt;Wire.h>
  
  
