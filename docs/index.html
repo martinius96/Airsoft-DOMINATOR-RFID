@@ -226,7 +226,7 @@ Arduino načítanú adresu karty porovná v multipodmienke, aplikuje digitálne 
 Na základe splnenej podmienky sa začne počítadlo aplikovať na daný tím, ktorému UID prislúcha.
 Čas je posielaný po I2C zbernici na znakový displej 20x4, kde je vykreslený na konkrétny riadok. 
 Výpis na displej trvá do 30ms pri rýchlosti I2C zbernice 100 kHz - Standard speed, ktorý je použitý.
-Pri vážnom záujme možno vytvoriť firmvér v strojovom kóde pre AtMega328P na mieru aj pre iné typy RFID čítačiek: RDM6300, PN532, Wiegand W26.
+Pri vážnom záujme možno vytvoriť firmvér v strojovom kóde pre AtMega328P na mieru aj pre iné typy RFID čítačiek: RDM6300, PN532, Wiegand W26, zvýšenie hodinového signálu I2C zbernice až na 400 kHz (Fast Speed).
 </p>
 <div class="alert alert-success">
       <strong>Maximálny rozsah času, ktorý môže byť vypísaný v systéme: </strong>99 hodín, 59 minút a 59 sekúnd
@@ -383,9 +383,12 @@ Stiahnite si repozitár projektu RFID DOMINATOR (odkazuje naň prvý odkaz na vr
 <center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
 <center><hr><h4>Excel (.xls) Template - ON-line Google Sheets: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Tabuľky - RFID DOMINATOR Template" title="Google Tabuľky - RFID DOMINATOR Template"></a></h4></center>
 <hr><h4>Programová implementácia pre RFID DOMINATOR:</h4><hr>
-<li>Dáta o UID pre RED, GRE, rozhodcu a erasera vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov</li>
-<li>Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera zaberá 26% flash pamäte (32 kB vrátane bootloadera) a 28% RAM pamäte (2 kB).</li>
-<li>DOMINATOR je optimalizovaný, statické reťazce sú uložené do flash pamäte ako read-only dáta, nie sú v RAM pamäti. Použitý PROGMEM a F makro do výpisov lcd.print().</li>
+<p style="text-align: justify;">
+Dáta o UID pre RED, GRE, rozhodcu a erasera vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov, ktorí sú priradený ku konkrétnej skupine.
+Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera zaberá 26% flash pamäte (28 kB + 4 kB bootloader) a 28% RAM pamäte (2 kB).
+DOMINATOR je optimalizovaný, statické reťazce sú uložené do flash pamäte ako read-only dáta. 
+Statické reťazce (const) premenné uložené do PROGMEM. Použité F makro pre statické výpisy na UART monitor, prípadne použité pre funkciu lcd.print(), ktorá realizuje výpis na displej.
+</p>
 <center><img src="https://i.imgur.com/FdQhPUx.png" style="display: block; max-width: 100%; height: auto;" alt="Programová implementácia - DOMINATION TIMER RFID" title="Programová implementácia - DOMINATION TIMER RFID"></center>
 <pre style="background: #52BE80;">
 /*|-------------------------------------------------|*/
