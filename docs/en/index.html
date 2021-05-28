@@ -163,14 +163,18 @@ table,thead,tbody,tfoot,tr, td,th{
       <li>Firmware version: 0x91 = Version 1.0 - (original NXP chip)</li>      
       <li>Firmware version: 0x92 = Version 2.0 - (original NXP chip)</li>
       </div>
+<hr>
 <h4>User entities in a color-coded RFID Domination Timer project:</h4>
+<hr>
  <div class="row">
   <div class="col-sm-3"><center><img src="https://i.imgur.com/Ez2zobn.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard - Team RED" title="RFID wristband of ISO / IEC 14443-A standard - Team RED"><br><b><font color="#C0392B">Team RED</font></b></center></div>
   <div class="col-sm-3"><center><img src="https://i.imgur.com/d8D1ZrG.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard - Team GRE" title="RFID wristband of ISO / IEC 14443-A standard - Team GRE"><br><b><font color="#27AE60">Team GRE</font></b></center></div>
   <div class="col-sm-3"><center><img src="https://i.imgur.com/Mye11fr.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard- Referee" title="RFID wristband of ISO / IEC 14443-A standard - Referee"><br><b><font color="#F39C12">Referee</font></b></center></div>
   <div class="col-sm-3"><center><img src="https://i.imgur.com/laTDaGg.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID wristband of ISO / IEC 14443-A standard - Eraser" title="RFID wristband of ISO / IEC 14443-A standard - Eraser"><br><b><font color="#3498DB">Eraser</font></b></center></div>
 </div>	
+<hr>
 <h4> RFID Domination Timer description: </h4>
+<hr>
 <p style="text-align: justify;">
 Domination Timer is a device (stopwatch) for Airsoft sports, Paintball with an Arduino microcontroller (Uno / Nano) with an AtMega328P AVR chip.
 The stopwatch includes an LCD character display measuring 16x2 (16 characters x 2 lines), or 20x4, on which the times of individual teams are displayed.
@@ -211,7 +215,7 @@ The given tag standard also includes ISIC, bus cards, which function as NFC card
 <div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič" title="Hlásič"><br><b>Buzzer</b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/OxaPuBN.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b>2x LED diodes</b></center></div>
 </div><center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>   
-<h4> How RFID Domination Timer works (hardware side): </h4>
+<hr><h4> How RFID Domination Timer works (hardware side): </h4><hr>
 <p style="text-align: justify;">
 The NXP RC522 RFID reader communicates with the microcontroller (Arduino / stand-alone AtMega328P chip) via the SPI bus with a clock signal (CLK) of 4 MHz.
 The reader responds to the distance of the chip about 3 cm from the antenna, while it has a configurable gain of the antenna in the range of 18 to 48 dB (48 dB is used in the final application).
@@ -228,14 +232,16 @@ In case of serious interest, it is possible to create firmware in machine code f
       <div class="alert alert-info">
       <strong> Consumption: approx. 110mAh with 5V power supply. </strong> Convenient to power via power bank, charger from a phone with USB output.
       </div>
-      <hr> <h4> The RFID Domination Timer project is for: </h4> <hr>
+      <hr> <h4> Where to use RFID Domination Timer project: </h4> <hr>
 <p style="text-align: justify;">
-The RFID Domination Timer project is, in terms of its versatility, suitable for implementation in Airsoft actions, and with the possibility of cloning the firmware, it is possible to install X Domination Timer points in the game field with identical firmware, which players can play with the same RFID cards. 
-Domination Timer is also suitable for teams, sports grounds and playgrounds, which can use this device to expand the services and game modes offered for different numbers of players. If RFID cards, bracelets or key fobs are color-coded, it is very easy and universally distributed to players based on their team. 
-Their archiving is also simple. Using cards, bracelets or key rings is easy and can handle all ages in Airsoft games. The RFID chip itself is protected in a plastic case, it does not mind dirt, water, does not require maintenance. 
-It has no battery, the chip is activatd by RFID reader, which charges it with the transmitted electromagnetic field. 
-Domination Timer is suitable for game modes with the same number of players in both teams, e.g. DOMINATION, Capture Point (Points for multiple cloned Domination Timer points). 
-It is mainly used for Airsoft sports, Paintball games, but Domination Timer can also be used for other sports activities, where it can be used (boat running, orienteering, etc.).
+RFID Domination Timer project is, in terms of its versatility, suitable for implementation in Airsoft actions, and with the possibility of cloning the firmware, it is possible to place X DOMINATOR points in the game field with identical firmware, which players can play with the same RFID cards.
+DOMINATOR is also suitable for teams, sports grounds and playgrounds, which can use this device to expand the services and game modes offered for different numbers of players.
+If RFID cards, bracelets or key fobs are color-coded, it is very easy and universally distributed to players based on their team.
+Their archiving is also simple. Using cards, bracelets or key rings is easy and can handle all ages in Airsoft games.
+<b> The RFID chip itself is protected in a plastic case, it does not mind dirt, water, it is fully maintenance-free. </b>
+It has no battery, the chip activates the RFID reader, which charges it with the transmitted electromagnetic field and allows it to send a UID if it is within range of the RFID reader.
+DOMINATOR is suitable for game modes with the same number of players in both teams, e.g. DOMINATION, Capture Point (Points for multiple cloned DOMINATOR points).
+It is mainly used for Airsoft sports, Paintball games.
 </p>
       <hr><h4>Demonstration of functionality - RFID Domination Timer:</h4><hr><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <hr><center><h2>Printed circuit board - (PCB) - RFID Domination Timer - GERBER / production by photo route</h2></center><hr>
