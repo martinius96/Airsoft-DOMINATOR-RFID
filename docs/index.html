@@ -189,7 +189,7 @@ DOMINATOR (Domination Timer) je zariadenie - stopky pre športy typu Airsoft, Pa
 Súčasťou stopiek je LCD znakový displej rozmeru 16x2 (16 znakov x 2 riadky), respektíve 20x4, na ktorom sa vyobrazujú časy jednotlivých tímov.
 V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a zaberajú pomyselný bod, ktorý je tvorený týmto zariadením - DOMINATOR.				
 Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.			
-Každý z členov tímu je vybavený kartou, náramkom, prípadne kľúčenkou, ktorá komunikuje na frekvencii 13.56MHz s RFID čítačkou, ak je v jej dosahu.
+Každý z členov tímu je vybavený kartou, náramkom, prípadne kľúčenkou, ktorá komunikuje na frekvencii 13.56 MHz s RFID čítačkou, ak je v jej dosahu.
 Kľúčenky a náramky môžu byť farebné odlíšené (zelené, červené podľa tímu a funkcie...), čo umožňuje ich efektívnejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie.
 <b><font color="#C0392B">Ak tím RED obsadí bod, hráč tímu priloží svoju kartu k čítačke, čím bod obsadí. Táto akcia spustí buzzer, ktorý ohlási zmenu na bode.
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím.</font></b>
@@ -201,7 +201,7 @@ Slúži pre reštart hry, inicializáciu novej hry.</font></b>
 Projekt je vhodný pre Airsoft akcie, športové areály, čí Airsoft tímy, ktoré si môžu dané zariadenie Dominator zostrojiť s funkčným firmvér ku ktorému existuje schéma zapojenia i návrh plošného spoja pre strojové vyrábanie.
 Výhodou DOMINATOR systému je, že systém je možné klonovať a vytvoriť si X bodov s totožnou konfiguráciou prostredníctvom strojového kódu o ktoré sa v hre môže nezávisle na sebe bojovať, pričom dané RFID karty budú plne fungovať na všetky zariadenia DOMINATOR. 
 Systém je otestovaný, funkčný, možno rýchlo nasadiť na konkrétnu aplikáciu RFID DOMINATOR.
-Čítačka NXP RC522 pracuje na frekvencii 13.56MHz, RFID tagy registruje na cca 3 centimetre (nutný skoro až fyzický dotyk s čítačkou), kompatibilný formát tagov ISO/IEC 14443-A.
+Čítačka NXP RC522 pracuje na frekvencii 13.56 MHz, RFID tagy registruje na cca 3 centimetre (nutný skoro až fyzický dotyk s čítačkou), kompatibilný formát tagov ISO/IEC 14443-A.
 Pod danú normu tagov spadajú aj ISIC, autobusové karty, ktoré fungujú ako NFC karty a dokážu oznámiť svoju fyzickú adresu - UID čítačke v dosahu.
 </p>
 <hr><h4>Výpis časov na LCD znakovom displeji 16x2:</h4><hr>
@@ -227,13 +227,13 @@ Pod danú normu tagov spadajú aj ISIC, autobusové karty, ktoré fungujú ako N
 <center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>   
 <hr><h4>Princíp funkčnosti projetku RFID DOMINATOR po hardvérovej stránke:</h4><hr>
 <p style="text-align: justify;">
-RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip AtMega328P) po SPI zbernici s hodinovým signálom 4 MHz.
+RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip AtMega328P) po SPI zbernici s hodinovým signálom (CLK) 4 MHz.
 Čítačka reaguje na vzdialenosť čipu cca 3cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB (48 dB je použité vo finálnej aplikácii).
 Načítava UID (identifikátor) RFID kariet v dosahu, preposiela tento identifikátor Arduinu. 
 Arduino načítanú adresu karty porovná v multipodmienke, aplikuje digitálne stavy na diódy, beží na ňom univerzálne počítadlo riadené funkciou millis(), ktoré zodpovedá za počítanie oboch časov.
 Na základe splnenej podmienky sa začne počítadlo aplikovať na daný tím, ktorému UID prislúcha.
-Čas je posielaný po I2C zbernici na znakový displej 20x4, kde je vykreslený na konkrétny riadok. 
-Výpis na displej trvá do 30ms pri rýchlosti I2C zbernice 100 kHz - Standard speed, ktorý je použitý.
+Čas je posielaný po I2C zbernici na znakový displej 20x4, kde je vykreslený na konkrétny riadok - prepisuje sa iba konkrétna pozícia pre čo najrýchlejšiu obnovu času. 
+Výpis všetkých úprav na displej trvá do 30ms pri rýchlosti I2C zbernice 100 kHz - Standard speed, ktorý je použitý.
 Pri vážnom záujme možno vytvoriť firmvér v strojovom kóde pre AtMega328P na mieru aj pre iné typy RFID čítačiek: RDM6300, PN532, Wiegand W26, zvýšenie hodinového signálu I2C zbernice až na 400 kHz (Fast Speed).
 </p>
 <div class="alert alert-success">
@@ -248,10 +248,10 @@ Pri vážnom záujme možno vytvoriť firmvér v strojovom kóde pre AtMega328P 
       DOMINATOR sa hodí aj pre tímy, športové areály a ihriská ktoré tak môžu týmto zariadením rozšíriť ponúkané služby a herné módy pre rôzny počet hráčov.
       Ak sú RFID karty, náramky, respektíve kľúčenky farebne odlíšené, je veľmi ľahké a univerzálne ich distribuovať hráčom na základe ich tímu.
       Jednoduchá je aj ich archivácia. Použitie kariet, náramkov, respektíve kľúčeniek je ľahké a zvládnu to všetky vekové kategórie v Airsoft hrách. 
-      Samotný RFID čip je chránený v plastovom puzdre, nevadí mu špina, voda, nevyžaduje údržbu. 
+      <b>Samotný RFID čip je chránený v plastovom puzdre, nevadí mu špina, voda, je plne bezúdržbový.</b>
       Nemá batériu, čip aktivuje RFID čítačka, ktorá ho vysielaným elektromagnetickým poľom nabije a umožní mu vyslať UID ak je v dosahu RFID čítačky.
       DOMINATOR je vhodný pre herné módy s rovnakým počtom hráčov v oboch tímoch, napr. DOMINATION, Capture Point (Points v prípade viac klonovaných DOMINATOR bodov).
-      Využitie je predovšetkým pre športy Airsoft, Paintball hry, avšak DOMINATOR je možné použiť aj pre iné športové aktivity, kde nájde uplatnenie (člnkový beh, orientačný beh a iné..).
+      Využitie je predovšetkým pre športy Airsoft, Paintball hry.
       </p>
       <hr><h4>Ukážka funkčnosti - RFID DOMINATOR:</h4><hr><center><iframe width="80%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <hr><center><h2>Doska Plošných Spojov - (DPS) - RFID DOMINATOR - GERBER / výroba fotocestou</h2></center><hr>
