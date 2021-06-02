@@ -175,7 +175,7 @@ Tlačidlový DOMINATOR využíva tlačidlový vstup pre akciu obsadenia bodu čl
 Celkom teda 4 tlačidlá pre 4 entity systému, využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
 Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).
 Používajú sa spínacie tlačidlá, nie rozpínacie (nereagovali by na logiku systému, boli by vždy všetky softvérovo "stlačené").				
-V základnej verzii DOMINATOR reaguje okamžite na stlačenie - aktivuje sa počítanie času pre daný tím (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).
+<b>V základnej verzii DOMINATOR reaguje okamžite na stlačenie - aktivuje sa počítanie času pre daný tím (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).</b>
 Časy sú vypísané na LCD znakový displej rozmeru 16x2, prípadne 20x4, ktorý komunikuje s riadiacim mikrokontrolérom po I2C zbernici.
 <b><font color="#C0392B">Ak tím člen tímu RED obsadí bod stlačením tlačidla, spustí sa buzzer, ktorý krátkym pípnutím ohlási zmenu na bode.
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím.</font></b>
@@ -189,14 +189,22 @@ Výhodou systému Tlačidlový DOMINATOR je, že ho je možné klonovať a vytvo
 Hráči tak môžu v hre obsadzovať viacero bodov, pričom sa na konci hry sčíta čas, ako dlho bol ktorý bod obsadený ktorým tímom. 
 Je možné využiť aj tlačidlá s integrovanou dútnavkou, ktorá zlepší čítateľnosť a odhalí farbu jednotlivých tlačidiel v šere, tme. 
 </p> 
-<h4>Hardvér pre projekt - Tlačidlový DOMINATOR:</h4> 
-<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>LCD znakový displej 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>I2C prevodník pre LCD displej</b><img src="https://i.imgur.com/ORAwjHo.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>Hlásič (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>2x LED diódy</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>4x spínacie tlačidlo (pushbutton)</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-      <div class="alert alert-success">
+<hr><h4>Kompatibilný riadiaci hardvér pre tlačidlový DOMINATOR:</h4><hr>
+<div class="row">
+<div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler Arduino Uno" title="Riadiaci mikrokontróler Arduino Uno"><br><b>Arduino Uno</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/ZY3mDps.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler Arduino Nano" title="Riadiaci mikrokontróler Arduino Nano"><br><b>Arduino Nano</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler AtMega328P DIP" title="Riadiaci mikrokontróler AtMega328P DIP"><br><b>AtMega328P - DIP28</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler AtMega328P SMD" title="Riadiaci mikrokontróler AtMega328P SMD"><br><b>AtMega328P - SMD</b></center></div>
+</div>	
+<hr><h4>Periférie pre tlačidlový DOMINATOR:</h4><hr>
+<div class="row">
+<div class="col-sm-2"><center><img src="https://i.imgur.com/KLImexp.png" width="128px" height="128px" style="border-radius: 50%;" alt="LCD znakový displej 16x2 / 20x4" title="LCD znakový displej 16x2 / 20x4"><br><b>LCD znakový displej 16x2 / 20x4</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/DYNZjCW.png" width="128px" height="128px" style="border-radius: 50%;" alt="I2C prevodník pre LCD displej" title="I2C prevodník pre LCD displej"><br><b>I2C prevodník pre LCD displej</b></center></div>
+<div class="col-sm-4"><center><img src="https://i.imgur.com/9P3aF98.png" width="128px" height="128px" style="border-radius: 50%;" alt="Spínacie tlačidlo (pushbutton)" title="Spínacie tlačidlo (pushbutton)"><br><b>4x spínacie tlačidlo (pushbutton)</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič" title="Hlásič"><br><b>Hlásič</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/OxaPuBN.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b>2x LED diódy</b></center></div>
+</div>
+<div class="alert alert-success">
       <strong>Maximálny rozsah času, ktorý môže byť vypísaný v systéme: </strong>99 hodín, 59 minút a 59 sekúnd
       </div>
       <div class="alert alert-info">
