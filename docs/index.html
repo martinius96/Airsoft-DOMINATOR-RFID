@@ -158,7 +158,7 @@ table,thead,tbody,tfoot,tr, td,th{
 	<strong>Repozitár s projektom - schémami zapojenia, strojovými kódmi pre testovanie - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - RFID DOMINATOR - Arduino</a>
 </div>	
 <div class="alert alert-info">
-	<strong>Pri záujme o kúpu firmvéru pre RFID DOMINATOR (dodáva sa v strojovom kóde) kontaktujte na:</strong> <h4><font color="red">martinius96@gmail.com</font></h4>	
+	<strong>Pri záujme firmvér pre RFID DOMINATOR v strojovom kóde kontaktujte na:</strong> <h4><font color="red">martinius96@gmail.com</font></h4>	
 </div>					
 <span class="label label-default">Arduino</span>
 <span class="label label-primary">LCD</span>
@@ -381,15 +381,15 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <div style="background: #52BE80; ">
 <hr><center><h3>Program pre načítanie UID adries RFID kariet pre DOMINATOR</h3></center><hr>
 <p style="text-align: justify;">
-Program slúži na načítanie identifikátorov (UID) RFID tagov, kariet, ktoré budú použité v programe pre RFID DOMINATOR - <b><font color="red">tento zdrojový kód nereprezentuje RFID DOMINATOR, projekt nie je šírený zdarma!</font></b>.
-Výpis adresy karty sa realizuje do sériového (UART) monitoru - použitá rýchlosť 9600 baud/s (znakov za sekundu).
-Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám pre finálnu aplikáciu RFID DOMINATOR, ktorej strojový kód je viazaný na dodané UID kariet.				
+<b>Program slúži na načítanie identifikátorov (UID) RFID tagov, kariet, ktoré budú použité v programe pre RFID DOMINATOR</b> - <b><font color="red">tento zdrojový kód nereprezentuje RFID DOMINATOR, ani jeho logiku!</font></b>.
+Výpis UID RFID karty sa realizuje do sériového (UART) monitoru - použitá rýchlosť 9600 baud/s (znakov za sekundu).
+<b>Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám pre finálnu aplikáciu RFID DOMINATOR, ktorej strojový kód je viazaný na dodané UID kariet.</b>				
 Pre úspešné nahratie zdrojového kódu pre načítanie UID kariet je nutné importovať knižnicu MFRC522 do vášho prostredia Arduino IDE.
-Stiahnite si repozitár projektu RFID DOMINATOR (odkazuje naň prvý odkaz na vrchu stránky), obsah zložky /src/ (priečinok MFRC522) nakopírujte do priečinka /Arduino/libraries/ (cesta k zložke závisí od toho, kde máte v systéme Arduino IDE nainštalované), najčastejšie v Dokumentoch / Program Files u starších operačných systémov Windows.
+Knižnica MFRC522 vo verzii 1.4.8: <a href="https://github.com/miguelbalboa/rfid/releases/tag/1.4.8">Github repozitár</a> - <b>stiahnuť .zip archív a obsah archívu nakopírovať do Arduino/libraries</b> (zložka sa nachádza najčastejšie v Dokumentoch, alebo podľa vlastnej inštalácie v inom umiestnení).
 </p>
 <hr><h4>Príklad uložených UID RFID kariet - Excel dokument .xls:</h4><hr>				
 <center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
-<center><hr><h4>Excel (.xls) Template - ON-line Google Sheets: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Tabuľky - RFID DOMINATOR Template" title="Google Tabuľky - RFID DOMINATOR Template"></a></h4></center>
+<center><hr><h4>Excel (.xls) šablóna pre zápis UID - ON-line Google Tabuľky: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Tabuľky - RFID DOMINATOR Template" title="Google Tabuľky - RFID DOMINATOR Template"></a></h4></center>
 <hr><h4>Programová implementácia pre RFID DOMINATOR:</h4><hr>
 <p style="text-align: justify;">
 Dáta o UID pre RED, GRE, rozhodcu a erasera vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov, ktorí sú priradený ku konkrétnej skupine.
