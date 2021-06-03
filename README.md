@@ -4,7 +4,7 @@
 **Description of RFID Domination Timer:**
 >DOMINATOR is a device - stopwatch for sports such as Airsoft, Paintball. The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) AtMega328P, which controls the entire system logic. The stopwatch includes an LCD character display measuring 16x2 (16 characters x 2 lines), or 20x4, on which the times of individual teams are displayed. There are 2 teams in the game - RED team and GRE team that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR. At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for RED team , GRE team . Each member of the team is equipped with a card, bracelet or key fob, which communicates on the frequency 13.56MHz with an RFID reader, if it is within its range. Keychains and bracelets can be color-coded (green, red according to team and function ...), which allows them to be distributed more efficiently to players, but also their archiving and storage. If the RED team occupies a point, the team player attaches his card to the reader, thus occupying the point. This action triggers a buzzer that announces a change in the point. Then the RED team's LED at this station will light up and the display will start adding time for that team. If a GRE team occupies a point and a member of that team attaches the card to the reader, a buzzer sounds again, that team's LED lights up, RED's team time is paused, and team time counts. GRE, which occupied the point. If the card / key fob is attached by the organizer (referee), both times are paused until one of the teams inserts the card. This type of card is thus suitable for starting a break, but can also be used at the end of the game, when it is necessary to stop time to evaluate the game. There is still a fourth type of card in DOMINATOR - eraser, which pauses both times and resets to initial values as after starting the DOMINATOR stopwatch. Used to restart the game, initialize a new game. The project is suitable for Airsoft events, sports facilities, or Airsoft teams, which can build the equipment. The advantage of the DOMINATOR system is that the system can be cloned and create X points with the same configuration via machine code, which can be fought independently in the game, while the RFID cards will work fully on all DOMINATOR devices. The system is tested, functional, easy to maintain. The NXP RC522 reader works at a frequency of 13.56MHz, registers RFID tags at approx. 3 centimeters (almost physical contact with the reader is required), compatible ISO / IEC 14443-A tag format. The given tag standard also includes ISIC, bus cards, which function as NFC cards and can communicate their physical address - UID to a reader within range. PCB designs
 
-![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/LvXPxVq.png)
+![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/crCc2Ls.png)
 
 **Hardware used for Domination Timer:**
 * Arduino Uno / Nano or AtMega328P chip (Arduino Nano is used at PCB)
@@ -15,10 +15,9 @@
 * Buzzer
 * Compatible cards, keychains, wristbands with standard ISO/IEC 14443-A (13.56 MHz)
 # Screenshots of RFID DOMINATION TIMER
-![Štart Airsoft Hry - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/OY0geF2.jpg)
-![DPS - GERBER - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/YMe2Y4L.png)
-![DPS - Výroba fotocestou - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/cbZssQT.png)
-![Schéma zapojenia - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/g5ufkBO.png)
+![Štart Airsoft Hry - RFID Domination Timer - Arduino - Airsoft](https://i.imgur.com/Pv4pbS1.jpeg)
+![DPS - GERBER - RFID Domination Timer - Arduino - Airsoft](https://i.imgur.com/tJKTjPF.png)
+![Schéma zapojenia - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/RoHeR7b.png)
 
 # Tlačidlový DOMINATOR - Airsoft / Paintball
 * Logikou totožný ako RFID DOMINATOR, využíva však tlačidlový vstup spínacími tlačidlami
