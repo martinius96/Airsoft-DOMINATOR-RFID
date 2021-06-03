@@ -393,9 +393,9 @@ Knižnica MFRC522 vo verzii 1.4.8: <a href="https://github.com/miguelbalboa/rfid
 <hr><h4>Programová implementácia pre RFID DOMINATOR:</h4><hr>
 <p style="text-align: justify;">
 Dáta o UID pre RED, GRE, rozhodcu a erasera vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov, ktorí sú priradený ku konkrétnej skupine.
-Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera zaberá 26% flash pamäte (28 kB + 4 kB bootloader) a 28% RAM pamäte (2 kB).
-DOMINATOR je optimalizovaný, statické reťazce sú uložené do flash pamäte ako read-only dáta. 
-Statické reťazce (const) premenné uložené do PROGMEM. Použité F makro pre statické výpisy na UART monitor, prípadne použité pre funkciu lcd.print(), ktorá realizuje výpis na displej.
+Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera zaberá 9512 bajtov flash pamäte, t.j. 30% a  501 bajtov pamäte RAM, t.j. 24%.
+DOMINATOR je optimalizovaný, statické reťazce a polia so zapísanými RFID kartami sú uložené do flash pamäte ako segment read-only dát. 
+Statické reťazce (const) premenné uložené do PROGMEM. Použité F makro pre statické výpisy na UART monitor, prípadne na LCD znakový displej.
 </p>
 <center><img src="https://i.imgur.com/FdQhPUx.png" style="display: block; max-width: 100%; height: auto;" alt="Programová implementácia - DOMINATION TIMER RFID" title="Programová implementácia - DOMINATION TIMER RFID"></center>
 <pre style="background: #52BE80;">
