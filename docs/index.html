@@ -383,13 +383,6 @@ Knižnica MFRC522 vo verzii 1.4.8: <a href="https://github.com/miguelbalboa/rfid
 <hr><h4>Príklad uložených UID RFID kariet - Excel dokument .xls:</h4><hr>				
 <center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
 <center><hr><h4>Excel (.xls) šablóna pre zápis UID - ON-line Google Tabuľky: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Tabuľky - RFID DOMINATOR Template" title="Google Tabuľky - RFID DOMINATOR Template"></a></h4></center>
-<hr><h4>Programová implementácia pre RFID DOMINATOR:</h4><hr>
-<p style="text-align: justify;">
-Dáta o UID pre RED, GRE, rozhodcu a erasera vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov, ktorí sú priradený ku konkrétnej skupine.
-Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera zaberá 9512 bajtov flash pamäte, t.j. 30% a  501 bajtov pamäte RAM, t.j. 24%.
-DOMINATOR je optimalizovaný, statické reťazce a polia so zapísanými RFID kartami sú uložené do flash pamäte ako segment read-only dát. 
-Statické reťazce (const) premenné uložené do PROGMEM. Použité F makro pre statické výpisy na UART monitor, prípadne na LCD znakový displej.
-</p>
 <center><img src="https://i.imgur.com/a4dZasp.png" style="display: block; max-width: 100%; height: auto;" alt="Programová implementácia - DOMINATION TIMER RFID" title="Programová implementácia - DOMINATION TIMER RFID"></center>
 <pre style="background: #52BE80;">
 /*|-------------------------------------------------|*/
@@ -459,6 +452,13 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
   Serial.println(kod);
 }
 </pre>
+<hr><h4>Optimalizácia programu pre RFID DOMINATOR:</h4><hr>
+<p style="text-align: justify;">
+Čísla UID RFID kariet pre RED, GRE, rozhodcu a erasera vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov, ktorí sú priradený ku konkrétnej skupine.
+Celé polia sú uložené do flash pamäte mikrokontroléru ako rad-only segmenty, teda polia nemusia bežať v RAM pamäti zaberať tak operačnú pamäť, ktorú DOMINATOR využíva.
+Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera zaberá 9512 bajtov flash pamäte, t.j. 30% a  501 bajtov pamäte RAM, t.j. 24%.
+Statické reťazce (const) premenné uložené do PROGMEM. Použité F makro pre statické výpisy na UART monitor, prípadne na LCD znakový displej.
+</p>
 </div>
 <div style="background: #F8C471;">
 <hr>				
