@@ -374,31 +374,31 @@ Możliwe jest również wykorzystanie innych dostępnych producentów, np. PCBWa
 <div style="background: #52BE80; ">
 <hr><center><h3>Program do odczytu adresów UID kart RFID dla DOMINATORA</h3></center><hr>
 <p style="text-align: justify;">
-<b>Program slúži na načítanie identifikátorov (UID) RFID tagov, kariet, ktoré budú použité v programe pre RFID DOMINATOR</b> - <b><font color="red">tento zdrojový kód nereprezentuje RFID DOMINATOR, ani jeho logiku!</font></b>.
-Výpis UID RFID karty sa realizuje do sériového (UART) monitoru - použitá rýchlosť 9600 baud/s (znakov za sekundu).
-<b>Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám pre finálnu aplikáciu RFID DOMINATOR, ktorej strojový kód je viazaný na dodané UID kariet.</b>				
-Pre úspešné nahratie zdrojového kódu pre načítanie UID kariet je nutné importovať knižnicu MFRC522 do vášho prostredia Arduino IDE.
-Knižnica MFRC522 vo verzii 1.4.8: <a href="https://github.com/miguelbalboa/rfid/releases/tag/1.4.8">Github repozitár</a> - <b>stiahnuť .zip archív a obsah archívu nakopírovať do Arduino/libraries</b> (zložka sa nachádza najčastejšie v Dokumentoch, alebo podľa vlastnej inštalácie v inom umiestnení).
+<b> Program służy do odczytu identyfikatorów (UID) tagów RFID, kart, które będą używane w programie dla RFID DOMINATOR </b> - <b> <font color = "red"> ten kod źródłowy nie reprezentują RFID DOMINATOR lub jego logikę! </font></b>.
+Karta UID RFID jest zapisywana do monitora szeregowego (UART) - stosowana prędkość to 9600 bodów/s (znaków na sekundę).
+<b> Oświadczenie powinno być zapisane i przepisane w czytelnym dokumencie .xls (EXCEL), co ułatwi zarządzanie przypisanymi kartami RFID do konkretnych zespołów i podmiotów dla finalnej aplikacji RFID DOMINATOR, której kod maszynowy jest powiązany z dostarczonym UID karty. </b>
+Aby pomyślnie przesłać kod źródłowy do ładowania kart UID, musisz zaimportować bibliotekę MFRC522 do swojego Arduino IDE.
+Biblioteka MFRC522 w wersji 1.4.8: <a href="https://github.com/miguelbalboa/rfid/releases/tag/1.4.8"> Repozytorium Github </a> - <b> pobierz archiwum .zip i jego zawartość skopiuj archiwum do Arduino/biblioteki </b> (folder najczęściej znajduje się w Dokumentach lub według własnej instalacji w innej lokalizacji).
 </p>
-<hr><h4>Príklad uložených UID RFID kariet - Excel dokument .xls:</h4><hr>				
+<hr><h4>Przykład zapisanych kart RFID UID - dokument Excel .xls:</h4><hr>				
 <center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
-<center><hr><h4>Excel (.xls) šablóna pre zápis UID - ON-line Google Tabuľky: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Tabuľky - RFID DOMINATOR Template" title="Google Tabuľky - RFID DOMINATOR Template"></a></h4></center>
+<center><hr><h4>Szablon programu Excel (.xls) do pisania UID — Arkusze kalkulacyjne Google online: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Tabuľky - RFID DOMINATOR Template" title="Google Tabuľky - RFID DOMINATOR Template"></a></h4></center>
 <center><img src="https://i.imgur.com/a4dZasp.png" style="display: block; max-width: 100%; height: auto;" alt="Programová implementácia - DOMINATION TIMER RFID" title="Programová implementácia - DOMINATION TIMER RFID"></center>
 <pre style="background: #52BE80;">
-/*|-------------------------------------------------|*/
-/*|Názov: Načítanie UID RFID kariet                 |*/
-/*|Popis: Načíta prostredníctvom RFID čítačky RC522 |*/
-/*|adresu RFID karty, ktorá je priložená a vypíše   |*/
-/*|UID na UART rozhranie.                           |*/
-/*|Zaznamenané UID kariet sa použijú pre DOMINATOR  |*/
-/*|Autor: Bc. Martin Chlebovec                      |*/
-/*|E-mail: martinius96@gmail.com                    |*/
-/*|Licencia pouzitia: MIT                           |*/
-/*|Revízia: 12. Marec 2021                          |*/
-/*|-------------------------------------------------|*/
+/*|------------------------------------------------------------|*/
+/*|Tytuł: Ładowanie kart RFID UID                              |*/
+/*|Opis: Czyta przez czytnik RFID RC522                        |*/
+/*| Dołączony i wydrukowany adres karty RFID                   |*/
+/*|UID na interfejsie UART.                                    |*/
+/*|Zarejestrowane karty UID zostaną wykorzystane do DOMINATORA |*/
+/*|Autor: Bc. Martin Chlebovec                                 |*/
+/*|E-mail: martinius96@gmail.com                               |*/
+/*|Użyj licencji: MIT                                          |*/
+/*|Rewizja: 12. Marec 2021                                     |*/
+/*|------------------------------------------------------------|*/
 
 
-// Šablóna - Google SpreadSheet: https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing
+// Szablon — arkusz kalkulacyjny Google: https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing
 
 
 /*
@@ -447,30 +447,30 @@ void loop() {
 void dump_byte_array(byte *buffer, byte bufferSize) {
   for (byte i = 0; i &lt; bufferSize; i++) {
   }
-  Serial.print("Nacitany kod: ");
+  Serial.print("Code of your RFID card: ");
   unsigned long kod = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
   Serial.println(kod);
 }
 </pre>
-<hr><h4>Optimalizácia programu pre RFID DOMINATOR:</h4><hr>
+<hr><h4>Optymalizacja programu dla RFID DOMINATOR:</h4><hr>
 <p style="text-align: justify;">
-Čísla UID RFID kariet pre RED, GRE, rozhodcu a erasera vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov, ktorí sú priradený ku konkrétnej skupine.
-Celé polia sú uložené do flash pamäte mikrokontroléru ako rad-only segmenty, teda polia nemusia bežať v RAM pamäti zaberať tak operačnú pamäť, ktorú DOMINATOR využíva.
-Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera zaberá 9512 bajtov flash pamäte, t.j. 30% a  501 bajtov pamäte RAM, t.j. 24%.
-Statické reťazce (const) premenné uložené do PROGMEM. Použité F makro pre statické výpisy na UART monitor, prípadne na LCD znakový displej.
+Numery UID kart RFID dla RED, GRE, Referee i Eraser wstawiane w pola, które można łatwo skalować w celu rozszerzenia liczby graczy przypisanych do danej grupy.
+Całe macierze są przechowywane w pamięci flash mikrokontrolera jako segmenty tylko wierszowe, więc macierze nie muszą działać w pamięci RAM, aby zajmować pamięć RAM używaną przez DOMINATOR.
+Standardowy program RFID DOMINATOR dla 10x UID dla drużyny RED i GRE oraz 2x UID dla Sędziego i Gumki zajmuje 9512 bajtów pamięci flash, m.in. 30% i 501 bajtów pamięci RAM, czyli 24%.
+Ciągi statyczne (const) zmiennej przechowywanej w PROGMEM. Używane makro F do raportów statycznych na monitorze UART lub na wyświetlaczu znakowym LCD.
 </p>
 </div>
 <div style="background: #F8C471;">
 <hr>				
-<center><h3>I2C Scanner - program pre načítanie adresy I2C prevodníka pre LCD displej</h3></center>				
+<center><h3>Skaner I2C - program do odczytu adresu konwertera I2C dla wyświetlacza LCD</h3></center>				
 <hr>
-<h4>Očakávaný výstup programu I2C Scanner:</h4><hr>
+<h4>Oczekiwana wydajność skanera I2C:</h4><hr>
 <center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
 <p style="text-align: justify;">
-Knižnica Wire je vstavaná do Arduino IDE, nie je nutná jej inštalácia.
-Program je možné skompilovať a overiť komunikáciu po I2C zbernici s LCD znakovým displejom. 
-I2C prevodník je vhodné pripojiť k Arduinu na hardvérové I2C vývody (SCL na A5, SDA na A4) ešte pred nahratím programu, stačí aj bez dispelja.
-Načítanú adresu displeja je nutné dodať pre úspešný build pre Arduino spolu s UID RFID kariet.
+Biblioteka Wire jest wbudowana w Arduino IDE, nie jest wymagana instalacja.
+Program można skompilować i zweryfikować komunikację poprzez magistralę I2C z wyświetlaczem znakowym LCD.
+Konwerter I2C należy podłączyć do Arduino do sprzętowych wyjść I2C (SCL na A5, SDA na A4) przed załadowaniem programu, wystarczy nawet bez wyświetlacza.
+Pobrany adres wyświetlacza musi być dostarczony do pomyślnej kompilacji dla Arduino wraz z identyfikatorem UID kart RFID.
 </p>
 <pre style="background: #F8C471;">
 #include &lt;Wire.h>
@@ -536,7 +536,7 @@ void loop()
 <center><font color="#566573">Autor: <a href="mailto:martinius96@gmail.com" id="a">Martin Chlebovec</font></a></center>
 </div>
       <div class="col-sm-3">
-<center><font color="#566573">Grid systém: <a href="https://startbootstrap.com/template/bare">Bootstrap Bare</a></font></center>		
+<center><font color="#566573">Grid system: <a href="https://startbootstrap.com/template/bare">Bootstrap Bare</a></font></center>		
 </div>
       <div class="col-sm-3">
 <center><font color="#566573">Ikony (MIT): <a href="https://www.flaticon.com/">Flaticon</a></font></center>			
