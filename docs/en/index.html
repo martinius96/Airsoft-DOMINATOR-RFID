@@ -252,16 +252,17 @@ It is mainly used for Airsoft sports, Paintball games.
 <li> PCB is double-sided with overlays, dimensions: 100x105mm </li>
 <h4> PCB production in China </h4>
 <p style="text-align: justify;">
-PCBs can be made in Slovakia at <a href="https://www.pbspoj.sk/"> PB Spoj </a>, or in China - by machine production from GERBER files.
-One of the most popular and cheapest manufacturers is: JLCPCB.
-GERBER files can be uploaded directly as an archive, while the PCB is visualized, the layers it records are automatically set, the dimensions of the PCB are set.
+PCBs can be made in Slovakia at <a href="https://www.pbspoj.sk/"> PB Spoj </a>, where they can produce double-sided PCBs.
+Production can be realized, for example, in China, where they can produce double-sided PCBs from GERBER design.
+<b> One of the most popular and cheapest manufacturers is JLCPCB, where GERBER files can be uploaded directly as a .zip archive. </b>
+The PCB is visualized, the layers, PCB dimensions, double-sided PCB are set automatically.
 Production takes 1-2 days. This manufacturer used to be famous for the action of producing 10 pieces of PCBs for $ 2.
-Today JLCPCB allows you to produce 5 pieces of this PCB for RFID Domination Timer for 6.96 €, 10 pieces for 10.16 €.
+Today, JLCPCB allows you to produce 5 pieces of this PCB for RFID DOMINATOR for 6.96 €, 10 pieces for 10.16 € (currently as of January 2021, prices are rising).
 Transport - the cheapest alternative is available for 7.44 € up to DHL with delivery in 3-5 working days, while the cost of transport is 23.16 €.
-JLCPCB will automatically apply a discount coupon of € 8 for shipping, which will be assigned to you after registration.
-Thus, with the cheapest shipping alternative with delivery within 25 days, this shipping is free with the first purchase.
-It is also possible to use other available manufacturers, for example: PCBWay, AllPCB, NextPCB, SeeedStudio, which have the technology for PCB production by machine method from GERBER files.
-</p>
+JLCPCB will automatically apply a € 8 discount coupon for shipping, which will be assigned to you after registration.
+Thus, with the cheapest shipping alternative with delivery within 25 days, this shipping is free with the coupon on the first purchase.
+An interesting manufacturer of PCBs is also AISLER, which offers PCB production from 3 pieces with a price of about 7.6 € per piece with free shipping, or offers the possibility of delivery for a surcharge via UPS.
+It is also possible to use other available manufacturers, for example: PCBWay, AllPCB, NextPCB, SeeedStudio, which have the technology for PCB production by machine method from GERBER files.</p>
 <center><img src="https://i.imgur.com/rFyRB50.png" alt="DPS pre Airsoft Domination Timer - JLCPCB" style="display: block; max-width: 100%; height: auto;" title="DPS pre Airsoft Domination Timer - JLCPCB"></center>        							
 <h4> Pin headers in PCB design: </h4>
 <li> 2x female pin-header 15-pin (for Arduino Nano) </li>
@@ -372,30 +373,32 @@ It is also possible to use other available manufacturers, for example: PCBWay, A
 <div style="background: #52BE80; ">
 <hr><center><h3>Program for reading UID addresses of RFID cards for Domination Timer</h3></center><hr>
 <p style="text-align: justify;">
-The program is used to read identifiers (UID) of RFID tags, cards that will be used in the program for RFID Domination Timer - <b> <font color="red"> this source code does not represent RFID Domination Timer, the project is not distributed for free! </font> </b>.
-The card address is written to the serial (UART) monitor - the used speed is 9600 baud / s (characters per second).
-The statement should be saved and rewritten in a clear .xls (EXCEL) document, which will facilitate the management of assigned RFID cards to specific teams and entities for the final RFID Domination Timer application, whose machine code is tied to the supplied UID cards.
-You must import the MFRC522 library into your Arduino IDE to successfully load the source code to load UID cards.
-Download the RFID Domination Timer project repository (referenced by the first link at the top of the page), copy the contents of the / src / folder (MFRC522 folder) to the / Arduino / libraries / folder (the path to the folder depends on where you have the Arduino IDE installed), most commonly in Documents / Program Files on older Windows operating systems.
+<b>The program is used to read the identifiers (UID) of RFID tags, cards that will be used in the program for RFID DOMINATOR </b> - <b> <font color="red"> this source code does not represent RFID DOMINATOR or its logic! </font> </b>.
+The UID RFID card is written to the serial (UART) monitor - the used speed is 9600 baud / s (characters per second).
+<b> The statement should be saved and rewritten in a clear .xls (EXCEL) document, which will facilitate the management of assigned RFID cards to specific teams and entities for the final RFID DOMINATOR application, whose machine code is tied to the supplied UID cards. </b>
+To successfully upload the source code for loading UID cards, you need to import the MFRC522 library into your Arduino IDE.
+MFRC522 library in version 1.4.8: <a href="https://github.com/miguelbalboa/rfid/releases/tag/1.4.8">Github repository</a> - <b>download the .zip archive and copy the contents of the archive to Arduino / libraries </b> (the folder is most often located in the Documents, or according to your own installation in another location).
 </p>
 <hr><h4>Example of stored UID RFID cards - Excel document .xls:</h4><hr>				
-<center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
-<center><hr><h4>Excel (.xls) Template - ON-line Google Spreadsheet: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Spreadsheet - RFID Domination Timer Template" title="Google Spreadsheet - RFID Domination Timer Template"></a></h4></center>
-<hr><h4>Software implementation for RFID Domination Timer:</h4><hr>
-<li>UID data for RED, GRE, Referee and Eraser embedded in fields that can be easily scaled to expand the number of players</li>
-<center><img src="https://i.imgur.com/FdQhPUx.png" style="display: block; max-width: 100%; height: auto;" alt="Programová implementácia - DOMINATION TIMER RFID" title="Programová implementácia - DOMINATION TIMER RFID"></center>
+<center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Physical UID of RFID cards stored in a clear Excel document" title="Physical UID of RFID cards stored in a clear Excel document"></center> 				
+<center><hr><h4>Excel (.xls) template for writing UIDs - Online Google Spreadsheets: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Spreadsheets - RFID Domination TimerTemplate" title="Google Spreadsheets - RFID Domination TimerTemplate"></a></h4></center>
+<center><img src="https://i.imgur.com/a4dZasp.png" style="display: block; max-width: 100%; height: auto;" alt="Software implementation - DOMINATION TIMER RFID" title="Software implementation - DOMINATION TIMER RFID"></center>
 <pre style="background: #52BE80;">
-/*|--------------------------------------------------|*/
-/*|Title: Loading UID RFID cards                     |*/
-/*|Desc: Reads via RFID reader NXP RC522             |*/
-/*|the address of the RFID card that is attached and |*/
-/*|printed UID on the UART interface.                |*/
-/*|The recorded UID cards will be used for DOMINATOR |*/
-/*|Author: Bc. Martin Chlebovec                      |*/
-/*|E-mail: martinius96@gmail.com                     |*/
-/*|License: MIT                                      |*/
-/*|Revision: 12. March 2021                          |*/
-/*|--------------------------------------------------|*/
+/*|---------------------------------------------------|*/
+/*|Title: Reading UID of RFID cards                   |*/
+/*|Description: Reads via RFID reader RC522 address   |*/
+/*|of RFID card that is attached and printed          |*/
+/*|to the UART interface.                             |*/
+/*|The recorded UID cards will be used for DOMINATOR  |*/
+/*|Author: Bc. Martin Chlebovec                       |*/
+/*|E-mail: martinius96@gmail.com                      |*/
+/*|License: MIT                                       |*/
+/*|Revision: 12. Marec 2021                           |*/
+/*|---------------------------------------------------|*/
+
+
+// Template - Google SpreadSheet: https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing
+
 
 /*
  * Typical pin layout used:
@@ -443,11 +446,18 @@ void loop() {
 void dump_byte_array(byte *buffer, byte bufferSize) {
   for (byte i = 0; i &lt; bufferSize; i++) {
   }
-  Serial.print("Nacitany kod: ");
+  Serial.print("Code of RFID card is: ");
   unsigned long kod = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
   Serial.println(kod);
 }
 </pre>
+<hr><h4>Program optimization for RFID DOMINATOR:</h4><hr>
+<p style="text-align: justify;">
+UID numbers of RFID cards for RED, GRE, Referee and Eraser inserted into fields that can be easily scaled to expand the number of players assigned to a particular group.
+Entire arrays are stored in the microcontroller's flash memory as row-only segments, so the arrays do not have to run in RAM to take up the RAM used by DOMINATOR.
+The standard RFID DOMINATOR program for 10x UID for RED and GRE team and 2x UID for Referee and Eraser takes up 9512 bytes of flash memory, i. 30% and 501 bytes of RAM, i. 24%.
+Static strings (const) of a variable stored in PROGMEM. Used F macro for static reports on the UART monitor or on the LCD character display.
+</p>
 </div>
 <div style="background: #F8C471;">
 <hr>				
@@ -457,7 +467,7 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 <center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
 <p style="text-align: justify;">
 The Wire library is built into the Arduino IDE, no installation is required.
-The program can be compiled and verified communication via the I2C bus with an LCD character display.
+The program can be compiled and verified communication via I2C bus with LCD character display.
 I2C converter should be connected to Arduino to hardware I2C outlets (SCL to A5, SDA to A4) before loading the program, it is enough even without display.
 The retrieved display address must be provided for a successful build for Arduino along with the UID of the RFID cards.
 </p>
