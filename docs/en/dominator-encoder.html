@@ -2,22 +2,22 @@
 <html lang="en-US">
 <head>
 	<!-- Primary Meta Tags -->
-	<title>DOMINATOR Airsoft | Paintball - configurable stopwatch via encoder</title>
-	<meta name="title" content="DOMINATOR Airsoft | Paintball - configurable stopwatch via encoder">
+	<title>Domination Timer Airsoft | Paintball - configurable stopwatch via rotary encoder KY-040</title>
+	<meta name="title" content="Domination Timer Airsoft | Paintball - configurable stopwatch via rotary encoder KY-040">
 	<meta name="description" content="Button DOMINATOR using an encoder for configurable game mode. Stopwatch for Airsoft, Paintball.">
 	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/dominator-encoder.html">
-	<meta property="og:title" content="DOMINATOR Airsoft | Paintball - configurable stopwatch via encoder">
+	<meta property="og:title" content="Domination Timer Airsoft | Paintball - configurable stopwatch via rotary encoder KY-040">
 	<meta property="og:description" content="Button DOMINATOR using an encoder for configurable game mode. Stopwatch for Airsoft, Paintball">
 	<meta property="og:image" content="">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/dominator-encoder.html">
-	<meta property="twitter:title" content="DOMINATOR Airsoft | Paintball - configurable stopwatch via encoder">
+	<meta property="twitter:title" content="Domination Timer Airsoft | Paintball - configurable stopwatch via rotary encoder KY-040">
 	<meta property="twitter:description" content="Button DOMINATOR using an encoder for configurable game mode. Stopwatch for Airsoft, Paintball">
 	<meta property="twitter:image" content="">
 	
@@ -168,7 +168,7 @@ table,thead,tbody,tfoot,tr, td,th{
 	<strong>Repository with project - wiring diagrams, machine codes for testing - Github: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID">Airsoft - DOMINATOR - Arduino</a>
 </div>	
 <div class="alert alert-info">
-	<strong>If you are interested in purchasing firmware for the Configurable DOMINATOR, contact:</strong> martinius96@gmail.com
+	<strong>If you are interested in firmware for the Configurable DOMINATOR in machine code (.hex), contact me:</strong> martinius96@gmail.com
 	
 </div>					
 <span class="label label-default">Arduino</span>
@@ -179,28 +179,28 @@ table,thead,tbody,tfoot,tr, td,th{
 <span class="label label-danger">Button</span>
 <span class="label label-default">Menu</span>
 <span class="label label-primary">Paintball</span>
-<span class="label label-success">DOMINATOR</span>
-<hr><center><h2>Configurable DOMINATOR - stopwatch for Airsoft | Paintball</h2></center><hr>
-<h4>Entities in the project configurable DOMINATOR:</h4>
+<span class="label label-success">Domination Timer</span>
+<hr><center><h2>Configurable Domination Timer - stopwatch for Airsoft | Paintball</h2></center><hr>
+<h4>Entities in the project configurable Domination Timer:</h4>
  <div class="row">
   <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b>Team RED</b></center></div>
   <div class="col-sm-6"><center><img src="https://i.imgur.com/bBzcrj0.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b>Team GRE</b></center></div>
 </div>
 <h4>Project description:</h4>
 <p style="text-align: justify;">
-DOMINATOR is a device - a stopwatch for sports such as Airsoft, Paintball, which allow you to measure the time of occupying a point with a resolution of seconds.
+Domination Timer is a device - a stopwatch for sports such as Airsoft, Paintball, which allow you to measure the time of occupying a point with a resolution of seconds.
 The stopwatch is equipped with a 16x2 / 20x4 LCD character display. After switching on the device, it is possible to switch between menu items on the display using the rotary encoder - KY-040.
-Through the items, it is possible to start the DOMINATOR game mode, which responds to user buttons (inputs), or it is possible to set the time of team occupancy before the game in the configurable mode.
+Through the items, it is possible to start the Domination Timer game mode, which responds to user buttons (inputs), or it is possible to set the time of team occupancy before the game in the configurable mode.
 This parameter represents the required length of holding the button until the team successfully occupies the point. This configurable parameter is implemented for the number of seconds.
 The second configurable parameter is the automatic end of the game to reach a certain number of hours of the stopwatch with the UNLIMITED option - when the stopwatch counts to infinity, or after the maximum display time on the display - 99 hours, 59 minutes, 59 seconds.
 The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) AtMega328P, which controls the entire system logic.
 There are 2 teams in the game - <b><font color="#C0392B">RED team</font></b> and <b><font color="#27AE60">GRE team</font></b>, which play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.				
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b><font color="#C0392B">RED team</font></b>, <b><font color="#27AE60">GRE team</font></b>.
-Button DOMINATOR uses button input for the action of occupying a point by a team member, as well as for input of a referee entity.
+Button Domination Timer uses button input for the action of occupying a point by a team member, as well as for input of a referee entity.
 Thus, a total of 2 buttons for 3 system entities, the switching buttons connected in the INPUT_PULLUP mode are used.
 Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal).
 Switch buttons are used, not switch buttons (they would not react to the system logic, all software would always be "pressed").
-The configurable DOMINATOR responds to the length of the press, which is set in the configuration menu via an encoder.
+The configurable Domination Timer responds to the length of the press, which is set in the configuration menu via an encoder.
 It is required to hold the button for a given time. The system does not respond to short presses.
 <b> In the extended version, it is also possible to set point neutralization (stopping the time of the active team at the point if a member of the other team holds the button at least 50% of the required time) </b>
 The times are displayed on an LCD character display measuring 16x2 or 20x4, which communicates with the control microcontroller via the I2C bus.
@@ -211,12 +211,12 @@ Then the RED team's LED at this station will light up and the display will start
 This type of input is thus suitable for starting a break, but it can also end the game for its evaluation.</font></b>
 The new game is implemented by resetting the entire Arduino board via the RST button, or by disconnecting and reconnecting the power supply.
 In the menu it is also possible to configure the activity / inactivity of the buzzer, which can also be included in the game.
-DOMINATOR game mode uses a buzzer to announce the current occupation of a point.
-Eraser does not exist in this type of DOMINATOR.
+Domination Timer game mode uses a buzzer to announce the current occupation of a point.
+Eraser does not exist in this type of Domination Timer.
 A second game can be implemented in the system - countdown, which allows you to set a minute countdown while it must be stopped.
-The player stops the countdown by holding both buttons for a certain time (based on the configuration menu for the length of pressing from DOMINATOR). 
+The player stops the countdown by holding both buttons for a certain time (based on the configuration menu for the length of pressing from Domination Timer). 
 </p>
-<h4>Project hardware - Configurable DOMINATOR:</h4> 
+<h4>Project hardware - Configurable Domination Timer:</h4> 
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>Rotary 360° encoder (KY-040)</b><img src="https://i.imgur.com/sPFfayL.png" alt="Rotačný enkóder - KY-040" title="Rotačný enkóder - KY-040" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>LCD character display 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
@@ -224,11 +224,11 @@ The player stops the countdown by holding both buttons for a certain time (based
 <li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>2x pushbutton</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<hr><center><h3>Wiring diagram - Configurable DOMINATOR</h3></center><hr>
+<hr><center><h3>Wiring diagram - Configurable Domination Timer</h3></center><hr>
 <center><img src="https://i.imgur.com/jfk1d8y.png" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
-<hr><center><h3>Configurable DOMINATOR at runtime - testing</h3></center><hr>
+<hr><center><h3>Configurable Domination Timer at runtime - testing</h3></center><hr>
 <center><img src="https://i.imgur.com/R0wwJjD.jpeg" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball" title="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball"></center>        			
-<h3>The wiring of the terminals - Configurable DOMINATOR - fully corresponds to the wiring diagram:</h3>
+<h3>The wiring of the terminals - Configurable Domination Timer - fully corresponds to the wiring diagram:</h3>
 <div class="table-responsive">   
 <table class="table" style="border: 1px solid black;">
 				<thead>		
@@ -237,93 +237,93 @@ The player stops the countdown by holding both buttons for a certain time (based
 <td align="right" style="background-color:#27AE60"><strong>I2C converter for LCD display</strong></td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#27AE60">GND</td>
+<td align="right" style="background-color:#27AE60">GND</td>
 </tr>
 <tr>
-<td align="left">5V</td>
-<td align="right">Vcc</td>
+<td align="left" style="background-color:#27AE60">5V</td>
+<td align="right" style="background-color:#27AE60">Vcc</td>
 </tr>
 <tr>
-<td align="left">A4</td>
-<td align="right">SDA</td>
+<td align="left" style="background-color:#27AE60">A4 (Hardware SDA)</td>
+<td align="right" style="background-color:#27AE60">SDA</td>
 </tr>
 <tr>
-<td align="left">A5</td>
-<td align="right">SCL</td>
+<td align="left" style="background-color:#27AE60">A5 (Hardware SCL)</td>
+<td align="right" style="background-color:#27AE60">SCL</td>
 </tr>
 <tr>
 <td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#C0392B"><strong>Rotary encoder - KY-040</strong></td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#C0392B">GND</td>
+<td align="right" style="background-color:#C0392B">GND</td>
 </tr>
 <tr>
-<td align="left">5V</td>
-<td align="right">+</td>
+<td align="left" style="background-color:#C0392B">5V</td>
+<td align="right" style="background-color:#C0392B">+</td>
 </tr>
 <tr>
-<td align="left">D3</td>
-<td align="right">CLK</td>
+<td align="left" style="background-color:#C0392B">D3</td>
+<td align="right" style="background-color:#C0392B">CLK</td>
 </tr>
 <tr>
-<td align="left">D4</td>
-<td align="right">DT</td>
+<td align="left" style="background-color:#C0392B">D4</td>
+<td align="right" style="background-color:#C0392B">DT</td>
 </tr>
 <tr>
-<td align="left">D5</td>
-<td align="right">SW</td>
+<td align="left" style="background-color:#C0392B">D5</td>
+<td align="right" style="background-color:#C0392B">SW</td>
 </tr>
 <tr>
 <td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#F8C471"><strong>LED diodes</strong></td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#F8C471">GND</td>
+<td align="right" style="background-color:#F8C471">GND</td>
 </tr>
 <tr>
-<td align="left">D6</td>
-<td align="right">IN (RED)</td>
+<td align="left" style="background-color:#F8C471">D6</td>
+<td align="right" style="background-color:#F8C471">IN (RED)</td>
 </tr>
 <tr>
-<td align="left">D7</td>
-<td align="right">IN (GREEN)</td>
+<td align="left" style="background-color:#F8C471">D7</td>
+<td align="right" style="background-color:#F8C471">IN (GREEN)</td>
 </tr>
 <td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#5DADE2"><strong>Pushbuttons (INPUT_PULLUP)</strong></td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#5DADE2">GND</td>
+<td align="right" style="background-color:#5DADE2">GND</td>
 </tr>
 <tr>
-<td align="left">D8</td>
-<td align="right">IN (RED)</td>
+<td align="left" style="background-color:#5DADE2">D8</td>
+<td align="right" style="background-color:#5DADE2">IN (RED)</td>
 </tr>
 <tr>
-<td align="left">D9</td>
-<td align="right">IN (GRE)</td>
+<td align="left" style="background-color:#5DADE2">D9</td>
+<td align="right" style="background-color:#5DADE2">IN (GRE)</td>
 </tr>
 <td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#AF7AC5"><strong>Buzzer</strong></td>
 </tr>
 <tr>
-<td align="left">D10</td>
-<td align="right">IO</td>
+<td align="left" style="background-color:#AF7AC5">D10</td>
+<td align="right" style="background-color:#AF7AC5">IO</td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#AF7AC5">GND</td>
+<td align="right" style="background-color:#AF7AC5">GND</td>
 </tr>
 </tbody>
 </table>				</div>
-<hr><center><h2>Test program (Shareware) - Configurable DOMINATOR with machine code</h2></center><hr>
+<hr><center><h2>Test program (Shareware) - Configurable Domination Timer</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
-<b>Shareware version (.hex) available for Configurable DOMINATOR project.</b>The version allows you to measure a maximum of 60 seconds for each team. When this time is reached, the stopwatch stops.
+<b>Shareware version (.hex) available for Configurable Domination Timer project.</b>The version allows you to measure a maximum of 60 seconds for each team. When this time is reached, the stopwatch stops.
 <b>The goal of the version is to verify compatibility with your hardware.</b> Machine codes based on the I2C address of the converter for the LCD display are available in the Github repository.
 The most used addresses are 0x27 and 0x3F. If you do not know the address of your converter, use the built-in example in Arduino IDE -> I2C Scanner, which will write the address to the UART interface (Serial monitor).
 Machine code can be uploaded to the Arduino Uno microcontroller via the AVRDUDE software - part of the Arduino IDE, or with a GUI interface via the XLoader - easier to use.</p>
@@ -333,9 +333,10 @@ Machine code can be uploaded to the Arduino Uno microcontroller via the AVRDUDE 
 <li>For firmware with I2C display address 0x3F (example COM port 21 and 115200 baud / s):<b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
 <li><b>XLoader is a Windows application (executable .exe tool) with a simple graphical interface</b>, which allows the selection of firmware - machine code (.hex), the target platform and can dynamically show the COM port on which the device is located.</li> 
 <li><b>By simply clicking on Upload, the machine code can be uploaded automatically</b> (XLoader uses the AVRDUDE tool similar to the Arduino IDE). The XLoader window informs about the successful upload in the form of a list of the number of bytes uploaded.</li>	
+<li><font color="red">If you are using Arduino Nano with OLD Bootloader, you ned to use upload speed 57600 baud/s and not standard value 115200 baud/s!</font></li>
 <b><font color="red">The firmware can be downloaded from the repository:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">HERE</a>. The firmware is in the /firmware/encoder_dominator folder divided  according to the address of the I2C converter (you found out from the I2C scanner output on the UART interface).
 </div>
-				<h4>Available firmware - Configurable push-button DOMINATOR</h4>
+				<h4>Available firmware - Configurable push-button Domination Timer</h4>
 				<div class="table-responsive">          
  				<table class="table" style="border: 1px solid black;">
 				<thead>
