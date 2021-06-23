@@ -186,7 +186,7 @@ table,thead,tbody,tfoot,tr, td,th{
   <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b><font color="#C0392B">Tím RED</font></b></center></div>
   <div class="col-sm-6"><center><img src="https://i.imgur.com/bBzcrj0.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b><font color="#F39C12">Tím GRE</font></b></center></div>
 </div>
-<h4>Popis projektu:</h4>
+<hr><h4>Popis projektu konfigurovateľný DOMINATOR:</h4><hr>
 <p style="text-align: justify;">
 DOMINATOR je zariadenie - stopky pre športy typu Airsoft, Paintball, ktoré umožňujú merať čas obsadenia bodu s rozlíšením na sekundy.
 Stopky sú vybavené LCD znakovým displejom rozmeru 16x2 / 20x4. Po zapnutí zariadenia je možné na displeji prostredníctvom rotačného enkódera - KY-040 prepínať medzi položkami menu.
@@ -216,7 +216,7 @@ Eraser v tomto type DOMINATOR-a neexistuje.
 V systéme môže byť implementovaná druhá hra - countdown, ktorá umožňuje nastaviť minútový odpočet, pokým musí byť zastavený.
 Hráč zastaví odpočet držaním oboch tlačidiel po určitú dobu (vychádza z konfiguračného menu pre dĺžku stlačenia z DOMINATOR-a). 
 </p>
-<h4>Hardvér pre projekt - Konfigurovateľný DOMINATOR:</h4> 
+<hr><h4>Hardvér pre projekt - Konfigurovateľný DOMINATOR:</h4> <hr>
 <li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>Rotačný 360° enkóder (KY-040)</b><img src="https://i.imgur.com/sPFfayL.png" alt="Rotačný enkóder - KY-040" title="Rotačný enkóder - KY-040" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
 <li><b>LCD znakový displej 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
@@ -228,10 +228,10 @@ Hráč zastaví odpočet držaním oboch tlačidiel po určitú dobu (vychádza 
 <center><img src="https://i.imgur.com/jfk1d8y.png" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
 <hr><center><h3>Konfigurovateľný DOMINATOR za behu - testovanie</h3></center><hr>
 <center><img src="https://i.imgur.com/R0wwJjD.jpeg" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball" title="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball"></center>        			
-<h3>Tabuľkové zapojenie vývodov - Konfigurovateľný DOMINATOR - plne odpovedá schéme zapojenia:</h3>
+<hr><h3>Tabuľkové zapojenie vývodov - Konfigurovateľný DOMINATOR - plne odpovedá schéme zapojenia:</h3><hr>
 <div class="table-responsive">   
 <table class="table" style="border: 1px solid black;">
-				<thead>		
+<thead>		
 <tr>
 <td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#27AE60"><strong>I2C prevodník pre LCD displej</strong></td>
@@ -334,8 +334,9 @@ Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér A
 <li><b>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
 <li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (XLoader využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
 <b><font color="red">Firmvér je možné stiahnuť nájsť v repozitári:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">TU</a>. Firmvér je v priečinku Github repozitáru projektu /firmware/button_dominator/ rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
+V prípade, že využívate Arduino Nano s OLD Bootloaderom, je nutné projekt nahrávať rýchlosťou 57600 baud/s, nakoľko baudrate 115200 nie je podporovaný!
 </div>
-				<h4>Dostupný firmvér - Konfigurovateľný tlačidlový DOMINATOR</h4>
+				<hr><h4>Dostupný firmvér - Konfigurovateľný tlačidlový DOMINATOR</h4><hr>
 				<div class="table-responsive">          
  				<table class="table" style="border: 1px solid black;">
 				<thead>
