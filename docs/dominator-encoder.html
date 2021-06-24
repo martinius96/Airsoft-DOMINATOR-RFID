@@ -195,8 +195,9 @@ Druhým konfigurovateľným parametrom je automatické ukončenie hry pre dosiah
 Stopky využívajú riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) AtMega328P, ktorý ovláda celú logiku systému.
 V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a zaberajú pomyselný bod, ktorý je tvorený týmto zariadením - DOMINATOR.				
 Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.
+<hr>
 Tlačidlový DOMINATOR využíva tlačidlový vstup pre akciu obsadenia bodu členom tímu, rovnako aj pre vstup entity rozhodcu.
-Celkom teda 2 tlačidlá pre 3 entity systému, využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
+Celkom sú v systéme Konfigurovateľný DOMINATOR použité 2 tlačidlá pre 3 entity systému. Využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
 Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).
 Používajú sa spínacie tlačidlá, nie rozpínacie (nereagovali by na logiku systému, boli by vždy všetky softvérovo "stlačené").				
 Konfigurovateľný DOMINATOR reaguje na dĺžku stlačenia, ktorá sa nastavuje v konfiguračnom menu prostredníctvom enkóderu.
@@ -207,6 +208,7 @@ Vyžaduje sa držanie tlačidla po danú dobu. Na krátke stlačenia systém ner
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím.</font></b>
 <b><font color="#27AE60">V prípade, že bod obsadí tím GRE a člen tímu stlačí príslušné tlačidlo, opäť sa ozve buzzer, rozsvieti sa dióda tímu GRE, čas tímu RED sa pauzuje a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
 <b><font color="#F39C12">Rozhodca pre zastavenie oboch časov musí stlačiť obe tlačidlá súčasne. Časy sú zastavené, pokým nie je bod obsadený opäť niektorým z tímov, ktoré sú v systéme
+<hr>
 Tento typ vstupu je tak vhodný pre spustenie prestávky, ale môže taktiež ukončiť hru pre jej vyhodnotenie.</font></b>
 Nová hra sa realizuje resetom celej dosky Arduino cez RST tlačidlo, prípadne odpojením a pripojením napájania. 
 V menu je možné konfigurovať aj aktivitu / neaktivitu hlásiča - buzzera, ktorý je možné tiež do hry obsiahnuť.
@@ -335,6 +337,7 @@ Hráč zastaví odpočet držaním oboch tlačidiel po určitú dobu (vychádza 
 Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
 Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez XLoader - ľahšie na použitie.</p>
 <li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<hr>
 <b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (AtMega328P):</center></b>
 <li>Pre firmvér s I2C adresou displeja 0x27 (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
 <li>Pre firmvér s I2C adresou displeja 0x3F (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
