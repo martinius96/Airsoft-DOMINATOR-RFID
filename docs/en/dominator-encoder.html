@@ -196,6 +196,7 @@ The second configurable parameter is the automatic end of the game to reach a ce
 The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) AtMega328P, which controls the entire system logic.
 There are 2 teams in the game - <b><font color="#C0392B">RED team</font></b> and <b><font color="#27AE60">GRE team</font></b>, which play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.				
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b><font color="#C0392B">RED team</font></b>, <b><font color="#27AE60">GRE team</font></b>.
+<hr>
 Button Domination Timer uses button input for the action of occupying a point by a team member, as well as for input of a referee entity.
 Thus, a total of 2 buttons for 3 system entities, the switching buttons connected in the INPUT_PULLUP mode are used.
 Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal).
@@ -206,6 +207,7 @@ It is required to hold the button for a given time. The system does not respond 
 The times are displayed on an LCD character display measuring 16x2 or 20x4, which communicates with the control microcontroller via the I2C bus.
 <b><font color="#C0392B">If a team member of the RED team occupies a point by pressing a button, a buzzer is launched, which announces a change in the point with a short beep.
 Then the RED team's LED at this station will light up and the display will start adding time for that team.</font></b>
+<hr>
 <b><font color="#27AE60">If the point is occupied by the GRE team and the team member presses the appropriate button, the buzzer sounds again, the GRE team LED lights up, the RED time is paused and the time of the GRE team that occupied the point is counted.</font></b>
 <b><font color="#F39C12">The referee must stop both buttons at the same time to stop both times. Times are stopped until the point is reoccupied by some of the teams in the system
 This type of input is thus suitable for starting a break, but it can also end the game for its evaluation.</font></b>
@@ -216,14 +218,22 @@ Eraser does not exist in this type of Domination Timer.
 A second game can be implemented in the system - countdown, which allows you to set a minute countdown while it must be stopped.
 The player stops the countdown by holding both buttons for a certain time (based on the configuration menu for the length of pressing from Domination Timer). 
 </p>
-<h4>Project hardware - Configurable Domination Timer:</h4> 
-<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>Rotary 360° encoder (KY-040)</b><img src="https://i.imgur.com/sPFfayL.png" alt="Rotačný enkóder - KY-040" title="Rotačný enkóder - KY-040" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>LCD character display 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>I2C converter for LCD display</b><img src="https://i.imgur.com/ORAwjHo.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>2x pushbutton</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<hr><h4>Compatible control hardware - Configurable DOMINATOR:</h4><hr>
+<div class="row">
+<div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino Uno" title="Riadiaci mikrokontróler Arduino Uno"><br><b>Arduino Uno</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/ZY3mDps.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino Nano" title="Riadiaci mikrokontróler Arduino Nano"><br><b>Arduino Nano</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller AtMega328P DIP" title="Riadiaci mikrokontróler AtMega328P DIP"><br><b>AtMega328P - DIP28</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller AtMega328P SMD" title="Riadiaci mikrokontróler AtMega328P SMD"><br><b>AtMega328P - SMD</b></center></div>
+</div>
+<hr><h4>Compatible peripherals - Configurable DOMINATOR:</h4><hr>
+<div class="row">
+<div class="col-sm-2"><center><img src="https://i.imgur.com/KLImexp.png" width="128px" height="128px" style="border-radius: 50%;" alt="LCD character display 16x2 / 20x4" title="LCD character display 16x2 / 20x4"><br><b>LCD character display 16x2 / 20x4</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/DYNZjCW.png" width="128px" height="128px" style="border-radius: 50%;" alt="I2C converter for LCD display" title="I2C converter for LCD display"><br><b>I2C converter for LCD display</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/sPFfayL.png" width="128px" height="128px" style="border-radius: 50%;" alt="Rotary 360 ° encoder (KY-040)" title="Rotary 360 ° encoder (KY-040)"><br><b>Rotary 360° encoder (KY-040)</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Buzzer" title="Buzzer"><br><b>Buzzer</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/OxaPuBN.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diodes" title="2x LED diodes"><br><b>2x LED</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/9P3aF98.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x pushbutton" title="2x pushbutton"><br><b>2x pushbutton</b></center></div>
+</div>
 <hr><center><h3>Wiring diagram - Configurable Domination Timer</h3></center><hr>
 <center><img src="https://i.imgur.com/jfk1d8y.png" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
 <hr><center><h3>Configurable Domination Timer at runtime - testing</h3></center><hr>
