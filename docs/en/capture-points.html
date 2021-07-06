@@ -171,12 +171,14 @@ The points communicate with each other via WiFi modules from the nRF24L01 series
 One point is a permanent transmitter and requires communication from the other point. The second point is the receiver and responds to the data received by the transmitter, thus avoiding collisions when communicating on the WiFi frequency 2.4 GHz.
 Each of the points uses an Arduino control microcontroller (Arduino Uno / Nano), or a separate chip (Atmel) AtMega328P, which controls the entire logic of the system.
 There are 2 teams in the game - <b><font color="#C0392B">RED team</font></b> a <b><font color="#27AE60">GRE team</font></b>, who play against each other and try to occupy both points by pressing the appropriate button.	
+<hr>
 Button input indicates the action of occupying a point by a member of the RED or GRE team.
 The pushbuttons connected in the INPUT_PULLUP mode are used.
 Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal).
 Press duration / number of presses is not controlled and is not configurable. The point responds immediately to a button press.
-The game ends when both points are occupied by the same team.
+Game ends when both points are occupied by the same team.
 The change in the point is indicated by the detector, at the end of the game both detectors beep in an infinite loop and at the same time WiFi communication between the nRF24L01 modules is interrupted.
+<hr>
 WiFi modules nRF24l01 communicate at 2.4 GHz. nRF24l01 (without + PA + LNA) communicate at about 70 meters, nRF24l01 + PA + LNA also per kilometer, respectively in the forest and otherwise disturbed environment at the level of 450-700 meters at maximum transmission power.
 For external power supply, it is necessary to use a YL-adapter with a 3.3V converter and power it via an external adapter.
 Do not use a 5V power supply from the Arduino, there is a risk of destroying the controller, as well as the 3V3 terminal is not suitable for powering the module, as it has a high current consumption in more powerful transmission modes.
@@ -196,20 +198,26 @@ Restart of both points is performed by resetting the Arduín button, or by pulli
 <li>RF24_PA_HIGH=0dBm</li>
 <h4>Block diagram - WiFi points - Airsoft:</h4>
 <center><img src="https://i.imgur.com/hglnwgX.jpg" style="display: block; max-width: 100%; height: auto;" alt="Bloková schéma / Block scheme - Capture Points - Airsoft / Paintball, Arduino, nRF24L01" title="Bloková schéma / Block scheme - Capture Points - Airsoft / Paintball, Arduino, nRF24L01"></center>	
-<h4>Project hardware - WiFi points:</h4> 
-<li><b>2x Arduino Uno / Nano / AtMega328P</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>2x WiFi module nRF24L01 / nRF24L01 + PA + LNA</b><img src="https://i.imgur.com/1cykMkD.png" alt="nRF24L01 / nRF24L01 + PA + LNA" title="nRF24L01 / nRF24L01 + PA + LNA0" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>2x Buzzer (pasívny buzzer)</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>2x LED diodes</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>2x pushbutton</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<hr><h4>Compatible control hardware for WiFi Airsoft points:</h4><hr>
+<div class="row">
+<div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino Uno" title="Control microcontroller Arduino Uno"><br><b>Arduino Uno</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/ZY3mDps.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino Nano" title="Control microcontroller Arduino Nano"><br><b>Arduino Nano</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller AtMega328P DIP" title="Control microcontroller AtMega328P DIP"><br><b>AtMega328P - DIP28</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller AtMega328P SMD" title="Control microcontroller AtMega328P SMD"><br><b>AtMega328P - SMD</b></center></div>
+</div>	
+<hr><h4>Peripherals for WiFi Airsoft points:</h4><hr>
+<div class="row">
+<div class="col-sm-3"><center><img src="https://i.imgur.com/1cykMkD.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x WiFi module nRF24L01 / nRF24L01 + PA + LNA" title="2x WiFi module nRF24L01 / nRF24L01 + PA + LNA"><br><b>2x WiFi module nRF24L01 / nRF24L01 + PA + LNA</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/9P3aF98.png" width="128px" height="128px" style="border-radius: 50%;" alt="Pushbutton (pushbutton)" title="Pushbutton (pushbutton)"><br><b>4x Pushbutton</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Buzzer" title="Buzzer"><br><b>2x Buzzer</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/OxaPuBN.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LEDs" title="2x LEDs"><br><b>4x LEDs</b></center></div>
+</div>
 <hr><center><h3>Wiring diagram - WiFi points</h3></center><hr>
 <center><img src="https://i.imgur.com/noWoy6S.png" style="display: block; max-width: 100%; height: auto;" alt="WiFi body - DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="WiFi body - - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
 <hr><center><h3>WiFi points - test connection</h3></center><hr>
 <center><img src="https://i.imgur.com/bx6mj2V.png" style="display: block; max-width: 100%; height: auto;" alt="WiFi body - - Arduino pre Airsoft, Paintball" title="WiFi body - - Arduino pre Airsoft, Paintball"></center>        			
 <hr><h3>WiFi points - Capture Points - How it works:</h3><hr>
 <center><iframe width="80%" height="315" src="https://www.youtube.com/embed/SFTyy0cOauU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-
-
 <h3>Table connection of terminals - Configurable DOMINATOR - fully corresponds to the wiring diagram:</h3>
 <div class="table-responsive">   
 <table class="table" style="border: 1px solid black;">
