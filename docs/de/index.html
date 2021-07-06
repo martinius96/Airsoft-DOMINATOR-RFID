@@ -193,13 +193,22 @@ Das System ist getestet, funktionsfähig und wartungsfreundlich.
 Der NXP RC522-Leser arbeitet mit einer Frequenz von 13,56 MHz, registriert RFID-Tags bei ca. 3 Zentimetern (fast physischer Kontakt mit dem Leser ist erforderlich) und kompatibles ISO / IEC 14443-A-Tag-Format.
 Der angegebene Tag-Standard umfasst auch ISIC-Buskarten, die als NFC-Karten fungieren und ihre physische Adresse - UID - an einen Leser in Reichweite übermitteln können.
 </p>
-<h4> Hardware für das Projekt - RFID DOMINATOR: </h4>
-<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>RFID Leser RC522 (13.56MHz)</b><img src="https://i.imgur.com/PrVMhWG.png" alt="RFID čítačka RC522" title="RFID čítačka RC522" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>ISO / IEC 14443-A Standard-Schlüsselanhänger / Karten / Armbänder</b><img src="https://i.imgur.com/9lqEfhO.png" alt="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" title="Kľúčenky, karty, náramky na 13.56MHz štandardu ISO/IEC 14443-A" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>Buzzer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<li><b>2x LED Dioden</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; max-width: 100%; height: auto; border-radius: 50%;"></li>
-<center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>        
+<hr><h4>Kompatible Steuerungshardware für RFID DOMINATOR:</h4><hr>
+<div class="row">
+<div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Mikrocontroller steuern Arduino Uno" title="Mikrocontroller steuern Arduino Uno"><br><b>Arduino Uno</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/ZY3mDps.png" width="128px" height="128px" style="border-radius: 50%;" alt="Mikrocontroller steuern Arduino Nano" title="Mikrocontroller steuern Arduino Nano"><br><b>Arduino Nano</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Mikrocontroller steuern AtMega328P DIP" title="Mikrocontroller steuernr AtMega328P DIP"><br><b>AtMega328P - DIP28</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Mikrocontroller steuern AtMega328P SMD" title="Mikrocontroller steuern AtMega328P SMD"><br><b>AtMega328P - SMD</b></center></div>
+</div>	
+<hr><h4>Kompatible Peripheriegeräte für RFID DOMINATOR:</h4><hr>
+<div class="row">
+<div class="col-sm-2"><center><img src="https://i.imgur.com/KLImexp.png" width="128px" height="128px" style="border-radius: 50%;" alt="LCD-Zeichenanzeige 16x2 / 20x4" title="LCD-Zeichenanzeige 16x2 / 20x4"><br><b>LCD-Zeichenanzeige 16x2 / 20x4</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/DYNZjCW.png" width="128px" height="128px" style="border-radius: 50%;" alt="I2C-Konverter für LCD-Display" title="I2C-Konverter für LCD-Display"><br><b>I2C-Konverter für LCD-Display</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/PrVMhWG.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID čítačka NXP RC522" title="RFID-Leser NXP RC522"><br><b>RFID-Leser NXP RC522</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/9lqEfhO.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID-Chips nach ISO / IEC 14443-A-Standard" title="RFID-Chips nach ISO / IEC 14443-A-Standard"><br><b>RFID-Chips nach ISO / IEC 14443-A-Standard</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Summer" title="Summer"><br><b>Summer</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/OxaPuBN.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LEDs" title="2x LEDs"><br><b>2x LEDs</b></center></div>
+</div><center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>        
 <h4>Funktionsprinzip auf der Hardwareseite:</h4>
       <li> Der RF5-Leser RC522 kommuniziert mit dem Arduino über den SPI-Bus. Es liest die UID (Kennung) von RFID-Karten in Reichweite und leitet diese Kennung an Arduino weiter, das die Programmlogik ausführt. Der Leser reagiert auf den Abstand des Chips etwa 3 cm von der Antenne. </li>
        <li> Arduino vergleicht die Adresse der gelesenen Karte in einer Mehrfachbedingung, wendet digitale Zustände auf Dioden an, führt alle 100 ms einen Universalzähler aus (zählt in Zehntelsekunden) und steuert die Zählung beider Male. </li>
