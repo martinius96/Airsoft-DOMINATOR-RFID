@@ -196,7 +196,8 @@ Der zweite konfigurierbare Parameter ist das automatische Ende des Spiels, um mi
 Die Stoppuhr verwendet einen Arduino-Steuerungs-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Systemlogik steuert.
 Es gibt 2 Teams im Spiel - <b><font color="#C0392B">RED mannschaft</font></b> un <b><font color="#27AE60">GRE mannschaft</font></b>, die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.				
 Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für an <b><font color="#C0392B">RED mannschaft</font></b>, <b><font color="#27AE60">GRE mannschaft</font></b>.
-Button DOMINATOR verwendet die Tasteneingabe für die Besetzung eines Punktes durch ein Teammitglied sowie für die Eingabe einer Schiedsrichterentität.
+<hr>
+Taste DOMINATOR verwendet die Tasteneingabe für die Besetzung eines Punktes durch ein Teammitglied sowie für die Eingabe einer Schiedsrichterentität.
 Somit werden insgesamt 2 Tasten für 3 Systementitäten verwendet, wobei die im INPUT_PULLUP-Modus verbundenen Schalttasten verwendet werden.
 Durch Drücken der Taste wird das GND-Signal dem digitalen Arduino-Eingangsanschluss (Active-LOW-Schaltsignal) zugeführt.
 Schalttasten werden verwendet, keine Schalttasten (sie würden nicht auf die Systemlogik reagieren, die gesamte Software würde immer "gedrückt" werden).
@@ -206,6 +207,7 @@ Es ist erforderlich, die Taste für eine bestimmte Zeit gedrückt zu halten. Das
 Die Zeiten werden auf einer 16x2- oder 20x4-LCD-Zeichenanzeige angezeigt, die über den I2C-Bus mit dem Steuermikrocontroller kommuniziert.
 <b><font color="#C0392B">Wenn ein Teammitglied des ROTEN Teams per Knopfdruck einen Punkt belegt, wird ein Summer ausgelöst, der mit einem kurzen Piepton eine Änderung des Punktes ankündigt.
 Dann leuchtet die LED des ROTEN Teams an dieser Station auf und die Anzeige fügt Zeit für dieses Team hinzu.</font></b>
+<hr>
 <b><font color="#27AE60">Wenn der Punkt vom GRE-Team belegt ist und das Teammitglied die entsprechende Taste drückt, ertönt der Summer erneut, die GRE-Team-LED leuchtet auf, die ROTE Zeit wird angehalten und die Zeit des GRE-Teams, das den Punkt belegt hat, wird gezählt.</font></b>
 <b><font color="#F39C12">Der Schiedsrichter muss beide Tasten gleichzeitig anhalten, um beide Male anzuhalten. Die Zeiten werden angehalten, bis der Punkt von einigen Teams im System erneut belegt wird
 Diese Art der Eingabe eignet sich daher zum Starten einer Pause, kann aber auch das Spiel für die Auswertung beenden.</font></b>
@@ -216,14 +218,22 @@ Radiergummi existiert in diesem DOMINATOR-Typ nicht.
 Ein zweites Spiel kann im System implementiert werden - Countdown, mit dem Sie einen Minuten-Countdown einstellen können, während dieser gestoppt werden muss.
 Der Player stoppt den Countdown, indem er beide Tasten eine bestimmte Zeit lang gedrückt hält (basierend auf dem Konfigurationsmenü für die Dauer des Drückens von DOMINATOR).
 </p>
-<h4>Projekthardware - Konfigurierbarer DOMINATOR:</h4> 
-<li><b>Arduino Uno/Nano</b><img src="https://s3-ap-northeast-1.amazonaws.com/switch-science-intl/contents/small/789_201602_102_tBuTiHx.jpg" alt="Arduino Uno/Nano" title="Arduino Uno/Nano" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>360 ° Drehgeber (KY-040)</b><img src="https://i.imgur.com/sPFfayL.png" alt="Rotačný enkóder - KY-040" title="Rotačný enkóder - KY-040" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>LCD-Zeichenanzeige 20x4</b><img src="https://i.imgur.com/h1oKZpL.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>I2C-Wandler für LCD-Anzeige</b><img src="https://i.imgur.com/ORAwjHo.png" alt="LCD znakový displej 20x4" title="LCD znakový displej 20x4" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>Summer</b><img src="https://i.imgur.com/HPRdfXo.png" alt="Hlásič priloženia karty" title="Hlásič priloženia karty" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>2x LED Dioden</b><img src="https://www.leds-manufacturer.com/PIC/2010114205637734_1.jpg" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
-<li><b>2x Schaltertaste (pushbutton)</b><img src="https://i.imgur.com/9P3aF98.png" alt="LED diódy - indikátor aktívneho tímu na bode" title="LED diódy - indikátor aktívneho tímu na bode" style="display: block; width: 128px; height: 128px; border-radius: 50%;"></li>
+<hr><h4>Kompatible Steuerungshardware - Konfigurierbarer DOMINATOR:</h4><hr>
+<div class="row">
+<div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Mikrocontroller steuern Arduino Uno" title="Riadiaci mikrokontróler Arduino Uno"><br><b>Arduino Uno</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/ZY3mDps.png" width="128px" height="128px" style="border-radius: 50%;" alt="Mikrocontroller steuern Arduino Nano" title="Riadiaci mikrokontróler Arduino Nano"><br><b>Arduino Nano</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Mikrocontroller steuern AtMega328P DIP" title="Riadiaci mikrokontróler AtMega328P DIP"><br><b>AtMega328P - DIP28</b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Mikrocontroller steuern AtMega328P SMD" title="Riadiaci mikrokontróler AtMega328P SMD"><br><b>AtMega328P - SMD</b></center></div>
+</div>
+<hr><h4>Kompatible Peripheriegeräte - Konfigurierbarer DOMINATOR:</h4><hr>
+<div class="row">
+<div class="col-sm-2"><center><img src="https://i.imgur.com/KLImexp.png" width="128px" height="128px" style="border-radius: 50%;" alt="LCD-Zeichenanzeige 16x2 / 20x4" title="LCD-Zeichenanzeige 16x2 / 20x4"><br><b>LCD-Zeichenanzeige 16x2 / 20x4</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/DYNZjCW.png" width="128px" height="128px" style="border-radius: 50%;" alt="I2C prevodník pre LCD displej" title="I2C-Konverter für LCD-Display"><br><b>I2C-Konverter für LCD-Display</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/sPFfayL.png" width="128px" height="128px" style="border-radius: 50%;" alt="Rotačný 360° enkóder (KY-040)" title="Drehbarer 360°-Encoder (KY-040)"><br><b>Drehbarer 360°-Encoder (KY-040)</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Summer" title="Summer"><br><b>Summer</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/OxaPuBN.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED Dioden" title="2x LED Dioden"><br><b>2x LED Dioden</b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/9P3aF98.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x Schaltknopf (pushbutton)" title="2xSchaltknopf (pushbutton)"><br><b>2x Schaltknopf</b></center></div>
+</div>
 <hr><center><h3>Schaltplan - Konfigurierbarer DOMINATOR</h3></center><hr>
 <center><img src="https://i.imgur.com/jfk1d8y.png" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
 <hr><center><h3>Konfigurierbarer DOMINATOR zur Laufzeit - Testen</h3></center><hr>
@@ -237,86 +247,86 @@ Der Player stoppt den Countdown, indem er beide Tasten eine bestimmte Zeit lang 
 <td align="right" style="background-color:#27AE60"><strong>I2C-Wandler für LCD-Anzeige</strong></td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#27AE60">GND</td>
+<td align="right" style="background-color:#27AE60">GND</td>
 </tr>
 <tr>
-<td align="left">5V</td>
-<td align="right">Vcc</td>
+<td align="left" style="background-color:#27AE60">5V</td>
+<td align="right" style="background-color:#27AE60">Vcc</td>
 </tr>
 <tr>
-<td align="left">A4</td>
-<td align="right">SDA</td>
+<td align="left" style="background-color:#27AE60">A4</td>
+<td align="right" style="background-color:#27AE60">SDA</td>
 </tr>
 <tr>
-<td align="left">A5</td>
-<td align="right">SCL</td>
+<td align="left" style="background-color:#27AE60">A5</td>
+<td align="right" style="background-color:#27AE60">SCL</td>
 </tr>
 <tr>
 <td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#C0392B"><strong>Drehcodierer - KY-040</strong></td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#C0392B">GND</td>
+<td align="right" style="background-color:#C0392B">GND</td>
 </tr>
 <tr>
-<td align="left">5V</td>
-<td align="right">+</td>
+<td align="left" style="background-color:#C0392B">5V</td>
+<td align="right" style="background-color:#C0392B">+</td>
 </tr>
 <tr>
-<td align="left">D3</td>
-<td align="right">CLK</td>
+<td align="left" style="background-color:#C0392B">D3</td>
+<td align="right" style="background-color:#C0392B">CLK</td>
 </tr>
 <tr>
-<td align="left">D4</td>
-<td align="right">DT</td>
+<td align="left" style="background-color:#C0392B">D4</td>
+<td align="right" style="background-color:#C0392B">DT</td>
 </tr>
 <tr>
-<td align="left">D5</td>
-<td align="right">SW</td>
+<td align="left" style="background-color:#C0392B">D5</td>
+<td align="right" style="background-color:#C0392B">SW</td>
 </tr>
 <tr>
 <td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#F8C471"><strong>LED Dioden</strong></td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#F8C471">GND</td>
+<td align="right" style="background-color:#F8C471">GND</td>
 </tr>
 <tr>
-<td align="left">D6</td>
-<td align="right">IN (RED)</td>
+<td align="left" style="background-color:#F8C471">D6</td>
+<td align="right" style="background-color:#F8C471">IN (RED)</td>
 </tr>
 <tr>
-<td align="left">D7</td>
-<td align="right">IN (GREEN)</td>
+<td align="left" style="background-color:#F8C471">D7</td>
+<td align="right" style="background-color:#F8C471">IN (GREEN)</td>
 </tr>
 <td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#5DADE2"><strong>Taste (INPUT_PULLUP)</strong></td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#5DADE2">GND</td>
+<td align="right" style="background-color:#5DADE2">GND</td>
 </tr>
 <tr>
-<td align="left">D8</td>
-<td align="right">IN (RED)</td>
+<td align="left" style="background-color:#5DADE2">D8</td>
+<td align="right" style="background-color:#5DADE2">IN (RED)</td>
 </tr>
 <tr>
-<td align="left">D9</td>
-<td align="right">IN (GRE)</td>
+<td align="left" style="background-color:#5DADE2">D9</td>
+<td align="right" style="background-color:#5DADE2">IN (GRE)</td>
 </tr>
 <td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
 <td align="right" style="background-color:#AF7AC5"><strong>Summer</strong></td>
 </tr>
 <tr>
-<td align="left">D10</td>
-<td align="right">IO</td>
+<td align="left" style="background-color:#AF7AC5">D10</td>
+<td align="right" style="background-color:#AF7AC5">IO</td>
 </tr>
 <tr>
-<td align="left">GND</td>
-<td align="right">GND</td>
+<td align="left" style="background-color:#AF7AC5">GND</td>
+<td align="right" style="background-color:#AF7AC5">GND</td>
 </tr>
 </tbody>
 </table>				</div>
