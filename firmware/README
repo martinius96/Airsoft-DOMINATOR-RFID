@@ -1,7 +1,0 @@
-* Xloader 1.0 download: https://www.hobbytronics.co.uk/arduino-xloader
-* Download repository
-* Open your firmware
-* Set correct board, baudrate 115200 or 57600 with OLD Bootloader (related to some Arduino Nanos)
-* Click on Upload and wait until firmware is uploaded to Arduino
-* Firmware will be automatically running
-* Enjoy
