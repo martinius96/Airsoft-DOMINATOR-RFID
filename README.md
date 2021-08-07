@@ -19,36 +19,36 @@
 ![DPS - GERBER - RFID Domination Timer - Arduino - Airsoft](https://i.imgur.com/tJKTjPF.png)
 ![Schéma zapojenia - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/RoHeR7b.png)
 
-# Tlačidlový DOMINATOR - Airsoft / Paintball
-* Logikou totožný ako RFID DOMINATOR, využíva však tlačidlový vstup spínacími tlačidlami
-* Hráč tímu po obsadení bodu stlačí príslušné tlačidlo, čím obsadí bod (reakcia na stlačenie je okamžitá). 
-* Hlásič (buzzer) pípnutím oznámi obsadenie bodu, rozsvieti sa LED dióda daného tímu, začne sa počítať čas.
-* Čas sa pre tento tím počíta do momentu, kým bod neobsadí a neaktivuje svoje tlačidlo člen druhého tímu, čo zastaví pôvodný čas a začne sa pripočítavať čas k druhému tímu.
-* Rozhodca má svoje tlačidlo, ktorým dokáže čas zastaviť - vykonať pauzu. Pauza hry, obed, koniec hry, spočítanie času a vyhodnotenie herného kola.
-* Posledným tlačidlom v systéme je možnosť erasera, ktorý čas zastaví a vynuluje (reštart hry, nová hra). 
-* LED diódy je možné nahradiť za relé pre možnosť spínať výkonnejšie svietidlá pre lepšiu viditeľnosť aktuálnej farby DOMINATOR-a
-* K projektu nie je dostupný DPS návrh (neplánuje sa)
+# Button DOMINATOR - Airsoft / Paintball
+* Logically identical to RFID DOMINATOR, but uses button input with switching buttons
+* After occupying a point, the team player presses the appropriate button to occupy the point (the response to the press is immediate).
+* The buzzer beeps to indicate the occupation of the point, the LED of the team lights up, the time starts to count.
+* The time is counted for this team until the point is occupied and activated by a member of the other team, which stops the original time and starts adding time to the other team.
+* The referee has his own button with which he can stop time - take a break. Pause the game, lunch, end of the game, counting time and evaluating the game round.
+* The last button in the system is the eraser option, which stops and resets the time (game restart, new game).
+* LEDs can be replaced by relays for the ability to switch more powerful lamps for better visibility of the current color DOMINATOR-a
+* No PCB proposal available for the project (not planned)
 
-# Shareware verzia - Tlačidlový DOMINATOR
-**K projektu Tlačidlový DOMINATOR existuje Shareware verzia, kde je možné vyskúšať funkčnosť celého systému s vašim hardvérom.**
-* Testovací firmvér je v Shareware verzii obmedzený na maximálne 15 sekundové meranie obsadenia bodu každým tímom
-* Verzia využíva 30 sekundovú inicializáciou systému pred jeho možným použitím. 
-* Testovací firmvér je v strojovom kóde (.hex)
-* Nahrať do Arduino Uno dosky je možné firmvér cez nástroj Xloader (dostupný v repozitári).
-* Firmvér je iba pre Arduino Uno / Nano dosku (AtMega328P), pre iné dosky nebude fungovať!
-* Pre Arduino Nano s Old Bootloaderom je nutné zvoliť nahrávaciu rýchlosť 57600 baud/s. Pre Uno a Nano s novším Bootloaderom 115200 baud/s.
-* Testovací firmvér je založený na schéme zapojenia pre Tlačidlový DOMINATOR bez buzzera (LED diódy fungujú a vizualizujú stav, rovnako displej vypisuje čas)
-# Použitie nástroja XLoader pre nahratie strojového kódu do Arduina
+# Shareware version - Button DOMINATOR
+** There is a Shareware version for the Button DOMINATOR project, where it is possible to test the functionality of the entire system with your hardware. **
+* In the Shareware version, the test firmware is limited to a maximum of 15 seconds of measuring the occupancy of a point by each team
+* The version uses 30 seconds to initialize the system before it can be used.
+* Test firmware is in machine code (.hex)
+* Upload to Arduino Uno boards firmware is possible via Xloader tool (available in repository).
+* Firmware is only for Arduino Uno / Nano board (AtMega328P), for other boards it will not work!
+* For Arduino Nano with Old Bootloader it is necessary to select a recording speed of 57600 baud / s. For Uno and Nano with the newer Bootloader 115200 baud / s.
+* The test firmware is based on the wiring diagram for the Button DOMINATOR without a buzzer (LEDs work and visualize the status, the display also shows the time)
+# Use XLoader to upload machine code to Arduino
 ![Použitie programu XLoader](https://i.imgur.com/jpKuhTc.png)
 
-**Hardvér použitý pre projekt Tlačidlový DOMINATOR:**
+**Hardware used for the Button DOMINATOR project:**
 * Arduino Uno / Nano
-* 2x LED diódy
-* 2x predradný rezistor pre LED (možno použiť aj 2x I2C pullup rezistor)
-* LCD displej 16x2/20x4 s I2C prevodníkom
-* Buzzer (hlásič)
-* 4x spínacie tlačidlá (pushbutton)
+* 2x LEDs
+* 2x ballast resistor for LED (2x I2C pullup resistor can also be used)
+* LCD display 16x2 / 20x4 with I2C converter
+* Buzzer
+* 4x pushbuttons
 
-# Screenshoty projektu Tlačidlový DOMINATOR
+# Screenshots of the Button DOMINATION Timer
 ![Tlačidlový DOMINATOR - Arduino - Airsoft - bežiaca hra](https://i.imgur.com/yuHmpZa.jpg)
 ![Schéma zapojenia - Tlačidlový DOMINATOR - Arduino - Airsoft](https://i.imgur.com/D9KcneX.png)
