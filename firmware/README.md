@@ -3,7 +3,7 @@
 * Firmware is available in machine code for this ATmega chip and is divided by project - Button / Configurable DOMINATION Timer
 * **Each firmware is available in version for LCD display with 0x3F or 0x27 I2C address based on its name**
 * XLoader tool for uploading firmware to Arduino boards is available at: https://www.hobbytronics.co.uk/arduino-xloader
-* ** In the program it is necessary to select firmware and change COM port and use suitable baudrate **
+* **In the program it is necessary to select firmware and change COM port and use suitable baudrate**
 * The current port where the microcontroller is logged in can be found in the Device Manager
 * The device is most often marked as USB-SERIAL CH340 in the case of clones, or e.g. Arduino Uno in the case of originals
 * **Baud rate for New Bootloader: 115200 baud / s, for Old Bootloader: 57600 (some versions of Arduino Nano V3.0)**
