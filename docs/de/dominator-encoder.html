@@ -198,7 +198,9 @@ Der zweite konfigurierbare Parameter ist das automatische Ende des Spiels, um mi
 Die Stoppuhr verwendet einen Arduino-Steuerungs-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Systemlogik steuert.
 Es gibt 2 Teams im Spiel - <b><font color="#C0392B">RED mannschaft</font></b> un <b><font color="#27AE60">GRE mannschaft</font></b>, die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.				
 Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für an <b><font color="#C0392B">RED mannschaft</font></b>, <b><font color="#27AE60">GRE mannschaft</font></b>.
+</p>
 <hr>
+<p style="text-align: justify;">
 Taste Domination Timer verwendet die Tasteneingabe für die Besetzung eines Punktes durch ein Teammitglied sowie für die Eingabe einer Schiedsrichterentität.
 Somit werden insgesamt 2 Tasten für 3 Systementitäten verwendet, wobei die im INPUT_PULLUP-Modus verbundenen Schalttasten verwendet werden.
 Durch Drücken der Taste wird das GND-Signal dem digitalen Arduino-Eingangsanschluss (Active-LOW-Schaltsignal) zugeführt.
@@ -209,7 +211,9 @@ Es ist erforderlich, die Taste für eine bestimmte Zeit gedrückt zu halten. Das
 Die Zeiten werden auf einer 16x2- oder 20x4-LCD-Zeichenanzeige angezeigt, die über den I2C-Bus mit dem Steuermikrocontroller kommuniziert.
 <b><font color="#C0392B">Wenn ein Teammitglied des ROTEN Teams per Knopfdruck einen Punkt belegt, wird ein Summer ausgelöst, der mit einem kurzen Piepton eine Änderung des Punktes ankündigt.
 Dann leuchtet die LED des ROTEN Teams an dieser Station auf und die Anzeige fügt Zeit für dieses Team hinzu.</font></b>
+</p>
 <hr>
+<p style="text-align: justify;">
 <b><font color="#27AE60">Wenn der Punkt vom GRE-Team belegt ist und das Teammitglied die entsprechende Taste drückt, ertönt der Summer erneut, die GRE-Team-LED leuchtet auf, die ROTE Zeit wird angehalten und die Zeit des GRE-Teams, das den Punkt belegt hat, wird gezählt.</font></b>
 <b><font color="#F39C12">Der Schiedsrichter muss beide Tasten gleichzeitig anhalten, um beide Male anzuhalten. Die Zeiten werden angehalten, bis der Punkt von einigen Teams im System erneut belegt wird
 Diese Art der Eingabe eignet sich daher zum Starten einer Pause, kann aber auch das Spiel für die Auswertung beenden.</font></b>
