@@ -173,7 +173,9 @@ Stopky využívajú riadiaci mikrokontróler Arduino (Arduino Uno / Nano), príp
 Súčasťou stopiek je LCD znakový displej rozmeru 16x2 (16 znakov x 2 riadky), respektíve 20x4, na ktorom sa vyobrazujú časy jednotlivých tímov.
 V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a zaberajú pomyselný bod, ktorý je tvorený týmto zariadením - DOMINATOR.				
 Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.
+</p>
 <hr>
+<p style="text-align: justify;">
 Tlačidlový DOMINATOR využíva tlačidlový vstup pre akciu obsadenia bodu členom tímu, rovnako aj pre vstup entity rozhodcu a erasera.
 Celkom teda 4 tlačidlá pre 4 entity systému, využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
 Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).
@@ -182,7 +184,9 @@ Používajú sa spínacie tlačidlá, nie rozpínacie (nereagovali by na logiku 
 Časy sú vypísané na LCD znakový displej rozmeru 16x2, prípadne 20x4, ktorý komunikuje s riadiacim mikrokontrolérom po I2C zbernici.
 <b><font color="#C0392B">Ak tím člen tímu RED obsadí bod stlačením tlačidla, spustí sa buzzer, ktorý krátkym pípnutím ohlási zmenu na bode.
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím.</font></b>
+</p>
 <hr>
+<p style="text-align: justify;">
 <b><font color="#27AE60">V prípade, že bod obsadí tím GRE a člen tímu stlačí príslušné tlačidlo, opäť sa ozve buzzer, rozsvieti sa dióda tímu GRE, čas tímu RED sa pauzuje a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
 <b><font color="#F39C12">Ak svoje tlačidlo stlačí organizátor (rozhodca), oba časy sa zapauzujú až do momentu, kým nevykoná používateľský vstup člen niektorého z tímov.
 Tento typ vstupu je tak vhodný pre spustenie prestávky, ale môže taktiež ukončiť hru pre jej vyhodnotenie.</font></b>
