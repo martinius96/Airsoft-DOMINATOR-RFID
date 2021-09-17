@@ -165,7 +165,9 @@ The stopwatch uses an Arduino control microcontroller (Arduino Uno / Nano) or a 
 The stopwatch includes an LCD character display measuring 16x2 (16 characters x 2 lines), or 20x4, on which the times of individual teams are displayed.
 There are 2 teams in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b > that play against each other and occupy the imaginary point that is formed by this device - DOMINATOR.
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
+</p>
 <hr>
+<p style="text-align: justify;">
 Button Domination Timer uses button input for the action of occupying a point by a team member, as well as for input of a referee and eraser entity.
 Thus, a total of 4 buttons for 4 system entities, the switching buttons connected in the INPUT_PULLUP mode are used.
 Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal).
@@ -173,7 +175,9 @@ In the basic version, Domination Timer responds immediately to a press - the tim
 The times are displayed on an LCD character display measuring 16x2 or 20x4, which communicates with the control microcontroller via the I2C bus.
 <b> <font color = "#C0392B"> If a team member of the RED team occupies a point by pressing a button, a buzzer is triggered, which announces a change in the point with a short beep.
 Then the RED team's LED at this station will light up and the display will start adding time for that team. </font> </b>
+</p>
 <hr>
+<p style="text-align: justify;">
 <b> <font color = "#27AE60"> If the point is occupied by the GRE team and a team member presses the appropriate button, the buzzer sounds again, the GRE team LED lights up, the RED team time is paused and the GRE team time is calculated, which point he occupied. </font> </b>
 <b> <font color = "#F39C12"> If the organizer (referee) presses his button, both times are paused until a member of one of the teams makes user input.
 This type of input is thus suitable for starting a break, but can also end the game for evaluation. </font> </b>
