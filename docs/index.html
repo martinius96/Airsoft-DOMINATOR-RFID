@@ -468,11 +468,12 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
   Serial.println(kod);
 }
 </pre>
-<hr><h4>Optimalizácia programu pre RFID DOMINATOR:</h4><hr>
+<hr><h4>Použitia výstupu programu do hlavnej RFID Dominator aplikácie:</h4><hr>
 <p style="text-align: justify;">
-Čísla UID RFID kariet pre RED, GRE, rozhodcu a erasera vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov, ktorí sú priradený ku konkrétnej skupine.
+<b>Zaznamenané UID RFID kariet pre RED, GRE, rozhodcu a erasera sú vložené do polí, ktoré môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov, ktorí sú priradený ku konkrétnej skupine.
+UID je potrebné dodať v .xls výstupe. Možno použiť verejnú šablónu pre Google Tabuľky vyššie nad zdrojovým kódom.</b>
 Celé polia sú uložené do flash pamäte mikrokontroléru ako rad-only segmenty, teda polia nemusia bežať v RAM pamäti zaberať tak operačnú pamäť, ktorú DOMINATOR využíva.
-Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera zaberá 9512 bajtov flash pamäte, t.j. 30% a  501 bajtov pamäte RAM, t.j. 24%.
+Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera (celkovo 24x UID) zaberá 9512 bajtov flash pamäte, t.j. 30% a  501 bajtov pamäte RAM, t.j. 24%.
 Statické reťazce (const) premenné uložené do PROGMEM. Použité F makro pre statické výpisy na UART monitor, prípadne na LCD znakový displej.
 </p>
 </div>
@@ -559,7 +560,7 @@ void loop()
 </div>
       <div class="col-sm-3">	
 <a href="https://www.facebook.com/martin.s.chlebovec"><img src="https://image.flaticon.com/icons/svg/124/124010.svg" style="height: 24px; width: 24px;"></a>
-<a href="https://martinius96.github.io/hladinomer-studna-scripty/"><img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" style="height: 24px; width: 24px;"></a>
+<a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID"><img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" style="height: 24px; width: 24px;"></a>
 <a href="https://paypal.me/chlebovec/5"><img src="https://image.flaticon.com/icons/svg/217/217422.svg" style="height: 24px; width: 24px;"></a></center></th>							 
 </div>
 </div>
