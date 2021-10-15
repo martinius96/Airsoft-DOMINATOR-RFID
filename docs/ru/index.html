@@ -372,6 +372,49 @@ JLCPCB автоматически применит купон на скидку 
 </table>				</div>
 <hr><center><h2>Схема подключения - RFID DOMINATOR:</h2></center><hr>
 <img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID Domination Timer (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
+<hr><center><h2>Тестовая программа (условно-бесплатная) - RFID Domination Timer с машинным кодом</h2></center><hr>
+<div class="alert alert-info">
+<p style="text-align: justify;">
+<b> Условно-бесплатная версия в виде машинного кода (.hex) для микроконтроллера Arduino (ATmega328P) доступна для проекта RFID Domination Timer. </b>
+Первоначально версия позволяет записывать 4 различных RFID-карты UID, которые назначаются командам RED, GRE, Referee и Eraser.
+Запрос на ввод конкретной карты отображается на символьном ЖК-дисплее 16х2 или 20х4 с конвертером I2C.
+Впоследствии можно протестировать игровую механику и реакцию считывателя на RFID-карту с временной визуализацией на дисплее. Можно измерить максимум 15 секунд игры для каждой команды с возможностью сброса его с помощью карты ластика и повторного измерения в течение 15 секунд.
+<b> Цель версии - проверить совместимость с вашим оборудованием. </b> Машинные коды, основанные на адресе преобразователя I2C для ЖК-дисплея, доступны в репозитории Github.
+Наиболее часто используемые адреса - 0x27 и 0x3F. Если вы не знаете адрес вашего преобразователя, используйте встроенный пример в Arduino IDE -> I2C Scanner, который запишет адрес в интерфейс UART (Serial monitor).
+Машинный код может быть загружен в микроконтроллер Arduino Uno с помощью программного обеспечения AVRDUDE - части Arduino IDE или с помощью графического интерфейса пользователя через <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - проще в использовании. </p>
+<li> AVRDUDE должен запускаться через CMD (командную строку), установленную с Arduino IDE. Находится в C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
+<b> <center> Пример команды для загрузки программы в Arduino Uno / Nano (AtMega328P): </center> </b>
+<li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
+<li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - это приложение для Windows (исполняемый файл .exe) с простым графическим интерфейсом </ b>, который позволяет вам выбрать прошивку - машинный код (.hex), целевую платформу и может динамически отображать COM-порт, на котором расположено устройство. </li>
+<li> <b> При простом нажатии на "Загрузить" машинный код может быть загружен автоматически </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> используется аналогично инструменту Arduino IDE AVRDUDE). Окно <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> информирует вас об успешной загрузке, указав количество загруженных байтов. </li>
+<b> <font color = "red"> Прошивку можно скачать из репозитория проекта: </font> </b> <a href = "https://github.com/martinius96/Airsoft-DOMINATOR-RFID/ "> ЗДЕСЬ </a>. Прошивка находится в папке Github репозитория проекта / firmware / rfid_dominator /, разделенной по адресу преобразователя I2C (вы узнали из вывода сканера I2C на интерфейсе UART).</div>
+				<hr><h4>Доступная прошивка (условно-бесплатная) - RFID Domination Timer</h4><hr>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>Название прошивки (в папке rfid_dominator)</strong></td>
+				<td align="center" style="background-color:#2ECC71"><strong>Предназначен для</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>Скачать</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">RFID_Dominator_0x27.hex</td>
+				<td align="center">Символьный ЖК-дисплей размером 16x2 или 20x4 с преобразователем <b> I2C, который обменивается данными по адресу 0x27</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x27.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Скачать прошивку</a></td>
+				</tr>
+				<tr>
+				<td align="left">RFID_Dominator_0x3F.hex</td>
+				<td align="center">Символьный ЖК-дисплей размером 16x2 или 20x4 с преобразователем <b> I2C, который обменивается данными по адресу 0x3F</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x3F.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Скачать прошивку</a></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>				
+<div class="alert alert-danger">
+      <strong>В случае последних китайских клонов Arduino Nano, которые имеют "старый загрузчик", необходимо записывать со скоростью 57600 бод / с! Для других версий с более новым загрузчиком 115200 бод / с (эта скорость также используется в команде AVRDUDE для загрузки машинного кода).</strong>
+ </div>			
 <div style="background: #52BE80; ">
 <hr><center><h3>Программа для чтения UID адресов RFID карт для Domination Timer</h3></center><hr>
 <p style="text-align: justify;">
