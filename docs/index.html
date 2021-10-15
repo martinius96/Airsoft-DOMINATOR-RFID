@@ -388,6 +388,50 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 <hr><center><h2>Schéma zapojenia - RFID DOMINATOR:</h2></center><hr>
 <img src="https://i.imgur.com/RoHeR7b.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
 <div style="background: #52BE80; ">
+<hr><center><h2>Testovací program (Shareware) - RFID DOMINATOR so strojovým kódom</h2></center><hr>
+<div class="alert alert-info">
+<p style="text-align: justify;">
+<b>K projektu RFID DOMINATOR je dostupná Shareware verzia vo forme strojového kódu (.hex) pre mikrokontróler Arduino (ATmega328P).</b> 
+Verzia umožňuje na začiatku zaznamenať 4 rôzne UID RFID kariet, ktoré sú priradené tímu RED, GRE, Rozhodcovi a Eraserovi.
+Požiadavka na zadanie konkrétnej karty je vypísaná na LCD znakový displej 16x2 alebo 20x4 s I2C prevodníkom.
+Následne je možné vyskúšať hernú mechaniku a reakciu čítačky na RFID karty s vizualizáciou času na displej. Merať je možné maximálne 15 sekúnd hry pre každý tím s možnosťou jeho resetu kartou Eraser a opätovným meraním 15 sekúnd.
+<b>Cieľom verzie je overiť kompatibilitu s vašim hardvérom.</b> V Github repozitári sú dostupné strojové kódy na základe I2C adresy prevodníka pre LCD displej.
+Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
+Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - ľahšie na použitie.</p>
+<li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (AtMega328P):</center></b>
+<li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
+<li><b><a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
+<li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoadera</a> informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
+<b><font color="red">Firmvér je možné stiahnuť z repozitára projektu:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">TU</a>. Firmvér je v priečinku Github repozitáru projektu /firmware/rfid_dominator/ rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
+</div>
+				<hr><h4>Dostupný firmvér (Shareware) - RFID DOMINATOR</h4><hr>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>Názov firmvéru (v priečinku rfid_dominator)</strong></td>
+				<td align="center" style="background-color:#2ECC71"><strong>Určené pre</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>Stiahnuť</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">RFID_Dominator_0x27.hex</td>
+				<td align="center">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x27</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x27.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Stiahnuť firmvér</a></td>
+				</tr>
+				<tr>
+				<td align="left">RFID_Dominator_0x3F.hex</td>
+				<td align="center">LCD znakový displej rozmeru 16x2, alebo 20x4 s <b>I2C prevodníkom, ktorý komunikuje na adrese 0x3F</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x3F.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Stiahnuť firmvér</a></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>				
+<div class="alert alert-danger">
+      <strong>V prípade najnovších čínskych klonov Arduino Nano, ktoré majú "Old Bootloader" je nutné nahrávať rýchlosťou 57600 baud/s! Pri iných verziách s novším Bootloaderom 115200 baud/s (táto rýchlosť je použitá aj v AVRDUDE príkaze pre nahratie strojového kódu).</strong>
+ </div>				
 <hr><center><h3>Program pre načítanie UID adries RFID kariet pre DOMINATOR</h3></center><hr>
 <p style="text-align: justify;">
 <b>Program slúži na načítanie identifikátorov (UID) RFID tagov, kariet, ktoré budú použité v programe pre RFID DOMINATOR</b> - <b><font color="red">tento zdrojový kód nereprezentuje RFID DOMINATOR, ani jeho logiku!</font></b>.
