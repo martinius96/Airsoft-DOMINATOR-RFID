@@ -356,7 +356,7 @@ Es ist auch möglich, andere verfügbare Hersteller zu verwenden, zum Beispiel: 
 </tbody>
 </table>				</div>
 <hr><center><h2>Schaltplan - RFID Domination Timer:</h2></center><hr>
-<img src="https://i.imgur.com/g5ufkBO.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID Domination Timer (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
+<img src="https://i.imgur.com/RoHeR7b.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schaltplan - RFID-Domination-Timer (Version 2) mit Arduino Uno-Mikrocontroller und RC522-Lesegerät und LCD-Zeichenanzeige, die über I2C-Bus kommunizieren" title="Schaltplan - RFID-Domination-Timer (Version 2) mit Arduino Uno-Mikrocontroller und RC522-Lesegerät und LCD-Zeichenanzeige, die über I2C-Bus kommunizieren">  
 <hr><center><h2>Testprogramm (Shareware) - RFID Domination Timer mit Maschinencode</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
@@ -367,7 +367,7 @@ Anschließend ist es möglich, die Spielmechanik und die Reaktion des Lesegerät
 <b> Das Ziel der Version besteht darin, die Kompatibilität mit Ihrer Hardware zu überprüfen. </b> Maschinencodes basierend auf der I2C-Konverteradresse für das LCD-Display sind im Github-Repository verfügbar.
 Die am häufigsten verwendeten Adressen sind 0x27 und 0x3F. Wenn Sie die Adresse Ihres Konverters nicht kennen, verwenden Sie das eingebaute Beispiel in Arduino IDE -> I2C Scanner, das die Adresse an die UART-Schnittstelle (Serieller Monitor) schreibt.
 Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder mit einer GUI-Schnittstelle über <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader auf den Arduino Uno-Mikrocontroller hochgeladen werden </a> - einfacher zu bedienen. </p>
-<li> AVRDUDE muss über das mit der Arduino IDE installierte CMD (Befehlszeile) ausgeführt werden. Befindet sich in C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
+<li> AVRDUDE muss über das mit der Arduino IDE installierte CMD (Befehlszeile) ausgeführt werden. Befindet sich in C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
 <b> <center> Beispielbefehl zum Hochladen eines Programms auf Arduino Uno / Nano (AtMega328P): </center> </b>
 <li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
 <li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> ist eine Windows-Anwendung (ausführbares .exe-Tool) mit einer einfachen grafischen Oberfläche </b> mit dem Sie die Firmware auswählen können - Maschinencode (.hex), die Zielplattform und kann dynamisch den COM-Port anzeigen, auf dem sich das Gerät befindet. </li>
