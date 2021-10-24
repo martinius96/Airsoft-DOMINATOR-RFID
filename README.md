@@ -25,9 +25,17 @@ The NXP RC522 reader works at a frequency of 13.56MHz, registers RFID tags at ap
 The given tag standard also includes ISIC, bus cards, which function as NFC cards and can communicate their physical address - UID to a reader within range.
 </p>
 
+**ShareWare firmware - RFID Domination Timer:**
+* Available at: https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/rfid_dominator
+* Divided by I2C address 0x27 or 0x3F of LCD display
+* It let you to measure up to 15 seconds for each team
+* You can use 1 RFID card per entity (4 total --> RED, GRE, REFEREE, ERASER)
+* Firmware will test compatibility of your hardware, you can test its latency, if output at LCD display is working etc.
+* **Firmware is compiled for ATmega328P (Arduino Uno and Nano are compatible)**
+* 
 ![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/crCc2Ls.png)
 
-**Hardware used for Domination Timer:**
+**Hardware used for RFID Domination Timer:**
 * Arduino Uno / Nano or AtMega328P chip (Arduino Nano is used at PCB)
 * NXP RFID RC522 reader
 * 2x LED diodes
