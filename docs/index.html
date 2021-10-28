@@ -192,21 +192,23 @@ table,thead,tbody,tfoot,tr, td,th{
 </div>	
 <hr><h4>Popis projektu RFID DOMINATOR pre Airsoft:</h4><hr>
 <p style="text-align: justify;">
-DOMINATOR (Domination Timer) je zariadenie (stopky) pre Airsoft / Paintball herný mód DOMINATION.
-Stopky majú sekundové rozlíšenie, sú vybavené riadiacim mikrokontorlérom Arduino (Uno / Nano) s AVR čipom ATmega328P.
-Súčasťou stopiek je LCD znakový displej rozmeru 16x2 (16 znakov x 2 riadky), respektíve 20x4, na ktorom sa vyobrazujú časy dvoch tímov.
+DOMINATOR (Domination Timer) je zariadenie - stopky pre Airsoft / Paintball herný mód DOMINATION, resp. Capture Hill Point.
+Stopky sú tvorené mikrokontrolérom ATmega328P (AVR), ktorý je možné využiť samostatne, alebo vo vývojovom kite Arduino Uno / Nano / Pro Mini.
+LCD znakový displej (16x2 alebo 20x4) komunikuje s mikrokontrolérom a vizualizuje dva časy v dvoch riadkoch, ktoré dynamicky aktualizuje v prípade, že sú aktívne.
 V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie tohto bodu - DOMINATOR-a.				
 Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.			
 Každý z členov tímu je vybavený kartou, náramkom, prípadne kľúčenkou, ktorá má integrovaný RFID čip a komunikuje s RFID čítačkou, ak je v jej dosahu.
 Kľúčenky a náramky môžu byť farebné odlíšené (zelené, červené podľa tímu a funkcie...), čo umožňuje ich efektívnejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie, nakoľko sú plne bezúdržbové.
 <b><font color="#C0392B">Ak tím RED obsadí bod, hráč tímu priloží svoju kartu k čítačke, čím bod obsadí. Táto akcia spustí buzzer, ktorý ohlási zmenu na bode krátkym pípnutím.
-Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím do momentu priloženia karty inej entity. V prípade opätovného priloženia karty rovnakej entity to nemá efekt na počítanie času.</font></b>
-<b><font color="#27AE60">V prípade, že bod obsadí hač tímu GRE a priloží kartu k RFID čítačke, zmenu ohlási buzzer krátkym pípnutím, rozsvieti sa LED dióda tímu GRE, aktuálny čas tímu RED sa zastaví a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
+Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím do momentu priloženia karty druhého tímu, rozhodcu, alebo erasera. 
+V prípade opätovného priloženia karty člena tímu RED to nemá efekt na počítanie času.</font></b>
+<b><font color="#27AE60">V prípade, že bod obsadí hač tímu GRE a priloží kartu k RFID čítačke, zmenu ohlási buzzer krátkym pípnutím, rozsvieti sa LED dióda tímu GRE (LED dióda tímu RED zhasne), aktuálny čas tímu RED sa zastaví a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
 </p>
 <hr>
 <p style="text-align: justify;">
-<b><font color="#F39C12">Ak kartu / kľúčenku priloží organizátor (rozhodca), oba časy sa zastavia. Zastavenie času trvá do momentu, kým nepriloží svoju kartu člen tímu RED, alebo GRE.
-Tento typ karty je tak vhodný pre spustenie zastavenie hry, kontrolu zásahu hráča, zranenia. Zároveň môže byť použitá pri ukončení hry, kedy je nutné čas zastaviť pre vyhodnotenie hry, respawn tímov.</font></b>
+<b><font color="#F39C12">Ak svoju RFID kartu priloží Rozhodca, oba časy sa zastavia. Zastavenie času trvá do momentu, kým nepriloží svoju kartu člen tímu RED, alebo GRE.
+Tento typ karty je tak vhodný pre dočasné zastavenie prebiehajúcej hry, kontrolu zásahu hráča, či zranenia. 
+Zároveň môže byť karta použitá pri ukončení kola hry, pre vyhodnotenie kola, respawn tímov pred pokračovaním.</font></b>
 <b><font color="#3498DB">Ak kartu priloží Eraser, oba časy sa zastavia a zároveň sa vynulujú na počiatočnú hodnotu 00 hodín, 00 minút, 00 sekúnd, ktorá sa vypíše na displej.
 Karta Eraser slúži pre reštart hry, inicializáciu novej hry bez nutnosti power-on cyklu.</font></b>
 RFID čítačka reaguje na priloženie RFID karty okamžite vrátane celej logiky projektu Dominator.
@@ -259,10 +261,10 @@ Pri vážnom záujme možno vytvoriť firmvér v strojovom kóde pre AtMega328P 
       DOMINATOR sa hodí aj pre tímy, športové areály a ihriská ktoré tak môžu týmto zariadením rozšíriť ponúkané služby a herné módy pre rôzny počet hráčov.
       Ak sú RFID karty, náramky, respektíve kľúčenky farebne odlíšené, je veľmi ľahké a univerzálne ich distribuovať hráčom na základe ich tímu.
       Jednoduchá je aj ich archivácia. Použitie kariet, náramkov, respektíve kľúčeniek je ľahké a zvládnu to všetky vekové kategórie v Airsoft hrách. 
-      <b>Samotný RFID čip je chránený v plastovom puzdre, nevadí mu špina, voda, je plne bezúdržbový.</b>
-      Nemá batériu, čip aktivuje RFID čítačka, ktorá ho vysielaným elektromagnetickým poľom nabije a umožní mu vyslať UID ak je v dosahu RFID čítačky.
+      <b>Samotný RFID čip je chránený v plastovom puzdre, nevadí mu blato, špina, voda, mráz, je plne bezúdržbový.</b>
+      Nemá batériu, čip aktivuje RFID čítačka, ktorá ho vysielaným elektromagnetickým poľom nabije a umožní mu vyslať UID - identifikátor ak je v dosahu RFID čítačky.
       DOMINATOR je vhodný pre herné módy s rovnakým počtom hráčov v oboch tímoch, napr. DOMINATION, Capture Point (Points v prípade viac klonovaných DOMINATOR bodov).
-      Využitie je predovšetkým pre športy Airsoft, Paintball hry.
+      Využitie je predovšetkým pre športy Airsoft, Paintball, Nerf Wars.
       </p>
       <hr><h4>Ukážka funkčnosti - RFID DOMINATOR:</h4><hr><center><iframe width="80%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <hr><center><h2>Doska Plošných Spojov - (DPS) - RFID DOMINATOR - GERBER / výroba fotocestou</h2></center><hr>
