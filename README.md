@@ -89,6 +89,15 @@ Button Domination Timer uses button input for the action of occupying a point by
 <p style="text-align: justify;"> 
 paused and the time of the GRE team that occupied the point is counted. The referee must stop both buttons at the same time to stop both times. Times are stopped until the point is reoccupied by some of the teams in the system This type of input is thus suitable for starting a break, but it can also end the game for its evaluation. In the case of the COUNTDOWN game mode, the combination of both buttons is intended to stop the countdown time! The new game is implemented by resetting the entire Arduino board via the RST button, or by disconnecting and reconnecting the power supply. In the menu it is also possible to configure the activity / inactivity of the buzzer, which can also be included in the game. Domination Timer game mode uses a buzzer to announce the current occupation of a point. Eraser does not exist in this type of Domination Timer. A second game can be implemented in the system - countdown, which allows you to set a minute countdown while it must be stopped. The player stops the countdown by holding both buttons for a certain time (based on the configuration menu for the length of pressing from Domination Timer).
 </p>
+# Shareware version - Configurable Domination Timer
+**There is a Shareware version for Configurable Domination Timer project, where it is possible to test the functionality of the entire system with your hardware.**
+* In the Shareware version, the test firmware is limited to a maximum of 15 seconds of measuring the occupancy of a point by each team
+* The version uses 30 seconds to initialize the system before it can be used.
+* Test firmware is in machine code (.hex)
+* Upload to Arduino Uno boards firmware is possible via Xloader tool (available in repository).
+* Firmware is only for Arduino Uno / Nano board (AtMega328P), for other boards it will not work!
+* For Arduino Nano with Old Bootloader it is necessary to select a recording speed of 57600 baud / s. For Uno and Nano with the newer Bootloader 115200 baud / s.
+
 **Hardware used for the Configurable Domination Timer project:**
 * Arduino Uno / Nano
 * 2x LEDs
@@ -100,3 +109,4 @@ paused and the time of the GRE team that occupied the point is counted. The refe
 
 # Screenshots of Configurable Domination Timer
 ![Configurable Domination Timer - Arduino - Airsoft - running game](https://i.imgur.com/R0wwJjD.jpeg)
+![Configurable Domination Timer - Arduino - Schematics](https://i.imgur.com/jfk1d8y.png)
