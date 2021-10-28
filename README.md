@@ -48,18 +48,17 @@ The given tag standard also includes ISIC, bus cards, which function as NFC card
 ![DPS - GERBER - RFID Domination Timer - Arduino - Airsoft](https://i.imgur.com/tJKTjPF.png)
 ![Schéma zapojenia - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/RoHeR7b.png)
 
-# Button DOMINATOR - Airsoft / Paintball
-* Logically identical to RFID DOMINATOR, but uses button input with switching buttons
-* After occupying a point, the team player presses the appropriate button to occupy the point (the response to the press is immediate).
-* The buzzer beeps to indicate the occupation of the point, the LED of the team lights up, the time starts to count.
-* The time is counted for this team until the point is occupied and activated by a member of the other team, which stops the original time and starts adding time to the other team.
-* The referee has his own button with which he can stop time - take a break. Pause the game, lunch, end of the game, counting time and evaluating the game round.
-* The last button in the system is the eraser option, which stops and resets the time (game restart, new game).
-* LEDs can be replaced by relays for the ability to switch more powerful lamps for better visibility of the current color DOMINATOR-a
-* No PCB proposal available for the project (not planned)
+# Button Domination Timer
+<p style="text-align: justify;">
+Button Domination Timer uses button input for the action of occupying a point by a team member, as well as for input of a referee and eraser entity. Thus, a total of 4 buttons for 4 system entities, the switching buttons connected in the INPUT_PULLUP mode are used. Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal). In the basic version, Domination Timer responds immediately to a press - the time counting for a given team is activated (the length of the press, the number of presses, etc. are not verified ...). The times are displayed on an LCD character display measuring 16x2 or 20x4, which communicates with the control microcontroller via the I2C bus. If a team member of the RED team occupies a point by pressing a button, a buzzer is triggered, which announces a change in the point with a short beep. Then the RED team's LED at this station will light up and the display will start adding time for that team.
+</p>
+<hr>
+<p style="text-align: justify;"> 
+If the point is occupied by the GRE team and a team member presses the appropriate button, the buzzer sounds again, the GRE team LED lights up, the RED team time is paused and the GRE team time is calculated, which point he occupied. If the organizer (referee) presses his button, both times are paused until a member of one of the teams makes user input. This type of input is thus suitable for starting a break, but can also end the game for evaluation. Button Domination Timer has a fourth button for the eraser entity, which pauses and resets both times to initial values as after starting the Button Domination Timer stopwatch. Used to restart the game, initialize a new game. The project is suitable for Airsoft events, sports facilities, or Airsoft teams, which can build the equipment. The advantage of the Button Domination Timer system is that it can be cloned and create X points with the same configuration via machine code, which can be loaded into an unlimited number of Arduino boards and chips and guarantees identical application operation. Players can thus score more points in the game, while at the end of the game the time is added up as long as which point was occupied by which team.
+</p>
 
 # Shareware version - Button DOMINATOR
-** There is a Shareware version for the Button DOMINATOR project, where it is possible to test the functionality of the entire system with your hardware. **
+**There is a Shareware version for the Button DOMINATOR project, where it is possible to test the functionality of the entire system with your hardware.**
 * In the Shareware version, the test firmware is limited to a maximum of 15 seconds of measuring the occupancy of a point by each team
 * The version uses 30 seconds to initialize the system before it can be used.
 * Test firmware is in machine code (.hex)
@@ -81,3 +80,23 @@ The given tag standard also includes ISIC, bus cards, which function as NFC card
 # Screenshots of the Button DOMINATION Timer
 ![Tlačidlový DOMINATOR - Arduino - Airsoft - bežiaca hra](https://i.imgur.com/yuHmpZa.jpg)
 ![Schéma zapojenia - Tlačidlový DOMINATOR - Arduino - Airsoft](https://i.imgur.com/D9KcneX.png)
+
+# Configurable Domination Timer
+<p style="text-align: justify;">
+Button Domination Timer uses button input for the action of occupying a point by a team member, as well as for input of a referee entity. Thus, a total of 2 buttons for 3 system entities, the switching buttons connected in the INPUT_PULLUP mode are used. Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal). Switch buttons are used, not switch buttons (they would not react to the system logic, all software would always be "pressed"). The configurable Domination Timer responds to the length of the press, which is set in the configuration menu via an encoder. It is required to hold the button for a given time. The system does not respond to short presses. In the extended version, it is also possible to set point neutralization (stopping the time of the active team at the point if a member of the other team holds the button at least 50% of the required time) The times are displayed on an LCD character display measuring 16x2 or 20x4, which communicates with the control microcontroller via the I2C bus. If a team member of the RED team occupies a point by pressing a button, a buzzer is launched, which announces a change in the point with a short beep. Then the RED team's LED at this station will light up and the display will start adding time for that team.
+</p>
+<hr>
+<p style="text-align: justify;"> 
+paused and the time of the GRE team that occupied the point is counted. The referee must stop both buttons at the same time to stop both times. Times are stopped until the point is reoccupied by some of the teams in the system This type of input is thus suitable for starting a break, but it can also end the game for its evaluation. In the case of the COUNTDOWN game mode, the combination of both buttons is intended to stop the countdown time! The new game is implemented by resetting the entire Arduino board via the RST button, or by disconnecting and reconnecting the power supply. In the menu it is also possible to configure the activity / inactivity of the buzzer, which can also be included in the game. Domination Timer game mode uses a buzzer to announce the current occupation of a point. Eraser does not exist in this type of Domination Timer. A second game can be implemented in the system - countdown, which allows you to set a minute countdown while it must be stopped. The player stops the countdown by holding both buttons for a certain time (based on the configuration menu for the length of pressing from Domination Timer).
+</p>
+**Hardware used for the Configurable Domination Timer project:**
+* Arduino Uno / Nano
+* 2x LEDs
+* 2x ballast resistor for LED (2x I2C pullup resistor can also be used)
+* LCD display 16x2 / 20x4 with I2C converter
+* Buzzer
+* 2x pushbuttons
+* Rotary encoder KY-040
+
+# Screenshots of Configurable Domination Timer
+![Configurable Domination Timer - Arduino - Airsoft - running game](https://i.imgur.com/R0wwJjD.jpeg)
