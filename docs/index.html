@@ -240,14 +240,15 @@ Pod danú normu tagov spadajú aj ISIC, autobusové karty, ktoré fungujú ako N
 <center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>   
 <hr><h4>Princíp funkčnosti projetku RFID DOMINATOR po hardvérovej stránke:</h4><hr>
 <p style="text-align: justify;">
-RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip AtMega328P) po SPI zbernici s hodinovým signálom (CLK) 4 MHz.
-Čítačka reaguje na vzdialenosť čipu cca 3cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB (48 dB je použité vo finálnej aplikácii).
-Načítava UID (identifikátor) RFID kariet v dosahu, preposiela tento identifikátor Arduinu. 
-Arduino načítanú adresu karty porovná v multipodmienke, aplikuje digitálne stavy na diódy, beží na ňom univerzálne počítadlo riadené funkciou millis(), ktoré zodpovedá za počítanie oboch časov.
-Na základe splnenej podmienky sa začne počítadlo aplikovať na daný tím, ktorému UID prislúcha.
-Čas je posielaný po I2C zbernici na znakový displej 20x4, kde je vykreslený na konkrétny riadok - prepisuje sa iba konkrétna pozícia pre čo najrýchlejšiu obnovu času. 
-Výpis všetkých úprav na displej trvá do 30ms pri rýchlosti I2C zbernice 100 kHz - Standard speed, ktorý je použitý.
+RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip AtMega328P) po SPI zbernici s hodinovým signálom (SCLK) 4 MHz.
+Čítačka RC522 reaguje na RFID čip vo vzdialenosti približne 3 cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB (48 dB je použité vo finálnej aplikácii pre DOMINATOR).
+Načítava UID (identifikátor) RFID čipov v dosahu, preposiela tento identifikátor Arduinu. 
+Arduino načítanú adresu karty porovná v multipodmienke, spustí pípnutie buzzra, aplikuje digitálne stavy na LED diódy, beží na ňom univerzálne počítadlo riadené internou funkciou millis(), ktoré zodpovedá za počítanie oboch časov.
+Na základe splnenej podmienky sa začne počítadlo aplikovať na daný tím, ktorému UID prislúcha a počítadlo času beží.
+Čas je vykreslený na LCD znakový displej 16x2 alebo 20x4. Dáta času sú posielané po I2C zbernici s hodinový signálom (SCL) 100 kHz (Standard Speed). 
+Aby bola obnova displeja čo najrýchlejšia, prepisuje sa iba číslo na danej pozícii (daný znak). Hodiny a minúty a sekundy sú prepisované iba pri zmene a vždy len pre daný tím.
 Pri vážnom záujme možno vytvoriť firmvér v strojovom kóde pre AtMega328P na mieru aj pre iné typy RFID čítačiek: RDM6300, PN532, Wiegand W26, zvýšenie hodinového signálu I2C zbernice až na 400 kHz (Fast Speed).
+Možné rozšírenie firmvéru pre hru DOMINATOR na 3 alebo 4 tímy.
 </p>
 <div class="alert alert-success">
       <strong>Maximálny rozsah času, ktorý môže byť vypísaný v systéme: </strong>99 hodín, 59 minút a 59 sekúnd
