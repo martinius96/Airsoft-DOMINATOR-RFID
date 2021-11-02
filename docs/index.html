@@ -197,9 +197,10 @@ Stopky pozostávajú z mikrokontroléra ATmega328P (AVR), ktorý môže byť sú
 LCD znakový displej (16x2 alebo 20x4) komunikuje s mikrokontrolérom a vizualizuje dva časy v dvoch riadkoch pod sebou, ktoré dynamicky aktualizuje v prípade, že sú aktívne (bod obsadený niektorým tímom).
 Herný režim je navrhnutý pre 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie bodu DOMINATOR.				
 Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.			
-Každý z členov tímu je vybavený kartou, náramkom, prípadne kľúčenkou, ktorá má integrovaný RFID čip a komunikuje s RFID čítačkou, ak je v jej dosahu.
-Kľúčenky a náramky môžu byť farebné odlíšené (zelené, červené podľa tímu a funkcie...), čo umožňuje ich efektívnejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie, nakoľko sú plne bezúdržbové.
-<b><font color="#C0392B">Tím RED obsadí bod v momente, keď člen tímu priloží svoju kartu k RFID čítačke. Táto akcia spustí buzzer, ktorý ohlási zmenu na bode krátkym pípnutím.
+Každý z členov tímu je vybavený RFID čipom, ktorý je integrovaný v náramku (alebo karte / kľúčenke). RFID čip komunikuje s RFID čítačkou, ak je v jej dosahu - vysiela svoj identifikátor.
+Jenotlivé náramky môžu byť farebné odlíšené (červené, zelené podľa tímu a funkcie...), čo umožňuje ich rýchlejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie.
+<b><font color="#C0392B">Tím RED obsadí bod v momente, keď člen tímu RED priloží svoju kartu k RFID čítačke. 
+Táto akcia spustí buzzer, ktorý ohlási zmenu na bode krátkym pípnutím.
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím do momentu priloženia karty člena <font color="#27AE60">tímu GRE</font>, <font color="#F39C12">Rozhodcu</font>, alebo <font color="#3498DB">Erasera</font>.</font></b>
 <b><font color="#27AE60">V prípade, že bod obsadí hráč tímu GRE a priloží kartu k RFID čítačke, túto zmenu ohlási buzzer krátkym pípnutím, rozsvieti sa LED dióda tímu GRE <font color="#C0392B">(LED dióda tímu RED zhasne), aktuálny čas tímu RED sa zastaví</font> a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
 </p>
