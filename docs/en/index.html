@@ -186,16 +186,18 @@ There are 2 teams in the game - <b> <font color = "#C0392B"> RED team </font> </
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
 Each member of the team is equipped with a card, bracelet or key fob, which communicates on the frequency 13.56MHz with an RFID reader, if it is within range.
 Keychains and bracelets can be color-coded (green, red according to team and function ...), which allows them to be distributed more efficiently to players, but also their archiving and storage.
-<b> <font color = "#C0392B"> If the RED team occupies a point, the team player attaches his card to the reader, thus occupying the point. This action triggers a buzzer that announces a change in the point.
-Then the RED team's LED at this station will light up and the display will start adding time for that team. </font> </b>
+<b> <font color = "#C0392B"> The RED team occupies a point the moment a RED team member attaches their card to an RFID reader.
+This action triggers a buzzer that announces a change in the point with a short beep.
+Subsequently, the LED of the RED team at this station will light up and the display will start adding the time for this team until the member's <font color = "#27AE60"> team card is inserted </font>, <font color = "# F39C12"> Referee </font>, or <font color = "#3498DB"> Erasera </font>. </font> </b>
+<b> <font color = "#27AE60"> If the point is occupied by a GRE player and the card is attached to an RFID reader, the buzzer will announce this change with a short beep, the GRE LED will light up <font color = "#C0392B"> (RED LED turns off), RED's current time stops </font>, and the GRE time that occupied the point is calculated. </font> </b>
 </p>
 <hr>
 <p style="text-align: justify;">
-<b> <font color = "#27AE60"> If a GRE team occupies a point and a member of that team attaches the card to the reader, a buzzer sounds again, that team's LED lights up, RED's team time is paused, and team time counts. GRE, which occupied the point. </font> </b>
-<b> <font color = "#F39C12"> If the card / key fob is attached by the organizer (referee), both times are paused until one of the teams inserts the card.
-This type of card is thus suitable for starting a break, but can also be used at the end of the game, when it is necessary to stop time to evaluate the game. </font> </b>
-<b> <font color = "#3498DB"> If the card is attached by Eraser, both times are stopped and reset to the initial value of 00 hours, 00 minutes, 00 seconds at the same time.
-Used to restart the game, initialize a new game. </font> </b>
+<b> <font color = "#F39C12"> If the Referee attaches his RFID card, both times will stop. The time stops until a member of the <font color = "#C0392B"> RED team </font> or <font color = "#27AE60"> the GRE team </font> presents their card.
+This type of card is thus suitable for temporarily stopping an ongoing game, checking a player's intervention, or injuries.
+At the same time, the card can be used at the end of the round of the game, to evaluate the round, respawn teams before continuing. </font> </b>
+<b> <font color = "#3498DB"> If an Eraser card is inserted, both times are stopped and reset to the initial value of 00 hours, 00 minutes, 00 seconds, which is displayed.
+The Eraser card is used to restart the game, initialize a new game without the need for a power-on cycle. </font> </b>
 Project RFID Domination Timer for Airsoft is suitable for  events, facilities (arenas), or Airsoft teams.
 <b>Huge advantage of the Domination Timer system is that the system can be cloned using same firmware for multiple RFID Domination Timers, so you can create as many Timers as you want that will react to same cards.</b>
 The NXP RC522 reader works at a frequency of 13.56MHz, registers RFID tags at approx. 3 centimeters (almost physical contact with the reader is required), compatible ISO / IEC 14443-A tag format.
