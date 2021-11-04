@@ -188,7 +188,7 @@ Each member of the team is equipped with a card, bracelet or key fob, which comm
 Keychains and bracelets can be color-coded (green, red according to team and function ...), which allows them to be distributed more efficiently to players, but also their archiving and storage.
 <b> <font color = "#C0392B"> The RED team occupies a point the moment a RED team member attaches their card to an RFID reader.
 This action triggers a buzzer that announces a change in the point with a short beep.
-Subsequently, the LED of the RED team at this station will light up and the display will start adding the time for this team until the member's <font color = "#27AE60"> team card is inserted </font>, <font color = "# F39C12"> Referee </font>, or <font color = "#3498DB"> Erasera </font>. </font> </b>
+Subsequently, the LED of the RED team at this station will light up and the display will start adding the time for this team until the member's <font color = "#27AE60"> team card is inserted </font>, <font color = "# F39C12"> Referee </font>, or <font color = "#3498DB"> Eraser </font>. </font> </b>
 <b> <font color = "#27AE60"> If the point is occupied by a GRE player and the card is attached to an RFID reader, the buzzer will announce this change with a short beep, the GRE LED will light up <font color = "#C0392B"> (RED LED turns off), RED's current time stops </font>, and the GRE time that occupied the point is calculated. </font> </b>
 </p>
 <hr>
@@ -220,17 +220,18 @@ The given tag standard also includes ISIC, bus cards, which function as NFC card
 <div class="col-sm-2"><center><img src="https://i.imgur.com/9lqEfhO.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID čipy štandardu ISO/IEC 14443-A" title="RFID čipy štandardu ISO/IEC 14443-A"><br><b>RFID chips of ISO / IEC 14443-A standard</b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič" title="Hlásič"><br><b>Buzzer</b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/OxaPuBN.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b>2x LED diodes</b></center></div>
-</div><center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>   
+</div><center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID Domination Timer - DOMINATION TIMER" title="RFID Domination Timer - DOMINATION TIMER"></center>   
 <hr><h4> How RFID Domination Timer works (hardware side): </h4><hr>
 <p style="text-align: justify;">
-The NXP RC522 RFID reader communicates with the microcontroller (Arduino / stand-alone AtMega328P chip) via the SPI bus with a clock signal (CLK) of 4 MHz.
-The reader responds to the distance of the chip about 3 cm from the antenna, while it has a configurable gain of the antenna in the range of 18 to 48 dB (48 dB is used in the final application).
-Reads the UID (identifier) of RFID cards in range, forwards this identifier to Arduino.
-Arduino compares the read card address in a multi-condition, applies digital states to diodes, runs a universal counter controlled by the millis() function, which is responsible for counting both times.
-Based on the fulfilled condition, the counter will be applied to the given team to which the UID belongs.
-The time is sent via the I2C bus to the 20x4 character display, where it is plotted on a specific line - only the specific position is overwritten for the fastest possible time recovery.
-Listing of all adjustments to the display takes up to 30ms at the I2C bus speed of 100 kHz - Standard speed, which is used.
-In case of serious interest, it is possible to create firmware in machine code for AtMega328P to measure for other types of RFID readers: RDM6300, PN532, Wiegand W26, increase of I2C bus clock signal up to 400 kHz (Fast Speed).
+The NXP RC522 RFID reader communicates with the microcontroller (Arduino / stand-alone chip ATmega328P) via the SPI bus with a clock signal (SCLK) of 4 MHz.
+The RC522 reader responds to the RFID chip at a distance of approximately 3 cm from the antenna, while having a configurable antenna gain in the range of 18 to 48 dB (48 dB is used in the final application for DOMINATOR).
+Reads the UID (identifier) of RFID chips in range, forwards this identifier to Arduino.
+Arduino compares the read address of the card in a multi-condition, triggers a buzzer beep, applies digital states to the LEDs, runs a universal counter controlled by the internal function millis (), which is responsible for counting both times.
+Based on the fulfilled condition, the counter starts to be applied to the given team to which the UID belongs and the time counter is running.
+The time is plotted on a 16x2 or 20x4 LCD character display. The time data is sent via the I2C bus with a clock signal (SCL) of 100 kHz (Standard Speed).
+To restore the display as quickly as possible, only the number at the given position (given character) is overwritten. Hours and minutes and seconds are overwritten only when changing and always only for a given team.
+In case of serious interest, it is possible to create firmware in machine code for ATmega328P to measure also for other types of RFID readers: RDM6300, PN532, Wiegand W26, increase of I2C bus clock signal up to 400 kHz (Fast Speed).
+Possible firmware expansion for Domination Timer to 3 or 4 teams.
 </p>
 <div class="alert alert-success">
       <strong> Maximum time range that can be listed on the system: </strong> 99 hours, 59 minutes, and 59 seconds
@@ -240,14 +241,13 @@ In case of serious interest, it is possible to create firmware in machine code f
 </div>
 <hr> <h4> Where to use RFID Domination Timer project: </h4> <hr>
 <p style="text-align: justify;">
-RFID Domination Timer project is, in terms of its versatility, suitable for implementation in Airsoft actions, and with the possibility of cloning the firmware, it is possible to place X DOMINATOR points in the game field with identical firmware, which players can play with the same RFID cards.
-DOMINATOR is also suitable for teams, sports grounds and playgrounds, which can use this device to expand the services and game modes offered for different numbers of players.
-If RFID cards, bracelets or key fobs are color-coded, it is very easy and universally distributed to players based on their team.
-Their archiving is also simple. Using cards, bracelets or key rings is easy and can handle all ages in Airsoft games.
-<b> The RFID chip itself is protected in a plastic case, it does not mind dirt, water, it is fully maintenance-free. </b>
-It has no battery, the chip activates the RFID reader, which charges it with the transmitted electromagnetic field and allows it to send a UID if it is within range of the RFID reader.
-DOMINATOR is suitable for game modes with the same number of players in both teams, e.g. DOMINATION, Capture Point (Points for multiple cloned DOMINATOR points).
-It is mainly used for Airsoft sports, Paintball games.
+     The RFID Domination Timer project is, in terms of its versatility, suitable for implementation in Airsoft actions, and with the possibility of cloning the firmware, it is possible to place X Domination Timer points in the game field with identical firmware, which players can play with the same RFID cards.
+      Domination Timer is also suitable for teams, sports grounds and playgrounds, which can use this device to expand the services and game modes offered for different numbers of players.
+      If RFID cards, bracelets or key fobs are color-coded, it is very easy and universally distributed to players based on their team.
+      Their archiving is also simple. Using cards, bracelets or key rings is easy and can handle all ages in Airsoft games.
+      <b> The RFID chip itself is protected in a plastic case, it does not mind mud, dirt, water, frost, it is fully maintenance-free. </b>
+      It has no battery, the chip activates the RFID reader, which charges it with the transmitted electromagnetic field and allows it to send a UID - identifier if it is within range of the RFID reader.
+      Domination Timer is suitable for game modes with the same number of players in both teams, e.g. DOMINATION, Capture Point (Points for multiple cloned Domination Timer points).
 </p>
       <hr><h4>Demonstration of functionality - RFID Domination Timer:</h4><hr><center><iframe width="50%" height="315" src="https://www.youtube.com/embed/H7FHSLeyXVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <hr><center><h2>Printed circuit board - (PCB) - RFID Domination Timer - GERBER / production by photo route</h2></center><hr>
