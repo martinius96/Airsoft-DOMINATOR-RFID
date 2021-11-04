@@ -147,17 +147,16 @@ table,thead,tbody,tfoot,tr, td,th{
 	<strong>Repository mit Testsoftware-Implementierungen für Airsoft WiFi-Punkte: </strong><a href="https://github.com/martinius96/Capture_Points_Arduino_nRF24L01_Airsoft_Paintball">Airsoft - WiFi-Punkte - Arduino</a>
 </div>	
 <div class="alert alert-info">
-	<strong>Wenn Sie Firmware für WiFi-Punkte erwerben möchten, wenden Sie sich an:</strong> martinius96@gmail.com
+	<strong>Die Firmware ist kostenlos erhältlich</strong>
 </div>					
 <span class="label label-default">Arduino</span>
-<span class="label label-primary">LCD</span>
+<span class="label label-primary">DOMINATOR</span>
 <span class="label label-success">WiFi</span>
 <span class="label label-info">Stoppuhr</span>
 <span class="label label-warning">Planen</span>
 <span class="label label-danger">Taste</span>
 <span class="label label-default">Capture Points</span>
 <span class="label label-primary">Paintball</span>
-<span class="label label-success">DOMINATOR</span>
 <hr><center><h2>WiFi Punkte für Airsoft | Paintball</h2></center><hr>
 <h4>Entitäten im WiFi-Punkte-Projekt:</h4>
  <div class="row">
@@ -305,98 +304,84 @@ Der Tester eignet sich auch zur Verwendung im Airsoft-Spiel zum ersten Testen de
 Der Sender sendet immer, der Empfänger nur als Antwort auf den Sender nach dem Empfang der Daten.
 Es ist möglich, unterschiedliche Daten in der Struktur zu übertragen, größere Pakete.
 </p>
-<h3><font color="#2ECC71">Sendertester</font> <font color="red">(Dies ist kein Programm für das Airsoft WiFi-Projekt! - Das Projekt ist bezahlt)</font></h3>					   
+<hr>
+<h3><font color="#2ECC71">Programm - NODE 1 (permanenter Sender)</font></h3>					   
+<hr>
 <pre style="background: #2ECC71;">
-//nRF24L01 + PA + LNA - Transmitter tester
-//Author: Martin Chlebovec (martinius96)
-//Web: https://arduino.php5.sk
-//Donate: https://paypal.me/chlebovec
-
+// nRF24L01 transmitter
 #include &lt;SPI.h>
 #include "RF24.h"
-// nastavení propojovacích pinů
 #define CE 4
 #define CS 3
-// inicializace nRF s piny CE a CS
 RF24 nRF(CE, CS);
-// nastavení adres pro přijímač a vysílač,
-// musí být nastaveny stejně v obou programech!
-byte adresaPrijimac[]= "prijimac00";
-byte adresaVysilac[]= "vysilac00";
+int response = 8;
+int received = 12;
+const int buzzer = 2;
+const int red_team = 5;
+const int blue_team = 6;
+const int red_led = 7;
+const int blue_led = 8;
+byte adresaPrijimac[] = "prijimac00";
+byte adresaVysilac[] = "vysilac00";
 void setup() {
-  // komunikace přes sériovou linku rychlostí 9600 baud
   Serial.begin(9600);
-  // zapnutí komunikace nRF modulu
+  pinMode(buzzer, OUTPUT);
+  pinMode(red_led, OUTPUT);
+  pinMode(blue_led, OUTPUT);
+  pinMode(red_team, INPUT_PULLUP);
+  pinMode(blue_team, INPUT_PULLUP);
   nRF.begin();
   nRF.setDataRate( RF24_250KBPS );
-  // nastavení výkonu nRF modulu,
-  // možnosti jsou RF24_PA_MIN, RF24_PA_LOW, RF24_PA_HIGH and RF24_PA_MAX,
-  // pro HIGH a MAX je nutnýv externí 3,3V zdroj
   nRF.setPALevel(RF24_PA_LOW);
-  // nastavení zapisovacího a čtecího kanálu
   nRF.openWritingPipe(adresaVysilac);
-  nRF.openReadingPipe(1,adresaPrijimac);
-  // začátek příjmu dat
+  nRF.openReadingPipe(1, adresaPrijimac);
   nRF.startListening();
 }
 
 void loop() {
-  // for smyčka pro postupné odeslání
-  // hodnot 0 až 3 pro načtení všech dat
-  // z přijímače
-  for (int i=0; i &lt; 4; i++ ) {
-    // ukončení příjmu dat
+  if (response == received) {
+    tone( buzzer, 900, 800);
+    delay(1000);
+  } else {
     nRF.stopListening();
-    // vytisknutí aktuální volby po sériové lince
-    Serial.print("Posilam volbu ");
-    Serial.println(i);
-    // uložení startovního času komunikace
-    unsigned long casZacatek = micros();
-    // odeslání aktuální volby, v případě selhání
-    // vytištění chybové hlášky na sériovou linku
-    if (!nRF.write( &i, sizeof(i) )){
-       Serial.println("Chyba při odeslání!");
+    int output_red = digitalRead(red_team);
+    int output_blue = digitalRead(blue_team);
+    if (output_red == LOW) {
+      response = 1;
+      digitalWrite(red_led, HIGH);
+      digitalWrite(blue_led, LOW);
+    } else if (output_blue == LOW) {
+      response = 2;
+      digitalWrite(red_led, LOW);
+      digitalWrite(blue_led, HIGH);
     }
+    nRF.write( &response, sizeof(response) );
     nRF.startListening();
-    unsigned long casCekaniOdezvy = micros();
-    boolean timeout = false;
-    while ( ! nRF.available() ){
-    if (micros() - casCekaniOdezvy > 200000 ){
-          timeout = true;
-          break;
-      }      
+    while (nRF.available()) {
+      nRF.read( &received, sizeof(received) );
     }
-    if ( timeout ){
-      Serial.println("Chyba při prijmu, vyprseni casu na odezvu!");
-    }
-    else{
-     
-        unsigned long prijataData;
-        nRF.read( &prijataData, sizeof(prijataData) );
-        unsigned long casKonec = micros();
-        Serial.print("Odeslana volba: ");
-        Serial.print(i);
-        Serial.print(", prijata data: ");
-        Serial.println(prijataData);
-        Serial.print("Delka spojeni: ");
-        Serial.print(casKonec - casZacatek);
-        Serial.println(" mikrosekund.");
-    }
-    delay(200);
+    Serial.println("Received datas: ");
+    Serial.println(received);
+    Serial.println("Response: ");
+    Serial.println(response);
+    delay(50);
   }
 }
-</pre>   
-<h3><font color="#CB4335">Empfängertester</font> <font color="red">Dies ist kein Programm für das Airsoft WiFi-Projekt! - Das Projekt ist bezahlt)</font></h3>					   
+</pre>
+<hr>   
+<h3><font color="#CB4335">Programm - NODE 2 (Dauerempfänger mit Rückruf zum Sender)</font></h3>					   
+<hr>
 <pre style="background: #CB4335;">
-//nRF24L01 + PA + LNA - Receiver tester
-//Author: Martin Chlebovec (martinius96)
-//Web: https://arduino.php5.sk
-//Donate: https://paypal.me/chlebovec
-
+// nRF24L01 receiver
 #include &lt;SPI.h>
 #include "RF24.h"
-int prijem;
+int response = 3;
+int received = 4;
 const int buzzer = 2;
+const int red_team = 5;
+const int blue_team = 6;
+const int red_led = 7;
+const int blue_led = 8;
 #define CE 4
 #define CS 3
 RF24 nRF(CE, CS);
@@ -405,6 +390,10 @@ byte adresaVysilac[] = "vysilac00";
 void setup() {
   Serial.begin(9600);
   pinMode(buzzer, OUTPUT);
+  pinMode(red_led, OUTPUT);
+  pinMode(blue_led, OUTPUT);
+  pinMode(red_team, INPUT_PULLUP);
+  pinMode(blue_team, INPUT_PULLUP);
   nRF.begin();
   nRF.setDataRate( RF24_250KBPS );
   nRF.setPALevel(RF24_PA_LOW);
@@ -414,35 +403,33 @@ void setup() {
 }
 
 void loop() {
-  unsigned long odezva;
-  if ( nRF.available()) {
-    // čekání na příjem dat
-    while (nRF.available()) {
-      nRF.read( &prijem, sizeof(prijem) );
+  if (response == received) {
+    tone( buzzer, 900, 800);
+    delay(1000);
+  } else {
+    if ( nRF.available()) {
+      while (nRF.available()) {
+        nRF.read( &received, sizeof(received) );
+      }
+      Serial.println("Received datas:: ");
+      Serial.println(received);
+      Serial.println("Response: ");
+      Serial.println(response);
+      nRF.stopListening();
+      int output_red = digitalRead(red_team);
+      int output_blue = digitalRead(blue_team);
+      if (output_red == LOW) {
+        response = 1;
+        digitalWrite(red_led, HIGH);
+        digitalWrite(blue_led, LOW);
+      } else if (output_blue == LOW) {
+        response = 2;
+        digitalWrite(red_led, LOW);
+        digitalWrite(blue_led, HIGH);
+      }
+      nRF.write( &response, sizeof(response) );
+      nRF.startListening();
     }
-    Serial.print("Prijata volba: ");
-    Serial.print(prijem);
-    switch ( prijem ) {
-      case 1:
-
-        odezva = millis();
-
-        tone(buzzer, 50, 500);
-
-        break;
-      case 2:
-        odezva = millis() / 1000;
-        break;
-      case 3:
-        odezva = micros();
-        break;
-      default:
-        odezva = 0;
-        break;
-    }
-    nRF.stopListening();
-    nRF.write( &odezva, sizeof(odezva) );
-    nRF.startListening();
   }
 }
 </pre>       
