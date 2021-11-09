@@ -160,8 +160,8 @@ table,thead,tbody,tfoot,tr, td,th{
 <hr><center><h2>WiFi points for Airsoft | Paintball</h2></center><hr>
 <h4>Entities in the WiFi points project:</h4><hr>
  <div class="row">
-  <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b>Team RED</b></center></div>
-  <div class="col-sm-6"><center><img src="https://i.imgur.com/etKbK4l.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b>Team GRE</b></center></div>
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Team red - button for user entry" title="Team red - button for user entry"><br><b><font color="#C0392B">Team RED</font></b></center></div>
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/etKbK4l.png" width="128px" height="128px" style="border-radius: 50%;" alt="Team red - button for user entry" title="Team gre - button for user entry"><br><b><font color="#27AE60">Team GRE</font></b></center></div>
 </div>
 <hr><h4>Project description WiFi points:</h4><hr>
 <p style="text-align: justify;">
@@ -172,11 +172,13 @@ Each of the points uses an Arduino control microcontroller (Arduino Uno / Nano),
 There are 2 teams in the game - <b><font color="#C0392B">RED team</font></b> a <b><font color="#27AE60">GRE team</font></b>, who play against each other and try to occupy both points by pressing the appropriate button.	
 <hr>
 Button input indicates the action of occupying a point by a member of the RED or GRE team.
-The pushbuttons connected in the INPUT_PULLUP mode are used.
-Pressing the button feeds the GND signal to the Arduino digital input terminal (Active-LOW switching signal).
-Press duration / number of presses is not controlled and is not configurable. The point responds immediately to a button press.
+The pushbuttons connected in the INPUT_PULLUP mode are used (input of Arduino is connected to internal pullup resistor).
+Pressing the button brings GND signal to the Arduino digital input terminal (Active-LOW switching signal).
+<b>Press (hold) duration / number of presses is not implemented. The point responds immediately to a button press without any delay.</a>
 Game ends when both points are occupied by the same team.
-The change in the point is indicated by the detector, at the end of the game both detectors beep in an infinite loop and at the same time WiFi communication between the nRF24L01 modules is interrupted.
+On button press, it is indicated by buzzer for all players nearby (information about change).
+At the end of game both buzzers will beep in infinite loop. 
+At the same time WiFi communication between the nRF24L01 modules is closed.
 <hr>
 WiFi modules nRF24l01 communicate at 2.4 GHz. nRF24l01 (without + PA + LNA) communicate at about 70 meters, nRF24l01 + PA + LNA also per kilometer, respectively in the forest and otherwise disturbed environment at the level of 450-700 meters at maximum transmission power.
 For external power supply, it is necessary to use a YL-adapter with a 3.3V converter and power it via an external adapter.
