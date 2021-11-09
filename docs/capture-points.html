@@ -160,8 +160,8 @@ table,thead,tbody,tfoot,tr, td,th{
 <hr><center><h2>WiFi body pre Airsoft | Paintball</h2></center><hr>
 <h4>Entity v projekte WiFi body:</h4><hr>
  <div class="row">
-  <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b>Tím RED</b></center></div>
-  <div class="col-sm-6"><center><img src="https://i.imgur.com/etKbK4l.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b>Tím GRE</b></center></div>
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b><font color="#C0392B">Tím RED</font></b></center></div>
+  <div class="col-sm-6"><center><img src="https://i.imgur.com/etKbK4l.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b><font color="#27AE60">Tím GRE</font></b></center></div>
 </div>
 <hr>
 <h4>Popis projektu WiFi body:</h4>
@@ -175,16 +175,17 @@ V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font colo
 Tlačidlový vstup indikuje akciu obsadenia bodu členom tímu RED, alebo GRE.
 Využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
 Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).	
-Dĺžka stlačenia / počet stlačení sa neovuje a nie je konfigurovateľný. Bod reaguje okamžite na stlačenie tlačidla.
+<b>Dĺžka stlačenia (držania) / počet stlačení sa v programovej implementácii neoveruje. Bod reaguje okamžite na stlačenie tlačidla bez pauzy.</b>
 Hra sa končí v momente, kedy sú obsadené oba body rovnakým tímom.
-Zmenu na bode indikuje hlásič, pri konci hry oba hlásiče pípajú v nekonečnej slučke a zároveň sa preruší WiFi komunikácia medzi modulmi nRF24L01.
-WiFi moduly nRF24l01 komunikujú na 2,4 GHz. nRF24l01 (bez + PA + LNA) komunikujú na cca 70 metrov, nRF24l01 + PA + LNA aj na kilometer, respektíve v lese a inak zarušenom prostredí na úrovni 450-700 metrov pri maximálnom vysielacom výkone. 
-Pri externom napájaní je nutné použiť adaptér YL-s 3.3V prevodníkom a napájať cez externý adaptér.  
+Zmenu na bode indikuje hlásič, ktorý pípne vždy pri stlačení tlačidla. 
+Na konci hry oba hlásiče pípajú v nekonečnej slučke. Zároveň sa preruší WiFi komunikácia medzi modulmi nRF24L01.
+WiFi moduly nRF24l01 komunikujú na 2,4 GHz. nRF24l01 (verzia bez + PA + LNA) komunikujú na cca 70 metrov, nRF24l01 + PA + LNA aj na kilometer, respektíve v lese a inak zarušenom prostredí na úrovni 450-700 metrov pri maximálnom vysielacom výkone. 
+Pri externom napájaní je nutné použiť adaptér YL-105 s 3.3V prevodníkom a napájať cez externý adaptér.  
 Nepoužívať 5V napájanie z Arduina, hrozí zničenie regulátora, rovnako tak ani 3V3 vývod nie je vhodný pre napájanie modulu, nakoľko má vysoký prúdový odber vo výkonnejších vysielacích režimoch. 
 Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnutím a pripojením napájania (power-on cyklus).
 </p>
 <div class="alert alert-info">
-  <strong>Bezdrôtové moduly komunikujú na 2.4GHz, nie je to technológia WiFi, nevyžadujú router, alebo prístupový bod!</strong> Moduly majú vlastný komunikačný kanál s možnosťou voľby až 140 kanálov.
+  <strong>Bezdrôtové moduly komunikujú na 2.4GHz. Nevyžadujú router, alebo prístupový bod!</strong> Moduly majú vlastný komunikačný kanál s možnosťou voľby až 140 kanálov.
 </div>
 <hr>
 <h4>Podporované rýchlosti modulov nRF24L01:</h4> 
@@ -195,10 +196,10 @@ Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnut
 <hr>
 <h4>Výkonové režimy modulov nRF24L01:</h4> 
 <hr>
-<li>RF24_PA_MIN=-18dBm</li> 
-<li>RF24_PA_LOW=-12dBm</li>
-<li>RF24_PA_MED=-6dBM</li>
-<li>RF24_PA_HIGH=0dBm</li>
+<li>RF24_PA_MIN = -18 dBm --> 0,0158 mW</li> 
+<li>RF24_PA_LOW = -12 dBm --> 0,0631 mW</li>
+<li>RF24_PA_MED = -6 dBm --> 0,2512 mW</li>
+<li>RF24_PA_HIGH = 0 dBm --> 1 mW</li>
 <hr>
 <h4>Bloková schéma - WiFi body - Airsoft:</h4>
 <hr>
