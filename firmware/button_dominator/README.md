@@ -1,4 +1,5 @@
-# Instructions - Airsoft Domination Timer
+# Instructions - Airsoft Button Domination Timer
+[![Button Domination Timer](https://img.youtube.com/vi/KN6RXZYUcI4/0.jpg)](https://www.youtube.com/watch?v=KN6RXZYUcI4)
 * Each firmware is compatible with the ATmega328P chip, which is also equipped with Arduino Uno / Nano microcontroller
 * Firmware description at: https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/button-dominator.html
 * **Firmware is available in version for LCD display with 0x3F or 0x27 I2C address based on its name**
