@@ -189,6 +189,12 @@ Pri externom napájaní je možné použiť adaptér YL-105 s 3.3V prevodníkom 
 5V napájanie z Arduina nie je doporučené, nakoľko, hrozí zničenie regulátora, keďže potrebný prúd pre maximálny výkon nie je schopné dodať.
 Pri napájaní nRF24L01 cez 3V3 vývod Arduina je možné napájať na najnižší vysielací výkon 0,0158 mW. 
 Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnutím a pripojením napájania (power-on cyklus).
+<b>Teoreticky je možné WiFi body rozšíriť až na 8 bodov (8 pipelines), ktoré medzi sebou komunikujú, resp. môžu komunikovať iba s vysielačom na základe navrhnutej logiky. 
+Je však nutné pridať identifikátor jednotlivých bodov pre ich rozlíšenie.
+Vysielač, ktorý komunikáciu inicializuje tak dokáže rozlíšiť obsadenie tímu na všetkých WiFi bodoch, ktoré sú v systéme implementované. 
+Pri prenose väčšieho množstva údajov zároveň je možné využiť aj štruktúru, kde je možné prenášať viac dátových typov súčasne ako jeden paket.
+Prijímací bod tak dokáže dáta z očakávanej štruktúry získať na základe veľkosti jednotlivých dátových typov.
+</b>
 </p>
 <div class="alert alert-info">
   <strong>Bezdrôtové moduly komunikujú na 2.4GHz.</strong> Moduly majú vlastný komunikačný kanál s možnosťou voľby až 140 kanálov.
