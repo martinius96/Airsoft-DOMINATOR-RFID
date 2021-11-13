@@ -189,6 +189,12 @@ Bei externer Stromversorgung ist es möglich, den YL-105-Adapter mit einem 3,3-V
 Die 5V-Stromversorgung vom Arduino ist nicht zu empfehlen, da sie den Controller zu zerstören droht, da dieser nicht in der Lage ist, den erforderlichen Strom für die maximale Leistung zu liefern.
 Bei der Stromversorgung des nRF24L01 über ein 3V3-Arduino-Terminal ist es möglich, die niedrigste Sendeleistung von 0,0158 mW bereitzustellen.
 Beide Punkte werden durch Zurücksetzen der Arduín-Taste oder durch Herausziehen und Anschließen des Netzteils (Einschaltzyklus) neu gestartet.
+<b> Theoretisch können WLAN-Punkte auf 8 Punkte (8 Pipelines) erweitert werden, die jeweils miteinander kommunizieren. sie können nur basierend auf der vorgeschlagenen Logik mit dem Sender kommunizieren.
+Es ist jedoch erforderlich, für jeden Punkt eine Kennung hinzuzufügen, um sie zu unterscheiden.
+Der die Kommunikation auslösende Sender kann somit die Besetzung des Teams an allen im System implementierten WLAN-Punkten unterscheiden.
+Bei der Übertragung einer größeren Datenmenge kann auch eine Struktur verwendet werden, bei der mehrere Datentypen gleichzeitig als ein Paket übertragen werden können.
+Die Empfangsstelle ist somit in der Lage, aufgrund der Größe der einzelnen Datentypen Daten aus der erwarteten Struktur zu entnehmen.
+</b>
 </p>
 <div class="alert alert-info">
   <strong>Drahtlose Module kommunizieren mit 2,4 GHz, es handelt sich nicht um WiFi-Technologie, sie benötigen keinen Router oder Zugangspunkt!</strong> Die Module verfügen über einen eigenen Kommunikationskanal mit einer Auswahl von bis zu 140 Kanälen.
