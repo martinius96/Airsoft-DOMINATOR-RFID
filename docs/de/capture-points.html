@@ -166,22 +166,29 @@ table,thead,tbody,tfoot,tr, td,th{
 <hr>
 <h4>Projektbeschreibung für WiFi-Punkte:</h4>
 <hr>
-<p style="text-align: justify;">
-Capture Points-Spielmodus für Airsoft- und Paintball-Sportarten.
-Die Punkte kommunizieren über WLAN-Module aus der nRF24L01-Serie miteinander, während sie Informationen über den Status des Punkts austauschen (ob er besetzt ist und von welchem Team).
-Ein Punkt ist ein permanenter Sender und erfordert die Kommunikation vom anderen Punkt. Der zweite Punkt ist der Empfänger und reagiert auf die vom Sender empfangenen Daten, wodurch Kollisionen bei der Kommunikation auf der WiFi-Frequenz von 2,4 GHz vermieden werden.
-Jeder der Punkte verwendet einen Arduino-Steuerungs-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Logik des Systems steuert.
-Es gibt 2 Teams im Spiel - <b><font color="#C0392B">RED mannschaft</font></b> a <b><font color="#27AE60">GRE mannschaft</font></b>die gegeneinander spielen und versuchen, beide Punkte durch Drücken der entsprechenden Taste zu besetzen.				
-Die Tasteneingabe gibt an, wie ein Mitglied des RED- oder GRE-Teams einen Punkt belegt.
-Die im INPUT_PULLUP-Modus verbundenen Drucktasten werden verwendet.
-Durch Drücken der Taste wird das GND-Signal dem digitalen Arduino-Eingangsanschluss (Active-LOW-Schaltsignal) zugeführt.
-Die Druckdauer / Anzahl der Druckmaschinen wird nicht gesteuert und ist nicht konfigurierbar. Der Punkt reagiert sofort auf einen Tastendruck.
+<p style = "text-align: justify;">
+Der Spielmodus Capture Points eignet sich für Airsoft- und Paintball-Sportarten.
+Die Weichen kommunizieren über WLAN-Module nRF24L01 miteinander, während sie Informationen über den Status der Weiche austauschen (ob belegt und von welchem Team).
+Der erste Punkt arbeitet im permanenten Sendermodus und erwartet eine Antwort vom zweiten Punkt, nachdem die Informationen gesendet wurden.
+Der zweite Punkt arbeitet im Empfängermodus und reagiert auf den Empfang der Senderdaten (Callback).
+Dieser Kommunikationsmechanismus verhindert Kollisionen.
+Die Situation, dass beide Punkte gleichzeitig übermittelten und die Informationen nicht empfangen konnten, ist nicht so gefährlich.
+Jeder der Punkte verwendet einen Arduino-Steuerungsmikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) ATmega328P, der die Logik der Tastendrücke steuert.
+Es gibt 2 Teams im Spiel - <b> <font color = "#C0392B"> ROTE Team </font> </b> und <b> <font color = "#27AE60"> GRE Team </font> < /b> die gegeneinander spielen und versuchen, beide Punkte durch Drücken der entsprechenden Taste zu besetzen.
+Die Tasteneingabe zeigt die Aktion der Besetzung eines Punktes durch ein Mitglied des RED- oder GRE-Teams an.
+Die im INPUT_PULLUP-Modus angeschlossenen Schalttaster werden verwendet, sie werden auf Masse geschaltet (Active-Low-Signal).
+<b> Die Haltezeit / Anzahl der Druckvorgänge wird in der verfügbaren Softwareimplementierung nicht überprüft. Der Punkt reagiert sofort, wenn die Taste ohne Pause gedrückt wird. </b>
+</p>
+<hr>
+<p style = "text-align: justify;">
 Das Spiel endet, wenn beide Punkte von derselben Mannschaft besetzt sind.
-Die Änderung des Punktes wird vom Detektor angezeigt, am Ende des Spiels piepen beide Detektoren in einer Endlosschleife und gleichzeitig wird die WiFi-Kommunikation zwischen den nRF24L01-Modulen unterbrochen.
-Die WiFi-Module nRF24l01 kommunizieren mit 2,4 GHz. nRF24l01 (ohne + PA + LNA) kommunizieren auf etwa 70 Metern, nRF24l01 + PA + LNA auch pro Kilometer im Wald bzw. in einer sonst gestörten Umgebung auf einer Höhe von 450-700 Metern bei maximaler Sendeleistung.
-Für die externe Stromversorgung muss ein YL-Adapter mit einem 3,3-V-Wandler verwendet und über einen externen Adapter mit Strom versorgt werden.
-Verwenden Sie kein 5-V-Netzteil vom Arduino, da die Gefahr besteht, dass der Controller zerstört wird. Das 3-V3-Terminal ist nicht für die Stromversorgung des Moduls geeignet, da es in leistungsstärkeren Übertragungsmodi einen hohen Stromverbrauch aufweist.
-Der Neustart beider Punkte erfolgt durch Zurücksetzen der Arduín-Taste oder durch Herausziehen und Anschließen der Stromversorgung (Einschaltzyklus).
+Eine Punktänderung wird durch einen Detektor angezeigt, der bei jedem Tastendruck piept.
+Am Ende des Spiels piepsen beide Detektoren in einer Endlosschleife. Gleichzeitig wird die WLAN-Kommunikation zwischen den nRF24L01-Modulen unterbrochen, so dass keine weiteren Informationen übertragen werden und das Spielergebnis endgültig ist.
+WLAN-Module nRF24L01 (Version ohne + PA + LNA) kommunizieren auf ca. 70 Meter, nRF24l01 + PA + LNA auch pro Kilometer, jeweils im Wald und sonst gestörter Umgebung auf der Höhe von 450-700 Metern bei einer maximalen Sendeleistung von 1 mW .
+Bei externer Stromversorgung ist es möglich, den YL-105-Adapter mit einem 3,3-V-Wandler zu verwenden und über einen externen Adapter im Bereich von 5 bis 18 V zu versorgen.
+Die 5V-Stromversorgung vom Arduino ist nicht zu empfehlen, da sie den Controller zu zerstören droht, da dieser nicht in der Lage ist, den erforderlichen Strom für die maximale Leistung zu liefern.
+Bei der Stromversorgung des nRF24L01 über ein 3V3-Arduino-Terminal ist es möglich, die niedrigste Sendeleistung von 0,0158 mW bereitzustellen.
+Beide Punkte werden durch Zurücksetzen der Arduín-Taste oder durch Herausziehen und Anschließen des Netzteils (Einschaltzyklus) neu gestartet.
 </p>
 <div class="alert alert-info">
   <strong>Drahtlose Module kommunizieren mit 2,4 GHz, es handelt sich nicht um WiFi-Technologie, sie benötigen keinen Router oder Zugangspunkt!</strong> Die Module verfügen über einen eigenen Kommunikationskanal mit einer Auswahl von bis zu 140 Kanälen.
