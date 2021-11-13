@@ -187,9 +187,15 @@ With external power supply, it is possible to use the YL-105 adapter with a 3.3V
 The 5V power supply from the Arduino is not recommended, as it threatens to destroy the controller, as it is not able to supply the required current for maximum power.
 When powering the nRF24L01 via a 3V3 Arduino terminal, it is possible to supply the lowest transmit power of 0.0158 mW.
 Both points are restarted by RESET button onboard of Arduino boards, or by pulling out and connecting back the power supply (power-on cycle).
+<b> Theoretically, WiFi points can be extended to 8 points (8 pipelines), which communicate with each other, respectively. they can only communicate with the transmitter based on the proposed logic.
+However, it is necessary to add an identifier for each point to distinguish them.
+The transmitter that initiates the communication can thus distinguish the occupation of the team on all WiFi points that are implemented in the system.
+When transmitting a larger amount of data, it is also possible to use a structure where it is possible to transmit multiple data types simultaneously as one packet.
+The receiving point can thus obtain data from the expected structure based on the size of the individual data types.
+</b>
 </p>
 <div class="alert alert-info">
-  <strong>Wireless modules communicate at 2.4GHz, it is not WiFi technology, they do not require a router or access point!</strong> The modules have their own communication channel with a choice of up to 140 channels.
+  <strong>Wireless modules communicate at 2.4 GHz.</strong> The modules have their own communication channel with a choice of up to 140 channels.
 </div>
 <hr><h4>Supported module speeds nRF24L01:</h4> <hr>
 <li>250 kbps - <font color="red"><b>this option is not supported for older nRF24L01!</b></font></li>
