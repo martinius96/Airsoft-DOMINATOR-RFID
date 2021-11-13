@@ -167,25 +167,31 @@ table,thead,tbody,tfoot,tr, td,th{
 <h4>Popis projektu WiFi body:</h4>
 <hr>
 <p style="text-align: justify;">
-Herný režim Capture Points pre športy Airsoft, Paintball.
-Body medzi sebou komunikujú prostredníctvom WiFi modulov z rady nRF24L01, pričom si medzi sebou vymieňajú informácie o stave bodu (či je obsadený a akým tímom).
-Jeden bod je permanentný vysielač a vyžaduje komunikáciu od druhého bodu. Druhý bod je prijímačom a odpovedá na prijatie dát vysielaču, tým sa zamedzuje kolíziám pri komunikácii na WiFi frekvencii 2.4 GHz.
-Každý z bodov využíva riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) AtMega328P, ktorý ovláda celú logiku systému.
+Herný režim Capture Points je vhodný pre športy Airsoft, Paintball.
+Body medzi sebou komunikujú prostredníctvom WiFi modulov nRF24L01, pričom si medzi sebou vymieňajú informácie o stave bodu (či je obsadený a akým tímom).
+Prvý bod pracuje v režime permanentného vysielača a po vysielaní informácie očakáva odpoveď od druhého bodu. 
+Druhý bod pracuje v režime prijímač a odpovedá na prijatie dát vysielaču (callback). 
+Tento mechanizmus komunikácie predchádza kolíziám.
+Situácia, žeby oba body vysielali súčasne a nedokázali prijať informáciu tak nehrozí.
+Každý z bodov využíva riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) ATmega328P, ktorý riadi logiku stlačenia tlačidiel.
 V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa obsadiť oba body stlačením príslušného tlačidla.				
 Tlačidlový vstup indikuje akciu obsadenia bodu členom tímu RED, alebo GRE.
-Využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
-Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).	
-<b>Dĺžka stlačenia (držania) / počet stlačení sa v programovej implementácii neoveruje. Bod reaguje okamžite na stlačenie tlačidla bez pauzy.</b>
+Využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP, spínajú sa proti zemi (active-low signál).	
+<b>Dĺžka stlačenia (držania) / počet stlačení sa v dostupnej programovej implementácii neoveruje. Bod reaguje okamžite na stlačenie tlačidla bez pauzy.</b>
+</p>
+<hr>
+<p style="text-align: justify;">
 Hra sa končí v momente, kedy sú obsadené oba body rovnakým tímom.
 Zmenu na bode indikuje hlásič, ktorý pípne vždy pri stlačení tlačidla. 
-Na konci hry oba hlásiče pípajú v nekonečnej slučke. Zároveň sa preruší WiFi komunikácia medzi modulmi nRF24L01.
-WiFi moduly nRF24l01 komunikujú na 2,4 GHz. nRF24l01 (verzia bez + PA + LNA) komunikujú na cca 70 metrov, nRF24l01 + PA + LNA aj na kilometer, respektíve v lese a inak zarušenom prostredí na úrovni 450-700 metrov pri maximálnom vysielacom výkone. 
-Pri externom napájaní je nutné použiť adaptér YL-105 s 3.3V prevodníkom a napájať cez externý adaptér.  
-Nepoužívať 5V napájanie z Arduina, hrozí zničenie regulátora, rovnako tak ani 3V3 vývod nie je vhodný pre napájanie modulu, nakoľko má vysoký prúdový odber vo výkonnejších vysielacích režimoch. 
+Na konci hry oba hlásiče pípajú v nekonečnej slučke. Zároveň sa preruší WiFi komunikácia medzi modulmi nRF24L01, aby neboli prenášané ďalšie informácie a výsledok hry bol definitívny.
+WiFi moduly nRF24L01 (verzia bez + PA + LNA) komunikujú na cca 70 metrov, nRF24l01 + PA + LNA aj na kilometer, respektíve v lese a inak zarušenom prostredí na úrovni 450-700 metrov pri maximálnom vysielacom výkone 1 mW. 
+Pri externom napájaní je možné použiť adaptér YL-105 s 3.3V prevodníkom a napájať cez externý adaptér v rozsahu 5 až 18V.  
+5V napájanie z Arduina nie je doporučené, nakoľko, hrozí zničenie regulátora, keďže potrebný prúd pre maximálny výkon nie je schopné dodať.
+Pri napájaní nRF24L01 cez 3V3 vývod Arduina je možné napájať na najnižší vysielací výkon 0,0158 mW. 
 Reštart oboch bodov prebieha za pomoci reset tlačidla Arduín, alebo vytiahnutím a pripojením napájania (power-on cyklus).
 </p>
 <div class="alert alert-info">
-  <strong>Bezdrôtové moduly komunikujú na 2.4GHz. Nevyžadujú router, alebo prístupový bod!</strong> Moduly majú vlastný komunikačný kanál s možnosťou voľby až 140 kanálov.
+  <strong>Bezdrôtové moduly komunikujú na 2.4GHz.</strong> Moduly majú vlastný komunikačný kanál s možnosťou voľby až 140 kanálov.
 </div>
 <hr>
 <h4>Podporované rýchlosti modulov nRF24L01:</h4> 
