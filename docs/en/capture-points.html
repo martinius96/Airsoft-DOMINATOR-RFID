@@ -164,26 +164,29 @@ table,thead,tbody,tfoot,tr, td,th{
   <div class="col-sm-6"><center><img src="https://i.imgur.com/etKbK4l.png" width="128px" height="128px" style="border-radius: 50%;" alt="Team red - button for user entry" title="Team gre - button for user entry"><br><b><font color="#27AE60">Team GRE</font></b></center></div>
 </div>
 <hr><h4>Project description WiFi points:</h4><hr>
-<p style="text-align: justify;">
-Capture Points game mode for Airsoft and Paintball sports.
-The points communicate with each other via WiFi modules from the nRF24L01 series, while they exchange information about the status of the point (whether it is occupied and by which team).
-One point is a permanent transmitter and requires communication from the other point. The second point is the receiver and responds to the data received by the transmitter, thus avoiding collisions when communicating on the WiFi frequency 2.4 GHz.
-Each of the points uses an Arduino control microcontroller (Arduino Uno / Nano), or a separate chip (Atmel) AtMega328P, which controls the entire logic of the system.
-There are 2 teams in the game - <b><font color="#C0392B">RED team</font></b> a <b><font color="#27AE60">GRE team</font></b>, who play against each other and try to occupy both points by pressing the appropriate button.	
-<hr>
+<p style = "text-align: justify;">
+Capture Points game mode is suitable for Airsoft and Paintball sports.
+The points communicate with each other via WiFi modules nRF24L01, while they exchange information about the status of the point (whether it is occupied and by which team).
+The first point operates in permanent transmitter mode and expects a response from the second point after the information is transmitted.
+The second point works in the receiver mode and responds to the reception of the transmitter data (callback).
+This communication mechanism prevents collisions.
+The situation that both points transmitted simultaneously and were unable to receive the information is not so dangerous.
+Each of the points uses an Arduino control microcontroller (Arduino Uno / Nano) or a separate chip (Atmel) ATmega328P, which controls the logic of button presses.
+There are 2 teams in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b> who play against each other and try to occupy both points by pressing the appropriate button.
 Button input indicates the action of occupying a point by a member of the RED or GRE team.
-The pushbuttons connected in the INPUT_PULLUP mode are used (input of Arduino is connected to internal pullup resistor).
-Pressing the button brings GND signal to the Arduino digital input terminal (Active-LOW switching signal).
-<b>Press (hold) duration / number of presses is not implemented. The point responds immediately to a button press without any delay.</b>
-Game ends when both points are occupied by the same team.
-On button press, it is indicated by buzzer for all players nearby (information about change).
-At the end of game both buzzers will beep in infinite loop. 
-At the same time WiFi communication between the nRF24L01 modules is closed.
+The switching buttons connected in the INPUT_PULLUP mode are used, they are switched to ground (active-low signal).
+<b> The hold time / number of presses is not verified in the available software implementation. The point responds immediately when the button is pressed without pausing. </b>
+</p>
 <hr>
-WiFi modules nRF24l01 communicate at 2.4 GHz. nRF24l01 (without + PA + LNA) communicate at about 70 meters, nRF24l01 + PA + LNA also per kilometer, respectively in the forest and otherwise disturbed environment at the level of 450-700 meters at maximum transmission power.
-For external power supply, it is necessary to use a YL-adapter with a 3.3V converter and power it via an external adapter.
-Do not use a 5V power supply from the Arduino, there is a risk of destroying the controller, as well as the 3V3 terminal is not suitable for powering the module, as it has a high current consumption in more powerful transmission modes.
-Restart of both points is performed by resetting the Arduín button, or by pulling out and connecting the power supply (power-on cycle).
+<p style = "text-align: justify;">
+The game ends when both points are occupied by the same team.
+A change in point is indicated by a detector that beeps each time a button is pressed.
+At the end of the game, both detectors beep in an endless loop. At the same time, WiFi communication between the nRF24L01 modules will be interrupted so that no further information is transmitted and the result of the game is final.
+WiFi modules nRF24L01 (version without + PA + LNA) communicate at about 70 meters, nRF24l01 + PA + LNA also per kilometer, respectively in the forest and otherwise disturbed environment at the level of 450-700 meters at a maximum transmission power of 1 mW.
+With external power supply, it is possible to use the YL-105 adapter with a 3.3V converter and power it via an external adapter in the range of 5 to 18V.
+The 5V power supply from the Arduino is not recommended, as it threatens to destroy the controller, as it is not able to supply the required current for maximum power.
+When powering the nRF24L01 via a 3V3 Arduino terminal, it is possible to supply the lowest transmit power of 0.0158 mW.
+Both points are restarted by RESET button onboard of Arduino boards, or by pulling out and connecting back the power supply (power-on cycle).
 </p>
 <div class="alert alert-info">
   <strong>Wireless modules communicate at 2.4GHz, it is not WiFi technology, they do not require a router or access point!</strong> The modules have their own communication channel with a choice of up to 140 channels.
