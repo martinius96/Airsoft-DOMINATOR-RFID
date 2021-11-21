@@ -195,7 +195,7 @@ Stopky sú vybavené LCD znakovým displejom rozmeru 16x2 / 20x4. Po zapnutí za
 Prostredníctvom položiek je možné spustiť herný režim DOMINATOR, ktorý reaguje na používateľské tlačidlá (vstupy), prípadne je možné pred hrou v konfigurovateľnom režime nastaviť čas obsadenia bodu tímom.
 Tento parameter reprezentuje potrebnú dĺžku držania stlačeného tlačidla, pokým tím úspešne bod obsadí. Tento konfigurovateľný parameter sa realizuje na počet sekúnd.
 Druhým konfigurovateľným parametrom je automatické ukončenie hry pre dosiahnutí určitého počtu hodín stopiek s možnosťou UNLIMITED - kedy stopky počítajú do nekonečna, respektíve po maximálny výpis času na displej - 99 hodín, 59 minút, 59 sekúnd.
-Stopky využívajú riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) AtMega328P, ktorý ovláda celú logiku systému.
+Stopky využívajú riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) ATmega328P, ktorý ovláda celú logiku systému.
 V hre sú 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a zaberajú pomyselný bod, ktorý je tvorený týmto zariadením - DOMINATOR.				
 Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.
 </p>
@@ -233,8 +233,8 @@ Hráč zastaví odpočet držaním oboch tlačidiel po určitú dobu (vychádza 
 <div class="row">
 <div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler Arduino UNO" title="Riadiaci mikrokontróler Arduino UNO"><br><b><a href="https://www.gme.sk/klon-arduino-uno-r3-atmega328p-ch340-mini-usb">Arduino UNO</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/XHC8DBe.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler Arduino Nano" title="Riadiaci mikrokontróler Arduino Nano"><br><b><a href="https://www.gme.sk/klon-arduino-nano-v3-0-r3-ch340g">Arduino Nano</a></b></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler AtMega328P DIP" title="Riadiaci mikrokontróler AtMega328P DIP"><br><b><a href="https://www.gme.sk/atmega328p-pu-sdip28-atmel">AtMega328P - DIP28</a></b></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler AtMega328P SMD" title="Riadiaci mikrokontróler AtMega328P SMD"><br><b><a href="https://www.gme.sk/atmega328p-au-tqfp32-atmel">AtMega328P - SMD</a></b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler ATmega328P DIP" title="Riadiaci mikrokontróler ATmega328P DIP"><br><b><a href="https://www.gme.sk/atmega328p-pu-sdip28-atmel">ATmega328P - DIP28</a></b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler ATmega328P SMD" title="Riadiaci mikrokontróler ATmega328P SMD"><br><b><a href="https://www.gme.sk/atmega328p-au-tqfp32-atmel">ATmega328P - SMD</a></b></center></div>
 </div>	
 <hr><h4>Kompatibilné periférie - Konfigurovateľný DOMINATOR:</h4><hr>
 <div class="row">
@@ -254,7 +254,7 @@ Hráč zastaví odpočet držaním oboch tlačidiel po určitú dobu (vychádza 
 <table class="table" style="border: 1px solid black;">
 <thead>		
 <tr>
-<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#27AE60"><strong>I2C prevodník pre LCD displej</strong></td>
 </tr>
 <tr>
@@ -274,7 +274,7 @@ Hráč zastaví odpočet držaním oboch tlačidiel po určitú dobu (vychádza 
 <td align="right" style="background-color:#27AE60">SCL</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#C0392B"><strong>Rotačný enkóder - KY-040</strong></td>
 </tr>
 <tr>
@@ -298,7 +298,7 @@ Hráč zastaví odpočet držaním oboch tlačidiel po určitú dobu (vychádza 
 <td align="right" style="background-color:#C0392B">SW</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#F8C471"><strong>LED diódy</strong></td>
 </tr>
 <tr>
@@ -313,7 +313,7 @@ Hráč zastaví odpočet držaním oboch tlačidiel po určitú dobu (vychádza 
 <td align="left" style="background-color:#F8C471">D7</td>
 <td align="right" style="background-color:#F8C471">IN (GREEN)</td>
 </tr>
-<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#5DADE2"><strong>Tlačidlá (INPUT_PULLUP)</strong></td>
 </tr>
 <tr>
@@ -328,7 +328,7 @@ Hráč zastaví odpočet držaním oboch tlačidiel po určitú dobu (vychádza 
 <td align="left" style="background-color:#5DADE2">D9</td>
 <td align="right" style="background-color:#5DADE2">IN (GRE)</td>
 </tr>
-<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#AF7AC5"><strong>Buzzer</strong></td>
 </tr>
 <tr>
@@ -350,7 +350,7 @@ Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodník
 Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - ľahšie na použitie.</p>
 <li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
 <hr>
-<b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (AtMega328P):</center></b>
+<b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (ATmega328P):</center></b>
 <li>Pre firmvér s I2C adresou displeja 0x27 (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
 <li>Pre firmvér s I2C adresou displeja 0x3F (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
 <li><b><a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
