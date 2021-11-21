@@ -198,7 +198,7 @@ DOMINATOR - это устройство - секундомер для таких
 С помощью предметов можно запустить игровой режим DOMINATOR, который реагирует на пользовательские кнопки (вводы), или можно установить время пребывания команды перед игрой в настраиваемом режиме.
 Этот параметр представляет собой требуемую продолжительность удерживания кнопки до тех пор, пока команда не займет точку. Этот настраиваемый параметр реализуется для количества секунд.
 Второй настраиваемый параметр - это автоматическое завершение игры для достижения определенного количества часов секундомера с опцией UNLIMITED - когда секундомер ведет счет до бесконечности или после максимального времени отображения на дисплее - 99 часов, 59 минут, 59 секунд.
-В секундомере используется управляющий микроконтроллер Arduino (Arduino Uno / Nano) или отдельный чип (Atmel) AtMega328P, который контролирует всю системную логику.
+В секундомере используется управляющий микроконтроллер Arduino (Arduino Uno / Nano) или отдельный чип (Atmel) ATmega328P, который контролирует всю системную логику.
 В игре 2 команды - <b><font color="#C0392B">RED команда</font></b> a <b><font color="#27AE60">GRE команда</font></b>, которые играют друг против друга и занимают воображаемую точку, образованную этим устройством - ДОМИНАТОР.
 В начале игры на дисплее отображается время 00 часов, 00 минут, 00 секунд для <b><font color="#C0392B">RED команда</font></b>, <b><font color="#27AE60">GRE команда</font></b>.
 </p>
@@ -235,8 +235,8 @@ DOMINATOR - это устройство - секундомер для таких
 <div class="row">
 <div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino UNO for Domination Timer" title="Control microcontroller Arduino UNO for Domination Timer"><br><b><a href="https://www.ebay.com/itm/254532156570">Arduino UNO</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/XHC8DBe.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino Nano for Domination Timer" title="Control microcontroller Arduino Nano for Domination Timer"><br><b><a href="https://www.ebay.com/itm/252742123829">Arduino Nano</a></b></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller AtMega328P DIP" title="Control microcontroller AtMega328P DIP"><br><b><a href="https://www.ebay.com/itm/292204064766">ATmega328P - DIP28</a></b></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller AtMega328P SMD" title="Control microcontroller AtMega328P SMD"><br><b><a href="https://www.ebay.com/itm/142666414237">ATmega328P - SMD</a></b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P DIP" title="Control microcontroller ATmega328P DIP"><br><b><a href="https://www.ebay.com/itm/292204064766">ATmega328P - DIP28</a></b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P SMD" title="Control microcontroller ATmega328P SMD"><br><b><a href="https://www.ebay.com/itm/142666414237">ATmega328P - SMD</a></b></center></div>
 </div>	
 <hr><h4>Совместимые периферийные устройства - настраиваемый DOMINATOR:</h4><hr>
 <div class="row">
@@ -276,7 +276,7 @@ DOMINATOR - это устройство - секундомер для таких
 <td align="right" style="background-color:#27AE60">SCL</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#C0392B"><strong>Поворотный энкодер - KY-040</strong></td>
 </tr>
 <tr>
@@ -300,7 +300,7 @@ DOMINATOR - это устройство - секундомер для таких
 <td align="right" style="background-color:#C0392B">SW</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#F8C471"><strong>LED диоды</strong></td>
 </tr>
 <tr>
@@ -315,7 +315,7 @@ DOMINATOR - это устройство - секундомер для таких
 <td align="left" style="background-color:#F8C471">D7</td>
 <td align="right" style="background-color:#F8C471">IN (GREEN)</td>
 </tr>
-<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#5DADE2"><strong>Кнопки (INPUT_PULLUP)</strong></td>
 </tr>
 <tr>
@@ -330,7 +330,7 @@ DOMINATOR - это устройство - секундомер для таких
 <td align="left" style="background-color:#5DADE2">D9</td>
 <td align="right" style="background-color:#5DADE2">IN (GRE)</td>
 </tr>
-<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#AF7AC5"><strong>Зуммер</strong></td>
 </tr>
 <tr>
@@ -351,7 +351,7 @@ DOMINATOR - это устройство - секундомер для таких
 Наиболее часто используемые адреса - 0x27 и 0x3F. Если вы не знаете адрес вашего преобразователя, используйте встроенный пример в Arduino IDE -> I2C Scanner, который запишет адрес в интерфейс UART (Serial monitor).
 Машинный код может быть загружен в микроконтроллер Arduino Uno через программное обеспечение AVRDUDE - часть Arduino IDE или с графическим интерфейсом через <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - проще в использовании.</p>
 <li>AVRDUDE должен запускаться через CMD (командную строку), установленную с Arduino IDE. Находится в C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<b><center>Пример команды для загрузки программы в Arduino Uno / Nano (AtMega328P):</center></b>
+<b><center>Пример команды для загрузки программы в Arduino Uno / Nano (ATmega328P):</center></b>
 <li>Для прошивки с отображаемым адресом I2C 0x27 (например, COM-порт 21 и 115200 бод / с): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
 <li>Для прошивки с отображаемым адресом I2C 0x3F (например, COM-порт 21 и 115200 бод / с): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
 <li><b><a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - это приложение Windows (исполняемый инструмент .exe) с простым графическим интерфейсом </b>, которое позволяет выбирать прошивку - машинный код (.hex), целевую платформу и может динамически отображать COM-порт, на котором установлено устройство. расположен.</li> 
