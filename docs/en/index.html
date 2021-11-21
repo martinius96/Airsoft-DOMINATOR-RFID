@@ -180,7 +180,7 @@ table,thead,tbody,tfoot,tr, td,th{
 <h4> RFID Domination Timer description: </h4>
 <hr>
 <p style="text-align: justify;">
-Domination Timer is a device (stopwatch) for Airsoft sports, Paintball with an Arduino microcontroller (Uno / Nano) with an AtMega328P AVR chip.
+Domination Timer is a device (stopwatch) for Airsoft sports, Paintball with an Arduino microcontroller (Uno / Nano) with an ATmega328P AVR chip.
 The stopwatch includes an LCD character display measuring 16x2 (16 characters x 2 lines), or 20x4, on which the times of individual teams are displayed.
 There are 2 teams in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b > that play against each other and occupy the imaginary point that is formed by this device - Domination Timer.
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
@@ -209,8 +209,8 @@ The given tag standard also includes ISIC, bus cards, which function as NFC card
 <div class="row">
 <div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino UNO for Domination Timer" title="Control microcontroller Arduino UNO for Domination Timer"><br><b><a href="https://www.ebay.com/itm/254532156570">Arduino UNO</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/XHC8DBe.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino Nano for Domination Timer" title="Control microcontroller Arduino Nano for Domination Timer"><br><b><a href="https://www.ebay.com/itm/252742123829">Arduino Nano</a></b></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller AtMega328P DIP" title="Control microcontroller AtMega328P DIP"><br><b><a href="https://www.ebay.com/itm/292204064766">AtMega328P - DIP28</a></b></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller AtMega328P SMD" title="Control microcontroller AtMega328P SMD"><br><b><a href="https://www.ebay.com/itm/142666414237">AtMega328P - SMD</a></b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P DIP" title="Control microcontroller ATmega328P DIP"><br><b><a href="https://www.ebay.com/itm/292204064766">ATmega328P - DIP28</a></b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P SMD" title="Control microcontroller ATmega328P SMD"><br><b><a href="https://www.ebay.com/itm/142666414237">ATmega328P - SMD</a></b></center></div>
 </div>	
 <hr><h4>Peripherals for RFID Domination Timer:</h4><hr>
 <div class="row">
@@ -290,7 +290,7 @@ It is also possible to use other available manufacturers, for example: PCBWay, A
 <table class="table" style="border: 1px solid black;">
 				<thead>
 <tr>
-<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#27AE60"><strong>NXP RFID RC522</strong></td>
 </tr>
 <tr>
@@ -322,7 +322,7 @@ It is also possible to use other available manufacturers, for example: PCBWay, A
 <td align="right" style="background-color:#27AE60">SCK</td>
 </tr>					
 <tr>
-<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#C0392B"><strong>I2C converter for LCD display</strong></td>
 </tr>
 <tr>
@@ -342,7 +342,7 @@ It is also possible to use other available manufacturers, for example: PCBWay, A
 <td align="right" style="background-color:#C0392B">SCL</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#F8C471"><strong>Buzzer</strong></td>
 </tr>
 <tr>
@@ -358,7 +358,7 @@ It is also possible to use other available manufacturers, for example: PCBWay, A
 <td align="right" style="background-color:#F8C471">IN</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (AtMega328P)</strong></td>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#5DADE2"><strong>LED diodes</strong></td>
 </tr>
 <tr>
@@ -389,7 +389,7 @@ Subsequently, it is possible to test the game mechanics and the response of the 
 The most used addresses are 0x27 and 0x3F. If you do not know the address of your converter, use the built-in example in Arduino IDE -> I2C Scanner, which will write the address to the UART interface (Serial monitor).
 Machine code can be uploaded to the Arduino Uno microcontroller via the AVRDUDE software - part of the Arduino IDE, or with a GUI interface via <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - easier to use. </p>
 <li> AVRDUDE must be run via the CMD (command line) installed with the Arduino IDE. Located in C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
-<b> <center> Sample command to upload a program to Arduino Uno / Nano (AtMega328P): </center> </b>
+<b> <center> Sample command to upload a program to Arduino Uno / Nano (ATmega328P): </center> </b>
 <li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
 <li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> is a Windows application (executable .exe tool) with a simple graphical interface </b> which allows you to select the firmware - machine code (.hex), the target platform and can dynamically show the COM port on which the device is located. </li>
 <li> <b> By simply clicking on Upload, machine code can be uploaded automatically </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> uses similar as Arduino IDE tool AVRDUDE). The <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> window informs you of a successful upload by listing the number of bytes uploaded. </li>
