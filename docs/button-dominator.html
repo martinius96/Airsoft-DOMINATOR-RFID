@@ -364,7 +364,7 @@ Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér A
 Knižnica Wire je vstavaná do Arduino IDE, nie je nutná jej inštalácia.
 Program je možné skompilovať a overiť komunikáciu po I2C zbernici s LCD znakovým displejom. 
 I2C prevodník je vhodné pripojiť k Arduinu na hardvérové I2C vývody (SCL na A5, SDA na A4) ešte pred nahratím programu, stačí aj bez dispelja.
-Načítanú adresu displeja je nutné dodať pre úspešný build pre Arduino spolu s UID RFID kariet.
+Načítanú adresu displeja je nutné dodať pre úspešný build pre Arduino a jeho cieľovú architektúru.
 </p>
 <pre style="background: #F8C471;">
 #include &lt;Wire.h>
