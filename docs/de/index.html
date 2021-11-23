@@ -219,9 +219,19 @@ Der angegebene Tag-Standard umfasst auch ISIC-Buskarten, die als NFC-Karten fung
 <div class="col-sm-2"><center><img src="https://i.imgur.com/Tz3cwNZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LEDs" title="2x LEDs"><br><b>2x LEDs</b></center></div>
 </div><center><img src="https://i.imgur.com/Pv4pbS1.jpeg" style="display: block; max-width: 100%; height: auto;" alt="RFID Domination Timer - DOMINATION TIMER" title="RFID Domination Timer - DOMINATION TIMER"></center>        
 <h4>Funktionsprinzip auf der Hardwareseite:</h4>
-      <li> Der RF5-Leser RC522 kommuniziert mit dem Arduino über den SPI-Bus. Es liest die UID (Kennung) von RFID-Karten in Reichweite und leitet diese Kennung an Arduino weiter, das die Programmlogik ausführt. Der Leser reagiert auf den Abstand des Chips etwa 3 cm von der Antenne. </li>
-       <li> Arduino vergleicht die Adresse der gelesenen Karte in einer Mehrfachbedingung, wendet digitale Zustände auf Dioden an, führt alle 100 ms einen Universalzähler aus (zählt in Zehntelsekunden) und steuert die Zählung beider Male. </li>
-       <li> Die Zeit wird über den I2C-Bus an die 20x4-Zeichenanzeige gesendet, wo sie aufgezeichnet wird. Das Display hält bis zu 30 ms bei einer I2C-Busgeschwindigkeit von 100 kHz - Standardgeschwindigkeit. </li>
+<p style="text-align: justify;">
+Der NXP RC522 RFID Reader kommuniziert mit dem Mikrocontroller (Arduino / Standalone ATmega328P Chip) über den SPI Bus mit einem Taktsignal (SCLK) von 4 MHz. 
+Der RC522-Reader reagiert auf den RFID-Chip in einem Abstand von ca. 3 cm von der Antenne mit einem konfigurierbaren Antennengewinn im Bereich von 18 bis 48 dB (48 dB wird in der Endanwendung für DOMINATOR verwendet). 
+Liest die UID (Identifier) von RFID-Chips in Reichweite, leitet diesen Identifier an Arduino weiter. 
+Arduino vergleicht die gelesene Kartenadresse in einem Multi-Zustand, löst einen Summerton aus, wendet digitale Zustände an die LEDs an, führt einen universellen Zähler aus, der von der internen Funktion millis() gesteuert wird, die für das Zählen beider Zeiten verantwortlich ist. 
+Aufgrund der erfüllten Bedingung wird der Zähler auf das angegebene Team angewendet, zu dem die UID gehört und der Zeitzähler läuft. 
+Die Zeit wird auf einem 16x2 oder 20x4 LCD-Zeichen-Display angezeigt. 
+Die Zeitdaten werden über den I2C-Bus mit einem Taktsignal (SCL) von 100 kHz (Standard Speed) gesendet. 
+Um die Anzeige möglichst schnell wiederherzustellen, wird nur die Zahl an der angegebenen Stelle (vorgegebenes Zeichen) überschrieben. 
+Stunden und Minuten und Sekunden werden nur bei Änderung und immer nur für ein bestimmtes Team neu geschrieben. 
+Bei ernsthaftem Interesse kann im Maschinencode für ATmega328P Firmware erstellt werden, um für andere Arten von RFID-Lesegeräten zu messen: RDM6300, PN532, Wiegand W26, Erhöhung des I2C-Bus-Taktsignals auf 400 kHz (Fast Speed). 
+Mögliche Firmware-Erweiterung für das DOMINATOR-Spiel auf 3 oder 4 Teams.
+</p>
       <div class="alert alert-success">
       <strong>Maximaler Zeitbereich, der im System aufgelistet werden kann: </strong>99 Stunden, 59 Minuten und 59 Sekunden
       </div>
