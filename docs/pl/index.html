@@ -192,7 +192,7 @@ Stoper składa się z mikrokontrolera ATmega328P (AVR), który może być częś
 Wyświetlacz znakowy LCD (rozmiar 16x2 lub 20x4) służy do wizualizacji czasów.
 Czasy są podane w dwóch wierszach poniżej siebie i są dynamicznie aktualizowane, jeśli w danym punkcie znajduje się aktywna drużyna (punkt zajmowany przez drużynę).
 Stoper wyposażony jest również w elementy do sygnalizacji aktywnej drużyny (diody LED w formach drużynowych) oraz detektor (przetwornik piezoelektryczny), który zapowiada zmianę w punkcie po włożeniu karty RFID.
-Tryb gry DOMINACJA jest przeznaczony dla 2 drużyn - <b> <font color = "#C0392B"> RED team </font>< </b> i <b> <font color = "#27AE60"> GRE team </font> </b> którzy grają przeciwko sobie i starają się zająć i utrzymać punkt DOMINATORA tak długo, jak to możliwe.
+Tryb gry DOMINACJA jest przeznaczony dla 2 drużyn - <b> <font color = "#C0392B"> RED team </font> i <font color = "#27AE60"> GRE team </font> </b> którzy grają przeciwko sobie i starają się zająć i utrzymać punkt DOMINATORA tak długo, jak to możliwe.
 Na początku gry wyświetlacz pokazuje czasy 00 godzin, 00 minut, 00 sekund dla <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> zespół GRE </font></b>.
 Każdy członek zespołu jest wyposażony w chip RFID, który jest zintegrowany z bransoletką (lub kartą/brelokiem).
 Chip RFID przekazuje swój identyfikator – UID, który jest odczytywany przez czytnik RFID i weryfikowany w logice systemu, do którego należy podmiot.
@@ -406,7 +406,7 @@ Kod maszynowy można wgrać do mikrokontrolera Arduino Uno za pomocą oprogramow
 <li> AVRDUDE musi być uruchamiany przez CMD (wiersz poleceń) zainstalowany z Arduino IDE. Znajduje się w C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
 <b> <center> Przykładowe polecenie do wgrania programu do Arduino Uno / Nano (ATmega328P): </center> </b>
 <li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
-<li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> to aplikacja Windows (narzędzie wykonywalne .exe) z prostym interfejsem graficznym </ b> co pozwala wybrać firmware - kod maszynowy (.hex), platformę docelową i może dynamicznie pokazywać port COM, na którym znajduje się urządzenie. </li>
+<li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> to aplikacja Windows (narzędzie wykonywalne .exe) z prostym interfejsem graficznym </b> co pozwala wybrać firmware - kod maszynowy (.hex), platformę docelową i może dynamicznie pokazywać port COM, na którym znajduje się urządzenie. </li>
 <li> <b> Po prostu klikając Prześlij, kod maszynowy może zostać załadowany automatycznie </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> używa podobny do narzędzia Arduino IDE AVRDUDE). Okno <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> informuje o pomyślnym przesłaniu, podając liczbę przesłanych bajtów. </li>
 <b> <font color = "red"> Wersję oprogramowania sprzętowego projektu RFID Dominator można pobrać z repozytorium: </font>< </b> <a href = "https://github.com/martinius96/Airsoft -DOMINATOR- RFID/tree/master/firmware ">Firmware dostępny TUTAJ </a>.
 Firmware znajduje się w folderze Github repozytorium projektu /rfid_dominator/ podzielony według adresu konwertera I2C (dowiedziałeś się z wyjścia skanera I2C na interfejsie UART).
