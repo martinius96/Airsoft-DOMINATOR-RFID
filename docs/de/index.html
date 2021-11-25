@@ -175,17 +175,20 @@ table,thead,tbody,tfoot,tr, td,th{
 </div>	
 <h4> Projektbeschreibung - RFID Domination Timer: </h4>
 <p style="text-align: justify;">
-Domination Timer ist eine Gerätestoppuhr für Sportarten wie Airsoft, Paintball.
-Die Stoppuhr verwendet einen Arduino Control-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) AtMega328P, der die gesamte Systemlogik steuert.
-Die Stoppuhr enthält eine 16 x 2 (16 Zeichen x 2 Zeilen) oder 20 x 4 große LCD-Zeichenanzeige, auf der die Zeiten einzelner Teams angezeigt werden.
-Es gibt 2 Teams im Spiel - <b> <font color = "#C0392B"> RED Mannschaft </font> </b> und <b> <font color = "#27AE60"> GRE Mannschaft </font> </b> die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.
-Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> RED Mannschaft </font> </b>, <b> <font color = "#27AE60"> GRE Mannschaft </font> </b>.
-Jedes Mitglied des Teams ist mit einer Karte, einem Armband oder einem Schlüsselanhänger ausgestattet, der mit einem RFID-Lesegerät auf der Frequenz 13,56 MHz kommuniziert, wenn es sich in Reichweite befindet.
-Schlüsselanhänger und Armbänder können farbcodiert werden (grün, rot je nach Team und Funktion ...), wodurch sie effizienter an die Spieler verteilt werden können, aber auch deren Archivierung und Speicherung.
-<b> <font color = "#C0392B"> Das RED Mannschaft besetzt den Punkt in dem Moment, in dem ein RED-Teammitglied seine Karte an das RFID-Lesegerät anschließt.
-Diese Aktion löst einen Summer aus, der mit einem kurzen Piepton eine Änderung des Punktes ankündigt.
+Domination Timer ist ein Gerät (Stoppuhr) geeignet für den Airsoft / Paintball Spielmodus DOMINATION, bzw. Hügel erobern.
+Die Stoppuhr besteht aus einem ATmega328P-Mikrocontroller (AVR), der Teil des Arduino-Entwicklungskits (Uno / Nano / Pro Mini) oder eigenständig verwendet werden kann.
+Zur Visualisierung der Zeiten dient ein LCD-Zeichendisplay (Größe 16x2 oder 20x4).
+Die Zeiten werden in zwei Zeilen untereinander aufgelistet und werden dynamisch aktualisiert, wenn sich ein aktives Team an dem Punkt befindet (ein von einem Team besetzter Punkt).
+Die Stoppuhr ist außerdem mit Komponenten zur Anzeige der aktiven Mannschaft (LED-Dioden in Mannschaftsformularen) und einem Detektor (Piezowandler) ausgestattet, der nach Aufstecken der RFID-Karte die Änderung an der Stelle ankündigt.
+Der Spielmodus DOMINATION ist für 2 Teams ausgelegt - <b> <font color = "#C0392B"> ROTES Team </font> </b> und <b> <font color = "#27AE60"> GRE-Team </font> </b> die gegeneinander spielen und versuchen, den DOMINATOR-Punkt so lange wie möglich zu besetzen und zu halten.
+Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> ROTES Team </font> </b>, <b> <font color = "#27AE60 "> GRE-Team </font> </b>.
+Jedes Teammitglied ist mit einem RFID-Chip ausgestattet, der in das Armband (oder die Karte / den Schlüsselanhänger) integriert ist.
+Der RFID-Chip überträgt seine Kennung - UID, die von einem RFID-Lesegerät gelesen und in der Logik des Systems, zu dem die Entität gehört, verifiziert wird.
+Die einzelnen Armbänder können farblich gekennzeichnet werden (rot, grün je nach Team und Funktion der Entität), wodurch sie schneller an die Spieler verteilt, aber auch archiviert und gespeichert werden können.
+<b> <font color = "#C0392B"> Das RED-Team besetzt den Punkt, an dem das RED-Teammitglied seine Karte am RFID-Lesegerät anbringt.
+Diese Aktion löst einen Summer aus, der den Punktwechsel mit einem kurzen Piepton ankündigt.
 Anschließend leuchtet die LED des ROTEN Teams an dieser Station und das Display beginnt die Zeit für dieses Team zu addieren, bis die <font color = "#27AE60"> Teamkarte des Mitglieds eingesteckt </font>, <font color = "#F39C12"> Schiedsrichter </font> oder <font color = "#3498DB"> Radiergummi </font>. </font> </b>
-<b> <font color = "#27AE60"> Wenn der Punkt von einem GRE-Spieler besetzt ist und die Karte an einem RFID-Lesegerät befestigt ist, gibt der Summer diese Änderung mit einem kurzen Piepton bekannt, die GRE-LED leuchtet <font color = "#C0392B"> (ROTE LED erlischt), die aktuelle Zeit von RED stoppt </font> und die GRE-Zeit, die den Punkt belegt hat, wird berechnet. </font> </b>
+<b> <font color = "#27AE60"> Wenn der Punkt von einem GRE-Spieler belegt ist und die Karte am RFID-Lesegerät befestigt ist, gibt der Summer diese Änderung mit einem kurzen Piepton bekannt, die GRE-LED leuchtet <font color = "#C0392B"> (ROTE LED erlischt), REDs aktuelle Zeit stoppt </font> und GREs Zeit wird gewertet. </font> </b>
 </p>
 <hr>
 <p style="text-align: justify;">
