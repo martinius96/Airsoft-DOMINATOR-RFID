@@ -187,13 +187,16 @@ table,thead,tbody,tfoot,tr, td,th{
 </div>	
 <hr><h4>Opis projektu RFID DOMINATOR dla Airsoftu:</h4><hr>
 <p style="text-align: justify;">
-Domination Timer (DOMINATOR) to urządzenie (stoper) przystosowane do trybu gry Airsoft / Paintball DOMINACJA, ew. Zdobądź wzgórze.
+DOMINATOR (Domination Timer) to urządzenie (stoper) przystosowane do trybu gry Airsoft / Paintball DOMINACJA, ew. Zdobądź wzgórze.
 Stoper składa się z mikrokontrolera ATmega328P (AVR), który może być częścią zestawu uruchomieniowego Arduino (Uno / Nano / Pro Mini) lub używany samodzielnie.
-Wyświetlacz znakowy LCD (16x2 lub 20x4) komunikuje się z mikrokontrolerem i wizualizuje dwa razy w dwóch liniach pod sobą, które dynamicznie aktualizuje, gdy są aktywne (punkt zajmowany przez drużynę).
-Tryb gry jest przeznaczony dla 2 drużyn - <b> <font color = "#C0392B"> RED team </font>< </b> i <b> <font color = "#27AE60"> GRE team </font> </b> którzy grają przeciwko sobie i próbują zająć punkt DOMINATORA.
+Wyświetlacz znakowy LCD (rozmiar 16x2 lub 20x4) służy do wizualizacji czasów.
+Czasy są podane w dwóch wierszach poniżej siebie i są dynamicznie aktualizowane, jeśli w danym punkcie znajduje się aktywna drużyna (punkt zajmowany przez drużynę).
+Stoper wyposażony jest również w elementy do sygnalizacji aktywnej drużyny (diody LED w formach drużynowych) oraz detektor (przetwornik piezoelektryczny), który zapowiada zmianę w punkcie po włożeniu karty RFID.
+Tryb gry DOMINACJA jest przeznaczony dla 2 drużyn - <b> <font color = "#C0392B"> RED team </font>< </b> i <b> <font color = "#27AE60"> GRE team </font> </b> którzy grają przeciwko sobie i starają się zająć i utrzymać punkt DOMINATORA tak długo, jak to możliwe.
 Na początku gry wyświetlacz pokazuje czasy 00 godzin, 00 minut, 00 sekund dla <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> zespół GRE </font></b>.
-Każdy członek zespołu jest wyposażony w chip RFID, który jest zintegrowany z bransoletką (lub kartą/brelokiem). Chip RFID komunikuje się z czytnikiem RFID, jeśli znajduje się w jego zasięgu – przekazuje jego identyfikator.
-Poszczególne bransoletki można kodować kolorami (czerwony, zielony w zależności od zespołu i funkcji ...), co pozwala na szybsze rozdawanie ich graczom, ale także na archiwizację i przechowywanie.
+Każdy członek zespołu jest wyposażony w chip RFID, który jest zintegrowany z bransoletką (lub kartą/brelokiem).
+Chip RFID przekazuje swój identyfikator – UID, który jest odczytywany przez czytnik RFID i weryfikowany w logice systemu, do którego należy podmiot.
+Poszczególne bransoletki można kodować kolorami (czerwony, zielony w zależności od zespołu i funkcji podmiotu), co pozwala na szybsze rozdawanie ich graczom, ale także archiwizowanie i przechowywanie.
 <b> <font color = "#C0392B"> Drużyna RED zajmie punkt, w którym członek drużyny RED dołącza swoją kartę do czytnika RFID.
 Ta akcja uruchamia brzęczyk, który ogłasza zmianę punktu krótkim sygnałem dźwiękowym.
 Następnie dioda LED drużyny RED na tej stacji zaświeci się, a wyświetlacz zacznie dodawać czas dla tej drużyny, aż do włożenia karty drużyny <font color = "#27AE60"> członka </font>, <font color = "#F39C12"> Sędzia </font> lub <font color = "#3498DB"> Gumka </font>. </font></b>
