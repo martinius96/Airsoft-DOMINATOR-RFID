@@ -194,10 +194,11 @@ table,thead,tbody,tfoot,tr, td,th{
 <p style="text-align: justify;">
 Domination Timer (DOMINATOR) je zariadenie (stopky) vhodné pre Airsoft / Paintball herný mód DOMINATION, resp. Capture Hill.
 Stopky pozostávajú z mikrokontroléra ATmega328P (AVR), ktorý môže byť súčasťou vývojového kitu Arduino (Uno / Nano / Pro Mini), alebo je použitý samostatne (standalone).
-LCD znakový displej (16x2 alebo 20x4) komunikuje s mikrokontrolérom a vizualizuje dva časy v dvoch riadkoch pod sebou, ktoré dynamicky aktualizuje v prípade, že sú aktívne (bod obsadený niektorým tímom).
-Herný režim je navrhnutý pre 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie bodu DOMINATOR.				
+Stopky obsahujú LCD znakový displej ( rozmeru 16x2 alebo 20x4), ktorý komunikuje s mikrokontrolérom a vizualizuje dva časy v dvoch riadkoch pod sebou, ktoré dynamicky aktualizuje v prípade, že sú aktívne (bod obsadený niektorým tímom).
+Herný režim je navrhnutý pre 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie a udržanie bodu DOMINATOR po čo najdlhšiu dobu.				
 Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.			
-Každý z členov tímu je vybavený RFID čipom, ktorý je integrovaný v náramku (alebo karte / kľúčenke). RFID čip komunikuje s RFID čítačkou, ak je v jej dosahu - vysiela svoj identifikátor.
+Každý z členov tímu je vybavený RFID čipom, ktorý je integrovaný v náramku (alebo karte / kľúčenke). 
+RFID čip vysiela svoj identifikátor - UID, ktorý je načítaný RFID čítačkou a overený v logike systému ku ktorej entite patrí.
 Jednotlivé náramky môžu byť farebne odlíšené (červené, zelené podľa tímu a funkcie...), čo umožňuje ich rýchlejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie.
 <b><font color="#C0392B">Tím RED obsadí bod v momente, keď člen tímu RED priloží svoju kartu k RFID čítačke. 
 Táto akcia spustí buzzer, ktorý ohlási zmenu na bode krátkym pípnutím.
