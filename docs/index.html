@@ -178,7 +178,7 @@ table,thead,tbody,tfoot,tr, td,th{
 <span class="label label-success">DOMINATOR</span>
 <hr><center><h2>RFID DOMINATOR - stopky pre Airsoft | Paintball</h2></center><hr>
       <div class="alert alert-info">
-      <strong>Nová verzia projektu RFID DOMINATOR (Domination Timer) podporuje tieto typy firmvéru RFID čítačky NXP RC522:</strong>
+      <strong>Nová verzia projektu RFID DOMINATOR podporuje tieto typy firmvéru RFID čítačky NXP RC522:</strong>
       <li>Firmware version: 0x12 = counterfeit chip - (neoriginálny NXP čip, náhrada)</li>
       <li>Firmware version: 0x91 = Version 1.0 - (originálny NXP čip)</li>      
       <li>Firmware version: 0x92 = Version 2.0 - (originálny NXP čip)</li>
@@ -192,14 +192,16 @@ table,thead,tbody,tfoot,tr, td,th{
 </div>	
 <hr><h4>Popis projektu RFID DOMINATOR pre Airsoft:</h4><hr>
 <p style="text-align: justify;">
-Domination Timer (DOMINATOR) je zariadenie (stopky) vhodné pre Airsoft / Paintball herný mód DOMINATION, resp. Capture Hill.
+DOMINATOR (Domination Timer) je zariadenie (stopky) vhodné pre Airsoft / Paintball herný mód DOMINATION, resp. Capture Hill.
 Stopky pozostávajú z mikrokontroléra ATmega328P (AVR), ktorý môže byť súčasťou vývojového kitu Arduino (Uno / Nano / Pro Mini), alebo je použitý samostatne (standalone).
-Stopky obsahujú LCD znakový displej ( rozmeru 16x2 alebo 20x4), ktorý komunikuje s mikrokontrolérom a vizualizuje dva časy v dvoch riadkoch pod sebou, ktoré dynamicky aktualizuje v prípade, že sú aktívne (bod obsadený niektorým tímom).
-Herný režim je navrhnutý pre 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie a udržanie bodu DOMINATOR po čo najdlhšiu dobu.				
+Pre vizualizáciu časov sa využíva LCD znakový displej (rozmer 16x2 alebo 20x4).
+Časy sú vypísané v dvoch riadkoch pod sebou a sú dynamicky aktualizované v prípade, že je na bode aktívny tím (bod obsadený niektorým tímom).
+Stopky sú ďalej vybavené súčiastkami pre indikáciu aktívneho tímu (LED diódami vo formách tímov) a hlásičom (piezomeničom), ktorý oznamuje zmenu na bode po priložení RFID karty.
+Herný režim DOMINATION je navrhnutý pre 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie a udržanie bodu DOMINATOR po čo najdlhšiu dobu.				
 Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.			
 Každý z členov tímu je vybavený RFID čipom, ktorý je integrovaný v náramku (alebo karte / kľúčenke). 
 RFID čip vysiela svoj identifikátor - UID, ktorý je načítaný RFID čítačkou a overený v logike systému ku ktorej entite patrí.
-Jednotlivé náramky môžu byť farebne odlíšené (červené, zelené podľa tímu a funkcie...), čo umožňuje ich rýchlejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie.
+Jednotlivé náramky môžu byť farebne odlíšené (červené, zelené podľa tímu a funkcie entity), čo umožňuje ich rýchlejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie.
 <b><font color="#C0392B">Tím RED obsadí bod v momente, keď člen tímu RED priloží svoju kartu k RFID čítačke. 
 Táto akcia spustí buzzer, ktorý ohlási zmenu na bode krátkym pípnutím.
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím do momentu priloženia karty člena <font color="#27AE60">tímu GRE</font>, <font color="#F39C12">Rozhodcu</font>, alebo <font color="#3498DB">Erasera</font>.</font></b>
@@ -364,7 +366,7 @@ Taktiež je možné využiť aj iných dostupných výrobcov, napríklad: PCBWay
 </tr>
 <tr>
 <td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
-<td align="right" style="background-color:#F8C471"><strong>Buzzer (hlásič)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>Hlásič (piezomenič)</strong></td>
 </tr>
 <tr>
 <td align="left" style="background-color:#F8C471">GND</td>
