@@ -192,16 +192,17 @@ table,thead,tbody,tfoot,tr, td,th{
 </div>	
 <hr><h4>Popis projektu RFID DOMINATOR pre Airsoft:</h4><hr>
 <p style="text-align: justify;">
-DOMINATOR (Domination Timer) je zariadenie (stopky) vhodné pre Airsoft / Paintball herný mód DOMINATION, resp. Capture Hill.
-Stopky pozostávajú z mikrokontroléra ATmega328P (AVR), ktorý môže byť súčasťou vývojového kitu Arduino (Uno / Nano / Pro Mini), alebo je použitý samostatne (standalone).
-Pre vizualizáciu časov sa využíva LCD znakový displej (rozmer 16x2 alebo 20x4).
+DOMINATOR (Domination Timer) je zariadenie (stopky) navrhnuté pre 2 tímy, ktoré proti sebe hrajú.
+Stopky sú vhodné pre Airsoft / Paintball herný mód DOMINATION, resp. Capture Hill.
+Pozostávajú z mikrokontroléra ATmega328P (AVR), ktorý môže byť súčasťou vývojového kitu Arduino (Uno / Nano / Pro Mini), alebo je použitý samostatne (standalone).
+Pre vizualizáciu časov sa využíva LCD znakový displej (rozmer 16x2 alebo 20x4), ktorý je pripojený k mikrokontroléru a komunikuje s ním.
 Časy sú vypísané v dvoch riadkoch pod sebou a sú dynamicky aktualizované v prípade, že je na bode aktívny tím (bod obsadený niektorým tímom).
-Stopky sú ďalej vybavené súčiastkami pre indikáciu aktívneho tímu (LED diódami vo formách tímov) a hlásičom (piezomeničom), ktorý oznamuje zmenu na bode po priložení RFID karty.
-Herný režim DOMINATION je navrhnutý pre 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie a udržanie bodu DOMINATOR po čo najdlhšiu dobu.				
+Stopky sú vybavené indikačnými LED diódami vo formách jednotlivých tímov, ktoré signalizujú aktívny tím na bode a hlásičom (piezomeničom), ktorý oznamuje zmenu na bode po priložení RFID karty.
+Do hry sú implementované tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie bodu a jeho následné udržanie po čo najdlhší čas.				
 Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.			
-Každý z členov tímu je vybavený RFID čipom, ktorý je integrovaný v náramku (alebo karte / kľúčenke). 
-RFID čip vysiela svoj identifikátor - UID, ktorý je načítaný RFID čítačkou a overený v logike systému ku ktorej entite patrí.
-Jednotlivé náramky môžu byť farebne odlíšené (červené, zelené podľa tímu a funkcie entity), čo umožňuje ich rýchlejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie.
+Každý z členov tímu je vybavený RFID čipom, ktorý je integrovaný v náramku (alebo v karte / kľúčenke). 
+RFID čip vysiela svoj jedinečný identifikátor - UID (unique ID), ktorý je načítaný RFID čítačkou a overený v logike systému ku ktorej entite (tímu) patrí.
+Jednotlivé náramky môžu byť farebne odlíšené (červené, zelené podľa tímu a funkcie entity), čo umožňuje ich rýchlejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie podľa farieb.
 <b><font color="#C0392B">Tím RED obsadí bod v momente, keď člen tímu RED priloží svoju kartu k RFID čítačke. 
 Táto akcia spustí buzzer, ktorý ohlási zmenu na bode krátkym pípnutím.
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím do momentu priloženia karty člena <font color="#27AE60">tímu GRE</font>, <font color="#F39C12">Rozhodcu</font>, alebo <font color="#3498DB">Erasera</font>.</font></b>
@@ -220,7 +221,7 @@ Projekt je vhodný pre Airsoft akcie, športové areály, čí Airsoft tímy, kt
 Firmvér je univerzálny, ktorý vychádza zo schémy zapojenia, možno využiť aj dostupný DPS návrh pre výrobu dosky plošných spojov.
 <b>Výhodou projektu RFID DOMINATOR je, že licencia používania oprávňuje používateľa klonovať a vytvoriť si X bodov s totožnou konfiguráciou prostredníctvom strojového kódu. 
 Do hry je tak možné umiestniť ľubovoľný počet nezávisle na sebe fungujúcich RFID DOMINATOR bodov, ktoré reagujú na totožné RFID karty podľa jednotnej konfigurácie. 
-Systém RFID Dominator je vyladený, je ho možné okamžite nasadiť do hry.</b>
+Systém RFID Dominator je vyladený, je ho možné okamžite nasadiť do hry. Nahrávanie firmvéru trvá do 10 sekúnd </b>
 </p>
 <hr><h4>Výpis časov na LCD znakovom displeji 20x4:</h4><hr>
 <center><img src="https://i.imgur.com/xqqKdEF.png" alt="LCD character display 20x4 - Arduino Domination Timer - DOMINATOR" style="display: block; max-width: 100%; height: auto;" title="LCD character display 20x4 - Arduino Domination Timer - DOMINATOR"></center>
