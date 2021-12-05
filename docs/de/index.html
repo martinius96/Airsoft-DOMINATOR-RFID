@@ -193,16 +193,19 @@ Anschließend leuchtet die LED des RED Mannschaft an dieser Station und das Disp
 </p>
 <hr>
 <p style="text-align: justify;">
-<b> <font color = "#F39C12"> Wenn der Schiedsrichter seine RFID-Karte anlegt, werden beide Zeiten gestoppt. Die Zeit bleibt stehen, bis ein Mitglied <font color = "#C0392B"> des RED Mannschaft </font> oder <font color = "#27AE60"> des GRE Mannschaft </font> seine Karte vorlegt.
-Dieser Kartentyp ist somit geeignet, um ein laufendes Spiel vorübergehend zu unterbrechen, das Eingreifen eines Spielers oder Verletzungen zu überprüfen.
+<b> <font color = "#F39C12"> Wenn der Referee seine RFID-Karte anlegt, stoppt die Laufzeit beim aktuellen Wert. Der Punkt wird neutral, die LED des aktiven Teams erlischt.
+Die Unterbrechung dauert an, bis ein Mitglied des <font color = "#C0392B"> RED Mannschafts </font> oder <font color = "#27AE60"> des GRE Mannschafts </font> seine Karte vorlegt.
+Dieser Kartentyp ist somit geeignet, ein laufendes Spiel vorübergehend zu unterbrechen, Eingriffe eines Spielers oder Verletzungen zu kontrollieren.
 Gleichzeitig kann die Karte am Ende der Spielrunde verwendet werden, um die Runde zu bewerten, Teams neu zu spawnen, bevor es weitergeht. </font> </b>
-<b> <font color = "#3498DB"> Wenn eine Radiergummi-Karte eingesteckt wird, werden beide Zeiten gestoppt und auf den angezeigten Anfangswert von 00 Stunden, 00 Minuten, 00 Sekunden zurückgesetzt.
-Die Radiergummikarte wird verwendet, um das Spiel neu zu starten, ein neues Spiel zu initialisieren, ohne dass ein Einschaltzyklus erforderlich ist. </font> </b>
-Das Projekt eignet sich für Airsoft-Veranstaltungen, Sportanlagen oder Airsoft-Teams, die die Ausrüstung bauen können.
-Der Vorteil des Stoppuhr der Dominanz-Systems besteht darin, dass das System geklont werden und X-Punkte mit derselben Konfiguration über einen Maschinencode erstellen kann, der unabhängig im Spiel bekämpft werden kann, während die RFID-Karten auf allen DOMINATOR-Geräten vollständig funktionieren.
-Das System ist getestet, funktionsfähig und wartungsfreundlich.
-Der NXP RC522-Leser arbeitet mit einer Frequenz von 13,56 MHz, registriert RFID-Tags bei ca. 3 Zentimetern (fast physischer Kontakt mit dem Leser ist erforderlich) und kompatibles ISO / IEC 14443-A-Tag-Format.
-Der angegebene Tag-Standard umfasst auch ISIC-Buskarten, die als NFC-Karten fungieren und ihre physische Adresse - UID - an einen Leser in Reichweite übermitteln können.
+<b> <font color = "#3498DB"> Wenn der Radierer die Karte anbringt, werden beide Zeiten angehalten und auf den Anfangswert von 00 Stunden, 00 Minuten, 00 Sekunden zurückgesetzt, der angezeigt wird.
+Die Radiergummikarte wird verwendet, um das Spiel neu zu starten, um ein neues Spiel zu initialisieren, ohne dass ein Einschaltzyklus erforderlich ist. </font> </b>
+Der RFID-Reader reagiert sofort auf das Einstecken einer RFID-Karte, inklusive der gesamten Logik des Dominator-Projekts.
+Das Projekt eignet sich für Airsoft-Events, Sportstätten oder Airsoft-Teams, die mit eigener Hardware ein Dominator-Gerät bauen können.
+Die Firmware ist universell, basierend auf dem Schaltplan, es ist auch möglich das vorhandene PCB-Design für die Herstellung von Leiterplatten zu verwenden.
+<b> Der Vorteil des RFID Stoppuhr der Dominanz-Projekts besteht darin, dass die Nutzungslizenz den Benutzer berechtigt, X-Punkte mit gleicher Konfiguration über Maschinencode zu klonen und zu erstellen.
+Maschinencode (.hex) ist ein kompiliertes Firmware-Format für das RFID Dominator-Projekt für gelieferte UID-RFID-Karten, die vor der Kompilierung in den Code eingebettet werden.
+Damit ist es möglich, beliebig viele unabhängig voneinander arbeitende RFID-Stoppuhr der Dominanz-Punkte im Spiel zu platzieren, die nach einer einheitlichen Konfiguration auf identische RFID-Karten reagieren.
+Das RFID Dominator System ist abgestimmt, es kann sofort ins Spiel eingesetzt werden. Firmware-Uploads innerhalb von 10 Sekunden über <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a>. </b>
 </p>
 <hr><h4>Liste der Zeiten auf der LCD-Zeichenanzeige 20x4:</h4><hr>
 <center><img src="https://i.imgur.com/xqqKdEF.png" alt="Liste der Zeiten auf der LCD-Zeichenanzeige 20x4" style="display: block; max-width: 100%; height: auto;" title="Liste der Zeiten auf der LCD-Zeichenanzeige 20x4"></center>
