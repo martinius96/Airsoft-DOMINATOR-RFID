@@ -147,7 +147,7 @@ table,thead,tbody,tfoot,tr, td,th{
 	<strong>Репозиторий проекта - условно-бесплатная прошивка для Button Dominator: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/button_dominator">Domination Timer firmware</a>
 </div>
 <div class="alert alert-info">
-	<strong>Если вас интересует программная реализация проекта DOMINATOR, обращайтесь на английском языке:</strong> martinius96@gmail.com
+	<strong>Если вас интересует программная реализация проекта Секундомер доминирования, обращайтесь на английском языке:</strong> martinius96@gmail.com
 	
 </div>					
 <span class="label label-default">Arduino</span>
@@ -157,7 +157,7 @@ table,thead,tbody,tfoot,tr, td,th{
 <span class="label label-danger">Schematics</span>
 <span class="label label-default">Airsoft</span>
 <span class="label label-primary">Paintball</span>
-<span class="label label-success">DOMINATOR</span>
+<span class="label label-success">Секундомер доминирования</span>
 <hr> <center> <h2> Кнопка ДОМИНАТОР - секундомер для страйкбола | Пейнтбол </h2> </center> <hr>
 <h4>Сущности в проекте Кнопка ДОМИНАТОР:</h4>
  <div class="row">
@@ -176,10 +176,10 @@ table,thead,tbody,tfoot,tr, td,th{
 </p>
 <hr>
 <p style="text-align: justify;">
-Кнопка DOMINATOR использует ввод кнопки для действия по занятию точки членом команды, а также для ввода судьи и объекта ластика.
+Кнопка Секундомер доминирования использует ввод кнопки для действия по занятию точки членом команды, а также для ввода судьи и объекта ластика.
 Таким образом, всего используется 4 кнопки для 4 сущностей системы, кнопки переключения, подключенные в режиме INPUT_PULLUP.
 Нажатие кнопки подает сигнал GND на цифровой входной терминал Arduino (сигнал переключения Active-LOW).
-В базовой версии DOMINATOR немедленно реагирует на нажатие - включается отсчет времени для данной команды (продолжительность нажатия, количество нажатий и т.д. не проверяются ...).
+В базовой версии Секундомер доминирования немедленно реагирует на нажатие - включается отсчет времени для данной команды (продолжительность нажатия, количество нажатий и т.д. не проверяются ...).
 Время отображается на символьном ЖК-дисплее размером 16x2 или 20x4, который связывается с управляющим микроконтроллером через шину I2C.
 <b> <font color = "#C0392B"> Если член команды RED занимает точку, нажав кнопку, срабатывает зуммер, который сообщает об изменении точки коротким звуковым сигналом.
 Затем загорится КРАСНЫЙ светодиод команды на этой станции, и на дисплее начнется добавление времени для этой команды. </font> </b>
@@ -189,22 +189,22 @@ table,thead,tbody,tfoot,tr, td,th{
 <b> <font color = "#27AE60"> Если точка занята командой GRE и член команды нажимает соответствующую кнопку, снова звучит зуммер, загорается светодиодный индикатор команды GRE, КРАСНОЕ командное время приостанавливается и Подсчитывается время команды GRE, какую точку он занял. </font> </b>
 <b> <font color = "#F39C12"> Если организатор (судья) нажимает свою кнопку, оба раза приостанавливаются до тех пор, пока член одной из команд не введет данные пользователя.
 Таким образом, этот тип ввода подходит для начала перерыва, но также может завершить игру для оценки. </font> </b>
-<b> <font color = "#3498DB"> Кнопка DOMINATOR имеет четвертую кнопку для объекта ластика, которая приостанавливает и сбрасывает оба раза до начальных значений, как после запуска секундомера Button DOMINATOR.
+<b> <font color = "#3498DB"> Кнопка Секундомер доминирования имеет четвертую кнопку для объекта ластика, которая приостанавливает и сбрасывает оба раза до начальных значений, как после запуска секундомера Button DOMINATOR.
 Используется для перезапуска игры, инициализации новой игры. </font> </b>
 Проект подходит для мероприятий по страйкболу, спортивных сооружений или команд по страйкболу, которые могут собрать оборудование.
-Преимущество системы Button DOMINATOR заключается в том, что ее можно клонировать и создавать X-точки с одинаковой конфигурацией с помощью машинного кода, который может быть загружен в неограниченное количество плат и чипов Arduino и гарантирует идентичную работу приложения.
+Преимущество системы Button Секундомер доминирования заключается в том, что ее можно клонировать и создавать X-точки с одинаковой конфигурацией с помощью машинного кода, который может быть загружен в неограниченное количество плат и чипов Arduino и гарантирует идентичную работу приложения.
 Таким образом, игроки могут набрать больше очков в игре, а в конце игры время суммируется до тех пор, пока какая точка была занята какой командой.
 </p> 
 <hr><h4>Список времен на символьном ЖК-дисплее 20х4:</h4><hr>
-<center><img src="https://i.imgur.com/xqqKdEF.png" alt="Список времен на символьном ЖК-дисплее 20х4 - Arduino Domination Timer - DOMINATOR" style="display: block; max-width: 100%; height: auto;" title="Список времен на символьном ЖК-дисплее 20х4 - Arduino Domination Timer - DOMINATOR"></center>
-<hr><h4>Совместимое управляющее оборудование для кнопочного DOMINATOR:</h4><hr>
+<center><img src="https://i.imgur.com/xqqKdEF.png" alt="Список времен на символьном ЖК-дисплее 20х4 - Arduino Domination Timer - Секундомер доминирования" style="display: block; max-width: 100%; height: auto;" title="Список времен на символьном ЖК-дисплее 20х4 - Arduino Domination Timer - DOMINATOR"></center>
+<hr><h4>Совместимое управляющее оборудование для кнопочного Секундомер доминирования:</h4><hr>
 <div class="row">
 <div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino UNO for Domination Timer" title="Control microcontroller Arduino UNO for Domination Timer"><br><b><a href="https://www.ebay.com/itm/254532156570">Arduino UNO</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/XHC8DBe.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino Nano for Domination Timer" title="Control microcontroller Arduino Nano for Domination Timer"><br><b><a href="https://www.ebay.com/itm/252742123829">Arduino Nano</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P DIP" title="Control microcontroller ATmega328P DIP"><br><b><a href="https://www.ebay.com/itm/292204064766">ATmega328P - DIP28</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P SMD" title="Control microcontroller ATmega328P SMD"><br><b><a href="https://www.ebay.com/itm/142666414237">ATmega328P - SMD</a></b></center></div>
 </div>	
-<hr><h4>Периферийные устройства для кнопочного DOMINATOR:</h4><hr>
+<hr><h4>Периферийные устройства для кнопочного Секундомер доминирования:</h4><hr>
 <div class="row">
 <div class="col-sm-2"><center><img src="https://i.imgur.com/KLImexp.png" width="128px" height="128px" style="border-radius: 50%;" alt="LCD znakový displej 16x2 / 20x4" title="LCD znakový displej 16x2 / 20x4"><br><b><a href="https://www.ebay.com/itm/233193109985">Символьный ЖК-дисплей 16x2 / 20x4</a></b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/DYNZjCW.png" width="128px" height="128px" style="border-radius: 50%;" alt="I2C prevodník pre LCD displej" title="I2C prevodník pre LCD displej"><br><b><a href="https://www.ebay.com/itm/181862365068">Конвертер I2C для ЖК-дисплея</a></b></center></div>
@@ -219,10 +219,10 @@ table,thead,tbody,tfoot,tr, td,th{
       <strong> Потребление: около 20 мАч при питании 5 В. </strong> Удобно получать питание через внешний аккумулятор, зарядное устройство от телефона с выходом USB.
       </div>
 <hr><center><h3>Кнопка ДОМИНАТОР на лету в игре Airsoft - Очки захвата</h3></center><hr>
-<center><img src="https://i.imgur.com/yuHmpZa.jpg" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Airsoft DOMINATOR s tlačidlovým vstupom - stopky" title="Airsoft DOMINATOR s tlačidlovým vstupom - stopky"></center>        			
-<hr><center><h3>Кнопка DOMINATOR - демонстрация функциональности и логики системы</h3></center><hr>
+<center><img src="https://i.imgur.com/yuHmpZa.jpg" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Airsoft Секундомер доминирования s tlačidlovým vstupom - stopky" title="Airsoft DOMINATOR s tlačidlovým vstupom - stopky"></center>        			
+<hr><center><h3>Кнопка Секундомер доминирования - демонстрация функциональности и логики системы</h3></center><hr>
 <center><iframe width="50%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-<h3>Таблица подключения клемм - Кнопка DOMINATOR - полностью соответствует схеме подключения:</h3>
+<h3>Таблица подключения клемм - Кнопка Секундомер доминирования - полностью соответствует схеме подключения:</h3>
 <div class="table-responsive">   
 <table class="table" style="border: 1px solid black;">
 				<thead>		
@@ -303,12 +303,12 @@ table,thead,tbody,tfoot,tr, td,th{
 </tr>
 </tbody>
 </table>				</div>
-<hr><center><h2>Схема подключения - кнопка DOMINATOR:</h2></center><hr>
-<img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
+<hr><center><h2>Схема подключения - кнопка Секундомер доминирования:</h2></center><hr>
+<img src="https://i.imgur.com/D9KcneX.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMСекундомер доминированияINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
 <hr><center><h2>Тестовая программа (Условно-бесплатная) - Кнопка ДОМИНАТОР с машинным кодом</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
-<b> Условно-бесплатная версия (.hex) доступна для проекта Button DOMINATOR. </b> Эта версия позволяет измерять максимум 15 секунд игры для каждой команды.
+<b> Условно-бесплатная версия (.hex) доступна для проекта Button Секундомер доминирования. </b> Эта версия позволяет измерять максимум 15 секунд игры для каждой команды.
 <b> Цель версии - проверить совместимость с вашим оборудованием. </b> Машинные коды на основе адреса преобразователя I2C для ЖК-дисплея доступны в репозитории Github.
 Наиболее часто используемые адреса - 0x27 и 0x3F. Если вы не знаете адрес вашего конвертера, используйте встроенный пример в Arduino IDE -> I2C Scanner, который запишет адрес в интерфейс UART (Serial monitor).
 Машинный код может быть загружен в микроконтроллер Arduino Uno через программное обеспечение AVRDUDE - часть Arduino IDE или с графическим интерфейсом через <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - проще в использовании. </p>
@@ -319,7 +319,7 @@ table,thead,tbody,tfoot,tr, td,th{
 <li> <b> Если просто щелкнуть «Загрузить», машинный код может быть загружен автоматически </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> использует инструмент AVRDUDE, аналогичный Arduino IDE). Окно XLoader сообщает об успешной загрузке в виде списка загруженных байтов. </li>
 <b> Прошивку можно скачать из репозитория проекта: </b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/">здесь</a>. Прошивка находится в папке / firmware /, разделенной по адресу преобразователя I2C (вы узнали из вывода сканера I2C на интерфейс UART).
 </div>
-				<h4>Доступные прошивки - кнопка DOMINATOR</h4>
+				<h4>Доступные прошивки - кнопка Секундомер доминирования</h4>
 				<div class="table-responsive">          
  				<table class="table" style="border: 1px solid black;">
 				<thead>
@@ -346,7 +346,7 @@ table,thead,tbody,tfoot,tr, td,th{
 <div class="alert alert-danger">
       <strong>Для последних китайских клонов Arduino Nano, которые имеют "старый загрузчик", необходимо загрузить машинный код со скоростью 57600 бод / с! Для других версий с более новым загрузчиком 115200 бод / с (эта скорость также используется в команде AVRDUDE для загрузки машинного кода).</strong>
  </div>				
-<hr><center><h2>Загрузка условно-бесплатной версии проекта Button DOMINATOR в Arduino через XLoader</h2></center><hr>				
+<hr><center><h2>Загрузка условно-бесплатной версии проекта Button Секундомер доминирования в Arduino через XLoader</h2></center><hr>				
 <center>
 	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
 </center>	
