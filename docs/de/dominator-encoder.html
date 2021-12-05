@@ -196,7 +196,7 @@ Die Stoppuhr ist mit einer 16x2 / 20x4 LCD-Zeichenanzeige ausgestattet. Nach dem
 Über die Gegenstände ist es möglich, den Domination Timer-Spielmodus zu starten, der auf Benutzertasten (Eingaben) reagiert, oder die Zeit der Teambelegung vor dem Spiel im konfigurierbaren Modus einzustellen.
 Dieser Parameter gibt die erforderliche Länge des Haltens der Taste an, bis das Team den Punkt erfolgreich belegt. Dieser konfigurierbare Parameter wird für die Anzahl der Sekunden implementiert.
 Der zweite konfigurierbare Parameter ist das automatische Ende des Spiels, um mit der Option UNLIMITED eine bestimmte Anzahl von Stunden der Stoppuhr zu erreichen - wenn die Stoppuhr bis unendlich zählt oder nach der maximalen Anzeigezeit auf dem Display - 99 Stunden, 59 Minuten, 59 Sekunden.
-Die Stoppuhr verwendet einen Arduino-Steuerungs-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) ATMega328P, der die gesamte Systemlogik steuert.
+Die Stoppuhr verwendet einen Arduino-Steuerungs-Mikrocontroller (Arduino Uno / Nano) oder einen separaten Chip (Atmel) ATmega328P, der die gesamte Systemlogik steuert.
 Es gibt 2 Teams im Spiel - <b><font color="#C0392B">RED mannschaft</font></b> un <b><font color="#27AE60">GRE mannschaft</font></b>, die gegeneinander spielen und den imaginären Punkt einnehmen, der von diesem Gerät gebildet wird - DOMINATOR.				
 Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für an <b><font color="#C0392B">RED mannschaft</font></b>, <b><font color="#27AE60">GRE mannschaft</font></b>.
 </p>
@@ -237,8 +237,8 @@ Der Player stoppt den Countdown, indem er beide Tasten eine bestimmte Zeit lang 
 <div class="row">
 <div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino UNO for Domination Timer" title="Control microcontroller Arduino UNO for Domination Timer"><br><b><a href="https://www.ebay.com/itm/254532156570">Arduino UNO</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/XHC8DBe.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino Nano for Domination Timer" title="Control microcontroller Arduino Nano for Domination Timer"><br><b><a href="https://www.ebay.com/itm/252742123829">Arduino Nano</a></b></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATMega328P DIP" title="Control microcontroller ATMega328P DIP"><br><b><a href="https://www.ebay.com/itm/292204064766">ATMega328P - DIP28</a></b></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATMega328P SMD" title="Control microcontroller ATMega328P SMD"><br><b><a href="https://www.ebay.com/itm/142666414237">ATMega328P - SMD</a></b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P DIP" title="Control microcontroller ATmega328P DIP"><br><b><a href="https://www.ebay.com/itm/292204064766">ATmega328P - DIP28</a></b></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P SMD" title="Control microcontroller ATmega328P SMD"><br><b><a href="https://www.ebay.com/itm/142666414237">ATmega328P - SMD</a></b></center></div>
 </div>	
 <hr><h4>Kompatible Peripheriegeräte - Konfigurierbarer Domination Timer:</h4><hr>
 <div class="row">
@@ -258,7 +258,7 @@ Der Player stoppt den Countdown, indem er beide Tasten eine bestimmte Zeit lang 
 <table class="table" style="border: 1px solid black;">
 				<thead>		
 <tr>
-<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (ATMega328P)</strong></td>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#27AE60"><strong>I2C-Wandler für LCD-Anzeige</strong></td>
 </tr>
 <tr>
@@ -278,7 +278,7 @@ Der Player stoppt den Countdown, indem er beide Tasten eine bestimmte Zeit lang 
 <td align="right" style="background-color:#27AE60">SCL</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (ATMega328P)</strong></td>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#C0392B"><strong>Drehcodierer - KY-040</strong></td>
 </tr>
 <tr>
@@ -302,7 +302,7 @@ Der Player stoppt den Countdown, indem er beide Tasten eine bestimmte Zeit lang 
 <td align="right" style="background-color:#C0392B">SW</td>
 </tr>
 <tr>
-<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (ATMega328P)</strong></td>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#F8C471"><strong>LED Dioden</strong></td>
 </tr>
 <tr>
@@ -317,7 +317,7 @@ Der Player stoppt den Countdown, indem er beide Tasten eine bestimmte Zeit lang 
 <td align="left" style="background-color:#F8C471">D7</td>
 <td align="right" style="background-color:#F8C471">IN (GREEN)</td>
 </tr>
-<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (ATMega328P)</strong></td>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#5DADE2"><strong>Taste (INPUT_PULLUP)</strong></td>
 </tr>
 <tr>
@@ -332,7 +332,7 @@ Der Player stoppt den Countdown, indem er beide Tasten eine bestimmte Zeit lang 
 <td align="left" style="background-color:#5DADE2">D9</td>
 <td align="right" style="background-color:#5DADE2">IN (GRE)</td>
 </tr>
-<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (ATMega328P)</strong></td>
+<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
 <td align="right" style="background-color:#AF7AC5"><strong>Summer</strong></td>
 </tr>
 <tr>
@@ -353,7 +353,7 @@ Der Player stoppt den Countdown, indem er beide Tasten eine bestimmte Zeit lang 
 Die am häufigsten verwendeten Adressen sind 0x27 und 0x3F. Wenn Sie die Adresse Ihres Konverters nicht kennen, verwenden Sie das in Arduino IDE -> I2C Scanner integrierte Beispiel, das die Adresse in die UART-Schnittstelle (serieller Monitor) schreibt.
 Der Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder über den <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> mit einer GUI-Schnittstelle einfacher auf den Arduino Uno-Mikrocontroller hochgeladen werden.</p>
 <li>AVRDUDE muss über das mit der Arduino IDE installierte CMD (Befehlszeile) ausgeführt werden. Gelegen in C:/Users/[User]/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<b><center>Beispielbefehl zum Hochladen eines Programms auf Arduino Uno / Nano (ATMega328P):</center></b>
+<b><center>Beispielbefehl zum Hochladen eines Programms auf Arduino Uno / Nano (ATmega328P):</center></b>
 <li>Für Firmware mit I2C-Anzeigeadresse 0x27 (Beispiel COM-Port 21 und 115200 Baud / s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
 <li>Für Firmware mit I2C-Anzeigeadresse 0x3F (Beispiel COM-Port 21 und 115200 Baud / s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
 <li><b><a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> ist eine Windows-Anwendung (ausführbares EXE-Tool) mit einer einfachen grafischen Oberfläche</b>Dies ermöglicht die Auswahl von Firmware - Maschinencode (.hex), der Zielplattform und kann dynamisch den COM-Port anzeigen, an dem sich das Gerät befindet.</li> 
