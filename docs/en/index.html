@@ -180,19 +180,20 @@ table,thead,tbody,tfoot,tr, td,th{
 <h4> RFID Domination Timer description: </h4>
 <hr>
 <p style="text-align: justify;">
-Domination Timer is stopwatch device suitable for Airsoft / Paintball game mode DOMINATION, resp. Capture Hill.
-The stopwatch consists of an ATmega328P microcontroller (AVR), which can be part of the Arduino development kit (Uno / Nano / Pro Mini) or used standalone.
-An LCD character display (size 16x2 or 20x4) is used to visualize the times.
+Domination Timer is a device (stopwatch) designed for 2 teams that play against each other.
+The stopwatch is suitable for Airsoft / Paintball game mode DOMINATION, resp. Capture Hill.
+They consist of an ATmega328P microcontroller (AVR), which can be part of the Arduino development kit (Uno / Nano / Pro Mini) or used standalone.
+An LCD character display (size 16x2 or 20x4) is used to visualize the times, which is connected to the microcontroller and communicates with it.
 The times are listed in two lines below each other and are dynamically updated if there is an active team at the point (a point occupied by a team).
-The stopwatch is also equipped with components for indicating the active team (LED diodes in team forms) and a detector (piezo transducer), which announces the change at the point after attaching the RFID card.
-DOMINATION game mode is designed for 2 teams - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b> who play against each other and try to occupy and maintain the DOMINATOR point for as long as possible.
-At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60"> GRE team </font> </b>.
+The stopwatch is equipped with indicator LEDs in the form of individual teams, which signal the active team at the point and a detector (piezo transducer), which announces the change at the point after attaching the RFID card.
+Teams are implemented in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b> who play against each other and try to occupy the point and then keep it for as long as possible.
+At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
 Each member of the team is equipped with an RFID chip that is integrated in the bracelet (or card / keychain).
-The RFID chip transmits its identifier - UID, which is read by an RFID reader and verified in the logic of the system to which the entity belongs.
-The individual bracelets can be color-coded (red, green according to the team and the function of the entity), which allows them to be distributed more quickly to players, but also to be archived and stored.
+The RFID chip transmits its unique identifier - UID (unique ID), which is read by an RFID reader and verified in the logic of the system to which the entity (team) belongs.
+Individual bracelets can be color-coded (red, green by team and entity function), which allows them to be distributed more quickly to players, but also archived and stored by color.
 <b> <font color = "#C0392B"> The RED team will occupy the point when the RED team member attaches their card to the RFID reader.
 This action triggers a buzzer that announces the change of point with a short beep.
-Subsequently, the LED of the RED team will light up at this station and the display will start adding the time for this team until the member's <font color = "#27AE60"> team card is inserted </font>, <font color = "#F39C12"> Referee </font>, or <font color = "#3498DB"> Eraser </font>. </font> </b>
+Subsequently, the LED of the RED team at this station will light up and the display will start adding the time for this team until the member's <font color = "#27AE60"> team card is inserted </font>, <font color = "#F39C12"> Referee </font>, or <font color = "#3498DB"> Eraser </font>. </font> </b>
 <b> <font color = "#27AE60"> If the point is occupied by a GRE player and the card is attached to an RFID reader, the buzzer will announce this change with a short beep, the GRE LED will light up <font color = "#C0392B"> (RED LED turns off), RED's current time stops </font>, and GRE's time is scored. </font> </b>
 </p>
 <hr>
