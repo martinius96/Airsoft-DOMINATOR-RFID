@@ -446,8 +446,34 @@ Firmware znajduje się w folderze Github repozytorium projektu /rfid_dominator/ 
 Karta UID RFID jest zapisywana do monitora szeregowego (UART) - stosowana prędkość to 9600 bodów/s (znaków na sekundę).
 <b> Oświadczenie powinno zostać zapisane i przepisane w czytelnym dokumencie .xls (EXCEL), co ułatwi zarządzanie przypisanymi kartami RFID do określonych zespołów i podmiotów do ostatecznej aplikacji RFID DOMINATOR, której kod maszynowy jest powiązany z dostarczone karty UID. </b>
 Musisz zaimportować bibliotekę MFRC522 do swojego Arduino IDE, aby pomyślnie załadować kod źródłowy w celu załadowania kart UID.
-Biblioteka MFRC522 w wersji 1.4.8: <a href="https://github.com/miguelbalboa/rfid/releases/tag/1.4.8">Repozytorium Github </a> - <b> pobierz archiwum .zip i skopiuj zawartość archiwum do Arduino/biblioteki </b> (folder najczęściej znajduje się w Dokumentach lub według własnej instalacji w innej lokalizacji).
 </p>
+<hr><center><h4>Dostępne biblioteki dla mikrokontrolerów (Arduino)</h4></center><hr>
+<div class="alert alert-danger">
+	Archiwum biblioteki (.zip) rozwiń do <strong>C:/Users/[User]/Documents/Arduino/libraries</strong>
+</div>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+<thead>
+<tr>
+<th style="width: 25%">Nazwa biblioteki</th>
+<th style="width: 50%">Funkcja biblioteki</th>
+<th style="width: 25%">Ściągnij</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 25%"><b>MFRC522</b></td>
+<td style="width: 50%">
+<p style="text-align: justify;">
+Biblioteka dla mikrokontrolerów AVR (ATmega) Arduino Uno / Nano / Mega.
+Umożliwia komunikację z czytnikiem RFID NXP RC522 poprzez magistralę SPI.
+</p>
+</td>
+<td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/MFRC522" class="btn btn-success" role="button">Ściągnij</a></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr><h4>Przykład zapisanych kart RFID UID - dokument Excel .xls:</h4><hr>				
 <center><img src="https://i.imgur.com/crCc2Ls.png" style="display: block; max-width: 100%; height: auto;" alt="Fizyczne karty RFID UID przechowywane w przejrzystym dokumencie Excel" title="Fizyczne karty RFID UID przechowywane w przejrzystym dokumencie Excel"></center> 				
 <center><hr><h4>Szablon programu Excel (.xls) do pisania UID — Arkusze kalkulacyjne Google online: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Tabuľky - RFID DOMINATOR Template" title="Google Tabuľky - RFID DOMINATOR Template"></a></h4></center>
