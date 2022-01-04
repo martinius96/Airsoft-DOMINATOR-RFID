@@ -439,8 +439,34 @@ Machine code can be uploaded to the Arduino Uno microcontroller via the AVRDUDE 
 The UID RFID card is written to the serial (UART) monitor - the used speed is 9600 baud / s (characters per second).
 <b> The statement should be saved and rewritten in a clear .xls (EXCEL) document, which will facilitate the management of assigned RFID cards to specific teams and entities for the final RFID DOMINATOR application, whose machine code is tied to the supplied UID cards. </b>
 To successfully upload the source code for loading UID cards, you need to import the MFRC522 library into your Arduino IDE.
-MFRC522 library in version 1.4.8: <a href="https://github.com/miguelbalboa/rfid/releases/tag/1.4.8">Github repository</a> - <b>download the .zip archive and copy the contents of the archive to Arduino / libraries </b> (the folder is most often located in the Documents, or according to your own installation in another location).
 </p>
+<hr><center><h4>Available libraries for microcontrollers (Arduino)</h4></center><hr>
+<div class="alert alert-danger">
+	Library archive (.zip) expand to <strong>C:/Users/[User]/Documents/Arduino/libraries</strong>
+</div>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+<thead>
+<tr>
+<th style="width: 25%">Library name</th>
+<th style="width: 50%">Library function</th>
+<th style="width: 25%">Download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 25%"><b>MFRC522</b></td>
+<td style="width: 50%">
+<p style="text-align: justify;">
+Library for AVR microcontrollers (ATmega) Arduino Uno / Nano / Mega.
+It allows to communicate with RFID reader NXP RC522 via SPI bus.
+</p>
+</td>
+<td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/MFRC522" class="btn btn-success" role="button">Download</a></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr><h4>Example of stored UID RFID cards - Excel document .xls:</h4><hr>				
 <center><img src="https://i.imgur.com/rEvG8Wb.png" style="display: block; max-width: 100%; height: auto;" alt="Physical UID of RFID cards stored in a clear Excel document" title="Physical UID of RFID cards stored in a clear Excel document"></center> 				
 <center><hr><h4>Excel (.xls) template for writing UIDs - Online Google Spreadsheets: <a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing"><img src="https://pbs.twimg.com/profile_images/1150082025673625600/m1VyNZtc.png" style="display: block; width: 64px; height: 64px; border-radius: 50%;" alt="Google Spreadsheets - RFID Domination TimerTemplate" title="Google Spreadsheets - RFID Domination TimerTemplate"></a></h4></center>
