@@ -130,7 +130,7 @@ table,thead,tbody,tfoot,tr, td,th{
   		<div class="row">
     			<div class="col-sm-12">
 <div class="alert alert-success">
-	<strong>Project Repository - Firmware Shareware pour Button Dominator: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/button_dominator">Micrologiciel Domination Timer</a>
+	<strong>Project Repository - Firmware Shareware pour Bouton Dominator: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/button_dominator">Micrologiciel Domination Timer</a>
 </div>	
 <div class="alert alert-info">
 	<strong>Si vous êtes intéressé par le firmware du code machine du bouton DOMINATOR, veuillez contacter en anglais à:</strong> <h4><font color="red">martinius96@gmail.com</font></h4>	
@@ -153,7 +153,7 @@ table,thead,tbody,tfoot,tr, td,th{
 </div>
 <hr><h4>Description du projet Bouton DOMINATOR</h4><hr>
 <p style="text-align: justify;">
-Button DOMINATOR est un appareil - chronomètre pour les sports Airsoft et Paintball.
+Bouton DOMINATOR est un appareil - chronomètre pour les sports Airsoft et Paintball.
 Le chronomètre utilise un microcontrôleur de contrôle Arduino (Arduino Uno / Nano) ou une puce séparée (Atmel) ATmega328P, qui contrôle l'ensemble de la logique du système.
 Le chronomètre comprend un affichage LCD de caractères mesurant 16x2 (16 caractères x 2 lignes), ou 20x4, qui affiche les temps des équipes individuelles.
 Il y a 2 équipes dans le jeu - <b> <font color = "#C0392B"> l'équipe RED </font> </b> et <b> <font color = "#27AE60"> l'équipe GRE </font> </b> qui jouent les uns contre les autres et occupent le point imaginaire formé par cet appareil - DOMINATOR.
@@ -161,7 +161,7 @@ Au début du jeu, l'écran affiche les temps 00 heures, 00 minutes, 00 secondes 
 </p>
 <hr>
 <p style="text-align: justify;">
-Button DOMINATOR utilise l'entrée de bouton pour l'action des membres de l'équipe, ainsi que l'entrée d'entité d'arbitre et de gomme.
+Bouton DOMINATOR utilise l'entrée de bouton pour l'action des membres de l'équipe, ainsi que l'entrée d'entité d'arbitre et de gomme.
 Ainsi, un total de 4 boutons pour 4 entités système, les boutons de commutation connectés en mode INPUT_PULLUP sont utilisés.
 Appuyez sur le bouton pour envoyer le signal GND à la borne d'entrée numérique Arduino (signal de commutation Active-LOW).
 Les boutons à bascule sont utilisés, pas les boutons à bascule (ils ne répondraient pas à la logique du système, tous seraient toujours "pressés").
@@ -175,10 +175,10 @@ Ensuite, la LED de l'équipe ROUGE de cette station s'allumera et l'affichage co
 <b> <font color = "#27AE60"> Si le point est occupé par l'équipe GRE et que le membre de l'équipe appuie sur le bouton approprié, le buzzer retentit à nouveau, la LED de l'équipe GRE s'allume, le temps de l'équipe ROUGE est mis en pause et le Le temps de l'équipe GRE est calculé, quel point occupé. </font> </b>
 <b> <font color = "#F39C12"> Si l'organisateur (l'arbitre) appuie sur son bouton, les deux temps sont mis en pause jusqu'à ce qu'un membre de l'une des équipes effectue une saisie de l'utilisateur.
 Ce type d'entrée est donc adapté pour démarrer une pause, mais peut également terminer le jeu pour évaluation. </font> </b>
-<b> <font color = "#3498DB"> Button DOMINATOR a un quatrième bouton pour l'entité gomme, qui s'interrompt et réinitialise les deux fois aux valeurs initiales comme après le démarrage du chronomètre Button DOMINATOR.
+<b> <font color = "#3498DB"> Bouton DOMINATOR a un quatrième bouton pour l'entité gomme, qui s'interrompt et réinitialise les deux fois aux valeurs initiales comme après le démarrage du chronomètre Button DOMINATOR.
 Utilisé pour redémarrer le jeu, initialiser un nouveau jeu. </font> </b>
 Le projet convient aux événements Airsoft, aux installations sportives ou aux équipes Airsoft, qui peuvent construire l'équipement.
-L'avantage du système Button DOMINATOR est qu'il peut être cloné et créer X points avec la même configuration via le code machine, qui peut être chargé dans un nombre illimité de cartes et de puces Arduino et garantit un fonctionnement identique de l'application.
+L'avantage du système Bouton DOMINATOR est qu'il peut être cloné et créer X points avec la même configuration via le code machine, qui peut être chargé dans un nombre illimité de cartes et de puces Arduino et garantit un fonctionnement identique de l'application.
 Les joueurs peuvent ainsi marquer plus de points dans le jeu, tandis qu'à la fin du jeu, le temps est ajouté tant que quel point a été occupé par quelle équipe.
 Il est également possible d'utiliser des boutons avec une bougie de préchauffage intégrée, ce qui améliore la lisibilité et révèle la couleur des boutons individuels dans l'obscurité.
 </p> 
@@ -295,7 +295,7 @@ Il est également possible d'utiliser des boutons avec une bougie de préchauffa
 <hr><center><h2>Programme de test (Shareware) - Bouton DOMINATOR avec code machine</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
-<b> Une version Shareware (.hex) est disponible pour le projet DOMINATOR Button. </b> La version permet de mesurer un maximum de 15 secondes de jeu pour chaque équipe.
+<b> Une version Shareware (.hex) est disponible pour le projet DOMINATOR Bouton. </b> La version permet de mesurer un maximum de 15 secondes de jeu pour chaque équipe.
 <b> L'objectif de la version est de vérifier la compatibilité avec votre matériel. </b> Les codes machine basés sur l'adresse du convertisseur I2C pour l'écran LCD sont disponibles dans le référentiel Github.
 Les adresses les plus utilisées sont 0x27 et 0x3F. Si vous ne connaissez pas l'adresse de votre convertisseur, utilisez l'exemple intégré dans Arduino IDE -> I2C Scanner, qui écrira l'adresse sur l'interface UART (Serial Monitor).
 Le code machine peut être téléchargé sur le microcontrôleur Arduino Uno via le logiciel AVRDUDE - qui fait partie de l'IDE Arduino, ou avec une interface graphique via <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - plus facile à utiliser. </p>
@@ -319,12 +319,12 @@ Le code machine peut être téléchargé sur le microcontrôleur Arduino Uno via
 				<tbody>
 				<tr>
 				<td align="left">0x27.ino.hex</td>
-				<td align="center">Le firmware du bouton de test du Button Dominator permet de mesurer un temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C, qui communique à l'adresse 0x27</b></td>
+				<td align="center">Le firmware du bouton de test du Bouton Dominator permet de mesurer un temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C, qui communique à l'adresse 0x27</b></td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x27.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Télécharger le micrologiciel</a></td>
 				</tr>
 				<tr>
 				<td align="left">0x3F.ino.hex</td>
-				<td align="center">Le firmware du bouton de test du Button Dominator permet de mesurer un temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C qui communique à 0x3F</b></td>
+				<td align="center">Le firmware du bouton de test du Bouton Dominator permet de mesurer un temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C qui communique à 0x3F</b></td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x3F.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Télécharger le micrologiciel</a></td>
 				</tr>
 				</tbody>
