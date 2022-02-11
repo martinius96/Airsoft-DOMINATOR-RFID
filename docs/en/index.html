@@ -181,36 +181,36 @@ table,thead,tbody,tfoot,tr, td,th{
 <h4> RFID Domination Timer description: </h4>
 <hr>
 <p style="text-align: justify;">
-Domination Timer is a device (stopwatch) designed for 2 teams that play against each other.
+Domination timer (DOMINATOR) is a stopwatch device designed for 2 teams that play against each other and try to occupy the point and keep it for as long as possible.
 The stopwatch is suitable for Airsoft / Paintball game mode DOMINATION, resp. Capture Hill.
-They consist of an ATmega328P microcontroller (AVR), which can be part of the Arduino development kit (Uno / Nano / Pro Mini) or used standalone.
-An LCD character display (size 16x2 or 20x4) is used to visualize the times, which is connected to the microcontroller and communicates with it.
+They consist of an ATmega328P microcontroller (AVR), which can be part of the Arduino development kit (Uno / Nano / Pro Mini).
+An LCD character display (size 16x2 or 20x4) is used to visualize the times.
 The times are listed in two lines below each other and are dynamically updated if there is an active team at the point (a point occupied by a team).
-The stopwatch is equipped with indicator LEDs in the form of individual teams, which signal the active team at the point and a detector (piezo transducer), which announces the change at the point after attaching the RFID card.
+The stopwatch is equipped with indicator LEDs in team colors, which signal the active team at the point and a detector (piezo transducer), which announces the change at the point after attaching the RFID card.
 Teams are implemented in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b> who play against each other and try to occupy the point and then keep it for as long as possible.
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b> <font color = "#C0392B"> RED team </font> </b>, <b> <font color = "#27AE60 "> GRE team </font> </b>.
-Each member of the team is equipped with an RFID chip that is integrated in the bracelet (or card / keychain).
-The RFID chip transmits its unique identifier - UID (unique ID), which is read by an RFID reader and verified in the logic of the system to which the entity (team) belongs.
+<b> Each team member is equipped with an RFID chip that is integrated into the bracelet (or card / keychain).
+The RFID chip transmits its unique identifier - UID (unique ID), which is read by an RFID reader and verified in the logic of the system to which the entity (team) belongs. </b>
 Individual bracelets can be color-coded (red, green by team and entity function), which allows them to be distributed more quickly to players, but also archived and stored by color.
 <b> <font color = "#C0392B"> The RED team will occupy the point when the RED team member attaches their card to the RFID reader.
 This action triggers a buzzer that announces the change of point with a short beep.
-Subsequently, the LED of the RED team at this station will light up and the display will start adding the time for this team until the member's <font color = "#27AE60"> team card is inserted </font>, <font color = "#F39C12"> Referee </font>, or <font color = "#3498DB"> Eraser </font>. </font> </b>
-<b> <font color = "#27AE60"> If the point is occupied by a GRE player and the card is attached to an RFID reader, the buzzer will announce this change with a short beep, the GRE LED will light up <font color = "#C0392B"> (RED LED turns off), RED's current time stops </font>, and GRE's time is scored. </font> </b>
+Subsequently, the LED of the RED team at this station will light up and the display will start adding the time for this team until the member's <font color = "#27AE60"> team card is inserted </font>, <font color = "# F39C12"> Referee </font>, or <font color = "# 3498DB"> Eraser </font>. </font> </b>
+<b> <font color = "#27AE60"> If the point is occupied by a GRE player and the card is attached to an RFID reader, the buzzer will announce this change with a short beep, the GRE LED will light up <font color = "# C0392B"> (RED LED turns off), RED's current time stops </font>, and GRE's time is scored. </font> </b>
 </p>
 <hr>
 <p style="text-align: justify;">
-<b> <font color = "#F39C12"> If the Referee attaches his RFID card, the running time will stop at the current value. The point becomes neutral, the active team's LED goes out.
+<b> <font color = "# F39C12"> If the Referee attaches his RFID card, the running time will stop at the current value. The point becomes neutral, the active team's LED goes out.
 The stoppage lasts until a member of the <font color = "#C0392B"> RED team </font> or <font color = "#27AE60"> the GRE team </font> presents their card.
 This type of card is thus suitable for temporarily stopping an ongoing game, controlling a player's intervention, or injuries.
-At the same time, the card can be used at the end of the game round, to evaluate the round, respawn teams before continuing. </font> </b>
+At the same time, the card can be used at the end of a round of the game, to evaluate the round, respawn teams before continuing. </font> </b>
 <b> <font color = "#3498DB"> If Eraser attaches the card, both times will stop and reset to the initial value of 00 hours, 00 minutes, 00 seconds, which will be displayed.
 The Eraser card is used to restart the game, to initialize a new game without the need for a power-on cycle. </font> </b>
 The RFID reader responds to the insertion of an RFID card immediately, including the entire logic of the Dominator project.
 The project is suitable for Airsoft events, sports facilities, or Airsoft teams, which can build a Dominator device with their own hardware.
-The firmware is universal, which is based on the wiring diagram, it is also possible to use the available PCB design for the production of printed circuit boards.
-<b> The advantage of the RFID Domination Timer project is that the usage license authorizes the user to clone and create X points with the same configuration via machine code.
+Firmware is universal, which is based on the wiring diagram, it is also possible to use the available PCB design for the production of printed circuit boards.
+<b> The advantage of the RFID Domination timer project is that the usage license authorizes the user to clone and create X points with the same configuration via machine code.
 Machine code (.hex) is a compiled firmware format for the RFID Dominator project for supplied UID RFID cards that are embedded in the code before compilation.
-It is thus possible to place any number of independently operating RFID Domination Timer points in the game, which respond to identical RFID cards according to a uniform configuration.
+It is thus possible to place any number of independently operating RFID Domination timer points in the game, which respond to identical RFID cards according to a uniform configuration.
 The RFID Dominator system is tuned, it can be put into the game immediately. Firmware uploads within 10 seconds via <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a>. </b>
 </p>
 <hr><h4>LCD 20x4 output for RFID Domination Timer:</h4><hr>
