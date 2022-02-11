@@ -253,9 +253,10 @@ Systém RFID Dominator je vyladený, je ho možné okamžite nasadiť do hry. Na
 <hr><h4>Princíp funkčnosti projetku RFID DOMINATOR po hardvérovej stránke:</h4><hr>
 <p style="text-align: justify;">
 RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip ATmega328P) po SPI zbernici s hodinovým signálom (SCLK) 4 MHz.
-Čítačka RC522 reaguje na RFID čip vo vzdialenosti približne 3 cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB (48 dB je použité vo finálnej aplikácii pre DOMINATOR).
-Načítava UID (identifikátor) RFID čipov v dosahu, preposiela tento identifikátor Arduinu. 
-Arduino načítanú adresu karty porovná v multipodmienke, spustí pípnutie buzzra, aplikuje digitálne stavy na LED diódy, beží na ňom univerzálne počítadlo riadené internou funkciou millis(), ktoré zodpovedá za počítanie oboch časov.
+Čítačka NXP RC522 reaguje na RFID čip vo vzdialenosti približne 3 cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB (48 dB je použité vo finálnej aplikácii pre DOMINATOR).
+<b>Načítava UID (identifikátor) RFID čipov v dosahu, preposiela tento identifikátor Arduinu. 
+Arduino načítanú adresu karty porovná v multipodmienke, spustí pípnutie buzzra, aplikuje digitálne stavy na LED diódy</b>. 
+Na Arduino beží počítadlo (timer) od spustenia procesora. Toto počítadlo vracia počet milisekúnd funkciou millis(), ktoré je použité pre počítanie času aktívneho tímu.
 Na základe splnenej podmienky sa začne počítadlo aplikovať na daný tím, ktorému UID prislúcha a počítadlo času beží.
 Čas je vykreslený na LCD znakový displej 16x2 alebo 20x4. Dáta času sú posielané po I2C zbernici s hodinový signálom (SCL) 100 kHz (Standard Speed). 
 Aby bola obnova displeja čo najrýchlejšia, prepisuje sa iba číslo na danej pozícii (daný znak). Hodiny a minúty a sekundy sú prepisované iba pri zmene a vždy len pre daný tím.
