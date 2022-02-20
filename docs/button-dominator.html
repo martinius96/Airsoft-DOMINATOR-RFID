@@ -174,7 +174,8 @@ table,thead,tbody,tfoot,tr, td,th{
 </div>
 <hr><h4>Popis projektu Tlačidlový DOMINATOR</h4><hr>
 <p style="text-align: justify;">
-Tlačidlový DOMINATOR je zariadenie - stopky pre športy typu Airsoft, Paintball, ktoré vzniklo ako ekvivalent k projektu RFID Dominator s tlačidlovým vstupom.
+Tlačidlový DOMINATOR je zariadenie - stopky pre športy typu Airsoft, Paintball, ktoré vzniklo ako ekvivalent k projektu RFID Dominator.
+Rozdielom je implementácia tlačidlového vstupu pre hráčov namiesto RFID vstupu kartou.
 Stopky využívajú riadiaci mikrokontróler Arduino (Arduino Uno / Nano), prípadne samostatný čip (Atmel) ATmega328P, ktorý ovláda celú logiku systému.
 Súčasťou stopiek je LCD znakový displej rozmeru 16x2 (16 znakov x 2 riadky), respektíve 20x4, na ktorom sa dynamicky vyobrazujú časy jednotlivých tímov.
 V hre sú implementované 2 tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie a následné udržanie tohto bodu po čo najdlhšiu dobu.				
@@ -183,7 +184,7 @@ Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekú
 <hr>
 <p style="text-align: justify;">
 Tlačidlový DOMINATOR využíva tlačidlový vstup pre akciu obsadenia bodu členom tímu, rovnako aj pre vstup entity rozhodcu a erasera.
-Celkom teda 4 tlačidlá pre 4 entity systému, využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
+Celkom teda 4 tlačidlá pre 4 entity systému (tím RED, tím GRE, Rozhodca, Eraser), využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
 Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).
 Používajú sa spínacie tlačidlá, nie rozpínacie (nereagovali by na logiku systému, boli by vždy všetky softvérovo "stlačené").				
 <b>V základnej verzii DOMINATOR reaguje okamžite na stlačenie - aktivuje sa počítanie času pre daný tím (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).</b>
