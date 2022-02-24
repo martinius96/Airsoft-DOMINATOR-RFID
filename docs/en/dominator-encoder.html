@@ -396,7 +396,75 @@ Machine code can be uploaded to the Arduino Uno microcontroller via the AVRDUDE 
 				</table>
 				</div>		
 
-
+<div style="background: #F8C471;">
+<hr>				
+<center><h3>I2C Scanner - a program for reading the address of the I2C converter for the LCD display</h3></center>				
+<hr>
+<h4>Expected output of I2C Scanner:</h4><hr>
+<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
+<p style="text-align: justify;">
+The Wire library is built into the Arduino IDE, no installation is required.
+The program can be compiled and verified communication via I2C bus with LCD character display.
+I2C converter should be connected to Arduino to hardware I2C outlets (SCL to A5, SDA to A4) before loading the program, it is enough even without display.
+The retrieved display address must be provided for a successful build for Arduino along with the UID of the RFID cards.
+</p>
+<pre style="background: #F8C471;">
+#include &lt;Wire.h>
+ 
+ 
+void setup()
+{
+  Wire.begin();
+ 
+  Serial.begin(9600);
+  while (!Serial);             // Leonardo: wait for serial monitor
+  Serial.println("\nI2C Scanner");
+}
+ 
+ 
+void loop()
+{
+  byte error, address;
+  int nDevices;
+ 
+  Serial.println("Scanning...");
+ 
+  nDevices = 0;
+  for(address = 1; address &lt; 127; address++ )
+  {
+    // The i2c_scanner uses the return value of
+    // the Write.endTransmisstion to see if
+    // a device did acknowledge to the address.
+    Wire.beginTransmission(address);
+    error = Wire.endTransmission();
+ 
+    if (error == 0)
+    {
+      Serial.print("I2C device found at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.print(address,HEX);
+      Serial.println("  !");
+ 
+      nDevices++;
+    }
+    else if (error==4)
+    {
+      Serial.print("Unknown error at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.println(address,HEX);
+    }    
+  }
+  if (nDevices == 0)
+    Serial.println("No I2C devices found\n");
+  else
+    Serial.println("done\n");
+ 
+  delay(5000);           // wait 5 seconds for next scan
+}
+</pre>
+</div>
 
 </div>
 		</div>
