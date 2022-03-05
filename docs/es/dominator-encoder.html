@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!-- Primary Meta Tags -->
+	<title>Pulsador configurable DOMINADOR Airsoft | Paintball - cronómetro con pantalla</title>
+	<meta name="title" content="Pulsador configurable DOMINADOR Airsoft | Paintball - cronómetro con pantalla">
+	<meta name="description" content="Botón DOMINADOR mediante encoder para modo de juego configurable. Cronómetro para Airsoft, Paintball.">
+	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="../../sitemap.xml" />
+	<meta name="robots" content="index, follow">	
+	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
+	<meta property='fb:admins' content='100001242570317'>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    		window.smartlook||(function(d) {
+    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+    		})(document);
+    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
+	</script>    
+<script type="text/javascript">
+  function downloadFile(data, fileName, type="text/plain") {
+    // Create an invisible A element
+    const a = document.createElement("a");
+    a.style.display = "none";
+    document.body.appendChild(a);
+
+    // Set the HREF to a Blob representation of the data to be downloaded
+    a.href = window.URL.createObjectURL(
+      new Blob([data], { type })
+    );
+
+    // Use download attribute to set set desired file name
+    a.setAttribute("download", fileName);
+
+    // Trigger the download by simulating click
+    a.click();
+
+    // Cleanup
+    window.URL.revokeObjectURL(a.href);
+    document.body.removeChild(a);
+  }
+</script>
+<style>
+	 h1 {
+		font-size: 1.5em;
+	}
+	 h2 {
+		font-size: 1.17em;
+	}
+.aa_h2{
+  font:100 5rem/1 Roboto;
+  text-transform: uppercase;
+}
+table{
+   background: #fff;
+}
+table,thead,tbody,tfoot,tr, td,th{
+  text-align: center;
+  margin: auto;
+  border:1px solid #dedede;
+  padding: 1rem;
+  width: 50%;
+}
+.table    { display: table; width: 100%; }
+.tr       { display: table-row;  }
+.thead    { display: table-header-group }
+.tbody    { display: table-row-group }
+.tfoot    { display: table-footer-group }
+.col      { display: table-column }
+.colgroup { display: table-column-group }
+.td, .th   { display: table-cell; width: 50%; }
+.caption  { display: table-caption }
+
+.table,
+.thead,
+.tbody,
+.tfoot,
+.tr,
+.td,
+.th{
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+}
+.table{
+  background: #fff;
+  margin: auto;
+  border:none;
+  padding: 0;
+}
+
+.th{
+  font-weight: 700;
+  border:1px solid #dedede;
+  &:nth-child(odd){
+    border-right:none;
+  }
+}
+.td{
+  font-weight: 300;
+  border:1px solid #dedede;
+  border-top:none;
+  &:nth-child(odd){
+    border-right:none;
+  }
+}
+
+.aa_htmlTable{
+  background: tomato;
+  padding: 5rem;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  vertical-align: middle;
+}
+.aa_css{
+  background: skyblue;
+  padding: 5rem;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  vertical-align: middle;
+}
+
+.aa_ahmadawais{
+  display: table;
+  width: 100%;
+  font: 100 1.2rem/2 Roboto;
+  margin: 5rem auto;
+}
+    
+  </style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      	<li><a href="index.html">DOMINADOR RFID</a></li>
+<li class="active"><a href="dominator-encoder.html">Configurable DOMINADOR</a></li>
+<li><a href="button-dominator.html">Botón DOMINADOR</a></li> 
+<li><a href="capture-points.html">Puntos WiFi</a></li>
+<a href="../index.html"><img src="https://futbalovysen.sk/wp-content/uploads/slovakia.png" alt="Slovak flag.png, 2,2kB" title="Slovakia" height="32" width="32"></a>
+<a href="../de/index.html"><img src="https://futbalovysen.sk/wp-content/uploads/germany.png" alt="Germany.png, 2,2kB" title="Germany" height="32" width="32"></a>
+<a href="../ru/index.html"><img src="https://futbalovysen.sk/wp-content/uploads/russia.png" alt="russia.png, 2,2kB" title="Russia" height="32" width="32"></a>	
+<a href="../en/index.html"><img src="https://i2.wp.com/facsusa.com/wp-content/uploads/2017/05/Flag-of-England.png?ssl=1" alt="English.png, 2,2kB" title="English" height="32" width="32"></a>
+<a href="../pl/index.html"><img src="https://i.imgur.com/OteBe4t.png" alt="poland.png, 2,2kB" title="Poland" height="32" width="32"></a>
+<a href="../fr/index.html"><img src="https://i.imgur.com/vX7NaZ7.png" alt="Frenxh.png, 2,2kB" title="French" height="32" width="32"></a>
+</div>
+</nav>  
+  		<div class="row">
+    			<div class="col-sm-12">
+<div class="alert alert-success">
+	<strong>Repositorio de Proyectos - Firma Shareware para Configurable Dominator: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">Firmware del temporizador de dominación</a>
+</div>	
+<div class="alert alert-info">
+	<strong>Si está interesado en el firmware del DOMINADOR configurable en código máquina, por favor contacte con el autor del proyecto en inglés en:</strong> <h4><font color="red">martinius96@gmail.com</font></h4>	
+</div>				
+<span class="label label-default">Arduino</span>
+<span class="label label-primary">LCD</span>
+<span class="label label-success">Codificador rotatorio</span>
+<span class="label label-info">Cronógrafo</span>
+<span class="label label-warning">Esquema</span>
+<span class="label label-danger">Botón</span>
+<span class="label label-default">Menu</span>
+<span class="label label-primary">Paintball</span>
+<span class="label label-success">DOMINADOR</span>
+<hr><center><h1>DOMINADOR configurable - cronómetro para Airsoft paintball</h1></center><hr>
+<h2>Entidades en el proyecto DOMINADOR configurable:</h2>
+ <div class="row">
+  <div class="col-sm-3"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b><font color="#C0392B">El equipo RED</font></b></center></div>
+<div class="col-sm-6"><center><img src="https://i.imgur.com/QLj8hgi.png" width="266px" height="128px" style="" alt="Rozhodca - kombinácia oboch tlačidiel zastaví čas" title="Rozhodca - kombinácia oboch tlačidiel zastaví čas"><br><b><font color="#F39C12">Árbitro / STOP</font></b></center></div>  
+<div class="col-sm-3"><center><img src="https://i.imgur.com/etKbK4l.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b><font color="#27AE60">El equipo GRE</font></b></center></div>
+</div>
+<hr><h4>Descripción del botón configurable DOMINADOR:</h4><hr>
+<p style="text-align: justify;">
+DOMINADOR es un cronómetro para deportes de Airsoft y Paintball, que permite medir el tiempo de un punto con una resolución de segundos.
+El cronómetro está equipado con una pantalla de caracteres LCD de 16x2 / 20x4. Después de encender el dispositivo, es posible cambiar entre los elementos del menú en la pantalla usando el codificador rotatorio - KY-040.
+A través de los elementos, es posible iniciar el modo de juego DOMINADOR, que responde a los botones del usuario (entradas), o es posible establecer el tiempo de ocupación del equipo antes del juego en el modo configurable.
+Este parámetro representa el tiempo requerido que se presiona la tecla hasta que el equipo ocupa el punto con éxito. Este parámetro configurable se implementa para el número de segundos.
+El segundo parámetro configurable es el final automático del juego para llegar a un cierto número de horas del cronómetro con la opción ILIMITADO - cuando el cronómetro cuenta hasta el infinito, o después del tiempo máximo de visualización - 99 horas, 59 minutos, 59 segundos.
+El cronómetro utiliza un microcontrolador de control Arduino (Arduino Uno/Nano) o un chip separado (Atmel) ATmega328P, que controla toda la lógica del sistema.
+Hay 2 equipos en el juego: <b> <font color = "#C0392B"> equipo RED </font> </b> y <b> <font color = "#27AE60"> equipo GRE </font> </b> que juegan uno contra el otro y ocupan el punto imaginario que está formado por este dispositivo - DOMINATOR.
+Al comienzo del juego, la pantalla muestra los tiempos 00 horas, 00 minutos, 00 segundos para <b> <font color = "#C0392B"> equipo ROJO </font> </b>, <b> <font color = "#27AE60 "> equipo GRE </font> </b>.
+</p>
+<center>
+<img src="https://i.imgur.com/eYIVvdQ.jpeg" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINADOR - výber konfigurovateľného parametra" title="Konfigurovateľný DOMINATOR - výber konfigurovateľného parametra">
+<img src="https://i.imgur.com/JRqxHr5.jpeg" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINADOR - menu pre nastavenie maximálnej dĺžky hry" title="Konfigurovateľný DOMINATOR - menu pre nastavenie maximálnej dĺžky hry">
+</center>
+<p style="text-align: justify;">
+Botón DOMINADOR utiliza la entrada de botón para la acción de los miembros del equipo, así como la entrada de la entidad árbitro.
+En total, se utilizan 2 botones para 3 entidades del sistema en el sistema DOMINADOR Configurable. Se utilizan los botones de alternar conectados en el modo INPUT_PULLUP.
+Al presionar el botón, la señal GND se envía al terminal de entrada digital Arduino (señal de conmutación Active-LOW).
+Se utilizan los botones de alternar, no los botones de alternar (no responderían a la lógica del sistema, todos ellos estarían siempre "pulsados").
+El DOMINADOR configurable responde a la longitud de la prensa, que se establece en el menú de configuración a través de un codificador.
+Se requiere mantener presionado el botón durante un tiempo determinado. El sistema no responde a pulsaciones breves.
+<b> En la versión extendida, también es posible configurar la neutralización de puntos (detener el tiempo del equipo activo en el punto si un miembro del otro equipo mantiene presionado el botón al menos el 50 % del tiempo requerido) </b>
+Los tiempos se muestran en una pantalla de caracteres LCD de 16x2 o 20x4, que se comunica con el microcontrolador de control a través del bus I2C.
+<b> <font color="#C0392B">Si un equipo de un equipo RED ocupa un punto pulsando un botón, sonará un zumbador que anunciará el cambio de punto con un pitido breve.
+Luego, el LED ROJO del equipo en esta estación se encenderá y la pantalla comenzará a agregar tiempo para ese equipo. </font> </b>
+</p>
+<hr>
+<p style="text-align: justify;">
+<b> <font color = "#27AE60"> Si el punto está ocupado por el equipo GRE y el miembro del equipo presiona el botón correspondiente, el zumbador vuelve a sonar, el LED del equipo GRE se enciende, el tiempo del equipo RED se detiene y el Se calcula el tiempo del equipo GRE, qué punto ocupó. </font> </b>
+<b> <font color="#F39C12">El árbitro debe presionar ambos botones al mismo tiempo para detener los dos tiempos. Los tiempos se paran hasta que el punto es reocupado por alguno de los equipos del sistema
+Por lo tanto, este tipo de entrada es adecuado para iniciar un descanso, pero también puede finalizar el juego para su evaluación. ¡En el modo de juego CUENTA REGRESIVA, la combinación de ambos botones está diseñada para detener la cuenta regresiva! </font> </b>
+El nuevo juego se implementa reiniciando toda la placa Arduino a través del botón RST o desconectando y volviendo a conectar la fuente de alimentación.
+En el menú también es posible configurar la actividad/inactividad del zumbador, que también se puede incluir en el juego.
+El modo de juego DOMINADOR utiliza un zumbador para anunciar la ocupación actual de un punto.
+Eraser no existe en este tipo de DOMINADOR.
+Se puede implementar un segundo juego en el sistema: la cuenta regresiva, que le permite establecer una cuenta regresiva de minutos mientras debe detenerse.
+El jugador detiene la cuenta regresiva manteniendo presionados ambos botones durante un cierto tiempo (según el menú de configuración para la duración de la pulsación de DOMINADOR).
+</p>
+<hr><h4>Lista de tiempos en la pantalla LCD - Modo de juego DOMINACIÓN:</h4><hr>
+<center><img src="https://i.imgur.com/xqqKdEF.png" alt="Výpis časov na LCD znakovom displeji 20x4 - Arduino Domination Timer - DOMINADOR" style="display: block; max-width: 100%; height: auto;" title="Výpis časov na LCD znakovom displeji 20x4 - Arduino Domination Timer - DOMINATOR"></center>
+<hr><h4>Lista de tiempos en la pantalla LCD - modo de juego CUENTA REGRESIVA:</h4><hr>
+<center><img src="https://i.imgur.com/Vk8n5aI.png" alt="Výpis časov na LCD znakovom displeji 20x4 - Arduino Domination Timer - COUNTDOWN" style="display: block; max-width: 100%; height: auto;" title="Výpis časov na LCD znakovom displeji 20x4 - Arduino Domination Timer - COUNTDOWN"></center>
+
+<hr><h4>Hardware de control compatible - DOMINADOR Configurable:</h4><hr>
+<div class="row">
+<div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler Arduino UNO" title="Riadiaci mikrokontróler Arduino UNO"><br><b>Arduino UNO</b><br><a href="https://www.gme.sk/klon-arduino-uno-r3-atmega328p-ch340-mini-usb" class="btn btn-success" role="button">Kúpiť GME.sk</a><br><a href="https://rlx.sk/sk/arduino-boards/7262-elecrow-arduino-uno-r3-atmega328p-atmega16u2-usb-cable-er-ele18721s.html" class="btn btn-danger" role="button">Kúpiť RLX.sk</a><br><a href="https://techfun.sk/produkt/arduino-uno-r3-precizny-klon/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/XHC8DBe.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler Arduino Nano" title="Riadiaci mikrokontróler Arduino Nano"><br><b>Arduino Nano</b><br><a href="https://www.gme.sk/klon-arduino-nano-v3-0-r3-ch340g" class="btn btn-success" role="button">Kúpiť GME.sk</a><br><a href="https://rlx.sk/sk/arduino-boards/1908-iteaduino-nano-itead-adruino-nano-30-functionality-of-duemilanove.html" class="btn btn-danger" role="button">Kúpiť RLX.sk</a><br><a href="https://techfun.sk/produkt/arduino-nano-precizny-klon/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler ATmega328P DIP" title="Riadiaci mikrokontróler ATmega328P DIP"><br><b>ATmega328P - DIP28</b><br><a href="https://www.gme.sk/atmega328p-pu-sdip28-atmel" class="btn btn-success" role="button">Kúpiť GME.sk</a><br><a href="https://rlx.sk/sk/microcontroller/1989-atmega328p-pu-atmel-mcu-8bit-32kb-flash-dip28-.html" class="btn btn-danger" role="button">Kúpiť RLX.sk</a><br><a href="https://techfun.sk/produkt/atmega328p-pu/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
+<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler ATmega328P SMD" title="Riadiaci mikrokontróler ATmega328P SMD"><br><b>ATmega328P - SMD</b><br><a href="https://www.gme.sk/atmega328p-au-tqfp32-atmel" class="btn btn-success" role="button">Kúpiť GME.sk</a><br><a href="https://techfun.sk/produkt/atmega328p-au-samostatny-cip/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
+</div>	
+<hr><h4>Periféricos Compatibles - DOMINADOR Configurable:</h4><hr>
+<div class="row">
+<div class="col-sm-2"><center><img src="https://i.imgur.com/KLImexp.png" width="128px" height="128px" style="border-radius: 50%;" alt="LCD znakový displej 16x2 / 20x4" title="LCD znakový displej 16x2 / 20x4"><br><b>LCD znakový displej 16x2 / 20x4</b><br><a href="https://www.gme.sk/modry-lcd-display-20x4-i2c" class="btn btn-success" role="button">Kúpiť GME.sk</a><br><a href="https://rlx.sk/sk/cog-vfd-charactermonochrome-lcd/3285-serial-i2c-lcd-module-20x4-blue-backlight-er-dlc12004a.html" class="btn btn-danger" role="button">Kúpiť RLX.sk</a><br><a href="https://techfun.sk/produkt/led-display-20x4-modre-podsvietenie-spajkovany-i2c-modul/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/DYNZjCW.png" width="128px" height="128px" style="border-radius: 50%;" alt="I2C prevodník pre LCD displej" title="I2C prevodník pre LCD displej"><br><b>I2C prevodník pre LCD displej</b><br><a href="https://www.gme.sk/modry-lcd-display-20x4-i2c" class="btn btn-success" role="button">Kúpiť GME.sk</a><br><a href="https://rlx.sk/sk/cog-vfd-charactermonochrome-lcd/3285-serial-i2c-lcd-module-20x4-blue-backlight-er-dlc12004a.html" class="btn btn-danger" role="button">Kúpiť RLX.sk</a><br><a href="https://techfun.sk/produkt/led-display-20x4-modre-podsvietenie-spajkovany-i2c-modul/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/us7VXBr.png" width="128px" height="128px" style="border-radius: 50%;" alt="Rotačný 360° enkóder (KY-040)" title="Rotačný 360° enkóder (KY-040)"><br><b>Rotačný 360° enkóder (KY-040)</b><br><a href="https://www.gme.sk/modul-s-rotacnim-enkoderom" class="btn btn-success" role="button">Kúpiť GME.sk</a><br><a href="https://rlx.sk/sk/various-boards/4765-encoder-module-ec11-er-smec11en-20-pulse.html" class="btn btn-danger" role="button">Kúpiť RLX.sk</a><br><a href="https://techfun.sk/produkt/rotacny-enkoder/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/9P3aF98.png" width="128px" height="128px" style="border-radius: 50%;" alt="Spínacie tlačidlo (pushbutton)" title="Spínacie tlačidlo (pushbutton)"><br><b><a href="https://www.gme.sk/tc-0102-t-a00">4x spínacie tlačidlo (pushbutton)</a></b></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič (buzzer)" title="Hlásič (buzzer)"><br><b>Hlásič</b><br><a href="https://rlx.sk/sk/elektronicke-suciastky-battery-memory-card/6094-5ks-5x-pazzive-buzzer-3v-5v-5pcs-er-ccg00105b-42.html" class="btn btn-danger" role="button">Kúpiť RLX.sk</a><br><a href="https://techfun.sk/produkt/pasivny-buzzer-samostatne/" class="btn btn-primary" role="button"role="button">Kúpiť Techfun.sk</a></center></div>
+<div class="col-sm-2"><center><img src="https://i.imgur.com/Tz3cwNZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b>2x LED diódy</b><br><a href="https://www.gme.sk/led-3mm-red-150-35-bl-bd0141" class="btn btn-success" role="button">Kúpiť GME.sk</a><br><a href="https://techfun.sk/produkt/led-ka-1-kus-3mm-rozne-farby/" class="btn btn-primary" role="button">Kúpiť Techfun.skk</a></center></div>
+</div>
+<hr><center><h3>Esquema eléctrico - DOMINADOR Configurable</h3></center><hr>
+<center><img src="https://i.imgur.com/jfk1d8y.png" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľný DOMINADOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION" title="Konfigurovateľný DOMINATOR - schéma zapojenia - Arduino / Airsoft, stopwatch, DOMINATION"></center>        			
+<hr><center><h3>DOMINADOR configurable - modo de juego DOMINACIÓN</h3></center><hr>
+<center><img src="https://i.imgur.com/I9jLFPn.jpeg" style="display: block; max-width: 100%; height: auto;" alt="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball" title="Konfigurovateľné stopky - Arduino pre Airsoft, Paintball"></center>        			
+<hr><h3>El cableado de los terminales - DOMINADOR configurable - corresponde completamente al diagrama de cableado:</h3><hr>
+<div class="table-responsive">   
+<table class="table" style="border: 1px solid black;">
+<thead>		
+<tr>
+<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
+<td align="right" style="background-color:#27AE60"><strong>Convertidor I2C para pantalla LCD</strong></td>
+</tr>
+<tr>
+<td align="left" style="background-color:#27AE60">GND</td>
+<td align="right" style="background-color:#27AE60">GND</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#27AE60">5V</td>
+<td align="right" style="background-color:#27AE60">Vcc</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#27AE60">A4</td>
+<td align="right" style="background-color:#27AE60">SDA</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#27AE60">A5</td>
+<td align="right" style="background-color:#27AE60">SCL</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
+<td align="right" style="background-color:#C0392B"><strong>Codificador rotatorio - KY-040</strong></td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B">GND</td>
+<td align="right" style="background-color:#C0392B">GND</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B">5V</td>
+<td align="right" style="background-color:#C0392B">+</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B">D3</td>
+<td align="right" style="background-color:#C0392B">CLK</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B">D4</td>
+<td align="right" style="background-color:#C0392B">DT</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#C0392B">D5</td>
+<td align="right" style="background-color:#C0392B">SW</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
+<td align="right" style="background-color:#F8C471"><strong>LED diodos</strong></td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471">GND</td>
+<td align="right" style="background-color:#F8C471">GND</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471">D6</td>
+<td align="right" style="background-color:#F8C471">IN (RED)</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#F8C471">D7</td>
+<td align="right" style="background-color:#F8C471">IN (GREEN)</td>
+</tr>
+<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
+<td align="right" style="background-color:#5DADE2"><strong>Botones (INPUT_PULLUP)</strong></td>
+</tr>
+<tr>
+<td align="left" style="background-color:#5DADE2">GND</td>
+<td align="right" style="background-color:#5DADE2">GND</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#5DADE2">D8</td>
+<td align="right" style="background-color:#5DADE2">IN (RED)</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#5DADE2">D9</td>
+<td align="right" style="background-color:#5DADE2">IN (GRE)</td>
+</tr>
+<td align="left" style="background-color:#AF7AC5"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
+<td align="right" style="background-color:#AF7AC5"><strong>Zumbador</strong></td>
+</tr>
+<tr>
+<td align="left" style="background-color:#AF7AC5">D10</td>
+<td align="right" style="background-color:#AF7AC5">IO</td>
+</tr>
+<tr>
+<td align="left" style="background-color:#AF7AC5">GND</td>
+<td align="right" style="background-color:#AF7AC5">GND</td>
+</tr>
+</tbody>
+</table>				</div>
+<hr><center><h2>Programa de prueba (Shareware) - DOMINADOR configurable con código máquina</h2></center><hr>
+<div class="alert alert-info">
+<p style="text-align: justify;">
+<b> Está disponible una versión Shareware (.hex) para el proyecto DOMINADOR Configurable.</b> La versión permite medir un máximo de 60 segundos para cada equipo. Cuando se alcanza este tiempo, el cronómetro se detiene.
+<b> El objetivo de la versión es verificar la compatibilidad con su hardware. </b> Los códigos de máquina basados en la dirección del convertidor I2C para la pantalla LCD están disponibles en el repositorio de Github.
+Las direcciones más utilizadas son 0x27 y 0x3F. Si no conoce la dirección de su convertidor, use el ejemplo incorporado en Arduino IDE -> Escáner I2C, que escribirá la dirección en la interfaz UART (monitor en serie).
+El código de la máquina se puede cargar en el microcontrolador Arduino Uno a través del software AVRDUDE, parte del IDE de Arduino, o con una interfaz GUI a través de <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - más fácil de usar. </p>
+<li> AVRDUDE debe ejecutarse a través del CMD (línea de comando) instalado con el IDE de Arduino. Situado en C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<hr>
+<b><center>Ejemplo de comando para cargar un programa en Arduino Uno / Nano (ATmega328P):</center></b>
+<li>Pre firmvér s I2C adresou displeja 0x27 (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
+<li>Pre firmvér s I2C adresou displeja 0x3F (ukážkovo COM port 21 a 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
+<li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> es una aplicación de Windows (herramienta ejecutable .exe) con una interfaz gráfica simple </ b> que le permite seleccionar el firmware - código de máquina (.hex), la plataforma de destino y puede mostrar dinámicamente el puerto COM en el que se encuentra el dispositivo.</li>
+<li> <b> Simplemente haciendo clic en Cargar, el código de máquina se puede cargar automáticamente </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> utiliza similar a la herramienta Arduino IDE AVRDUDE). La ventana de XLoader informa sobre la carga exitosa en forma de una lista de bytes cargados. </li>
+<b> <font color="red"> El firmware se puede descargar desde el repositorio:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">AQUÍ</a>. El firmware está en la carpeta Github del repositorio del proyecto / firmware / button_dominator / dividido según la dirección del convertidor I2C (se enteró de la salida del escáner I2C en la interfaz UART).
+Si usa Arduino Nano con OLD Bootloader, es necesario cargar el proyecto a 57600 baudios / s, ¡ya que la velocidad de baudios 115200 no es compatible!
+</div>
+				<hr><h4>Firmware disponible - Pulsador configurable DOMINADOR</h4><hr>
+				<div class="table-responsive">          
+ 				<table class="table" style="border: 1px solid black;">
+				<thead>
+				<tr>
+				<td align="left" style="background-color:#2ECC71"><strong>Nombre del firmware (en la carpeta encoder_dominator)</strong></td>
+				<td align="center" style="background-color:#2ECC71"><strong>Funcionalidad de firmware</strong></td>
+				<td align="right" style="background-color:#2ECC71"><strong>Descargar</strong></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td align="left">encoder_0x27.ino.hex</td>
+				<td align="center">Firmware de prueba del proyecto Configurable Botón Dominator, permite medir tiempos de 15 segundos para cada equipo. <b> Diseñado para pantalla de caracteres LCD de 16x2 o 20x4 con convertidor I2C, que se comunica en la dirección 0x27</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/encoder_dominator/encoder_0x27.ino.hex" class="btn btn-danger" role="button" download>Descargar firmware</a></td>
+				<tr>
+				<td align="left">encoder_0x3F.ino.hex</td>
+				<td align="center">Firmware de prueba del proyecto Configurable Botón Dominator, permite medir tiempos de 15 segundos para cada equipo. <b> Diseñado para pantalla de caracteres LCD de 16x2 o 20x4 con convertidor I2C, que se comunica en la dirección 0x3F</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/encoder_dominator/encoder_0x3F.ino.hex" class="btn btn-danger" role="button" download>Descargar firmware</a></td>
+				</tr>
+				</tbody>
+				</table>
+				</div>			
+<div style="background: #F8C471;">
+<hr>				
+<center><h3>Escáner I2C: un programa para leer la dirección del convertidor I2C para la pantalla LCD</h3></center>				
+<hr>
+<h4>Salida esperada del escáner I2C:</h4><hr>
+<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
+<p style="text-align: justify;">
+La biblioteca Wire está integrada en el IDE de Arduino, no se requiere instalación.
+El programa se puede compilar y verificar la comunicación a través del bus I2C con pantalla LCD de caracteres.
+El convertidor I2C debe conectarse a Arduino a los terminales de hardware I2C (SCL a A5, SDA a A4) antes de cargar el programa, es suficiente incluso sin pantalla.
+La dirección de visualización recuperada debe proporcionarse para una compilación exitosa de Arduino y su arquitectura de destino.
+</p>
+<pre style="background: #F8C471;">
+#include &lt;Wire.h>
+ 
+ 
+void setup()
+{
+  Wire.begin();
+ 
+  Serial.begin(9600);
+  while (!Serial);             // Leonardo: wait for serial monitor
+  Serial.println("\nI2C Scanner");
+}
+ 
+ 
+void loop()
+{
+  byte error, address;
+  int nDevices;
+ 
+  Serial.println("Scanning...");
+ 
+  nDevices = 0;
+  for(address = 1; address &lt; 127; address++ )
+  {
+    // The i2c_scanner uses the return value of
+    // the Write.endTransmisstion to see if
+    // a device did acknowledge to the address.
+    Wire.beginTransmission(address);
+    error = Wire.endTransmission();
+ 
+    if (error == 0)
+    {
+      Serial.print("I2C device found at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.print(address,HEX);
+      Serial.println("  !");
+ 
+      nDevices++;
+    }
+    else if (error==4)
+    {
+      Serial.print("Unknown error at address 0x");
+      if (address &lt; 16)
+        Serial.print("0");
+      Serial.println(address,HEX);
+    }    
+  }
+  if (nDevices == 0)
+    Serial.println("No I2C devices found\n");
+  else
+    Serial.println("done\n");
+ 
+  delay(5000);           // wait 5 seconds for next scan
+}
+</pre>
+</div>
+
+
+</div>
+		</div>
+</div>
+</div>
+</body>
+</html>
