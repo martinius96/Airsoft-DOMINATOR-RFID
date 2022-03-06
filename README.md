@@ -2,7 +2,7 @@
 * If you are interested in full version of RFID / Button / Configurable Domination Timer: martinius96@gmail.com
 
 **Description of RFID Domination Timer:**
-<p align="center">
+<p align="justify">
 Domination timer (DOMINATOR) is a stopwatch device designed for 2 teams that play against each other and try to occupy the point and keep it for as long as possible.
 The stopwatch is suitable for Airsoft / Paintball game mode DOMINATION, resp. Capture Hill.
 They consist of an ATmega328P microcontroller (AVR), which can be part of the Arduino development kit (Uno / Nano / Pro Mini).
