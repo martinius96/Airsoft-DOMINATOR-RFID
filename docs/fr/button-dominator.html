@@ -171,7 +171,8 @@ Bouton DOMINATOR utilise l'entrée de bouton pour l'action des membres de l'équ
 Ainsi, un total de 4 boutons pour 4 entités système, les boutons de commutation connectés en mode INPUT_PULLUP sont utilisés.
 Appuyez sur le bouton pour envoyer le signal GND à la borne d'entrée numérique Arduino (signal de commutation Active-LOW).
 Les boutons à bascule sont utilisés, pas les boutons à bascule (ils ne répondraient pas à la logique du système, tous seraient toujours "pressés").
-<b> Dans la version de base, DOMINATOR répond immédiatement à un clic - le décompte du temps pour l'équipe donnée est activé (la durée de la presse, le nombre de presses, etc. ne sont pas vérifiés). </b>
+<b>Le bouton DOMINATOR est disponible en deux versions : La version de base répond immédiatement à un bouton d'occupation de point.
+La version avancée vous oblige à maintenir le bouton enfoncé pendant 5 secondes pour réussir à occuper un point.</b>
 Les temps sont affichés sur un afficheur LCD 16x2 ou 20x4 caractères, qui communique avec le microcontrôleur de contrôle via le bus I2C.
 <b> <font color = "#C0392B"> Si une équipe d'une équipe ROUGE occupe un point en appuyant sur un bouton, un buzzer se déclenchera, qui annoncera un changement de point par un bip court.
 Ensuite, la LED de l'équipe ROUGE de cette station s'allumera et l'affichage commencera à ajouter du temps pour cette équipe. </font> </b>
