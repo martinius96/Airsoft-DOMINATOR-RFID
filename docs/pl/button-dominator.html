@@ -187,7 +187,8 @@ Przycisk DOMINATOR wykorzystuje dane wejściowe przycisku do działania członka
 Zatem łącznie 4 przyciski dla 4 jednostek systemu, używane są przyciski przełączające podłączone w trybie INPUT_PULLUP.
 Naciśnięcie przycisku podaje sygnał GND do wejścia cyfrowego Arduino (sygnał przełączania Active-LOW).
 Używane są przyciski przełączania, a nie przyciski przełączania (nie odpowiadałyby logice systemowej, wszystkie byłyby zawsze „wciśnięte”).
-<b> W wersji podstawowej DOMINATOR reaguje natychmiastowo na kliknięcie - odliczanie czasu dla danej drużyny jest aktywowane (długość prasy, ilość naciśnięć itp. nie są weryfikowane). </b>
+<b>Przycisk DOMINATOR występuje w dwóch wersjach: Wersja podstawowa natychmiast reaguje na przycisk zajętości punktu.
+Wersja zaawansowana wymaga przytrzymania przycisku przez 5 sekund, aby skutecznie zająć punkt.</b>
 Czasy wyświetlane są na wyświetlaczu znakowym LCD 16x2 lub 20x4, który komunikuje się z mikrokontrolerem sterującym poprzez magistralę I2C.
 <b> <font color = "#C0392B"> Jeśli drużyna drużyny RED zajmie punkt przez naciśnięcie przycisku, włączy się brzęczyk, który krótkim sygnałem dźwiękowym ogłosi zmianę punktu.
 Następnie dioda LED drużyny RED na tej stacji zaświeci się, a wyświetlacz zacznie dodawać czas dla tej drużyny. </font></b>
