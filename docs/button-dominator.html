@@ -188,7 +188,8 @@ Tlačidlový DOMINATOR využíva tlačidlový vstup pre akciu obsadenia bodu čl
 Celkom teda 4 tlačidlá pre 4 entity systému (tím RED, tím GRE, Rozhodca, Eraser), využívajú sa spínacie tlačidlá zapojené v režime INPUT_PULLUP.
 Stlačením tlačidla sa privedie GND signál na vstupný digitálny vývod Arduina (Active-LOW spínací signál).
 Používajú sa spínacie tlačidlá, nie rozpínacie (nereagovali by na logiku systému, boli by vždy všetky softvérovo "stlačené").				
-<b>V základnej verzii DOMINATOR reaguje okamžite na stlačenie - aktivuje sa počítanie času pre daný tím (neoveruje sa dĺžka stlačenia, počet stlačení a iné...).</b>
+Tlačidlový DOMINATOR je dostupný v dvoch verziách: Základná verzia reaguje okamžite na stlačenie tlačidla pre obsadenie bodu.
+Rozšírená verzia vyžaduje pre úspešné obsadenie bodu držať tlačidlo 5 sekúnd.
 Časy sú vypísané na LCD znakový displej rozmeru 16x2, prípadne 20x4, ktorý komunikuje s riadiacim mikrokontrolérom po I2C zbernici.
 <b><font color="#C0392B">Ak tím člen tímu RED obsadí bod stlačením tlačidla, spustí sa buzzer, ktorý krátkym pípnutím ohlási zmenu na bode.
 Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím.</font></b>
