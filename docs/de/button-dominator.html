@@ -187,7 +187,8 @@ Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sek
 Druckknopf Stoppuhr der Dominanz verwendet die Tasteneingabe für die Besetzung eines Punktes durch ein Teammitglied sowie für die Eingabe einer Schiedsrichter- und Radiergummi-Entität.
 Somit werden insgesamt 4 Tasten für 4 Systementitäten verwendet, wobei die im INPUT_PULLUP-Modus verbundenen Schalttasten verwendet werden.
 Durch Drücken der Taste wird das GND-Signal dem digitalen Arduino-Eingangsanschluss (Active-LOW-Schaltsignal) zugeführt.
-In der Basisversion reagiert Stoppuhr der Dominanz sofort auf eine Presse - die Zeitzählung für ein bestimmtes Team ist aktiviert (die Länge der Presse, die Anzahl der Pressen usw. werden nicht überprüft ...).
+<b>Den Druckknopf Stoppuhr der Dominanz gibt es in zwei Versionen: Die Basisversion reagiert sofort auf einen Punktbelegungstaster.
+Die erweiterte Version erfordert, dass Sie die Taste 5 Sekunden lang gedrückt halten, um einen Punkt erfolgreich zu besetzen.</b>
 Die Zeiten werden auf einer 16x2- oder 20x4-LCD-Zeichenanzeige angezeigt, die über den I2C-Bus mit dem Steuermikrocontroller kommuniziert.
 <b> <font color = "#C0392B"> Wenn ein Teammitglied des RED Mannschaft per Knopfdruck einen Punkt belegt, wird ein Summer ausgelöst, der mit einem kurzen Piepton eine Änderung des Punktes ankündigt.
 Dann leuchtet die LED des RED Mannschafts an dieser Station auf und die Anzeige fügt Zeit für dieses Team hinzu. </font> </b>
