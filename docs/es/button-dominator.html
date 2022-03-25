@@ -177,7 +177,8 @@ Botón DOMINADOR utiliza la entrada de botón para la acción de los miembros de
 Por lo tanto, se utilizan un total de 4 botones para 4 entidades del sistema, los botones de conmutación conectados en el modo INPUT_PULLUP.
 Al presionar el botón, la señal GND se envía al terminal de entrada digital Arduino (señal de conmutación Active-LOW).
 Se utilizan los botones de alternar, no los botones de alternar (no responderían a la lógica del sistema, todos ellos estarían siempre "pulsados").
-<b> En la versión básica, DOMINADOR responde inmediatamente a un clic: se activa el conteo de tiempo para el equipo dado (la duración de la pulsación, el número de pulsaciones, etc. no se verifican). </b>
+<b>El botón DOMINATOR está disponible en dos versiones: La versión básica responde inmediatamente a un botón de ocupación de puntos.
+La versión avanzada requiere que mantenga presionado el botón durante 5 segundos para ocupar un punto con éxito.</b>
 Los tiempos se muestran en una pantalla de caracteres LCD de 16x2 o 20x4, que se comunica con el microcontrolador de control a través del bus I2C.
 <b> <font color="#C0392B">Si un equipo de un equipo RED ocupa un punto pulsando un botón, sonará un zumbador que anunciará el cambio de punto con un pitido breve.
 Luego, el LED ROJO del equipo en esta estación se encenderá y la pantalla comenzará a agregar tiempo para ese equipo. </font> </b>
