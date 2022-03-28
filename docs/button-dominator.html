@@ -223,6 +223,19 @@ Je možné využiť aj tlačidlá s integrovanou dútnavkou, ktorá zlepší č�
 <div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič (buzzer)" title="Hlásič (buzzer)"><br><b>Hlásič</b><br><a href="https://rlx.sk/sk/elektronicke-suciastky-battery-memory-card/6094-5ks-5x-pazzive-buzzer-3v-5v-5pcs-er-ccg00105b-42.html" class="btn btn-danger" role="button">Kúpiť RLX.sk</a><br><a href="https://techfun.sk/produkt/pasivny-buzzer-samostatne/" class="btn btn-primary" role="button"role="button">Kúpiť Techfun.sk</a></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/Tz3cwNZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b>2x LED diódy</b><br><a href="https://www.gme.sk/led-3mm-red-150-35-bl-bd0141" class="btn btn-success" role="button">Kúpiť GME.sk</a><br><a href="https://techfun.sk/produkt/led-ka-1-kus-3mm-rozne-farby/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
 </div>
+<hr><h4>Princíp funkčnosti projetku Tlačidlový DOMINATOR po hardvérovej stránke:</h4><hr>
+<p style="text-align: justify;">
+Tlačidlá sú zapojené v režime INPUT_PULLUP, využívajú interný 20 kΩ PULLUP rezistor, ktorý drží logickú úroveň HIGH na digitálnom vstupe.
+Pri stlačení tlačidla sa privedie signál úrovne LOW na digitálny vstup.
+<b>Na základe typu tlačidla a použitej verzie firmvéru dokáže Arduino overiť dĺžku držania tlačidla, pričom sa nezávisle na tom vykonáva aj logika počítadla.
+Pri splnení podmienky zmeny na bode spustí Arduino pípnutie buzzra, aplikuje digitálne stavy na LED diódy. </b>
+Logika systému sa nezávisle na stavoch digitálnych vstupov vykonáva každých 1000 ms - 1 Hz rutina (časované cez funkciu millis(), t.j. cez Timer 0). 
+V tejto rutine sa vykonáva kontrola aktívneho tímu s následným pripočítaním času. 
+Čas je dynamicky vykreslený na LCD znakovom displeji 20x4, alebo 16x2.
+Displej komunikuje s Arduinom po I2C zbernici s hodinovým signálom (SCL) 100 kHz - Standard Speed. 
+Prepis displeja tak trvá do cca 15 ms, pričom sa prepisuje iba riadok daného tímu, ktorý je na bode aktívny.
+<b>Pri vážnom záujme možno rozšíriť firmvér pre hru DOMINATOR na 3 alebo 4 tímy.</b>
+</p>
 <div class="alert alert-success">
       <strong>Maximálny rozsah času, ktorý môže byť vypísaný v systéme: </strong>99 hodín, 59 minút a 59 sekúnd
       </div>
