@@ -187,27 +187,27 @@ Die Stoppuhr ist geeignet für den Airsoft / Paintball Spielmodus DOMINATION, bz
 Sie bestehen aus einem ATmega328P-Mikrocontroller (AVR), der Teil des Arduino-Entwicklungskits (Uno / Nano / Pro Mini) oder eigenständig verwendet werden kann.
 Zur Visualisierung der Zeiten dient ein LCD-Zeichendisplay (Größe 16x2 oder 20x4), das mit dem Mikrocontroller verbunden ist und mit diesem kommuniziert.
 Die Zeiten werden in zwei Zeilen untereinander aufgelistet und werden dynamisch aktualisiert, wenn sich ein aktives Mannschaft an dem Punkt befindet (ein von einem Mannschaft besetzter Punkt).
-Die Stoppuhr ist mit Anzeige-LEDs in Form einzelner Teams ausgestattet, die das aktive Mannschaft am Punkt signalisieren und einem Detektor (Piezowandler), der nach Aufstecken der RFID-Karte den Wechsel am Punkt ankündigt.
-Teams werden im Spiel implementiert - <b> <font color = "#C0392B"> RED Mannschaft </font> </b> und <b> <font color = "#27AE60"> GRE Mannschaft </font> </b> die gegeneinander spielen und versuchen, den Punkt zu besetzen und dann so lange wie möglich zu behalten.
+Die Stoppuhr ist mit Anzeige-LEDs in Form einzelner Mannschaften ausgestattet, die das aktive Mannschaft am Punkt signalisieren und einem Detektor (Piezowandler), der nach Aufstecken der RFID-Karte den Wechsel am Punkt ankündigt.
+Mannschaften werden im Spiel implementiert - <b> <font color = "#C0392B"> RED Mannschaft </font> </b> und <b> <font color = "#27AE60"> GRE Mannschaft </font> </b> die gegeneinander spielen und versuchen, den Punkt zu besetzen und dann so lange wie möglich zu behalten.
 Zu Beginn des Spiels zeigt das Display die Zeiten 00 Stunden, 00 Minuten, 00 Sekunden für <b> <font color = "#C0392B"> RED Mannschaft </font> </b>, <b> <font color = "#27AE60 "> GRE Mannschaft </font> </b>.
-Jedes Teammitglied ist mit einem RFID-Chip ausgestattet, der in das Armband (oder die Karte / den Schlüsselanhänger) integriert ist.
+Jedes Mannschaftsmitglied ist mit einem RFID-Chip ausgestattet, der in das Armband (oder die Karte / den Schlüsselanhänger) integriert ist.
 Der RFID-Chip überträgt seine eindeutige Kennung - UID (unique ID), die von einem RFID-Lesegerät gelesen und in der Logik des Systems verifiziert wird, zu dem die Entität (das Mannschaft) gehört.
 Einzelne Armbänder können farblich gekennzeichnet werden (rot, grün nach Mannschaft- und Entity-Funktion), wodurch sie schneller an die Spieler verteilt, aber auch farblich archiviert und gespeichert werden können.
-<b> <font color = "#C0392B"> Das RED Mannschaft besetzt den Punkt, an dem das RED-Teammitglied seine Karte am RFID-Lesegerät anbringt.
+<b> <font color = "#C0392B"> Das RED Mannschaft besetzt den Punkt, an dem das RED-Mannschaftsmitglied seine Karte am RFID-Lesegerät anbringt.
 Diese Aktion löst einen Summer aus, der den Punktwechsel mit einem kurzen Piepton ankündigt.
 Anschließend leuchtet die LED des RED Mannschaft an dieser Station und das Display beginnt die Zeit für dieses Mannschaft zu addieren, bis die <font color = "#27AE60"> Mannschaftkarte des Mitglieds eingesteckt wird </font>, <font color = "#F39C12"> Schiedsrichter </font> oder <font color = "#3498DB"> Radiergummi </font>. </font> </b>
 <b> <font color = "#27AE60"> Wenn der Punkt von einem GRE-Spieler besetzt ist und die Karte an einem RFID-Lesegerät befestigt ist, kündigt der Summer diese Änderung mit einem kurzen Piepton an, die GRE-LED leuchtet <font color = "#C0392B"> (RED LED erlischt), REDs aktuelle Zeit stoppt </font> und GREs Zeit wird gewertet. </font> </b>
 </p>
 <hr>
 <p style="text-align: justify;">
-<b> <font color = "#F39C12"> Wenn der Referee seine RFID-Karte anlegt, stoppt die Laufzeit beim aktuellen Wert. Der Punkt wird neutral, die LED des aktiven Teams erlischt.
+<b> <font color = "#F39C12"> Wenn der Schiedsrichter seine RFID-Karte anlegt, stoppt die Laufzeit beim aktuellen Wert. Der Punkt wird neutral, die LED des aktiven Mannschaften erlischt.
 Die Unterbrechung dauert an, bis ein Mitglied des <font color = "#C0392B"> RED Mannschafts </font> oder <font color = "#27AE60"> des GRE Mannschafts </font> seine Karte vorlegt.
 Dieser Kartentyp ist somit geeignet, ein laufendes Spiel vorübergehend zu unterbrechen, Eingriffe eines Spielers oder Verletzungen zu kontrollieren.
-Gleichzeitig kann die Karte am Ende der Spielrunde verwendet werden, um die Runde zu bewerten, Teams neu zu spawnen, bevor es weitergeht. </font> </b>
+Gleichzeitig kann die Karte am Ende der Spielrunde verwendet werden, um die Runde zu bewerten, Mannschaften neu zu spawnen, bevor es weitergeht. </font> </b>
 <b> <font color = "#3498DB"> Wenn der Radierer die Karte anbringt, werden beide Zeiten angehalten und auf den Anfangswert von 00 Stunden, 00 Minuten, 00 Sekunden zurückgesetzt, der angezeigt wird.
 Die Radiergummikarte wird verwendet, um das Spiel neu zu starten, um ein neues Spiel zu initialisieren, ohne dass ein Einschaltzyklus erforderlich ist. </font> </b>
 Der RFID-Reader reagiert sofort auf das Einstecken einer RFID-Karte, inklusive der gesamten Logik des Dominator-Projekts.
-Das Projekt eignet sich für Airsoft-Events, Sportstätten oder Airsoft-Teams, die mit eigener Hardware ein Dominator-Gerät bauen können.
+Das Projekt eignet sich für Airsoft-Events, Sportstätten oder Airsoft-Mannschaften, die mit eigener Hardware ein Dominator-Gerät bauen können.
 Die Firmware ist universell, basierend auf dem Schaltplan, es ist auch möglich das vorhandene PCB-Design für die Herstellung von Leiterplatten zu verwenden.
 <b> Der Vorteil des RFID Stoppuhr der Dominanz-Projekts besteht darin, dass die Nutzungslizenz den Benutzer berechtigt, X-Punkte mit gleicher Konfiguration über Maschinencode zu klonen und zu erstellen.
 Maschinencode (.hex) ist ein kompiliertes Firmware-Format für das RFID Dominator-Projekt für gelieferte UID-RFID-Karten, die vor der Kompilierung in den Code eingebettet werden.
@@ -238,13 +238,13 @@ Der NXP RC522 RFID Reader kommuniziert mit dem Mikrocontroller (Arduino / Standa
 Der RC522-Reader reagiert auf den RFID-Chip in einem Abstand von ca. 3 cm von der Antenne mit einem konfigurierbaren Antennengewinn im Bereich von 18 bis 48 dB (48 dB wird in der Endanwendung für DOMINATOR verwendet). 
 Liest die UID (Identifier) von RFID-Chips in Reichweite, leitet diesen Identifier an Arduino weiter. 
 Arduino vergleicht die gelesene Kartenadresse in einem Multi-Zustand, löst einen Summerton aus, wendet digitale Zustände an die LEDs an, führt einen universellen Zähler aus, der von der internen Funktion millis() gesteuert wird, die für das Zählen beider Zeiten verantwortlich ist. 
-Aufgrund der erfüllten Bedingung wird der Zähler auf das angegebene Team angewendet, zu dem die UID gehört und der Zeitzähler läuft. 
+Aufgrund der erfüllten Bedingung wird der Zähler auf das angegebene Mannschaft angewendet, zu dem die UID gehört und der Zeitzähler läuft. 
 Die Zeit wird auf einem 16x2 oder 20x4 LCD-Zeichen-Display angezeigt. 
 Die Zeitdaten werden über den I2C-Bus mit einem Taktsignal (SCL) von 100 kHz (Standard Speed) gesendet. 
 Um die Anzeige möglichst schnell wiederherzustellen, wird nur die Zahl an der angegebenen Stelle (vorgegebenes Zeichen) überschrieben. 
-Stunden und Minuten und Sekunden werden nur bei Änderung und immer nur für ein bestimmtes Team neu geschrieben. 
+Stunden und Minuten und Sekunden werden nur bei Änderung und immer nur für ein bestimmtes Mannschaft neu geschrieben. 
 Bei ernsthaftem Interesse kann im Maschinencode für ATmega328P Firmware erstellt werden, um für andere Arten von RFID-Lesegeräten zu messen: RDM6300, PN532, Wiegand W26, Erhöhung des I2C-Bus-Taktsignals auf 400 kHz (Fast Speed). 
-Mögliche Firmware-Erweiterung für das DOMINATOR-Spiel auf 3 oder 4 Teams.
+Mögliche Firmware-Erweiterung für das DOMINATOR-Spiel auf 3 oder 4 Mannschaften.
 </p>
       <div class="alert alert-success">
       <strong>Maximaler Zeitbereich, der im System aufgelistet werden kann: </strong>99 Stunden, 59 Minuten und 59 Sekunden
@@ -387,7 +387,7 @@ Es ist auch möglich, andere verfügbare Hersteller zu verwenden, zum Beispiel: 
 <div class="alert alert-info">
 <p style="text-align: justify;">
 <b> Für das RFID Stoppuhr der Dominanz-Projekt steht eine Shareware-Version in Form von Maschinencode (.hex) für den Arduino-Mikrocontroller (ATmega328P) zur Verfügung. </b>
-In der Version können Sie zunächst 4 verschiedene UID-RFID-Karten aufzeichnen, die den Teams RED, GRE, Referee und Eraser zugeordnet sind.
+In der Version können Sie zunächst 4 verschiedene UID-RFID-Karten aufzeichnen, die den Mannschaften RED, GRE, Schiedsrichter und Radiergummi zugeordnet sind.
 Die Aufforderung zur Eingabe einer bestimmten Karte wird auf dem LCD-Zeichendisplay 16x2 oder 20x4 mit I2C-Wandler angezeigt.
 Anschließend ist es möglich, die Spielmechanik und die Reaktion des Lesegeräts auf die RFID-Karte mit Zeitvisualisierung auf dem Display zu testen. Es ist möglich, für jedes Team maximal 15 Sekunden Spielzeit zu messen, mit der Möglichkeit, es mit einer Radiergummi-Karte zurückzusetzen und erneut für 15 Sekunden zu messen.
 <b> Das Ziel der Version besteht darin, die Kompatibilität mit Ihrer Hardware zu überprüfen. </b> Maschinencodes basierend auf der I2C-Konverteradresse für das LCD-Display sind im Github-Repository verfügbar.
@@ -430,7 +430,7 @@ Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder mit 
 <hr><center><h3><font color="#52BE80">Programm zum Lesen von UID-Adressen von RFID-Karten für Stoppuhr der Dominanz</font></h3></center><hr>
 <li> Mit dem Programm werden Kennungen (UID) von RFID-Tags abgerufen, Karten, die im Programm für RFID Stoppuhr der Dominanz verwendet werden</li>
 <li> Die Kartenadresse ist im seriellen (UART) Monitor aufgeführt - 9600 Baud / s werden verwendet. </li>
-<li> Es ist eine gute Idee, den Bericht in einem übersichtlichen XLS-Dokument (EXCEL) zu speichern und zu überschreiben, um die Verwaltung der zugewiesenen RFID-Karten für bestimmte Teams und Entitäten zu vereinfachen. </li>				
+<li> Es ist eine gute Idee, den Bericht in einem übersichtlichen XLS-Dokument (EXCEL) zu speichern und zu überschreiben, um die Verwaltung der zugewiesenen RFID-Karten für bestimmte Mannschaften und Entitäten zu vereinfachen. </li>				
 <div class="alert alert-info">
 <b>Um den Quellcode zum Laden von UID-Karten erfolgreich hochzuladen, muss die MFRC522-Bibliothek in Ihre Arduino IDE-Umgebung importiert werden.. </b>
 Laden Sie das RFID Stoppuhr der Dominanz-Projekt-Repository herunter (auf das durch den ersten Link oben auf der Seite verwiesen wird) und kopieren Sie den Inhalt des Ordners /src/ <strong> (Ordner MFRC522) in den Ordner / Arduino / library / (Pfad zum Ordner) hängt davon ab, wo Sie die Arduino IDE installiert haben), am häufigsten in Dokumenten / Programmdateien unter älteren Windows-Betriebssystemen. </strong>
@@ -477,7 +477,7 @@ Es ermöglicht die Kommunikation mit dem LCD-Zeichendisplay über den I2C-Bus.
 <h4>Programmausgabe an die UART-Schnittstelle:</h4>
 <center><img src="https://i.imgur.com/zacr30a.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis UID RFID tagu, karty na UART rozhranie s vypísaním typu karty" title="Výpis UID RFID tagu, karty na UART rozhranie s vypísaním typu karty"></center>
 <h4>Software-Implementierung für RFID Stoppuhr der Dominanz:</h4>
-<li>UID-Daten für RED, GRE, Referee und Eraser, eingebettet in Felder, die einfach skaliert werden können, um die Anzahl der Spieler zu erhöhen</li>
+<li>UID-Daten für RED, GRE, Schiedsrichter und Radiergummi, eingebettet in Felder, die einfach skaliert werden können, um die Anzahl der Spieler zu erhöhen</li>
 <center><img src="https://i.imgur.com/jJnGgzf.png" style="display: block; max-width: 100%; height: auto;" alt="Software-Implementierung - DOMINATION TIMER RFID" title="Software-Implementierung - DOMINATION TIMER RFID"></center>
 <b>Die Vorlage ist auch in der Offline-Version im .xlsx-Format verfügbar: </b><a href="../Excel_Template/DOMINATOR_Blank_Template.xlsx" class="btn btn-success" role="button">Template.xlsx</a>
 <pre style="background: #52BE80;">
