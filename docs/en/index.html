@@ -242,7 +242,7 @@ The RFID Dominator system is tuned, it can be put into the game immediately. Fir
 The NXP RC522 RFID reader communicates with the microcontroller (Arduino / stand-alone chip ATmega328P) via the SPI bus with a clock signal (SCLK) of 4 MHz.
 The RC522 reader responds to the RFID chip at a distance of approximately 3 cm from the antenna, while having a configurable antenna gain in the range of 18 to 48 dB (48 dB is used in the final application for DOMINATOR).
 Reads the UID (identifier) of RFID chips in range, forwards this identifier to Arduino.
-Arduino compares the read address of the card in a multi-condition, triggers a buzzer beep, applies digital states to the LEDs, runs a universal counter controlled by the internal function millis (), which is responsible for counting both times.
+Arduino compares the read address of the card in a multi-condition, triggers a buzzer beep, applies digital states to the LEDs, runs a universal counter controlled by the internal function millis() - Timer 0, which is responsible for counting both times.
 Based on the fulfilled condition, the counter starts to be applied to the given team to which the UID belongs and the time counter is running.
 The time is plotted on a 16x2 or 20x4 LCD character display. The time data is sent via the I2C bus with a clock signal (SCL) of 100 kHz (Standard Speed).
 To restore the display as quickly as possible, only the number at the given position (given character) is overwritten. Hours and minutes and seconds are overwritten only when changing and always only for a given team.
