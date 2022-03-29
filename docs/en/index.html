@@ -190,7 +190,7 @@ table,thead,tbody,tfoot,tr, td,th{
 Domination timer (DOMINATOR) is a stopwatch device designed for 2 teams that play against each other and try to occupy the point and keep it for as long as possible.
 The stopwatch is suitable for Airsoft / Paintball game mode DOMINATION, resp. Capture Hill.
 They consist of an ATmega328P microcontroller (AVR), which can be part of the Arduino development kit (Uno / Nano / Pro Mini).
-An LCD character display (size 16x2 or 20x4) is used to visualize the times.
+An LCD character display (size 16x2 or 20x4, chipset HD44780) is used to visualize times of both teams.
 The times are listed in two lines below each other and are dynamically updated if there is an active team at the point (a point occupied by a team).
 The stopwatch is equipped with indicator LEDs in team colors, which signal the active team at the point and a detector (piezo transducer), which announces the change at the point after attaching the RFID card.
 Teams are implemented in the game - <b> <font color = "#C0392B"> RED team </font> </b> and <b> <font color = "#27AE60"> GRE team </font> </b> who play against each other and try to occupy the point and then keep it for as long as possible.
