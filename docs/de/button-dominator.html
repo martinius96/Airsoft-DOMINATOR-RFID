@@ -221,6 +221,22 @@ Die Spieler können somit mehr Punkte im Spiel erzielen, während am Ende des Sp
 <div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič" title="Hlásič"><br><b><a href="https://www.ebay.com/itm/144302857914">Summer</a></b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/Tz3cwNZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b><a href="https://www.ebay.com/itm/393599604346">2x LEDs</a></b></center></div>
 </div>
+<hr><h4>Das Prinzip der Projektfunktionalität Druckknopf DOMINATOR auf der Hardwareseite:</h4><hr>
+<p style="text-align: justify;">
+Die Druckknopfen sind im INPUT_PULLUP-Modus verbunden, sie verwenden einen internen 20-kΩ-PULLUP-Widerstand, der den Logikpegel HIGH am digitalen Eingang hält.
+Bei gedrückter Taste wird das LOW-Signal auf den digitalen Eingang geführt.
+<b> Basierend auf dem verwendeten Tastentyp und der verwendeten Firmware-Version kann der Arduino die Dauer des Tastendrucks überprüfen, und die Zählerlogik wird unabhängig ausgeführt.
+Wenn die Bedingung der Änderung an diesem Punkt erfüllt ist, löst der Arduino ein Summen aus und wendet digitale Zustände auf die LEDs an. </b>
+Die Systemlogik wird alle 1000 ms - 1 Hz ausgeführt (zeitgesteuert über die Funktion millis(), d. h. über Timer 0), unabhängig vom Zustand der digitalen Eingänge.
+In dieser Routine wird ein aktiver Teamcheck durchgeführt, gefolgt von der Zeit.
+Die Zeit wird dynamisch auf einem 20x4- oder 16x2-LCD-Zeichendisplay dargestellt.
+Das Display kommuniziert mit dem Arduino über einen I2C-Bus mit einem Taktsignal (SCL) von 100 kHz - Standard Speed.
+Das Überschreiben der Anzeige dauert somit bis zu ca. 15 ms, wobei nur die gerade aktive Zeile des angegebenen Teams überschrieben wird.
+<b> Bei ernsthaftem Interesse kann die Firmware für DOMINATOR auf 3 oder 4 Teams erweitert werden. </b>
+</p>
+<center>
+	<img src="https://i.imgur.com/cliiDyX.png" alt="RFID Dominator - hra pre 4 tímy" style="display: block; max-width: 100%; height: auto;" title="RFID Dominator - hra pre 4 tímy">
+</center>
 <div class="alert alert-success">
       <strong> Maximaler Zeitbereich, der im System aufgelistet werden kann: </strong> 99 Stunden, 59 Minuten und 59 Sekunden
       </div>
