@@ -222,6 +222,22 @@ Możliwe jest również użycie przycisków ze zintegrowaną świecą żarową, 
 <div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Brzęczyk" title="Brzęczyk"><br><b><a href="https://allegro.pl/oferta/brzeczyk-buzer-sygnalizator-otto-robot-diy-arduino-9185912646">Brzęczyk</a></b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/Tz3cwNZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x diody LED" title="2x diody LED"><br><b><a href="https://allegro.pl/oferta/10-x-dioda-led-5mm-dyfuzyjna-10szt-arduino-zielona-9328995048">2x diody LED</a></b></center></div>
 </div>
+<hr><h4>Zasada funkcjonalności projektu Przycisk DOMINATOR po stronie sprzętowej:</h4><hr>
+<p style="text-align: justify;">
+Przyciski połączone są w trybie INPUT_PULLUP, wykorzystują wewnętrzny rezystor 20 kΩ PULLUP, który utrzymuje poziom logiczny HIGH na wejściu cyfrowym.
+Po naciśnięciu przycisku na wejście cyfrowe podawany jest sygnał LOW.
+<b> Na podstawie typu przycisku i używanej wersji oprogramowania układowego Arduino może zweryfikować długość przytrzymania przycisku, a logika licznika jest wykonywana niezależnie.
+Gdy warunek zmiany w punkcie zostanie spełniony, Arduino wyzwala brzęczenie, nakładając stany cyfrowe na diody LED. </b>
+Logika systemu jest wykonywana co 1000 ms - 1 Hz procedura (zsynchronizowana za pomocą funkcji millis(), tj. za pomocą timera 0), niezależnie od stanu wejść cyfrowych.
+W tej procedurze wykonywana jest aktywna kontrola zespołu, po której następuje czas.
+Czas jest dynamicznie kreślony na wyświetlaczu LCD 20x4 lub 16x2 znaków.
+Wyświetlacz komunikuje się z Arduino za pośrednictwem magistrali I2C z sygnałem zegarowym (SCL) 100 kHz - Standard Speed.
+Przepisywanie wyświetlacza trwa więc do ok. 15 ms, podczas gdy nadpisywana jest tylko linia danego zespołu, która jest aktywna w danym punkcie.
+<b> Przy poważnym zainteresowaniu oprogramowanie układowe DOMINATORA można rozszerzyć do 3 lub 4 zespołów. </b>
+</p>
+<center>
+	<img src="https://i.imgur.com/cliiDyX.png" alt="RFID Dominator - hra pre 4 tímy" style="display: block; max-width: 100%; height: auto;" title="RFID Dominator - hra pre 4 tímy">
+</center>
 <div class="alert alert-success">
       <strong>Maksymalny zakres czasu, który może być wymieniony w systemie: </strong> 99 godzin, 59 minut i 59 sekund
       </div>
