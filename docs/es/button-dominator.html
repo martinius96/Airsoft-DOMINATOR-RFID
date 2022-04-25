@@ -212,6 +212,22 @@ También es posible utilizar botones con una bujía incandescente integrada, lo 
 <div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič" title="Hlásič"><br><b><a href="https://www.ebay.com/itm/144302857914">Zumbador</a></b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/Tz3cwNZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b><a href="https://www.ebay.com/itm/393599604346">2x LED diodos</a></b></center></div>
 </div>
+<hr><h4>El principio de funcionalidad del pulsador Button DOMINATOR en el lado del hardware:</h4><hr>
+<p style="text-align: justify;">
+Los botones están conectados en modo INPUT_PULLUP, utilizan una resistencia PULLUP interna de 20 kΩ, que mantiene el nivel lógico ALTO en la entrada digital.
+Cuando se presiona el botón, la señal BAJA se envía a la entrada digital.
+<b> Según el tipo de botón y la versión de firmware utilizada, Arduino puede verificar la duración de la retención del botón y la lógica del contador se ejecuta de forma independiente.
+Cuando se cumple la condición del cambio en el punto, el Arduino activa un zumbido, aplicando estados digitales a los LED. </b>
+La lógica del sistema se ejecuta cada 1000 ms - rutina de 1 Hz (temporizada a través de la función millis (), es decir, a través del Timer 0), independientemente del estado de las entradas digitales.
+En esta rutina, se realiza un control de equipo activo, seguido de tiempo.
+El tiempo se traza dinámicamente en una pantalla de caracteres LCD de 20x4 o 16x2.
+La pantalla se comunica con el Arduino a través de un bus I2C con una señal de reloj (SCL) de 100 kHz - Velocidad estándar.
+Por lo tanto, la reescritura de la pantalla tarda aproximadamente 15 ms, mientras que solo se sobrescribe la línea del equipo dado que está activa en el punto.
+<b> Con serio interés, el firmware para DOMINATOR se puede extender a 3 o 4 equipos. </b>
+</p>
+<center>
+	<img src="https://i.imgur.com/cliiDyX.png" alt="RFID Dominator - hra pre 4 tímy" style="display: block; max-width: 100%; height: auto;" title="RFID Dominator - hra pre 4 tímy">
+</center>
 <div class="alert alert-success">
       <strong>Rango de tiempo máximo que se puede listar en el sistema: </strong> 99 horas, 59 minutos y 59 segundos
       </div>
