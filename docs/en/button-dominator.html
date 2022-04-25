@@ -220,6 +220,22 @@ Players can thus score more points in the game, while at the end of the game the
 <div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič" title="Hlásič"><br><b><a href="https://www.ebay.com/itm/144302857914">Buzzer</a></b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/Tz3cwNZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b><a href="https://www.ebay.com/itm/393599604346">2x LED diodes</a></b></center></div>
 </div>
+<hr><h4>The principle of functionality of the Button Domination Timer project on the hardware side:</h4><hr>
+<p style="text-align: justify;">
+Buttons are connected in INPUT_PULLUP mode, they use an internal 20 kΩ PULLUP resistor, which holds the logic level HIGH on the digital input.
+When the button is pressed, the LOW signal is fed to the digital input.
+<b> Based on the button type and the firmware version used, the Arduino can verify the button hold length, while the counter logic is executed independently (the counter is active while the button is held).
+When the condition of the change at the point is met, the Arduino triggers a buzz, applying digital states to the LEDs. </b>
+System logic is executed every 1000 ms - 1 Hz routine (timed via the millis () function, i.e. via Timer 0), regardless of the state of the digital inputs.
+In this routine, an active team check is performed, followed by time.
+Time is dynamically plotted on a 20x4 or 16x2 LCD character display.
+Display communicates with the Arduino via an I2C bus with a clock signal (SCL) of 100 kHz - Standard Speed.
+Rewriting of the display thus takes up to approx. 15 ms, while only the line of the given team that is active at the point is overwritten.
+<b> With serious interest, the firmware for DOMINATOR can be extended to 3 or 4 teams. </b>
+</p>
+<center>
+	<img src="https://i.imgur.com/cliiDyX.png" alt="RFID Dominator - hra pre 4 tímy" style="display: block; max-width: 100%; height: auto;" title="RFID Dominator - hra pre 4 tímy">
+</center>
 <div class="alert alert-success">
       <strong> Maximum time range that can be listed on the system: </strong> 99 hours, 59 minutes, and 59 seconds
       </div>
