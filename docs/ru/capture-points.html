@@ -386,6 +386,8 @@ void setup() {
 
 void loop() {
   if (response == received) {
+    nRF.stopListening();
+    nRF.write( &response, sizeof(response) );     
     tone( buzzer, 900, 800);
     delay(1000);
   } else {
@@ -450,6 +452,8 @@ void setup() {
 
 void loop() {
   if (response == received) {
+    nRF.stopListening();
+    nRF.write( &response, sizeof(response) ); 
     tone( buzzer, 900, 800);
     delay(1000);
   } else {
