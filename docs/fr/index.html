@@ -528,7 +528,7 @@ void setup() {
   while (!Serial);
   SPI.begin();
   rfid.PCD_Init(); // Init MFRC522
-  rfid.PCD_SetAntennaGain(112); // set to max (00001110)
+  rfid.PCD_SetAntennaGain(rfid.RxGain_max);
   rfid.PCD_DumpVersionToSerial();
 }
 
