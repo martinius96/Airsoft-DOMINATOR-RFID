@@ -48,7 +48,7 @@ The RFID Dominator system is tuned, it can be put into the game immediately. Fir
 ![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/crCc2Ls.png)
 
 **Hardware used for RFID Domination Timer:**
-* Arduino Uno / Nano or AtMega328P chip (Arduino Nano is used at PCB)
+* Arduino Uno / Nano or ATmega328P chip (Arduino Nano is used at PCB)
 * NXP RFID RC522 reader
 * 2x LED diodes
 * 2x resistors for LED (also there can be used 2x I2C pullup rezistor for LCD display)
@@ -96,7 +96,7 @@ Players can thus score more points in the game, while at the end of the game the
 * The version uses 30 seconds to initialize the system before it can be used.
 * Test firmware is in machine code (.hex)
 * Upload to Arduino Uno boards firmware is possible via Xloader tool (available in repository).
-* Firmware is only for Arduino Uno / Nano board (AtMega328P), for other boards it will not work!
+* Firmware is only for Arduino Uno / Nano board (ATmega328P), for other boards it will not work!
 * For Arduino Nano with Old Bootloader it is necessary to select a recording speed of 57600 baud / s. For Uno and Nano with the newer Bootloader 115200 baud / s.
 * The test firmware is based on the wiring diagram for the Button DOMINATOR without a buzzer (LEDs work and visualize the status, the display also shows the time)
 # Use XLoader to upload machine code to Arduino
@@ -121,7 +121,7 @@ The stopwatch is equipped with a 16x2 / 20x4 LCD character display. After switch
 Through the items, it is possible to start the Domination Timer game mode, which responds to user buttons (inputs), or it is possible to set the time of team occupancy before the game in the configurable mode.
 This parameter represents the required length of holding the button until the team successfully occupies the point. This configurable parameter is implemented for the number of seconds.
 The second configurable parameter is the automatic end of the game to reach a certain number of hours of the stopwatch with the UNLIMITED option - when the stopwatch counts to infinity, or after the maximum display time on the display - 99 hours, 59 minutes, 59 seconds.
-Stopwatch is using Arduino microcontroller (with AtMega chip) or a it can use that chip stadalone. Chip controls whole Domination Timer settings, logic of stopwatch etc.
+Stopwatch is using Arduino microcontroller (with ATmega chip) or a it can use that chip stadalone. Chip controls whole Domination Timer settings, logic of stopwatch etc.
 There are 2 teams in the game - <b><font color="#C0392B">RED team</font></b> and <b><font color="#27AE60">GRE team</font></b>, which play against each other and occupy the imaginary point that is formed by this device - Domination Timer.				
 At the beginning of the game, the display shows the times 00 hours, 00 minutes, 00 seconds for <b><font color="#C0392B">RED team</font></b>, <b><font color="#27AE60">GRE team</font></b>.
 </p>
@@ -156,7 +156,7 @@ The player stops the countdown by holding both buttons for a certain time (based
 * The version uses 30 seconds to initialize the system before it can be used.
 * Test firmware is in machine code (.hex)
 * Upload to Arduino Uno boards firmware is possible via Xloader tool (available in repository).
-* Firmware is only for Arduino Uno / Nano board (AtMega328P), for other boards it will not work!
+* Firmware is only for Arduino Uno / Nano board (ATmega328P), for other boards it will not work!
 * For Arduino Nano with Old Bootloader it is necessary to select a recording speed of 57600 baud / s. For Uno and Nano with the newer Bootloader 115200 baud / s.
 
 **Hardware used for the Configurable Domination Timer project:**
