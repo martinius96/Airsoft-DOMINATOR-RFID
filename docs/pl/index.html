@@ -495,70 +495,45 @@ Umożliwia komunikację z wyświetlaczem znakowym LCD poprzez magistralę I2C.
 <center><img src="https://i.imgur.com/jJnGgzf.png" style="display: block; max-width: 100%; height: auto;" alt="Wdrażanie oprogramowania - DOMINATION TIMER RFID" title="Wdrażanie oprogramowania - DOMINATION TIMER RFID"></center>
 <b>Szablon dostępny również w wersji offline w formacie .xlsx: </b><a href="../Excel_Template/DOMINATOR_Blank_Template.xlsx" class="btn btn-success" role="button">Template.xlsx</a>
 <pre style="background: #52BE80;">
-/*|-------------------------------------------------------------|*/
-/*|Tytuł: Ładowanie kart RFID UID                               |*/
-/*|Opis: Czyta przez czytnik RFID RC522 adres dołączonej        |*/
-/*|i wydrukowanej karty RFID UID na interfejsie UART.           |*/
-/*|Zarejestrowane karty UID zostaną wykorzystane do DOMINATORA  |*/
-/*|Autor: Ing. Martin Chlebovec                                 |*/
-/*|E-mail: martinius96@gmail.com                                |*/
-/*|Licencja na użytkowanie: MIT                                 |*/
-/*|Wersja: 12 marca 2021 r.                                     |*/
-/*|-------------------------------------------------------------|*/
+/*|-------------------------------------------------|*/
+/*|Title: Reading RFID cards UID (unique identifier |*/
+/*|Compatible for Arduino Uno / Nano / ATmega328P   |*/
+/*|Author: Martin Chlebovec (martinius96@gmail.com) |*/
+/*|E-mail: martinius96@gmail.com                    |*/
+/*|Revision: 28. July 2022                          |*/
+/*|-------------------------------------------------|*/
 
 
-// Szablon - Google SpreadSheet: https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing
+//Template for writing RFID codes for RFID DOMINATION TIMER - Google SpreadSheet: https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing
 
-
-/*
- * Typical pin layout used:
- * -----------------------------------------------------------------------------------------
- *             MFRC522      Arduino       Arduino   Arduino    Arduino          Arduino
- *             Reader/PCD   Uno/101       Mega      Nano v3    Leonardo/Micro   Pro Micro
- * Signal      Pin          Pin           Pin       Pin        Pin              Pin
- * -----------------------------------------------------------------------------------------
- * RST/Reset   RST          9             5         D9         RESET/ICSP-5     RST
- * SPI SS      SDA(SS)      10            53        D10        10               10
- * SPI MOSI    MOSI         11 / ICSP-4   51        D11        ICSP-4           16
- * SPI MISO    MISO         12 / ICSP-1   50        D12        ICSP-1           14
- * SPI SCK     SCK          13 / ICSP-3   52        D13        ICSP-3           15
- *
- */
 #include &lt;SPI.h>
 #include &lt;MFRC522.h>
 #define SS_PIN 10
 #define RST_PIN 9
-
 MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
 void setup() {
   Serial.begin(9600);
-  while (!Serial);
+  Serial.println(F("Reading of RFID cards for RFID Domination Timer"));
   SPI.begin();
   rfid.PCD_Init(); // Init MFRC522
   rfid.PCD_SetAntennaGain(rfid.RxGain_max);
-  rfid.PCD_DumpVersionToSerial();
+  rfid.PCD_DumpVersionToSerial(); //Write version of Firmware to UART
 }
 
 void loop() {
   if (rfid.PICC_IsNewCardPresent() && rfid.PICC_ReadCardSerial()) {
-    Serial.print(F("Card UID: "));
     dump_byte_array(rfid.uid.uidByte, rfid.uid.size);
-    Serial.println();
-    Serial.print(F("PICC type: "));
-    MFRC522::PICC_Type piccType = rfid.PICC_GetType(rfid.uid.sak);
-    Serial.println(rfid.PICC_GetTypeName(piccType));
     rfid.PICC_HaltA();
     rfid.PCD_StopCrypto1();
   }
-
 }
 
 void dump_byte_array(byte *buffer, byte bufferSize) {
   for (byte i = 0; i &lt; bufferSize; i++) {
   }
-  Serial.print("Przeczytany kod: ");
-  unsigned long kod = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
-  Serial.println(kod);
+  Serial.print(F("Detected UID (code) of RFID CARD: "));
+  unsigned long code = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
+  Serial.println(code);
 }
 </pre>
 <hr><h4>Použitia výstupu programu do hlavnej RFID Dominator aplikácie:</h4><hr>
