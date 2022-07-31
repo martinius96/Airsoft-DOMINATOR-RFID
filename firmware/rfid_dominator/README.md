@@ -1,5 +1,5 @@
 # Instructions - RFID Domination Timer Shareware
-[![RFID Domination Timer](https://i.imgur.com/Qa76CwC.png)](https://www.youtube.com/watch?v=b_2SLzjmOFU)
+[![RFID Domination Timer](https://img.youtube.com/vi/b_2SLzjmOFU/0.jpg)](https://www.youtube.com/watch?v=b_2SLzjmOFU)
 * Each firmware is compatible with the ATmega328P chip, which is also equipped with Arduino Uno / Nano microcontroller
 * Firmware description at: https://martinius96.github.io/Airsoft-DOMINATOR-RFID/en/
 * **Firmware is available in version for LCD display with 0x3F or 0x27 I2C address based on its name**
