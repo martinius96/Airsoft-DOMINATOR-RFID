@@ -45,7 +45,7 @@ The RFID Dominator system is tuned, it can be put into the game immediately. Fir
 * Firmware will test compatibility of your hardware, you can test its latency, if output at LCD display is working etc.
 * **Firmware is compiled for ATmega328P (Arduino Uno and Nano are compatible)**
 * 
-![Fyzické UID čísla RFID kariet v Excel tabuľke pre použitie v projekte RFID DOMINATOR](https://i.imgur.com/crCc2Ls.png)
+![RFID Domination Timer - stored UID of RFID cards in .xls document - Google Spreadsheet](https://i.imgur.com/p88Ku8G.png)
 
 **Hardware used for RFID Domination Timer:**
 * Arduino Uno / Nano or ATmega328P chip (Arduino Nano is used at PCB)
