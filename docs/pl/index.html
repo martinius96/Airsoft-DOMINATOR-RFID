@@ -404,8 +404,7 @@ Wersja pozwala na wstępne zapisanie 4 różnych kart RFID UID, które są przyp
 Żądanie wprowadzenia konkretnej karty wyświetlane jest na wyświetlaczu LCD 16x2 lub 20x4 z konwerterem I2C.
 W dalszej kolejności możliwe jest przetestowanie mechaniki gry oraz reakcji czytnika na kartę RFID z wizualizacją czasu na wyświetlaczu.
 Możliwe jest zmierzenie maksymalnie 15 sekund gry dla każdej drużyny z możliwością zresetowania jej za pomocą karty Gumka i ponowne mierzenie przez 15 sekund w nieskończoność.
-<b> Celem wersji jest weryfikacja zgodności z Twoim sprzętem. </b> Kody maszynowe oparte na adresie konwertera I2C dla wyświetlacza LCD są dostępne w repozytorium Github.
-Najczęściej używane adresy konwerterów I2C to 0x27 i 0x3F.
+<b> Celem wersji jest weryfikacja zgodności z Twoim sprzętem. </b>
 Jeśli nie znasz adresu swojego konwertera, skorzystaj z przykładu wbudowanego w Arduino IDE -> I2C Scanner (dostępny również na tej stronie na końcu), który zapisze adres do interfejsu UART (Serial Monitor).
 Kod maszynowy można wgrać do mikrokontrolera Arduino Uno za pomocą oprogramowania AVRDUDE - części Arduino IDE lub za pomocą interfejsu GUI za pośrednictwem <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - łatwiejszy w użyciu. </p>
 <li> AVRDUDE musi być uruchamiany przez CMD (wiersz poleceń) zainstalowany z Arduino IDE. Znajduje się w C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
@@ -428,14 +427,9 @@ Firmware znajduje się w folderze Github repozytorium projektu /rfid_dominator/ 
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">RFID_Dominator_0x27.hex</td>
-				<td align="center">Testowe oprogramowanie projektu RFID Dominator pozwala na pomiar czasu 15 sekund dla każdego zespołu. <b> Przeznaczony do wyświetlacza LCD 16x2 lub 20x4 z konwerterem I2C, który komunikuje się pod adresem 0x27</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x27.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Pobierz oprogramowanie</a></td>
-				</tr>
-				<tr>
-				<td align="left">RFID_Dominator_0x3F.hex</td>
-				<td align="center">Testowe oprogramowanie projektu RFID Dominator pozwala na pomiar czasu 15 sekund dla każdego zespołu. <b> Przeznaczony do wyświetlacza LCD 16x2 lub 20x4 z konwerterem I2C, który komunikuje się pod adresem 0x3F</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x3F.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Pobierz oprogramowanie</a></td>
+				<td align="left">Shareware_RFID_DOMINATOR.hex</td>
+				<td align="center">Testowe oprogramowanie projektu RFID Dominator pozwala na pomiar czasu 15 sekund dla każdego zespołu. <b> Przeznaczony do wyświetlacza LCD 16x2 lub 20x4 z konwerterem I2C.</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/Shareware_RFID_DOMINATOR.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Pobierz oprogramowanie</a></td>
 				</tr>
 				</tbody>
 				</table>
@@ -476,16 +470,6 @@ Umożliwia komunikację z czytnikiem RFID NXP RC522 poprzez magistralę SPI.
 </td>
 <td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/MFRC522" class="btn btn-success" role="button">Ściągnij</a></td>
 </tr>
-<tr>
-<td style="width: 25%"><b>LiquidCrystal_I2C</b></td>
-<td style="width: 50%">
-<p style="text-align: justify;">
-Biblioteka dla mikrokontrolerów AVR (ATmega) Arduino Uno / Nano / Mega.
-Umożliwia komunikację z wyświetlaczem znakowym LCD poprzez magistralę I2C.
-</p>
-</td>
-<td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/LiquidCrystal_I2C" class="btn btn-success" role="button">Ściągnij</a></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -496,7 +480,7 @@ Umożliwia komunikację z wyświetlaczem znakowym LCD poprzez magistralę I2C.
 <b>Szablon dostępny również w wersji offline w formacie .xlsx: </b><a href="../Excel_Template/DOMINATOR_Blank_Template.xlsx" class="btn btn-success" role="button">Template.xlsx</a>
 <pre style="background: #52BE80;">
 /*|-------------------------------------------------|*/
-/*|Title: Reading RFID cards UID (unique identifier |*/
+/*|Title: Reading RFID cards UID (unique identifier)|*/
 /*|Compatible for Arduino Uno / Nano / ATmega328P   |*/
 /*|Author: Martin Chlebovec (martinius96@gmail.com) |*/
 /*|E-mail: martinius96@gmail.com                    |*/
@@ -547,75 +531,7 @@ Standardowy program RFID Stoper dominacji dla 10x UID dla drużyny RED i GRE ora
 Ciągi statyczne (const) zmienne przechowywane w PROGMEM. Używane makro F do raportów statycznych na monitorze UART lub na wyświetlaczu znakowym LCD.
 </p>
 </div>
-<div style="background: #F8C471;">
-<hr>				
-<center><h3>Skaner I2C - program do odczytu adresu konwertera I2C dla wyświetlacza LCD</h3></center>				
 <hr>
-<h4>Oczekiwane wyjście skanera I2C:</h4><hr>
-<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Lista adresów I2C na których komunikuje się konwerter I2C dla wyświetlacza 16x2 / 20x4" title="Lista adresów I2C na których komunikuje się konwerter I2C dla wyświetlacza 16x2 / 20x4"></center>				
-<p style="text-align: justify;">
-Biblioteka Wire jest wbudowana w Arduino IDE, nie jest wymagana instalacja.
-Program można skompilować i zweryfikować komunikację poprzez magistralę I2C z wyświetlaczem znakowym LCD.
-Konwerter I2C należy przed wczytaniem programu podłączyć do Arduino do sprzętowych terminali I2C (SCL na A5, SDA na A4), wystarczy nawet bez wyświetlacza.
-Pobrany adres wyświetlacza musi być dostarczony do pomyślnej kompilacji dla Arduino wraz z identyfikatorem UID kart RFID.
-</p>
-<pre style="background: #F8C471;">
-#include &lt;Wire.h>
- 
- 
-void setup()
-{
-  Wire.begin();
- 
-  Serial.begin(9600);
-  while (!Serial);             // Leonardo: wait for serial monitor
-  Serial.println("\nI2C Scanner");
-}
- 
- 
-void loop()
-{
-  byte error, address;
-  int nDevices;
- 
-  Serial.println("Scanning...");
- 
-  nDevices = 0;
-  for(address = 1; address &lt; 127; address++ )
-  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
- 
-    if (error == 0)
-    {
-      Serial.print("I2C device found at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.print(address,HEX);
-      Serial.println("  !");
- 
-      nDevices++;
-    }
-    else if (error==4)
-    {
-      Serial.print("Unknown error at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0)
-    Serial.println("No I2C devices found\n");
-  else
-    Serial.println("done\n");
- 
-  delay(5000);           // wait 5 seconds for next scan
-}
-</pre>
-</div>
 		</div>
 </div>
 </body>
