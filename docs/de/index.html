@@ -393,8 +393,6 @@ Die Produktion kann auch bei chinesischen Herstellern realisiert werden - JLCPCB
 In der Version können Sie zunächst 4 verschiedene UID-RFID-Karten aufzeichnen, die den Mannschaften RED, GRE, Schiedsrichter und Radiergummi zugeordnet sind.
 Die Aufforderung zur Eingabe einer bestimmten Karte wird auf dem LCD-Zeichendisplay 16x2 oder 20x4 mit I2C-Wandler angezeigt.
 Anschließend ist es möglich, die Spielmechanik und die Reaktion des Lesegeräts auf die RFID-Karte mit Zeitvisualisierung auf dem Display zu testen. Es ist möglich, für jedes Team maximal 15 Sekunden Spielzeit zu messen, mit der Möglichkeit, es mit einer Radiergummi-Karte zurückzusetzen und erneut für 15 Sekunden zu messen.
-<b> Das Ziel der Version besteht darin, die Kompatibilität mit Ihrer Hardware zu überprüfen. </b> Maschinencodes basierend auf der I2C-Konverteradresse für das LCD-Display sind im Github-Repository verfügbar.
-Die am häufigsten verwendeten Adressen sind 0x27 und 0x3F. Wenn Sie die Adresse Ihres Konverters nicht kennen, verwenden Sie das eingebaute Beispiel in Arduino IDE -> I2C Scanner, das die Adresse an die UART-Schnittstelle (Serieller Monitor) schreibt.
 Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder mit einer GUI-Schnittstelle über <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader auf den Arduino Uno-Mikrocontroller hochgeladen werden </a> - einfacher zu bedienen. </p>
 <li> AVRDUDE muss über das mit der Arduino IDE installierte CMD (Befehlszeile) ausgeführt werden. Befindet sich in C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
 <b> <center> Beispielbefehl zum Hochladen eines Programms auf Arduino Uno / Nano (ATmega328P): </center> </b>
@@ -414,14 +412,9 @@ Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder mit 
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">RFID_Dominator_0x27.hex</td>
-				<td align="center">LCD-Zeichenanzeigegröße 16x2 oder 20x4 mit <b> I2C-Konverter, der unter Adresse 0x27 . kommuniziert</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x27.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Firmware herunterladen</a></td>
-				</tr>
-				<tr>
-				<td align="left">RFID_Dominator_0x3F.hex</td>
-				<td align="center">LCD-Zeichenanzeigegröße 16x2 oder 20x4 mit <b> I2C-Konverter, der unter Adresse 0x3F . kommuniziert</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x3F.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Firmware herunterladen</a></td>
+				<td align="left">Shareware_RFID_DOMINATOR.hex</td>
+				<td align="center">LCD-Zeichenanzeigegröße 16x2 oder 20x4 mit <b> I2C-Konverter</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/Shareware_RFID_DOMINATOR.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Firmware herunterladen</a></td>
 				</tr>
 				</tbody>
 				</table>
@@ -461,16 +454,6 @@ Es ermöglicht die Kommunikation mit dem RFID-Lesegerät NXP RC522 über den SPI
 </p>
 </td>
 <td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/MFRC522" class="btn btn-success" role="button">Herunterladen</a></td>
-</tr>
-<tr>
-<td style="width: 25%"><b>LiquidCrystal_I2C</b></td>
-<td style="width: 50%">
-<p style="text-align: justify;">
-Bibliothek für AVR-Mikrocontroller (ATmega) Arduino Uno / Nano / Mega.
-Es ermöglicht die Kommunikation mit dem LCD-Zeichendisplay über den I2C-Bus.
-</p>
-</td>
-<td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/LiquidCrystal_I2C" class="btn btn-success" role="button">Herunterladen</a></td>
 </tr>
 </tbody>
 </table>
@@ -526,71 +509,7 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 }
 </pre>
 <hr>				
-<center><h3><font color="#C0392B">I2C-Scanner - ein Programm zum Lesen der Adresse des I2C-Wandlers für das LCD-Display</font></h3></center>				
-<hr>
-<h4>Erwartete Ausgabe des I2C-Scanners:</h4>
-<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<div class="alert alert-info">
-<b>Die Wire-Bibliothek ist in die Arduino IDE integriert. Eine Installation ist nicht erforderlich.</b>
-Das Programm kann sofort hochgeladen werden. Es wird empfohlen, den Hardware-I2C-Konverter für die 16x2 / 20x4-Anzeige auch ohne Anzeige anzuschließen, bevor Sie das Programm starten.
-</div>	
-<pre style="background: #C0392B;">
-#include &lt;Wire.h>
- 
- 
-void setup()
-{
-  Wire.begin();
- 
-  Serial.begin(9600);
-  while (!Serial);             // Leonardo: wait for serial monitor
-  Serial.println("\nI2C Scanner");
-}
- 
- 
-void loop()
-{
-  byte error, address;
-  int nDevices;
- 
-  Serial.println("Scanning...");
- 
-  nDevices = 0;
-  for(address = 1; address &lt; 127; address++ )
-  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
- 
-    if (error == 0)
-    {
-      Serial.print("I2C device found at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.print(address,HEX);
-      Serial.println("  !");
- 
-      nDevices++;
-    }
-    else if (error==4)
-    {
-      Serial.print("Unknown error at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0)
-    Serial.println("No I2C devices found\n");
-  else
-    Serial.println("done\n");
- 
-  delay(5000);           // wait 5 seconds for next scan
-}
-</pre>
-</div>
+
 		</div>
 </div>
 </body>
