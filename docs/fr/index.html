@@ -388,8 +388,7 @@ La version vous permet d'enregistrer initialement 4 cartes RFID UID différentes
 La demande de saisie d'une carte spécifique s'affiche sur un afficheur LCD 16x2 ou 20x4 caractères avec un convertisseur I2C.
 Par la suite, il est possible de tester la mécanique du jeu et la réponse du lecteur à la carte RFID avec visualisation du temps sur l'afficheur.
 Il est possible de mesurer un maximum de 15 secondes de jeu pour chaque équipe avec la possibilité de le réinitialiser avec une carte gomme et de mesurer à nouveau pendant 15 secondes indéfiniment.
-<b> L'objectif de la version est de vérifier la compatibilité avec votre matériel. </b> Les codes machine basés sur l'adresse du convertisseur I2C pour l'écran LCD sont disponibles dans le référentiel Github.
-Les adresses de convertisseur I2C les plus utilisées sont 0x27 et 0x3F.
+<b> L'objectif de la version est de vérifier la compatibilité avec votre matériel. </b>
 Si vous ne connaissez pas l'adresse de votre convertisseur, utilisez l'exemple intégré dans Arduino IDE -> I2C Scanner (également disponible sur cette page à la fin), qui écrira l'adresse sur l'interface UART (Serial Monitor).
 Le code machine peut être téléchargé sur le microcontrôleur Arduino Uno via le logiciel AVRDUDE - qui fait partie de l'IDE Arduino, ou avec une interface graphique via <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - plus facile à utiliser. </p>
 <li> AVRDUDE doit être exécuté via le CMD (ligne de commande) installé avec l'IDE Arduino. Situé dans C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
@@ -414,14 +413,9 @@ Dans le cas de la version complète du projet RFID Chronomètre de dominationr, 
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">RFID_Domination Timer_0x27.hex</td>
-				<td align="center">Le firmware de test du projet RFID Chronomètre de domination permet de mesurer un temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C, qui communique à l'adresse 0x27</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-Domination Timer-RFID/blob/master/firmware/rfid_Domination Timer/RFID_Domination Timer_0x27.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Télécharger le micrologiciel</a></td>
-				</tr>
-				<tr>
-				<td align="left">RFID_Domination Timer_0x3F.hex</td>
-				<td align="center">Le firmware de test du projet RFID Chronomètre de domination permet de mesurer un temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C qui communique à 0x3F</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-Domination Timer-RFID/blob/master/firmware/rfid_Domination Timer/RFID_Domination Timer_0x3F.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Télécharger le micrologiciel</a></td>
+				<td align="left">Shareware_RFID_DOMINATOR.hex</td>
+				<td align="center">Le firmware de test du projet RFID Chronomètre de domination permet de mesurer un temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C.</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-Domination Timer-RFID/blob/master/firmware/rfid_Domination Timer/Shareware_RFID_DOMINATOR.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Télécharger le micrologiciel</a></td>
 				</tr>
 				</tbody>
 				</table>
@@ -461,16 +455,6 @@ Il permet de communiquer avec le lecteur RFID NXP RC522 via le bus SPI.
 </p>
 </td>
 <td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-Domination Timer-RFID/tree/master/src/MFRC522" class="btn btn-success" role="button">Télécharger</a></td>
-</tr>
-<tr>
-<td style="width: 25%"><b>LiquidCrystal_I2C</b></td>
-<td style="width: 50%">
-<p style="text-align: justify;">
-Bibliothèque pour microcontrôleurs AVR (ATmega) Arduino Uno / Nano / Mega.
-Il permet de communiquer avec l'afficheur à caractères LCD via le bus I2C.
-</p>
-</td>
-<td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-Domination Timer-RFID/tree/master/src/LiquidCrystal_I2C" class="btn btn-success" role="button">Télécharger</a></td>
 </tr>
 </tbody>
 </table>
@@ -534,75 +518,7 @@ Variables de chaînes statiques (const) stockées dans PROGMEM.
 Macro F utilisée pour les rapports statiques sur le moniteur UART ou sur l'affichage de caractères LCD.
 </p>
 </div>
-<div style="background: #F8C471;">
-<hr>				
-<center><h3>Scanner I2C - un programme pour lire l'adresse du convertisseur I2C pour l'écran LCD</h3></center>				
 <hr>
-<h4>Sortie attendue du scanner I2C:</h4><hr>
-<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<p style="text-align: justify;">
-La bibliothèque Wire est intégrée à l'IDE Arduino, aucune installation n'est requise.
-Le programme peut être compilé et vérifié la communication via le bus I2C avec affichage de caractères LCD.
-Le convertisseur I2C doit être connecté à Arduino aux bornes matérielles I2C (SCL à A5, SDA à A4) avant de charger le programme, cela suffit même sans affichage.
-L'adresse d'affichage récupérée doit être fournie pour une construction réussie pour Arduino avec l'UID des cartes RFID.
-</p>
-<pre style="background: #F8C471;">
-#include &lt;Wire.h>
-
-
-void setup()
-{
-  Wire.begin();
-
-  Serial.begin(9600);
-  while (!Serial);             // Leonardo: wait for serial monitor
-  Serial.println("\nI2C Scanner");
-}
-
-
-void loop()
-{
-  byte error, address;
-  int nDevices;
-
-  Serial.println("Scanning...");
-
-  nDevices = 0;
-  for(address = 1; address &lt; 127; address++ )
-  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
-
-    if (error == 0)
-    {
-      Serial.print("I2C device found at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.print(address,HEX);
-      Serial.println("  !");
-
-      nDevices++;
-    }
-    else if (error==4)
-    {
-      Serial.print("Unknown error at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0)
-    Serial.println("No I2C devices found\n");
-  else
-    Serial.println("done\n");
-
-  delay(5000);           // wait 5 seconds for next scan
-}
-</pre>
-</div>
 	<div style="clear: both; left: 0; margin: 0;  width: 100%%; "><div style="margin: 5px; border-radius: 4px; background: #fff; color: #000; font-family: sans-serif; font-size: 14px; font-weight: normal; border: 1px solid #999; text-align: center;"><span style="margin: 5px 0 5px 0; display: inline-block; padding-left: 125px; background: url(https://www.endora.cz/images/icon.png) no-repeat left center; text-align: left;"><b style="font-weight: bold;">Z&iacute;skejte registraci dom&eacute;n s tld .online, .space, .store, .tech zdarma!</b><br>Stač&iacute; si k jedn&eacute; z těchto dom&eacute;n vybrat hosting Plus nebo Mega a registraci dom&eacute;ny od n&aacute;s dostanete za 0 Kč!</span><a style="margin: 9px 0 5px 30px; vertical-align: top; text-decoration: none; font-weight: bold; display: inline-block; color: white; background-color: #1ca2e1; border-radius: 3px; padding: 5px 10px;" href="https://www.endora.cz/objednavka/objednat?utm=kafo&program=plus&order-tld=online" target="_blank">Objednat</a></div></div>
 <footer>
 <div class="row">
