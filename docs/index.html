@@ -413,10 +413,7 @@ Po priložení poslednej karty sa spustí herný režim DOMINATION so stopkami.
 Je možné vyskúšať hernú mechaniku a reakciu NXP RC522 čítačky na RFID karty s vizualizáciou času na displej. 
 Merať je možné maximálne 15 sekúnd hry pre každý tím s možnosťou jeho resetu kartou Eraser a opätovným meraním 15 sekúnd donekonečna.
 <b>Cieľom verzie je overiť kompatibilitu s vašim hardvérom.</b> 
-V Github repozitári sú dostupné strojové kódy na základe I2C adresy prevodníka pre LCD displej.
-Najpoužívanejšie adresy I2C prevodníkov sú 0x27 a 0x3F. 
-Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner (dostupný aj na tejto stránke na konci), ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
-Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - ľahšie na použitie.</p>
+Strojový kód je možné nahrať do mikrokontroléra Arduino Uno / Nano cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - ľahšie na použitie.</p>
 <li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
 <b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (ATmega328P):</center></b>
 <li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
@@ -425,7 +422,7 @@ Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér A
 <b><font color="red">Firmvér Shareware verzie projektu RFID Dominator je možné stiahnuť z repozitáru:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware">Firmvér dostupný TU</a>. 
 Firmvér je v priečinku Github repozitáru projektu /rfid_dominator/ rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
 Nahrávanie programu trvá maximálne 10 sekúnd. Následne sa firmvér automaticky nabootuje a je ho možné vyskúšať.
-V prípade plnej verzie projektu RFID Dominator je ho možné prevádzkovať trvale bez obmedzení.
+V prípade plnej verzie projektu RFID Dominator je ho možné prevádzkovať trvale bez obmedzení času a s väčším počtom RFID kariet.
 </div>
 				<hr><h4>Dostupný firmvér (Shareware) - RFID DOMINATOR</h4><hr>
 				<div class="table-responsive">          
@@ -439,14 +436,9 @@ V prípade plnej verzie projektu RFID Dominator je ho možné prevádzkovať trv
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">RFID_Dominator_0x27.hex</td>
-				<td align="center">Testovací firmvér projektu RFID Dominator, umožňuje merať čas 15 sekúnd pre každý tím. <b>Určené pre LCD znakový displej rozmeru 16x2, alebo 20x4 s I2C prevodníkom, ktorý komunikuje na adrese 0x27</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x27.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Stiahnuť firmvér</a></td>
-				</tr>
-				<tr>
-				<td align="left">RFID_Dominator_0x3F.hex</td>
-				<td align="center">Testovací firmvér projektu RFID Dominator, umožňuje merať čas 15 sekúnd pre každý tím. <b>Určené pre LCD znakový displej rozmeru 16x2, alebo 20x4 s I2C prevodníkom, ktorý komunikuje na adrese 0x3F</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x3F.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Stiahnuť firmvér</a></td>
+				<td align="left">Shareware_RFID_DOMINATOR.hex</td>
+				<td align="center">Testovací firmvér projektu RFID Dominator, umožňuje merať čas 15 sekúnd pre každý tím. <b>Určené pre LCD znakový displej rozmeru 16x2, alebo 20x4 s I2C prevodníkom</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/Shareware_RFID_DOMINATOR.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Stiahnuť firmvér</a></td>
 				</tr>
 				</tbody>
 				</table>
@@ -487,16 +479,6 @@ Umožňuje komunikovať s RFID čítačkou NXP RC522 po SPI zbernici.
 </td>
 <td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/MFRC522" class="btn btn-success" role="button">Stiahnuť</a></td>
 </tr>
-<tr>
-<td style="width: 25%"><b>LiquidCrystal_I2C</b></td>
-<td style="width: 50%">
-<p style="text-align: justify;">
-Knižnica pre AVR mikrokontroléry (ATmega) Arduino Uno / Nano / Mega. 
-Umožňuje komunikovať s LCD znakovým displejom po I2C zbernici.
-</p>
-</td>
-<td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/LiquidCrystal_I2C" class="btn btn-success" role="button">Stiahnuť</a></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -507,7 +489,7 @@ Umožňuje komunikovať s LCD znakovým displejom po I2C zbernici.
 <b>Šablóna dostupná aj v offline verzii .xlsx formáte: </b><a href="Excel_Template/DOMINATOR_Blank_Template.xlsx" class="btn btn-success" role="button">Template.xlsx</a>
 <pre style="background: #52BE80;">
 /*|-------------------------------------------------|*/
-/*|Title: Reading RFID cards UID (unique identifier |*/
+/*|Title: Reading RFID cards UID (unique identifier)|*/
 /*|Compatible for Arduino Uno / Nano / ATmega328P   |*/
 /*|Author: Martin Chlebovec (martinius96@gmail.com) |*/
 /*|E-mail: martinius96@gmail.com                    |*/
@@ -555,78 +537,9 @@ UID je potrebné dodať v .xls výstupe. Možno použiť verejnú šablónu pre 
 Celé polia sú uložené do flash pamäte mikrokontroléru ako rad-only segmenty, teda polia nemusia bežať v RAM pamäti zaberať tak operačnú pamäť, ktorú DOMINATOR využíva pre plynulé počítanie časov.
 Zároveň sú polia nerozšíriteľné za behu programu. Ich nastavenie, veľkosť je fixné pre konkrétnu aplikáciu na mieru.
 Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera (celkovo 24x UID) zaberá 9512 bajtov flash pamäte, t.j. 30% a  501 bajtov pamäte RAM, t.j. 24%.
-Statické reťazce (const) premenné uložené do PROGMEM.
+Statické reťazce (const) premenné uložené do PROGMEM - flash pamäte mikrokontroléra.
 Pre statické výpisy na UART monitor, prípadne na LCD znakový displej použité F makro.
 </p>
-</div>
-<div style="background: #F8C471;">
-<hr>				
-<center><h3>I2C Scanner - program pre načítanie adresy I2C prevodníka pre LCD displej</h3></center>				
-<hr>
-<h4>Očakávaný výstup programu I2C Scanner:</h4><hr>
-<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<p style="text-align: justify;">
-Knižnica Wire je vstavaná do Arduino IDE, nie je nutná jej inštalácia.
-Program je možné skompilovať a overiť komunikáciu po I2C zbernici s LCD znakovým displejom. 
-I2C prevodník je vhodné pripojiť k Arduinu na hardvérové I2C vývody (SCL na A5, SDA na A4) ešte pred nahratím programu, stačí aj bez dispelja.
-Načítanú adresu displeja je nutné dodať pre úspešný build pre Arduino spolu s UID RFID kariet.
-</p>
-<pre style="background: #F8C471;">
-#include &lt;Wire.h>
- 
- 
-void setup()
-{
-  Wire.begin();
- 
-  Serial.begin(9600);
-  while (!Serial);             // Leonardo: wait for serial monitor
-  Serial.println("\nI2C Scanner");
-}
- 
- 
-void loop()
-{
-  byte error, address;
-  int nDevices;
- 
-  Serial.println("Scanning...");
- 
-  nDevices = 0;
-  for(address = 1; address &lt; 127; address++ )
-  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
- 
-    if (error == 0)
-    {
-      Serial.print("I2C device found at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.print(address,HEX);
-      Serial.println("  !");
- 
-      nDevices++;
-    }
-    else if (error==4)
-    {
-      Serial.print("Unknown error at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0)
-    Serial.println("No I2C devices found\n");
-  else
-    Serial.println("done\n");
- 
-  delay(5000);           // wait 5 seconds for next scan
-}
-</pre>
 </div>
 <footer>
 <div class="row">
