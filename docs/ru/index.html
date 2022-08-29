@@ -399,8 +399,7 @@ Arduino сравнивает адрес считанной карты в нес�
 Первоначально версия позволяет записывать 4 различных RFID-карты UID, которые назначаются командам RED, GRE, Referee и Eraser.
 Запрос на ввод конкретной карты отображается на символьном ЖК-дисплее 16х2 или 20х4 с конвертером I2C.
 Впоследствии можно протестировать игровую механику и реакцию считывателя на RFID-карту с временной визуализацией на дисплее. Можно измерить максимум 15 секунд игры для каждой команды с возможностью сброса его с помощью карты ластика и повторного измерения в течение 15 секунд.
-<b> Цель версии - проверить совместимость с вашим оборудованием. </b> Машинные коды, основанные на адресе преобразователя I2C для ЖК-дисплея, доступны в репозитории Github.
-Наиболее часто используемые адреса - 0x27 и 0x3F. Если вы не знаете адрес вашего преобразователя, используйте встроенный пример в Arduino IDE -> I2C Scanner, который запишет адрес в интерфейс UART (Serial monitor).
+<b> Цель версии - проверить совместимость с вашим оборудованием.</b> Если вы не знаете адрес вашего преобразователя, используйте встроенный пример в Arduino IDE -> I2C Scanner, который запишет адрес в интерфейс UART (Serial monitor).
 Машинный код может быть загружен в микроконтроллер Arduino Uno с помощью программного обеспечения AVRDUDE - части Arduino IDE или с помощью графического интерфейса пользователя через <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - проще в использовании. </p>
 <li> AVRDUDE должен запускаться через CMD (командную строку), установленную с Arduino IDE. Находится в C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
 <b> <center> Пример команды для загрузки программы в Arduino Uno / Nano (AtMega328P): </center> </b>
@@ -420,14 +419,9 @@ Arduino сравнивает адрес считанной карты в нес�
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">RFID_Dominator_0x27.hex</td>
-				<td align="center">Тестовая прошивка проекта RFID Секундомер доминирования позволяет измерять время по 15 секунд для каждой команды. <b> Предназначен для символьного ЖК-дисплея 16x2 или 20x4 с преобразователем I2C, который обменивается данными на 0x27 </b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x27.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Скачать прошивку</a></td>
-				</tr>
-				<tr>
-				<td align="left">RFID_Dominator_0x3F.hex</td>
-				<td align="center">Тестовая прошивка проекта RFID Секундомер доминирования позволяет измерять время по 15 секунд для каждой команды. <b> Предназначен для символьного ЖК-дисплея 16x2 или 20x4 с преобразователем I2C, который обменивается данными на 0x3F </b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/RFID_Dominator_0x3F.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Скачать прошивку</a></td>
+				<td align="left">Shareware_RFID_DOMINATOR.hex</td>
+				<td align="center">Тестовая прошивка проекта RFID Секундомер доминирования позволяет измерять время по 15 секунд для каждой команды. <b> Предназначен для символьного ЖК-дисплея 16x2 или 20x4 с преобразователем I2C.</b></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/Shareware_RFID_DOMINATOR.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Скачать прошивку</a></td>
 				</tr>
 				</tbody>
 				</table>
@@ -469,16 +463,6 @@ Arduino сравнивает адрес считанной карты в нес�
 </td>
 <td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/MFRC522" class="btn btn-success" role="button">Скачать</a></td>
 </tr>
-<tr>
-<td style="width: 25%"><b>LiquidCrystal_I2C</b></td>
-<td style="width: 50%">
-<p style="text-align: justify;">
-Библиотека для микроконтроллеров AVR (ATmega) Arduino Uno/Nano/Mega.
-Он позволяет обмениваться данными с символьным ЖК-дисплеем по шине I2C.
-</p>
-</td>
-<td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/LiquidCrystal_I2C" class="btn btn-success" role="button">Скачать</a></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -495,7 +479,7 @@ Arduino сравнивает адрес считанной карты в нес�
 <b>Шаблон также доступен в офлайн-версии в формате .xlsx: </b><a href="../Excel_Template/DOMINATOR_Blank_Template.xlsx" class="btn btn-success" role="button">Template.xlsx</a>
 <pre style="background: #52BE80;">
 /*|-------------------------------------------------|*/
-/*|Title: Reading RFID cards UID (unique identifier |*/
+/*|Title: Reading RFID cards UID (unique identifier)|*/
 /*|Compatible for Arduino Uno / Nano / ATmega328P   |*/
 /*|Author: Martin Chlebovec (martinius96@gmail.com) |*/
 /*|E-mail: martinius96@gmail.com                    |*/
@@ -536,75 +520,7 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 }
 </pre>
 </div>
-<div style="background: #F8C471;">
-<hr>				
-<center><h3>I2C Scanner - программа для чтения адреса конвертера I2C для ЖК-дисплея</h3></center>				
 <hr>
-<h4>Ожидаемый результат I2C Scanner:</h4><hr>
-<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<p style="text-align: justify;">
-Библиотека Wire встроена в IDE Arduino, установка не требуется.
-Программа может быть скомпилирована и проверена связь через шину I2C с символьным ЖК-дисплеем.
-Конвертер I2C должен быть подключен к Arduino к аппаратным клеммам I2C (SCL к A5, SDA к A4) перед загрузкой программы, этого достаточно даже без дисплея.
-Полученный адрес дисплея должен быть предоставлен для успешной сборки для Arduino вместе с UID карт RFID.
-</p>
-<pre style="background: #F8C471;">
-#include &lt;Wire.h>
- 
- 
-void setup()
-{
-  Wire.begin();
- 
-  Serial.begin(9600);
-  while (!Serial);             // Leonardo: wait for serial monitor
-  Serial.println("\nI2C Scanner");
-}
- 
- 
-void loop()
-{
-  byte error, address;
-  int nDevices;
- 
-  Serial.println("Scanning...");
- 
-  nDevices = 0;
-  for(address = 1; address &lt; 127; address++ )
-  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
- 
-    if (error == 0)
-    {
-      Serial.print("I2C device found at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.print(address,HEX);
-      Serial.println("  !");
- 
-      nDevices++;
-    }
-    else if (error==4)
-    {
-      Serial.print("Unknown error at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0)
-    Serial.println("No I2C devices found\n");
-  else
-    Serial.println("done\n");
- 
-  delay(5000);           // wait 5 seconds for next scan
-}
-</pre>
-</div>
 </div>
 		</div>
 </div>
