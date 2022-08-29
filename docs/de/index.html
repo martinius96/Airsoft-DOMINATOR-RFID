@@ -235,7 +235,7 @@ Das RFID Dominator System ist abgestimmt, es kann sofort ins Spiel eingesetzt we
 <h4>Funktionsprinzip auf der Hardwareseite:</h4>
 <p style="text-align: justify;">
 Der NXP RC522 RFID Reader kommuniziert mit dem Mikrocontroller (Arduino / Standalone ATmega328P Chip) über den SPI Bus mit einem Taktsignal (SCLK) von 4 MHz. 
-Der RC522-Reader reagiert auf den RFID-Chip in einem Abstand von ca. 3 cm von der Antenne mit einem konfigurierbaren Antennengewinn im Bereich von 18 bis 48 dB (48 dB wird in der Endanwendung für DOMINATOR verwendet). 
+Der RC522-Reader reagiert auf den RFID-Chip in einem Abstand von ca. 3 cm von der Antenne mit einem konfigurierbaren Antennengewinn im Bereich von 18 bis 48 dB (48 dB wird in der Endanwendung für Stoppuhr der Dominanz verwendet). 
 Liest die UID (Identifier) von RFID-Chips in Reichweite, leitet diesen Identifier an Arduino weiter. 
 Arduino vergleicht die gelesene Kartenadresse in einem Multi-Zustand, löst einen Summerton aus, wendet digitale Zustände an die LEDs an, führt einen universellen Zähler aus, der von der internen Funktion millis() gesteuert wird, die für das Zählen beider Zeiten verantwortlich ist. 
 Aufgrund der erfüllten Bedingung wird der Zähler auf das angegebene Mannschaft angewendet, zu dem die UID gehört und der Zeitzähler läuft. 
@@ -244,7 +244,7 @@ Die Zeitdaten werden über den I2C-Bus mit einem Taktsignal (SCL) von 100 kHz (S
 Um die Anzeige möglichst schnell wiederherzustellen, wird nur die Zahl an der angegebenen Stelle (vorgegebenes Zeichen) überschrieben. 
 Stunden und Minuten und Sekunden werden nur bei Änderung und immer nur für ein bestimmtes Mannschaft neu geschrieben. 
 Bei ernsthaftem Interesse kann im Maschinencode für ATmega328P Firmware erstellt werden, um für andere Arten von RFID-Lesegeräten zu messen: RDM6300, PN532, Wiegand W26, Erhöhung des I2C-Bus-Taktsignals auf 400 kHz (Fast Speed). 
-Mögliche Firmware-Erweiterung für das DOMINATOR-Spiel auf 3 oder 4 Mannschaften.
+Mögliche Firmware-Erweiterung für das Stoppuhr der Dominanz-Spiel auf 3 oder 4 Mannschaften.
 </p>
 <center>
 	<img src="https://i.imgur.com/cliiDyX.png" alt="RFID Dominator - hra pre 4 tímy" style="display: block; max-width: 100%; height: auto;" title="RFID Dominator - hra pre 4 tímy">
@@ -291,7 +291,7 @@ Die Produktion kann auch bei chinesischen Herstellern realisiert werden - JLCPCB
 	<strong>Ein PDF-Dokument mit Teileabmessungen ist verfügbar: </strong><a href="../pdf/Rozmery_SUCIASTOK.pdf">HIER</a>
 </div>
 <center>
-	<img src="https://i.imgur.com/hnNxCyW.png" alt="DPS pre Airsoft DOMINATOR - AISLER" style="display: block; max-width: 100%; height: auto;" title="DPS pre Airsoft DOMINATOR - AISLER">
+	<img src="https://i.imgur.com/hnNxCyW.png" alt="DPS pre Airsoft Stoppuhr der Dominanz - AISLER" style="display: block; max-width: 100%; height: auto;" title="DPS pre Airsoft DOMINATOR - AISLER">
 	<img src="https://i.imgur.com/6NerCFH.jpeg" alt="Osadená DPS s komponentami pre RFID Dominator" style="display: block; max-width: 100%; height: auto;" title="Osadená DPS s komponentami pre RFID Dominator">
 </center>   
 <h3>Die Verkabelung der Klemmen - RFID Stoppuhr der Dominanz - entspricht vollständig dem Schaltplan:</h3>
@@ -419,7 +419,10 @@ Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder mit 
 				</tbody>
 				</table>
 				</div>	
-<hr><h4>Demonstration der Funktionalität - Shareware RFID DOMINATOR:</h4><hr><center><iframe width="80%" height="315" src="https://www.youtube.com/embed/b_2SLzjmOFU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>				
+<hr><h4>Demonstration der Funktionalität - Shareware RFID Stoppuhr der Dominanz:</h4><hr><center><iframe width="80%" height="315" src="https://www.youtube.com/embed/b_2SLzjmOFU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>				
+<center>
+	<img src="https://i.imgur.com/hA3iK0O.png" title="RFID Dominator für Airsoft / Paintball - Shareware Arduino-Firmware" alt="RFID Dominator für Airsoft / Paintball - Shareware Arduino-Firmware" style="display: block; max-width: 100%; height: auto;">
+</center>
 <div class="alert alert-danger">
       <strong>Bei den neuesten chinesischen Arduino-Nano-Klonen, die einen "Old Bootloader" besitzen, muss mit 57600 Baud/s aufgenommen werden! Für andere Versionen mit dem neueren Bootloader 115200 Baud/s (diese Geschwindigkeit wird auch im AVRDUDE-Befehl zum Laden von Maschinencode verwendet).</strong>
  </div>			
@@ -449,7 +452,7 @@ Laden Sie das RFID Stoppuhr der Dominanz-Projekt-Repository herunter (auf das du
 <td style="width: 25%"><b>MFRC522</b></td>
 <td style="width: 50%">
 <p style="text-align: justify;">
-Bibliothek für AVR-Mikrocontroller (ATmega) Arduino Uno / Nano / Mega.
+Bibliothek für AVR-Mikrocontroller (ATmega328P) Arduino Uno / Nano / Mega.
 Es ermöglicht die Kommunikation mit dem RFID-Lesegerät NXP RC522 über den SPI-Bus.
 </p>
 </td>
