@@ -360,75 +360,7 @@ El código de la máquina se puede cargar en el microcontrolador Arduino Uno a t
 </center>	
 <hr><center><h2>Vídeo tutorial general para subir firmware a Arduino a través de XLoader</h2></center><hr>
 <center><iframe width="80%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>	
-<div style="background: #F8C471;">
-<hr>				
-<center><h3>Escáner I2C: un programa para leer la dirección del convertidor I2C para la pantalla LCD</h3></center>				
-<hr>
-<h4>Salida esperada del escáner I2C:</h4><hr>
-<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<p style="text-align: justify;">
-La biblioteca Wire está integrada en el IDE de Arduino, no se requiere instalación.
-El programa se puede compilar y verificar la comunicación a través del bus I2C con pantalla LCD de caracteres.
-El convertidor I2C debe conectarse al Arduino a los terminales de hardware I2C (SCL a A5, SDA a A4) antes de cargar el programa, incluso sin pantalla.
-La dirección de visualización recuperada debe proporcionarse para una compilación exitosa de Arduino y su arquitectura de destino.
-</p>
-<pre style="background: #F8C471;">
-#include &lt;Wire.h>
- 
- 
-void setup()
-{
-  Wire.begin();
- 
-  Serial.begin(9600);
-  while (!Serial);             // Leonardo: wait for serial monitor
-  Serial.println("\nI2C Scanner");
-}
- 
- 
-void loop()
-{
-  byte error, address;
-  int nDevices;
- 
-  Serial.println("Scanning...");
- 
-  nDevices = 0;
-  for(address = 1; address &lt; 127; address++ )
-  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
- 
-    if (error == 0)
-    {
-      Serial.print("I2C device found at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.print(address,HEX);
-      Serial.println("  !");
- 
-      nDevices++;
-    }
-    else if (error==4)
-    {
-      Serial.print("Unknown error at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0)
-    Serial.println("No I2C devices found\n");
-  else
-    Serial.println("done\n");
- 
-  delay(5000);           // wait 5 seconds for next scan
-}
-</pre>
-</div>
+
 </div>
 </div>
 </div>
