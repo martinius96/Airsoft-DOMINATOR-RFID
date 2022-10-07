@@ -320,17 +320,13 @@ La réécriture de l'affichage prend ainsi jusqu'à environ 15 ms, tandis que se
 <p style="text-align: justify;">
 <center>
 <img src="https://i.imgur.com/2iG6Ws8.png" alt="Source code - Button Domination Timer based on Arduino" style="display: block; max-width: 100%; height: auto;" alt="Source code - Button Domination Timer based on Arduino" title="Source code - Button Domination Timer based on Arduino">        			
-</center>
-<b> Une version Shareware (.hex) est disponible pour le projet DOMINATOR Bouton. </b> La version permet de mesurer un maximum de 15 secondes de jeu pour chaque équipe.
-<b> L'objectif de la version est de vérifier la compatibilité avec votre matériel. </b> Les codes machine basés sur l'adresse du convertisseur I2C pour l'écran LCD sont disponibles dans le référentiel Github.
-Les adresses les plus utilisées sont 0x27 et 0x3F. Si vous ne connaissez pas l'adresse de votre convertisseur, utilisez l'exemple intégré dans Arduino IDE -> I2C Scanner, qui écrira l'adresse sur l'interface UART (Serial Monitor).
-Le code machine peut être téléchargé sur le microcontrôleur Arduino Uno via le logiciel AVRDUDE - qui fait partie de l'IDE Arduino, ou avec une interface graphique via <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - plus facile à utiliser. </p>
-<li> AVRDUDE doit être exécuté via le CMD (ligne de commande) installé avec l'IDE Arduino. Situé dans C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
-<b> <center> Exemple de commande pour télécharger un programme sur Arduino Uno/Nano (ATmega328P) : </center> </b>
-<li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
-<li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> est une application Windows (outil exécutable .exe) avec une interface graphique simple </ b> qui vous permet de sélectionner le firmware - code machine (.hex), la plate-forme cible et peut afficher dynamiquement le port COM sur lequel se trouve l'appareil. </li>
-<li> <b> En cliquant simplement sur Télécharger, le code machine peut être téléchargé automatiquement </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> utilise similaire à l'outil AVRDUDE d'Arduino IDE). La fenêtre XLoader vous informe de la réussite du téléchargement en indiquant le nombre d'octets téléchargés. </li>
-<b> <font color = "red"> Le firmware peut être téléchargé depuis le référentiel du projet : </font> </b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware"> ICI </a>. Le firmware se trouve dans le dossier Github du dépôt du projet /firmware/button_dominator/ divisé en fonction de l'adresse du convertisseur I2C (vous l'avez découvert de la sortie du scanner I2C à l'interface UART).
+</center><b>Le projet Bouton DOMINATOR a une version Shareware gratuite disponible au format code machine (.hex), qui est compatible avec AVR ATmega328P (Arduino Uno, Nano, Pro Mini).</b>
+La version vous permet de mesurer un maximum de 15 secondes de jeu pour chaque équipe, tandis que les temps peuvent être réinitialisés via le bouton Gomme.
+<b>Le but de la version est de vérifier la compatibilité avec votre matériel.</b> Le code machine est disponible dans le référentiel Github.
+Le firmware fonctionne pour les adresses de convertisseur I2C les plus utilisées 0x27 et 0x3F, mais prend également en charge les adresses spécifiques modifiées sur les modules.
+Le code machine peut être téléchargé sur le microcontrôleur Arduino Uno via le logiciel AVRDUDE - qui fait partie de l'IDE Arduino, ou avec une interface graphique via <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader</a> - plus facile à utiliser.</p>
+<li>AVRDUDE doit être exécuté via CMD (ligne de commande) il est installé avec l'environnement IDE Arduino. Situé dans C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<li>XLoader est une application Windows (outil exécutable .exe) avec une interface graphique simple</b> qui permet de sélectionner le firmware - code machine (.hex), la plate-forme cible et peut afficher dynamiquement le port COM sur lequel l'appareil est situé.</li>
 </div>
 				<hr><h4>Firmware disponible (Shareware) - Bouton DOMINATOR</h4><hr>
 				<div class="table-responsive">          
@@ -344,14 +340,9 @@ Le code machine peut être téléchargé sur le microcontrôleur Arduino Uno via
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">0x27.ino.hex</td>
-				<td align="center">Le firmware du bouton de test du Bouton Dominator permet de mesurer un temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C, qui communique à l'adresse 0x27</b></td>
+				<td align="left">Shareware.hex</td>
+				<td align="center">Le micrologiciel de test du projet Bouton Dominator permet un chronométrage de 15 secondes pour chaque équipe, avec la possibilité de remettre le temps à zéro et de re-temps de 15 secondes. <b>Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec un convertisseur I2C.</b> Ce firmware peut être testé directement dans le simulateur en ligne Wokwi, qui peut être exécuté dans un navigateur : <a href="https:// wokwi.com/projects/333897447732413011">https://wokwi.com/projects/333897447732413011</a></td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x27.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Télécharger le micrologiciel</a></td>
-				</tr>
-				<tr>
-				<td align="left">0x3F.ino.hex</td>
-				<td align="center">Le firmware du bouton de test du Bouton Dominator permet de mesurer un temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C qui communique à 0x3F</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x3F.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Télécharger le micrologiciel</a></td>
 				</tr>
 				</tbody>
 				</table>
