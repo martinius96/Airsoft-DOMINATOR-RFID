@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
 	<!-- Primary Meta Tags -->
-	<title>Bouton DOMINATOR Airsoft | Paintball - chronomètre avec affichage</title>
-	<meta name="title" content="Bouton DOMINATOR Airsoft | Paintball - chronomètre avec affichage">
+	<title>Bouton chronomètres de dominance Airsoft | Paintball - chronomètre avec affichage</title>
+	<meta name="title" content="Bouton chronomètres de dominance Airsoft | Paintball - chronomètre avec affichage">
 	<meta name="description" content="Chronomètre pour Airsoft avec entrée à bouton-poussoir. Time Lapse dans Airosft, un jeu de paintball. Minuterie de domination pour les campus et les événements sportifs.">
 	<meta name="keywords" content="dominateur, minuteur, domination, chronomètre, minuteur, bouton, contribution, bouton poussoir, arduino, matériel, iot, campus, airsoft, paintball, sport, extrême, compteur, afficher, atmega328p, arduino, uno, nano">
 	<meta name="news_keywords" content="dominateur, minuteur, domination, chronomètre, minuteur, bouton, contribution, bouton poussoir, arduino, matériel, iot, campus, airsoft, paintball, sport, extrême, compteur, afficher, atmega328p, arduino, uno, nano">	
@@ -149,17 +149,17 @@ table,thead,tbody,tfoot,tr, td,th{
 <span class="label label-danger">I2C</span>
 <span class="label label-default">Paintball</span>
 <span class="label label-primary">DOMINATOR</span>
-<hr><center><h1>Bouton DOMINATOR - chronomètre pour Airsoft | Paintball</h1></center><hr>
-<h2>Entités du projet de bouton DOMINATOR:</h2>
+<hr><center><h1>Bouton chronomètres de dominance - chronomètre pour Airsoft | Paintball</h1></center><hr>
+<h2>Entités du projet de Bouton chronomètres de dominance:</h2>
  <div class="row">
   <div class="col-sm-3"><center><img src="https://i.imgur.com/2uGic8e.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím RED - tlačidlo pre používateľský vstup" title="Tím RED - tlačidlo pre používateľský vstup"><br><b><font color="#C0392B">L'équipe RED</font></b></center></div>
   <div class="col-sm-3"><center><img src="https://i.imgur.com/etKbK4l.png" width="128px" height="128px" style="border-radius: 50%;" alt="Tím GRE - tlačidlo pre používateľský vstup" title="Tím GRE - tlačidlo pre používateľský vstup"><br><b><font color="#27AE60">L'équipe GRE</font></b></center></div>
   <div class="col-sm-3"><center><img src="https://i.imgur.com/KaXWTaE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Rozhodca - tlačidlo pre používateľský vstup" title="Rozhodca - tlačidlo pre používateľský vstup"><br><b><font color="#F39C12">Arbitre</font></b></center></div>
   <div class="col-sm-3"><center><img src="https://i.imgur.com/uFpv2XX.png" width="128px" height="128px" style="border-radius: 50%;" alt="Eraser - tlačidlo pre používateľský vstup" title="Eraser - tlačidlo pre používateľský vstup"><br><b><font color="#3498DB">Gomme</font></b></center></div>
 </div>
-<hr><h4>Description du projet Bouton DOMINATOR</h4><hr>
+<hr><h4>Description du projet Bouton chronomètres de dominance</h4><hr>
 <p style="text-align: justify;">
-Bouton DOMINATOR est un appareil - chronomètre pour les sports Airsoft et Paintball.
+Bouton chronomètres de dominance est un appareil - chronomètre pour les sports Airsoft et Paintball.
 Le chronomètre utilise un microcontrôleur de contrôle Arduino (Arduino Uno / Nano) ou une puce séparée (Atmel) ATmega328P, qui contrôle l'ensemble de la logique du système.
 Le chronomètre comprend un affichage LCD de caractères mesurant 16x2 (16 caractères x 2 lignes), ou 20x4, qui affiche les temps des équipes individuelles.
 Il y a 2 équipes dans le jeu - <b> <font color = "#C0392B"> l'équipe RED </font> </b> et <b> <font color = "#27AE60"> l'équipe GRE </font> </b> qui jouent les uns contre les autres et occupent le point imaginaire formé par cet appareil - DOMINATOR.
@@ -167,11 +167,11 @@ Au début du jeu, l'écran affiche les temps 00 heures, 00 minutes, 00 secondes 
 </p>
 <hr>
 <p style="text-align: justify;">
-Bouton DOMINATOR utilise l'entrée de bouton pour l'action des membres de l'équipe, ainsi que l'entrée d'entité d'arbitre et de gomme.
+Bouton chronomètres de dominance utilise l'entrée de bouton pour l'action des membres de l'équipe, ainsi que l'entrée d'entité d'arbitre et de gomme.
 Ainsi, un total de 4 boutons pour 4 entités système, les boutons de commutation connectés en mode INPUT_PULLUP sont utilisés.
 Appuyez sur le bouton pour envoyer le signal GND à la borne d'entrée numérique Arduino (signal de commutation Active-LOW).
 Les boutons à bascule sont utilisés, pas les boutons à bascule (ils ne répondraient pas à la logique du système, tous seraient toujours "pressés").
-<b>Le bouton DOMINATOR est disponible en deux versions : La version de base répond immédiatement à un bouton d'occupation de point.
+<b>Bouton chronomètres de dominance est disponible en deux versions : La version de base répond immédiatement à un bouton d'occupation de point.
 La version avancée vous oblige à maintenir le bouton enfoncé pendant 5 secondes pour réussir à occuper un point.</b>
 Les temps sont affichés sur un afficheur LCD 16x2 ou 20x4 caractères, qui communique avec le microcontrôleur de contrôle via le bus I2C.
 <b> <font color = "#C0392B"> Si une équipe d'une équipe ROUGE occupe un point en appuyant sur un bouton, un buzzer se déclenchera, qui annoncera un changement de point par un bip court.
@@ -182,23 +182,23 @@ Ensuite, la LED de l'équipe ROUGE de cette station s'allumera et l'affichage co
 <b> <font color = "#27AE60"> Si le point est occupé par l'équipe GRE et que le membre de l'équipe appuie sur le bouton approprié, le buzzer retentit à nouveau, la LED de l'équipe GRE s'allume, le temps de l'équipe ROUGE est mis en pause et le Le temps de l'équipe GRE est calculé, quel point occupé. </font> </b>
 <b> <font color = "#F39C12"> Si l'organisateur (l'arbitre) appuie sur son bouton, les deux temps sont mis en pause jusqu'à ce qu'un membre de l'une des équipes effectue une saisie de l'utilisateur.
 Ce type d'entrée est donc adapté pour démarrer une pause, mais peut également terminer le jeu pour évaluation. </font> </b>
-<b> <font color = "#3498DB"> Bouton DOMINATOR a un quatrième bouton pour l'entité gomme, qui s'interrompt et réinitialise les deux fois aux valeurs initiales comme après le démarrage du chronomètre Button DOMINATOR.
+<b> <font color = "#3498DB"> Bouton chronomètres de dominance a un quatrième bouton pour l'entité gomme, qui s'interrompt et réinitialise les deux fois aux valeurs initiales comme après le démarrage du chronomètre Button DOMINATOR.
 Utilisé pour redémarrer le jeu, initialiser un nouveau jeu. </font> </b>
 Le projet convient aux événements Airsoft, aux installations sportives ou aux équipes Airsoft, qui peuvent construire l'équipement.
-L'avantage du système Bouton DOMINATOR est qu'il peut être cloné et créer X points avec la même configuration via le code machine, qui peut être chargé dans un nombre illimité de cartes et de puces Arduino et garantit un fonctionnement identique de l'application.
+L'avantage du système Bouton chronomètres de dominance est qu'il peut être cloné et créer X points avec la même configuration via le code machine, qui peut être chargé dans un nombre illimité de cartes et de puces Arduino et garantit un fonctionnement identique de l'application.
 Les joueurs peuvent ainsi marquer plus de points dans le jeu, tandis qu'à la fin du jeu, le temps est ajouté tant que quel point a été occupé par quelle équipe.
 Il est également possible d'utiliser des boutons avec une bougie de préchauffage intégrée, ce qui améliore la lisibilité et révèle la couleur des boutons individuels dans l'obscurité.
 </p> 
 <hr><h4>Liste des temps sur l'affichage à caractères LCD 20x4:</h4><hr>
-<center><img src="https://i.imgur.com/xqqKdEF.png" alt="Výpis časov na LCD znakovom displeji 20x4 - Arduino Domination Timer - DOMINATOR" style="display: block; max-width: 100%; height: auto;" title="Výpis časov na LCD znakovom displeji 20x4 - Arduino Domination Timer - DOMINATOR"></center>
-<hr><h4>Matériel de commande compatible pour bouton-poussoir DOMINATOR:</h4><hr>
+<center><img src="https://i.imgur.com/xqqKdEF.png" alt="Výpis časov na LCD znakovom displeji 20x4 - Arduino Domination Timer - chronomètres" style="display: block; max-width: 100%; height: auto;" title="Výpis časov na LCD znakovom displeji 20x4 - Arduino Domination Timer - DOMINATOR"></center>
+<hr><h4>Matériel de commande compatible pour bouton-poussoir chronomètres:</h4><hr>
 <div class="row">
 <div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino UNO for Domination Timer" title="Control microcontroller Arduino UNO for Domination Timer"><br><b><a href="https://www.ebay.com/itm/254532156570">Arduino UNO</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/XHC8DBe.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller Arduino Nano for Domination Timer" title="Control microcontroller Arduino Nano for Domination Timer"><br><b><a href="https://www.ebay.com/itm/252742123829">Arduino Nano</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P DIP" title="Control microcontroller ATmega328P DIP"><br><b><a href="https://www.ebay.com/itm/292204064766">ATmega328P - DIP28</a></b></center></div>
 <div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Control microcontroller ATmega328P SMD" title="Control microcontroller ATmega328P SMD"><br><b><a href="https://www.ebay.com/itm/142666414237">ATmega328P - SMD</a></b></center></div>
 </div>	
-<hr><h4>Périphériques pour bouton poussoir DOMINATOR:</h4><hr>
+<hr><h4>Périphériques pour bouton poussoir chronomètres:</h4><hr>
 <div class="row">
 <div class="col-sm-2"><center><img src="https://i.imgur.com/KLImexp.png" width="128px" height="128px" style="border-radius: 50%;" alt="LCD znakový displej 16x2 / 20x4" title="LCD znakový displej 16x2 / 20x4"><br><b><a href="https://www.ebay.com/itm/233193109985">Affichage des caractères LCD 16x2 / 20x4</a></b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/DYNZjCW.png" width="128px" height="128px" style="border-radius: 50%;" alt="I2C prevodník pre LCD displej" title="I2C prevodník pre LCD displej"><br><b><a href="https://www.ebay.com/itm/181862365068">Convertisseur I2C pour écran LCD</a></b></center></div>
@@ -206,7 +206,7 @@ Il est également possible d'utiliser des boutons avec une bougie de préchauffa
 <div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič" title="Hlásič"><br><b><a href="https://www.ebay.com/itm/144302857914">Ronfleur</a></b></center></div>
 <div class="col-sm-2"><center><img src="https://i.imgur.com/Tz3cwNZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b><a href="https://www.ebay.com/itm/393599604346">2x LED</a></b></center></div>
 </div>
-<hr><h4>Le principe de fonctionnalité du projet Bouton DOMINATOR côté matériel:</h4><hr>
+<hr><h4>Le principe de fonctionnalité du projet Bouton chronomètres de dominance côté matériel:</h4><hr>
 <p style="text-align: justify;">
 Les boutons sont connectés en mode INPUT_PULLUP, ils utilisent une résistance PULLUP interne de 20 kΩ, qui maintient le niveau logique HIGH sur l'entrée numérique.
 Lorsque le bouton est enfoncé, le signal LOW est envoyé à l'entrée numérique.
@@ -217,7 +217,7 @@ Dans cette routine, une vérification d'équipe active est effectuée, suivie du
 L'heure est tracée dynamiquement sur un écran LCD 20x4 ou 16x2 caractères.
 L'écran communique avec l'Arduino via un bus I2C avec un signal d'horloge (SCL) de 100 kHz - Vitesse standard.
 La réécriture de l'affichage prend ainsi jusqu'à environ 15 ms, tandis que seule la ligne de l'équipe donnée qui est active au point est écrasée.
-<b> Avec un sérieux intérêt, le firmware de DOMINATOR peut être étendu à 3 ou 4 équipes. </b>
+<b> Avec un sérieux intérêt, le firmware de chronomètres peut être étendu à 3 ou 4 équipes. </b>
 </p>
 <center>
 	<img src="https://i.imgur.com/cliiDyX.png" alt="RFID Dominator - hra pre 4 tímy" style="display: block; max-width: 100%; height: auto;" title="RFID Dominator - hra pre 4 tímy">
@@ -228,11 +228,11 @@ La réécriture de l'affichage prend ainsi jusqu'à environ 15 ms, tandis que se
       <div class="alert alert-info">
       <strong>Consommation : environ 20 mAh sous 5 V. </strong> Pratique pour alimenter via une banque d'alimentation, chargeur à partir d'un téléphone avec sortie USB.
       </div>
-<hr><center><h3>Bouton DOMINATOR lors de l'exécution dans le jeu Airsoft</h3></center><hr>
+<hr><center><h3>Bouton chronomètres de dominance lors de l'exécution dans le jeu Airsoft</h3></center><hr>
 <center><img src="https://i.imgur.com/yuHmpZa.jpg" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Airsoft DOMINATOR s tlačidlovým vstupom - stopky" title="Airsoft DOMINATOR s tlačidlovým vstupom - stopky"></center>        			
 <hr><center><h3>Bouton-poussoir DOMINATOR - démonstration de la fonctionnalité et de la logique du système</h3></center><hr>
 <center><iframe width="80%" height="315" src="https://www.youtube.com/embed/KN6RXZYUcI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-<hr><h3>Le tableau de connexion des bornes - Bouton DOMINATOR - correspond parfaitement au schéma de câblage:</h3><hr>
+<hr><h3>Le tableau de connexion des bornes - Bouton chronomètres de dominance - correspond parfaitement au schéma de câblage:</h3><hr>
 <div class="table-responsive">   
 <table class="table" style="border: 1px solid black;">
 				<thead>		
@@ -313,14 +313,14 @@ La réécriture de l'affichage prend ainsi jusqu'à environ 15 ms, tandis que se
 </tr>
 </tbody>
 </table>				</div>
-<hr><center><h2>Schéma de câblage - Bouton DOMINATOR :</h2></center><hr>
+<hr><center><h2>Schéma de câblage - Bouton chronomètres de dominance:</h2></center><hr>
 <img src="https://i.imgur.com/YSDz0ZT.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft" title="Schéma zapojenia - button - tlačidlový DOMINATOR s mikrokontrolérom Arduino Uno - stopky pre Airsoft">        			
-<hr><center><h2>Programme de test (Shareware) - Bouton DOMINATOR avec code machine</h2></center><hr>
+<hr><center><h2>Programme de test (Shareware) - Bouton chronomètres de dominance avec code machine</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
 <center>
 <img src="https://i.imgur.com/2iG6Ws8.png" alt="Source code - Button Domination Timer based on Arduino" style="display: block; max-width: 100%; height: auto;" alt="Source code - Button Domination Timer based on Arduino" title="Source code - Button Domination Timer based on Arduino">        			
-</center><b>Le projet Bouton DOMINATOR a une version Shareware gratuite disponible au format code machine (.hex), qui est compatible avec AVR ATmega328P (Arduino Uno, Nano, Pro Mini).</b>
+</center><b>Le projet Bouton chronomètres de dominance a une version Shareware gratuite disponible au format code machine (.hex), qui est compatible avec AVR ATmega328P (Arduino Uno, Nano, Pro Mini).</b>
 La version vous permet de mesurer un maximum de 15 secondes de jeu pour chaque équipe, tandis que les temps peuvent être réinitialisés via le bouton Gomme.
 <b>Le but de la version est de vérifier la compatibilité avec votre matériel.</b> Le code machine est disponible dans le référentiel Github.
 Le firmware fonctionne pour les adresses de convertisseur I2C les plus utilisées 0x27 et 0x3F, mais prend également en charge les adresses spécifiques modifiées sur les modules.
@@ -328,7 +328,7 @@ Le code machine peut être téléchargé sur le microcontrôleur Arduino Uno via
 <li>AVRDUDE doit être exécuté via CMD (ligne de commande) il est installé avec l'environnement IDE Arduino. Situé dans C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
 <li>XLoader est une application Windows (outil exécutable .exe) avec une interface graphique simple</b> qui permet de sélectionner le firmware - code machine (.hex), la plate-forme cible et peut afficher dynamiquement le port COM sur lequel l'appareil est situé.</li>
 </div>
-				<hr><h4>Firmware disponible (Shareware) - Bouton DOMINATOR</h4><hr>
+				<hr><h4>Firmware disponible (Shareware) - Bouton chronomètres de dominance</h4><hr>
 				<div class="table-responsive">          
  				<table class="table" style="border: 1px solid black;">
 				<thead>
@@ -350,9 +350,9 @@ Le code machine peut être téléchargé sur le microcontrôleur Arduino Uno via
 <div class="alert alert-danger">
       <strong>Dans le cas des derniers clones chinois d'Arduino Nano qui ont un "Old Bootloader", il faut enregistrer à 57600 baud/s ! Pour les autres versions avec le plus récent Bootloader 115200 baud/s (cette vitesse est également utilisée dans la commande AVRDUDE pour charger le code machine).</strong>
  </div>				
-<hr><center><h2>Nahrávanie Shareware verzie projektu Tlačidlový DOMINATOR do Arduina cez XLoader</h2></center><hr>				
+<hr><center><h2>Téléchargement de la version Shareware du projet Bouton chronomètres de dominance sur Arduino via XLoader</h2></center><hr>				
 <center>
-	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
+	<img src="https://i.imgur.com/jpKuhTc.png" style="display: block; max-width: 100%; height: auto;" alt="XLoader - Arduino - AVRDUDE - Tlačidlový Bouton chronomètres de dominance - testovací program" title="XLoader - Arduino - AVRDUDE - Tlačidlový DOMINATOR - testovací program">	
 </center>	
 <hr><center><h2>Tutoriel vidéo général pour télécharger le firmware sur Arduino via XLoader</h2></center><hr>
 <center><iframe width="80%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>	
