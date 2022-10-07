@@ -336,16 +336,13 @@ Das Überschreiben der Anzeige dauert somit bis zu ca. 15 ms, wobei nur die gera
 <center>
 <img src="https://i.imgur.com/2iG6Ws8.png" alt="Source code - Button Domination Timer based on Arduino" style="display: block; max-width: 100%; height: auto;" alt="Source code - Button Domination Timer based on Arduino" title="Source code - Button Domination Timer based on Arduino">        			
 </center>
-<b> Für das Taste Stoppuhr der Dominanz-Projekt ist eine Shareware-Version (.hex) verfügbar. </b> Mit dieser Version können Sie für jedes Team maximal 15 Sekunden Spielzeit messen.
-<b> Ziel der Version ist es, die Kompatibilität mit Ihrer Hardware zu überprüfen. </b> Maschinencodes, die auf der I2C-Konverteradresse für das LCD-Display basieren, sind im Github-Repository verfügbar.
-Die am häufigsten verwendeten Adressen sind 0x27 und 0x3F. Wenn Sie die Adresse Ihres Konverters nicht kennen, verwenden Sie das in Arduino IDE -> I2C Scanner integrierte Beispiel, das die Adresse in die UART-Schnittstelle (serieller Monitor) schreibt.
-Der Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder mit einer GUI-Schnittstelle über <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - einfacher in den Arduino Uno-Mikrocontroller hochgeladen werden. </p>
-<li> AVRDUDE muss über das CMD (Befehlszeile) ausgeführt werden, das mit der Arduino IDE installiert ist. Befindet sich in C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
-<b> <center> Beispielbefehl zum Hochladen eines Programms auf Arduino Uno / Nano (ATmega328P): </center> </b>
-<li> <b> avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash: w: scale.ino.hex: i </b> </li>
-<li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> ist eine Windows-Anwendung (ausführbares EXE-Tool) mit einer einfachen grafischen Oberfläche </b>, mit der Sie die Firmware auswählen können - Maschinencode (.hex), die Zielplattform und die dynamisch anzeigen können COM-Anschluss, an dem sich das Gerät befindet. </li>
-<li> <b> Durch einfaches Klicken auf Hochladen kann der Maschinencode automatisch hochgeladen werden </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> verwendet das AVRDUDE-Tool ähnlich der Arduino IDE). Das XLoader-Fenster informiert über den erfolgreichen Upload in Form einer Liste der hochgeladenen Bytes. </li>
-<b> Firmware kann aus dem Projekt-Repository heruntergeladen werden: </b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware">HIER</a>. Die Firmware befindet sich im Ordner / firmware /, unterteilt nach der Adresse des I2C-Konverters (Sie haben dies anhand der Ausgabe des I2C-Scanners auf der UART-Schnittstelle herausgefunden).
+<b>Das Taste Stoppuhr der Dominanz-Projekt hat eine kostenlose Shareware-Version im Maschinencode-Format (.hex), die mit AVR ATmega328P (Arduino Uno, Nano, Pro Mini) kompatibel ist.</b>
+Die Version ermöglicht es Ihnen, maximal 15 Sekunden Spielzeit für jedes Team zu messen, während die Zeiten über die Eraser-Taste zurückgesetzt werden können.
+<b>Der Zweck der Version besteht darin, die Kompatibilität mit Ihrer Hardware zu überprüfen.</b> Der Maschinencode ist im Github-Repository verfügbar.
+Die Firmware funktioniert für die am häufigsten verwendeten I2C-Konverteradressen 0x27 und 0x3F, unterstützt aber auch bestimmte Adressen, die auf den Modulen geändert wurden.
+Der Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder mit einer GUI-Schnittstelle über <a href="https://www.hobbytronics.co.uk/arduino-xloader"> auf den Arduino Uno-Mikrocontroller hochgeladen werden XLoader</a> - einfacher zu bedienen.</p>
+<li>AVRDUDE muss über CMD (Befehlszeile) ausgeführt werden, es wird mit der Arduino IDE-Umgebung installiert. Zu finden unter C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<li>XLoader ist eine Windows-Anwendung (ausführbares .exe-Tool) mit einer einfachen grafischen Oberfläche</b>, die die Auswahl von Firmware ermöglicht - Maschinencode (.hex), Zielplattform und dynamisch den COM-Port anzeigen kann, an dem sich das Gerät befindet befindet.</li>
 </div>
 				<h4>Firmware verfügbar - Taste Stoppuhr der Dominanz</h4>
 				<div class="table-responsive">          
@@ -359,14 +356,9 @@ Der Maschinencode kann über die AVRDUDE-Software - Teil der Arduino IDE - oder 
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">0x27.ino.hex</td>
-				<td align="center">LCD-Zeichenanzeigegröße 16x2 oder 20x4 mit I2C-Wandler, der unter der Adresse 0x27 kommuniziert</b></td>
+				<td align="left"Shareware.hex</td>
+				<td align="center">Die Test-Firmware des Button Dominator-Projekts ermöglicht eine Zeitmessung von 15 Sekunden für jedes Team, mit der Möglichkeit, die Zeit auf Null zurückzusetzen und 15 Sekunden neu zu messen. <b>Entwickelt für ein 16x2- oder 20x4-LCD-Zeichendisplay mit I2C-Konverter.</b> Diese Firmware kann direkt im Wokwi-Online-Simulator getestet werden, der in einem Browser ausgeführt werden kann: <a href="https://wokwi.com/projects/333897447732413011">https://wokwi.com/projects/333897447732413011</a></td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x27.ino.hex" class="btn btn-danger" role="button" download>Firmware herunterladen</a></td>
-				</tr>
-				<tr>
-				<td align="left">0x3F.ino.hex</td>
-				<td align="center">LCD-Zeichenanzeigegröße 16x2 oder 20x4 mit I2C-Wandler, der unter der Adresse 0x3F kommuniziert</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x3F.ino.hex" class="btn btn-danger" role="button" download>Firmware herunterladen</a></td>
 				</tr>
 				</tbody>
 				</table>
