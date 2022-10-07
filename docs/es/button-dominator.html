@@ -324,16 +324,13 @@ Por lo tanto, la reescritura de la pantalla tarda aproximadamente 15 ms, mientra
 <hr><center><h2>Programa de prueba (Shareware) - Botón DOMINADOR con código máquina</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
-<b> Hay disponible una versión Shareware (.hex) para el proyecto DOMINADOR Botón.</b> La versión permite medir un máximo de 15 segundos de juego para cada equipo.
-<b> El objetivo de la versión es verificar la compatibilidad con su hardware. </b> Los códigos de máquina basados en la dirección del convertidor I2C para la pantalla LCD están disponibles en el repositorio de Github.
-Las direcciones más utilizadas son 0x27 y 0x3F. Si no conoce la dirección de su convertidor, use el ejemplo incorporado en Arduino IDE -> Escáner I2C, que escribirá la dirección en la interfaz UART (monitor en serie).
-El código de la máquina se puede cargar en el microcontrolador Arduino Uno a través del software AVRDUDE, parte del IDE de Arduino, o con una interfaz GUI a través de <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - más fácil de usar. </p>
-<li> AVRDUDE debe ejecutarse a través del CMD (línea de comando) instalado con el IDE de Arduino. Ubicado en C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
-<b> <center> Ejemplo de comando para cargar un programa en Arduino Uno/Nano (ATmega328P): </center> </b>
-<li> <b> avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash: w: sketch.ino.hex: i </b> </li>
-<li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> es una aplicación de Windows (herramienta ejecutable .exe) con una interfaz gráfica simple </b> que le permite seleccionar el firmware - código de máquina (.hex), la plataforma de destino y puede mostrar dinámicamente el puerto COM en el que se encuentra el dispositivo.</li>
-<li> <b> Simplemente haciendo clic en Cargar, el código de máquina se puede cargar automáticamente </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> utiliza similar a la herramienta Arduino IDE AVRDUDE). La ventana de XLoader le informa sobre la carga exitosa al enumerar la cantidad de bytes cargados. </li>
-<b> <font color="red"> El firmware se puede descargar desde el repositorio del proyecto: </font> </b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware">AQUÍ</a>. El firmware está en la carpeta Github del repositorio del proyecto /firmware/button_dominator/ dividido según la dirección del convertidor I2C (se enteró de la salida del escáner I2C en la interfaz UART).
+<b>El proyecto Botón DOMINADOR tiene una versión Shareware gratuita disponible en formato de código de máquina (.hex), que es compatible con AVR ATmega328P (Arduino Uno, Nano, Pro Mini).</b>
+La versión le permite medir un máximo de 15 segundos de juego para cada equipo, mientras que los tiempos se pueden restablecer mediante el botón Eraser.
+<b>El propósito de la versión es verificar la compatibilidad con su hardware.</b> El código de máquina está disponible en el repositorio de Github.
+El firmware funciona para las direcciones de convertidor I2C más utilizadas 0x27 y 0x3F, pero también admite direcciones específicas modificadas en los módulos.
+El código de la máquina se puede cargar en el microcontrolador Arduino Uno a través del software AVRDUDE, parte del IDE de Arduino, o con una interfaz GUI a través de <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader</a> - más fácil de usar.</p>
+<li>AVRDUDE debe ejecutarse a través de CMD (línea de comando), se instala con el entorno IDE de Arduino. Ubicado en C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<li>XLoader es una aplicación de Windows (herramienta .exe ejecutable) con una interfaz gráfica simple</b> que permite la selección de firmware: código de máquina (.hex), plataforma de destino y puede mostrar dinámicamente el puerto COM en el que se encuentra el dispositivo. localizado.< /li>
 </div>
 				<hr><h4>Firmware disponible (Shareware) - Botón DOMINADOR</h4><hr>
 				<div class="table-responsive">          
@@ -347,14 +344,9 @@ El código de la máquina se puede cargar en el microcontrolador Arduino Uno a t
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">0x27.ino.hex</td>
-				<td align="center">El firmware del botón de prueba del Botón DOMINADOR le permite medir el tiempo de 15 segundos para cada equipo. <b> Diseñado para pantalla de caracteres LCD de 16x2 o 20x4 con convertidor I2C, que se comunica en la dirección 0x27</b></td>
+				<td align="left">Shareware.hex</td>
+				<td align="center">El firmware de prueba del proyecto Botón DOMINADOR permite cronometrar 15 segundos para cada equipo, con la capacidad de restablecer el tiempo a cero y volver a cronometrar 15 segundos. <b>Diseñado para una pantalla de caracteres LCD de 16x2 o 20x4 con un convertidor I2C.</b> Este firmware se puede probar directamente en el simulador en línea de Wokwi, que se puede ejecutar en un navegador: <a href="https:// wokwi.com/projects/333897447732413011">https://wokwi.com/projects/333897447732413011</a></td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x27.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Descargar firmware</a></td>
-				</tr>
-				<tr>
-				<td align="left">0x3F.ino.hex</td>
-				<td align="center">El firmware del botón de prueba del Botón DOMINADOR le permite medir el tiempo de 15 segundos para cada equipo. <b> Diseñado para pantalla de caracteres LCD de 16x2 o 20x4 con convertidor I2C, que se comunica en la dirección 0x3F</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x3F.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Descargar firmware</a></td>
 				</tr>
 				</tbody>
 				</table>
