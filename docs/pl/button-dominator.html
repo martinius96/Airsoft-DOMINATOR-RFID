@@ -334,16 +334,13 @@ Przepisywanie wyświetlacza trwa więc do ok. 15 ms, podczas gdy nadpisywana jes
 <hr><center><h2>Program testowy (Shareware) - Przycisk DOMINATOR z kodem maszynowym</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
-<b> Wersja Shareware (.hex) jest dostępna dla projektu DOMINATOR Button. </b> Wersja pozwala zmierzyć maksymalnie 15 sekund gry dla każdej drużyny.
-<b> Celem wersji jest weryfikacja zgodności z Twoim sprzętem. </b> Kody maszynowe oparte na adresie konwertera I2C dla wyświetlacza LCD są dostępne w repozytorium Github.
-Najczęściej używane adresy to 0x27 i 0x3F. Jeśli nie znasz adresu swojego konwertera, skorzystaj z przykładu wbudowanego w Arduino IDE -> I2C Scanner, który zapisze adres do interfejsu UART (monitor szeregowy).
-Kod maszynowy można wgrać do mikrokontrolera Arduino Uno za pomocą oprogramowania AVRDUDE - części Arduino IDE lub za pomocą interfejsu GUI za pośrednictwem <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> - łatwiejszy w użyciu. </p>
-<li> AVRDUDE musi być uruchamiany przez CMD (wiersz poleceń) zainstalowany z Arduino IDE. Znajduje się w C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
-<b> <center> Przykładowe polecenie do wgrania programu do Arduino Uno / Nano (ATmega328P): </center> </b>
-<li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
-<li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> to aplikacja Windows (narzędzie wykonywalne .exe) z prostym interfejsem graficznym </ b> co pozwala wybrać firmware - kod maszynowy (.hex), platformę docelową i może dynamicznie pokazywać port COM, na którym znajduje się urządzenie. </li>
-<li> <b> Po prostu klikając Prześlij, kod maszynowy może zostać załadowany automatycznie </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> używa podobny do narzędzia Arduino IDE AVRDUDE). Okno XLloadera informuje o pomyślnym załadowaniu w postaci listy przesłanych bajtów. </li>
-<b> <font color = "red"> Firmware można pobrać z repozytorium projektu: </font> </b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware"> TUTAJ </a>. Firmware znajduje się w folderze Github repozytorium projektu / firmware / button_dominator / podzielony według adresu konwertera I2C (dowiedziałeś się z wyjścia skanera I2C na interfejsie UART).
+<b>Projekt Przycisk DOMINATOR ma bezpłatną wersję Shareware dostępną w formacie kodu maszynowego (.hex), która jest kompatybilna z AVR ATmega328P (Arduino Uno, Nano, Pro Mini).</b>
+Wersja pozwala zmierzyć maksymalnie 15 sekund gry dla każdej drużyny, a czasy można zresetować za pomocą przycisku Gumka.
+<b>Celem wersji jest weryfikacja zgodności ze sprzętem.</b> Kod maszynowy jest dostępny w repozytorium Github.
+Firmware działa dla najczęściej używanych konwerterów I2C o adresach 0x27 i 0x3F, ale obsługuje również określone adresy zmienione na modułach.
+Kod maszynowy można wgrać do mikrokontrolera Arduino Uno za pomocą oprogramowania AVRDUDE - części Arduino IDE lub za pomocą interfejsu GUI poprzez <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLloader</a> - łatwiejszy w użyciu.</p>
+<li>AVRDUDE musi być uruchamiany przez CMD (wiersz poleceń) jest zainstalowany ze środowiskiem Arduino IDE. Znajduje się w C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<li>XLoader to aplikacja Windows (wykonywalne narzędzie .exe) z prostym interfejsem graficznym</b>, która umożliwia wybór oprogramowania układowego - kod maszynowy (.hex), platformę docelową i może dynamicznie wyświetlać port COM, na którym znajduje się urządzenie zlokalizowany.</li>
 </div>
 				<hr><h4>Dostępne oprogramowanie (Shareware) - Przycisk DOMINATOR</h4><hr>
 				<div class="table-responsive">          
@@ -357,14 +354,9 @@ Kod maszynowy można wgrać do mikrokontrolera Arduino Uno za pomocą oprogramow
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">0x27.ino.hex</td>
-				<td align="center">Wyświetlacz znakowy LCD 16x2 lub 20x4 z <b> konwerterem I2C, który komunikuje się pod adresem 0x27</b></td>
+				<td align="left">Shareware.hex</td>
+				<td align="center">Oprogramowanie testowe projektu Przycisk DOMINATOR pozwala na 15-sekundowy pomiar czasu dla każdego zespołu, z możliwością zresetowania czasu do zera i ponownego 15-sekundowego czasu. <b>Zaprojektowany dla wyświetlacza LCD 16x2 lub 20x4 z konwerterem I2C.</b> To oprogramowanie układowe można przetestować bezpośrednio w symulatorze online Wokwi, który można uruchomić w przeglądarce: <a href="https:// wokwi.com/projects/333897447732413011">https://wokwi.com/projects/333897447732413011</a></td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x27.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Pobierz oprogramowanie</a></td>
-				</tr>
-				<tr>
-				<td align="left">0x3F.ino.hex</td>
-				<td align="center">Wyświetlacz znakowy LCD 16x2 lub 20x4 z <b> konwerterem I2C, który komunikuje się pod adresem 0x3F</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x3F.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Pobierz oprogramowanie</a></td>
 				</tr>
 				</tbody>
 				</table>
