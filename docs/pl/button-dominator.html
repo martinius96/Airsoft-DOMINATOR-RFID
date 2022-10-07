@@ -356,7 +356,7 @@ Kod maszynowy można wgrać do mikrokontrolera Arduino Uno za pomocą oprogramow
 				<tr>
 				<td align="left">Shareware.hex</td>
 				<td align="center">Oprogramowanie testowe projektu Przycisk DOMINATOR pozwala na 15-sekundowy pomiar czasu dla każdego zespołu, z możliwością zresetowania czasu do zera i ponownego 15-sekundowego czasu. <b>Zaprojektowany dla wyświetlacza LCD 16x2 lub 20x4 z konwerterem I2C.</b> To oprogramowanie układowe można przetestować bezpośrednio w symulatorze online Wokwi, który można uruchomić w przeglądarce: <a href="https:// wokwi.com/projects/333897447732413011">https://wokwi.com/projects/333897447732413011</a></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x27.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Pobierz oprogramowanie</a></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/Shareware_BUTTON_DOMINATOR.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Pobierz oprogramowanie</a></td>
 				</tr>
 				</tbody>
 				</table>
@@ -370,75 +370,6 @@ Kod maszynowy można wgrać do mikrokontrolera Arduino Uno za pomocą oprogramow
 </center>	
 <hr><center><h2>Ogólny samouczek wideo dotyczący wgrywania oprogramowania układowego do Arduino przez Xloader</h2></center><hr>
 <center><iframe width="80%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>	
-<div style="background: #F8C471;">
-<hr>				
-<center><h3>Skaner I2C - program do odczytu adresu konwertera I2C dla wyświetlacza LCD</h3></center>				
-<hr>
-<h4>Oczekiwane wyjście skanera I2C:</h4><hr>
-<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<p style="text-align: justify;">
-Biblioteka Wire jest wbudowana w Arduino IDE, nie jest wymagana instalacja.
-Program można skompilować i zweryfikować komunikację poprzez magistralę I2C z wyświetlaczem znakowym LCD.
-Konwerter I2C należy przed wczytaniem programu podłączyć do Arduino do sprzętowych terminali I2C (SCL na A5, SDA na A4), wystarczy nawet bez wyświetlacza.
-Pobrany adres wyświetlacza musi być dostarczony do pomyślnej kompilacji dla Arduino wraz z identyfikatorem UID kart RFID.
-</p>
-<pre style="background: #F8C471;">
-#include &lt;Wire.h>
- 
- 
-void setup()
-{
-  Wire.begin();
- 
-  Serial.begin(9600);
-  while (!Serial);             // Leonardo: wait for serial monitor
-  Serial.println("\nI2C Scanner");
-}
- 
- 
-void loop()
-{
-  byte error, address;
-  int nDevices;
- 
-  Serial.println("Scanning...");
- 
-  nDevices = 0;
-  for(address = 1; address &lt; 127; address++ )
-  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
- 
-    if (error == 0)
-    {
-      Serial.print("I2C device found at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.print(address,HEX);
-      Serial.println("  !");
- 
-      nDevices++;
-    }
-    else if (error==4)
-    {
-      Serial.print("Unknown error at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0)
-    Serial.println("No I2C devices found\n");
-  else
-    Serial.println("done\n");
- 
-  delay(5000);           // wait 5 seconds for next scan
-}
-</pre>
-</div>
 </div>
 </div>
 </div>
