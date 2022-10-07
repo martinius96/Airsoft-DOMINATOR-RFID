@@ -342,16 +342,13 @@ Prepis displeja tak trvá do cca 15 ms, pričom sa prepisuje iba riadok daného 
 <center>
 <img src="https://i.imgur.com/2iG6Ws8.png" alt="Zdrojový kód - tlačidlový Dominator pre Airsoft postavený na platforme Arduino" style="display: block; max-width: 100%; height: auto;" alt="Zdrojový kód - tlačidlový Dominator pre Airsoft postavený na platforme Arduino" title="Zdrojový kód - tlačidlový Dominator pre Airsoft postavený na platforme Arduino">        			
 </center>
-<b>K projektu Tlačidlový DOMINATOR je dostupná Shareware verzia (.hex).</b> Verzia umožňuje merať maximálne 15 sekúnd hry pre každý tím.
-<b>Cieľom verzie je overiť kompatibilitu s vašim hardvérom.</b> V Github repozitári sú dostupné strojové kódy na základe I2C adresy prevodníka pre LCD displej.
-Najpoužívanejšie adresy sú 0x27 a 0x3F. Ak neviete adresu vášho prevodníka využite vstavaný príklad v Arduino IDE --> I2C Scanner, ktorý vám adresu vypíše na UART rozhranie (Sériový monitor).
+<b>K projektu Tlačidlový DOMINATOR je dostupná Shareware verzia zdarma vo formáte strojového kódu (.hex), ktorý je kompatibilný pre AVR ATmega328P (Arduino Uno, Nano, Pro Mini).</b> 
+Verzia umožňuje merať maximálne 15 sekúnd hry pre každý tím, pričom je časy možné resetovať cez Eraser tlačidlo.
+<b>Cieľom verzie je overiť kompatibilitu s vašim hardvérom.</b> V Github repozitári je dostupný strojový kód.
+Firmvér funguje pre najpoužívanejšie I2C adresy prevodníkov 0x27 a 0x3F, ale podporuje aj špecifické adresy pozmenené na moduloch. 
 Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - ľahšie na použitie.</p>
 <li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (ATmega328P):</center></b>
-<li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
-<li><b><a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
-<li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno XLoadera informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
-<b><font color="red">Firmvér je možné stiahnuť z repozitára projektu:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware">TU</a>. Firmvér je v priečinku Github repozitáru projektu /firmware/button_dominator/ rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
+<li>XLoader je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 	
 </div>
 				<hr><h4>Dostupný firmvér (Shareware) - Tlačidlový DOMINATOR</h4><hr>
 				<div class="table-responsive">          
@@ -365,15 +362,11 @@ Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér A
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">0x27.ino.hex</td>
-				<td align="center">Testovací firmvér projektu Tlačidlový Dominator, umožňuje merať čas 15 sekúnd pre každý tím. <b>Určené pre LCD znakový displej rozmeru 16x2, alebo 20x4 s I2C prevodníkom, ktorý komunikuje na adrese 0x27.</b> Tento firmvér môže byť otestovaný priamo v on-line simulátore Wokwi, ktorý je možné spustiť v prehliadači: <a href="https://wokwi.com/projects/333897447732413011">https://wokwi.com/projects/333897447732413011</a></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x27.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Stiahnuť firmvér</a></td>
+				<td align="left">Shareware.hex</td>
+				<td align="center">Testovací firmvér projektu Tlačidlový Dominator, umožňuje merať čas 15 sekúnd pre každý tím, pričom je možné čas vynulovať a znova merať 15 sekúnd. <b>Určené pre LCD znakový displej rozmeru 16x2, alebo 20x4 s I2C prevodníkom.</b> Tento firmvér môže byť otestovaný priamo v on-line simulátore Wokwi, ktorý je možné spustiť v prehliadači: <a href="https://wokwi.com/projects/333897447732413011">https://wokwi.com/projects/333897447732413011</a></td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/Shareware_BUTTON_DOMINATOR.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Stiahnuť firmvér</a></td>
 				</tr>
 				<tr>
-				<td align="left">0x3F.ino.hex</td>
-				<td align="center">Testovací firmvér projektu Tlačidlový Dominator, umožňuje merať čas 15 sekúnd pre každý tím. <b>Určené pre LCD znakový displej rozmeru 16x2, alebo 20x4 s I2C prevodníkom, ktorý komunikuje na adrese 0x3F</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x3F.ino.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Stiahnuť firmvér</a></td>
-				</tr>
 				</tbody>
 				</table>
 				</div>				
@@ -388,72 +381,6 @@ Strojový kód je možné nahrať do mikrokontroléru Arduino Uno cez softvér A
 <center><iframe width="80%" height="315" src="https://www.youtube.com/embed/fAUKYuYNkMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>	
 <div style="background: #F8C471;">
 <hr>				
-<center><h3>I2C Scanner - program pre načítanie adresy I2C prevodníka pre LCD displej</h3></center>				
-<hr>
-<h4>Očakávaný výstup programu I2C Scanner:</h4><hr>
-<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<p style="text-align: justify;">
-Knižnica Wire je vstavaná do Arduino IDE, nie je nutná jej inštalácia.
-Program je možné skompilovať a overiť komunikáciu po I2C zbernici s LCD znakovým displejom. 
-I2C prevodník je vhodné pripojiť k Arduinu na hardvérové I2C vývody (SCL na A5, SDA na A4) ešte pred nahratím programu, stačí aj bez displeja.
-Načítanú adresu displeja je nutné dodať pre úspešný build pre Arduino a jeho cieľovú architektúru.
-</p>
-<pre style="background: #F8C471;">
-#include &lt;Wire.h>
- 
- 
-void setup()
-{
-  Wire.begin();
- 
-  Serial.begin(9600);
-  while (!Serial);             // Leonardo: wait for serial monitor
-  Serial.println("\nI2C Scanner");
-}
- 
- 
-void loop()
-{
-  byte error, address;
-  int nDevices;
- 
-  Serial.println("Scanning...");
- 
-  nDevices = 0;
-  for(address = 1; address &lt; 127; address++ )
-  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
- 
-    if (error == 0)
-    {
-      Serial.print("I2C device found at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.print(address,HEX);
-      Serial.println("  !");
- 
-      nDevices++;
-    }
-    else if (error==4)
-    {
-      Serial.print("Unknown error at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0)
-    Serial.println("No I2C devices found\n");
-  else
-    Serial.println("done\n");
- 
-  delay(5000);           // wait 5 seconds for next scan
-}
-</pre>
 </div>
 </div>
 </div>
