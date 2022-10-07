@@ -332,16 +332,13 @@ table,thead,tbody,tfoot,tr, td,th{
 <hr><center><h2>Тестовая программа (Условно-бесплатная) - Кнопка Секундомер доминирования с машинным кодом</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
-<b> Условно-бесплатная версия (.hex) доступна для проекта Button Секундомер доминирования. </b> Эта версия позволяет измерять максимум 15 секунд игры для каждой команды.
-<b> Цель версии - проверить совместимость с вашим оборудованием. </b> Машинные коды на основе адреса преобразователя I2C для ЖК-дисплея доступны в репозитории Github.
-Наиболее часто используемые адреса - 0x27 и 0x3F. Если вы не знаете адрес вашего конвертера, используйте встроенный пример в Arduino IDE -> I2C Scanner, который запишет адрес в интерфейс UART (Serial monitor).
-Машинный код может быть загружен в микроконтроллер Arduino Uno через программное обеспечение AVRDUDE - часть Arduino IDE или с графическим интерфейсом через <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - проще в использовании. </p>
-<li> AVRDUDE должен запускаться через CMD (командную строку), установленную с Arduino IDE. Находится в C: /Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin </li>
-<b> <center> Пример команды для загрузки программы в Arduino Uno / Nano (ATmega328P): </center> </b>
-<li> <b> avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash: w: sketch.ino.hex: i </b> </li>
-<li> <b> <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - это приложение Windows (исполняемый инструмент .exe) с простым графическим интерфейсом </b>, которое позволяет вам выбирать прошивку - машинный код (.hex), целевую платформу и может динамически отображать COM-порт, на котором находится устройство. </li>
-<li> <b> Если просто щелкнуть «Загрузить», машинный код может быть загружен автоматически </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> использует инструмент AVRDUDE, аналогичный Arduino IDE). Окно XLoader сообщает об успешной загрузке в виде списка загруженных байтов. </li>
-<b> Прошивку можно скачать из репозитория проекта: </b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware">здесь</a>. Прошивка находится в папке / firmware /, разделенной по адресу преобразователя I2C (вы узнали из вывода сканера I2C на интерфейс UART).
+<b>Проект Секундомер доминирования имеет бесплатную условно-бесплатную версию, доступную в формате машинного кода (.hex), которая совместима с AVR ATmega328P (Arduino Uno, Nano, Pro Mini).</b>
+Версия позволяет вам измерять максимум 15 секунд игры для каждой команды, а время можно сбросить с помощью кнопки Eraser.
+<b>Цель версии — проверить совместимость с вашим оборудованием.</b> Машинный код доступен в репозитории Github.
+Прошивка работает для наиболее часто используемых адресов преобразователя I2C 0x27 и 0x3F, но также поддерживает определенные адреса, измененные на модулях.
+Машинный код можно загрузить в микроконтроллер Arduino Uno с помощью программного обеспечения AVRDUDE, являющегося частью среды разработки Arduino, или с помощью интерфейса GUI через <a href="https://www.hobbytronics.co.uk/arduino-xloader">. XLoader</a> — проще в использовании.</p>
+<li>AVRDUDE необходимо запускать через CMD (командную строку), он устанавливается вместе со средой Arduino IDE. Находится в C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
+<li>XLoader — это приложение для Windows (исполняемый инструмент .exe) с простым графическим интерфейсом</b>, которое позволяет выбирать прошивку — машинный код (.hex), целевую платформу и может динамически отображать COM-порт, на котором находится устройство. находится.</li>
 </div>
 				<h4>Доступные прошивки - кнопка Секундомер доминирования</h4>
 				<div class="table-responsive">          
@@ -355,14 +352,9 @@ table,thead,tbody,tfoot,tr, td,th{
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">0x27.ino.hex</td>
-				<td align="center">Символьный ЖК-дисплей размером 16x2 или 20x4 с конвертером <b> I2C, который обменивается данными по адресу 0x27</b></td>
+				<td align="left">Shareware.hex</td>
+				<td align="center">Тестовая прошивка проекта Button Dominator позволяет отсчитывать время по 15 секунд для каждой команды с возможностью обнуления времени и повторного отсчета времени на 15 секунд. <b>Предназначен для символьного ЖК-дисплея 16x2 или 20x4 с преобразователем I2C.</b> Эту прошивку можно протестировать непосредственно в онлайн-симуляторе Wokwi, который можно запустить в браузере: <a href="https:// wokwi.com/projects/333897447732413011">https://wokwi.com/projects/333897447732413011</a></td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x27.ino.hex" class="btn btn-danger" role="button" download>Скачать прошивку</a></td>
-				</tr>
-				<tr>
-				<td align="left">0x3F.ino.hex</td>
-				<td align="center">Символьный ЖК-дисплей размером 16x2 или 20x4 с конвертером <b> I2C, который обменивается данными по адресу 0x3F</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/button_dominator/0x3F.ino.hex" class="btn btn-danger" role="button" download>Скачать прошивку</a></td>
 				</tr>
 				</tbody>
 				</table>
