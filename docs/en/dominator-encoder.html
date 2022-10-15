@@ -360,18 +360,12 @@ The player stops the countdown by holding both buttons for a certain time (based
 <hr><center><h2>Test program (Shareware) - Configurable Domination Timer</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
-<b>Shareware version (.hex) available for Configurable Domination Timer project.</b>The version allows you to measure a maximum of 60 seconds for each team. When this time is reached, the stopwatch stops.
-<b>The goal of the version is to verify compatibility with your hardware.</b> Machine codes based on the I2C address of the converter for the LCD display are available in the Github repository.
-The most used addresses are 0x27 and 0x3F. If you do not know the address of your converter, use the built-in example in Arduino IDE -> I2C Scanner, which will write the address to the UART interface (Serial monitor).
-Machine code can be uploaded to the Arduino Uno microcontroller via the AVRDUDE software - part of the Arduino IDE, or with a GUI interface via the <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - easier to use.</p>
-<li>AVRDUDE must be run via the CMD (command line) installed with the Arduino IDE. Located in C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<b><center>Sample command for uploading a program to Arduino Uno / Nano (ATmega328P):</center></b>
-<li>For firmware with I2C display address 0x27 (example COM port 21 and 115200 baud / s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
-<li>For firmware with I2C display address 0x3F (example COM port 21 and 115200 baud / s):<b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
-<li><b><a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> is a Windows application (executable .exe tool) with a simple graphical interface</b>, which allows the selection of firmware - machine code (.hex), the target platform and can dynamically show the COM port on which the device is located.</li> 
-<li><b>By simply clicking on Upload, the machine code can be uploaded automatically</b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> uses the AVRDUDE tool similar to the Arduino IDE). The XLoader window informs about the successful upload in the form of a list of the number of bytes uploaded.</li>	
-<li><font color="red">If you are using Arduino Nano with OLD Bootloader, you ned to use upload speed 57600 baud/s and not standard value 115200 baud/s!</font></li>
-<b><font color="red">The firmware can be downloaded from the repository:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">HERE</a>. The firmware is in the /firmware/encoder_dominator folder divided  according to the address of the I2C converter (you found out from the I2C scanner output on the UART interface).
+<b>A Shareware version (.hex) is available for the Configurable DOMINATOR project.</b> The version allows measuring a maximum of 1 minute of time for each team. When this time is reached, the stopwatch will stop.
+<b>The purpose of the version is to verify compatibility with your hardware.</b> You must wait 30 seconds before you can start the game. The game is started by pressing the button on the rotary encoder KY-040.
+The shareware version only supports the DOMINATION game mode, it is not possible to try the COUNTDOWN mode or to configure the advanced functions that the full version contains.
+The firmware can be uploaded to the Arduino Uno / Nano via XLoader or AVRDUDE. In the case of Chinese Arduino Nano clones with Old Bootloader, it is necessary to select an upload speed of 57600 baud/s.
+With the standard Bootloader, Arduino supports a firmware upload speed of 115200 baud/s.
+</p>
 </div>
 				<hr><h4>Available firmware - Shareware for Configurable Domination Timer</h4><hr>
 				<div class="table-responsive">          
@@ -386,7 +380,7 @@ Machine code can be uploaded to the Arduino Uno microcontroller via the AVRDUDE 
 				<tbody>
 				<tr>
 				<td align="left">Shareware_CONFIGURABLE_DOMINATOR.hex</td>
-				<td align="center">LCD character display size 16x2 or 20x4 with <b> I2C converter, which communicates at address 0x27.</b></td>
+				<td align="center">Test firmware of the project Configurable Domination Timer, allows to measure the time of 1 minute for each team in DOMINATION mode. To occupy a point with a team, it is necessary to hold the team button for 5 seconds.</td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/encoder_dominator/Shareware_CONFIGURABLE_DOMINATOR.hex" class="btn btn-danger" role="button">Download firmware</a></td>
 				</tr>
 				</tbody>
