@@ -380,86 +380,13 @@ V prípade, že využívate Arduino Nano s OLD Bootloaderom, je nutné projekt n
 				</thead>
 				<tbody>
 				<tr>
-				<td align="left">encoder_0x27.ino.hex</td>
-				<td align="center">Testovací firmvér projektu Konfigurovateľný tlačidlový Dominator, umožňuje merať čas 15 sekúnd pre každý tím. <b>Určené pre LCD znakový displej rozmeru 16x2, alebo 20x4 s I2C prevodníkom, ktorý komunikuje na adrese 0x27</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/encoder_dominator/encoder_0x27.ino.hex" class="btn btn-danger" role="button" download>Stiahnuť firmvér</a></td>
-				<tr>
-				<td align="left">encoder_0x3F.ino.hex</td>
-				<td align="center">Testovací firmvér projektu Konfigurovateľný tlačidlový Dominator, umožňuje merať čas 15 sekúnd pre každý tím. <b>Určené pre LCD znakový displej rozmeru 16x2, alebo 20x4 s I2C prevodníkom, ktorý komunikuje na adrese 0x3F</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/encoder_dominator/encoder_0x3F.ino.hex" class="btn btn-danger" role="button" download>Stiahnuť firmvér</a></td>
+				<td align="left">Shareware_CONFIGURABLE_DOMINATOR.hex</td>
+				<td align="center">Testovací firmvér projektu Konfigurovateľný tlačidlový Dominator, umožňuje merať čas 1 minútu pre každý tím. Pre obsadenie bodu tímom je nutné držať tlačidlo tímu 5 sekúnd.</td>
+				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/encoder_dominator/Shareware_CONFIGURABLE_DOMINATOR.hex" class="btn btn-danger" role="button" download>Stiahnuť firmvér</a></td>
 				</tr>
-				</tbody>
+                                </tbody>
 				</table>
-				</div>			
-<div style="background: #F8C471;">
-<hr>				
-<center><h3>I2C Scanner - program pre načítanie adresy I2C prevodníka pre LCD displej</h3></center>				
-<hr>
-<h4>Očakávaný výstup programu I2C Scanner:</h4><hr>
-<center><img src="https://i.imgur.com/ProXJck.png" style="display: block; max-width: 100%; height: auto;" alt="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4" title="Výpis I2C adresy, na ktorej komunikuje I2C prevodník pre displej 16x2 / 20x4"></center>				
-<p style="text-align: justify;">
-Knižnica Wire je vstavaná do Arduino IDE, nie je nutná jej inštalácia.
-Program je možné skompilovať a overiť komunikáciu po I2C zbernici s LCD znakovým displejom. 
-I2C prevodník je vhodné pripojiť k Arduinu na hardvérové I2C vývody (SCL na A5, SDA na A4) ešte pred nahratím programu, stačí aj bez dispelja.
-Načítanú adresu displeja je nutné dodať pre úspešný build pre Arduino a jeho cieľovú architektúru.
-</p>
-<pre style="background: #F8C471;">
-#include &lt;Wire.h>
- 
- 
-void setup()
-{
-  Wire.begin();
- 
-  Serial.begin(9600);
-  while (!Serial);             // Leonardo: wait for serial monitor
-  Serial.println("\nI2C Scanner");
-}
- 
- 
-void loop()
-{
-  byte error, address;
-  int nDevices;
- 
-  Serial.println("Scanning...");
- 
-  nDevices = 0;
-  for(address = 1; address &lt; 127; address++ )
-  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
- 
-    if (error == 0)
-    {
-      Serial.print("I2C device found at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.print(address,HEX);
-      Serial.println("  !");
- 
-      nDevices++;
-    }
-    else if (error==4)
-    {
-      Serial.print("Unknown error at address 0x");
-      if (address &lt; 16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0)
-    Serial.println("No I2C devices found\n");
-  else
-    Serial.println("done\n");
- 
-  delay(5000);           // wait 5 seconds for next scan
-}
-</pre>
-</div>
+				</div>			<hr>
 
 
 </div>
