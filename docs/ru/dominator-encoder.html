@@ -356,17 +356,12 @@ DOMINATOR - это устройство - секундомер для таких
 <hr><center><h2>Тестовая программа (условно-бесплатная) - Настраиваемый ДОМИНАТОР с машинным кодом</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
-<b>Для проекта Configurable DOMINATOR доступна условно-бесплатная версия (.hex).</b> Версия позволяет отмерить максимум 60 секунд для каждой команды. По достижении этого времени секундомер останавливается.
-<b>Цель версии - проверить совместимость с вашим оборудованием..</b>Машинные коды, основанные на I2C-адресе преобразователя для ЖК-дисплея, доступны в репозитории Github.
-Наиболее часто используемые адреса - 0x27 и 0x3F. Если вы не знаете адрес вашего преобразователя, используйте встроенный пример в Arduino IDE -> I2C Scanner, который запишет адрес в интерфейс UART (Serial monitor).
-Машинный код может быть загружен в микроконтроллер Arduino Uno через программное обеспечение AVRDUDE - часть Arduino IDE или с графическим интерфейсом через <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - проще в использовании.</p>
-<li>AVRDUDE должен запускаться через CMD (командную строку), установленную с Arduino IDE. Находится в C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<b><center>Пример команды для загрузки программы в Arduino Uno / Nano (ATmega328P):</center></b>
-<li>Для прошивки с отображаемым адресом I2C 0x27 (например, COM-порт 21 и 115200 бод / с): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
-<li>Для прошивки с отображаемым адресом I2C 0x3F (например, COM-порт 21 и 115200 бод / с): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
-<li><b><a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - это приложение Windows (исполняемый инструмент .exe) с простым графическим интерфейсом </b>, которое позволяет выбирать прошивку - машинный код (.hex), целевую платформу и может динамически отображать COM-порт, на котором установлено устройство. расположен.</li> 
-<li><b>Простым щелчком на «Загрузить» машинный код может быть загружен автоматически </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> использует инструмент AVRDUDE, аналогичный Arduino IDE). Окно <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> информирует об успешной загрузке в виде списка количества загруженных байтов.</li>	
-<b>Прошивку можно скачать из репозитория:</b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">Здесь</a>. Прошивка разделена по адресу преобразователя I2C (вы узнали по выходу сканера I2C на интерфейс UART).
+<b>Условно-бесплатная версия (.hex) доступна для проекта Настраиваемая кнопка DOMINATOR.</b> Версия позволяет измерять максимум 1 минуту времени для каждой команды. Когда это время будет достигнуто, секундомер остановится.
+<b>Цель версии — проверить совместимость с вашим оборудованием.</b> Вы должны подождать 30 секунд, прежде чем сможете начать игру. Игра запускается нажатием кнопки на поворотном энкодере KY-040.
+Условно-бесплатная версия поддерживает только игровой режим DOMINATION, невозможно попробовать режим COUNTDOWN или настроить расширенные функции, которые содержит полная версия.
+Прошивку можно загрузить в Arduino Uno/Nano через XLoader или AVRDUDE. В случае китайских клонов Arduino Nano со Old Bootloader необходимо выбрать скорость отдачи 57600 бод/с.
+Со стандартным загрузчиком Arduino поддерживает скорость загрузки прошивки 115200 бод/с.
+</p>
 </div>
 				<h4>Доступная прошивка - Настраиваемая кнопка DOMINATOR</h4>
 				<div class="table-responsive">          
@@ -381,7 +376,7 @@ DOMINATOR - это устройство - секундомер для таких
 				<tbody>
 				<tr>
 				<td align="left">Shareware_CONFIGURABLE_DOMINATOR.hex</td>
-				<td align="center">Символьный ЖК-дисплей размером 16x2 или 20x4 с преобразователем <b> I2C, который обменивается данными по адресу 0x27</b></td>
+				<td align="center">Тестовая прошивка проекта Настраиваемая кнопка DOMINATOR, позволяет измерять время 1 минуты для каждой команды в режиме DOMINATION. Чтобы занять точку командой, необходимо удерживать кнопку команды 5 секунд.</td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/encoder_dominator/Shareware_CONFIGURABLE_DOMINATOR.hex" class="btn btn-danger" role="button">Скачать прошивку</a></td>
 				</tr>
 				</tbody>
