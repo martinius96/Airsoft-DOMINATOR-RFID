@@ -338,19 +338,12 @@ Le joueur arrête le compte à rebours en maintenant les deux boutons enfoncés 
 <hr><center><h2>Programme de test (Shareware) - DOMINATOR configurable avec code machine</h2></center><hr>
 <div class="alert alert-info">
 <p style="text-align: justify;">
-<b> Une version Shareware (.hex) est disponible pour le projet DOMINATOR Configurable. </b> La version vous permet de mesurer un maximum de 60 secondes pour chaque équipe. Lorsque ce temps est atteint, le chronomètre s'arrête.
-<b> L'objectif de la version est de vérifier la compatibilité avec votre matériel. </b> Les codes machine basés sur l'adresse du convertisseur I2C pour l'écran LCD sont disponibles dans le référentiel Github.
-Les adresses les plus utilisées sont 0x27 et 0x3F. Si vous ne connaissez pas l'adresse de votre convertisseur, utilisez l'exemple intégré dans Arduino IDE -> I2C Scanner, qui écrira l'adresse sur l'interface UART (Serial Monitor).
-Le code machine peut être téléchargé sur le microcontrôleur Arduino Uno via le logiciel AVRDUDE - partie de l'IDE Arduino, ou avec une interface graphique via <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - plus facile à utiliser.</p>
-<li>AVRDUDE doit être exécuté via le CMD (ligne de commande) installé avec l'IDE Arduino. Situé dans C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<hr>
-<b><center>Exemple de commande pour télécharger un programme sur Arduino Uno / Nano (ATmega328P):</center></b>
-<li>Pour le firmware avec l'adresse d'affichage I2C 0x27 (exemple de port COM 21 et 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x27.ino.hex:i</b></li>
-<li>Pour le firmware avec l'adresse d'affichage I2C 0x3F (exemple de port COM 21 et 115200 baud/s): <b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:encoder_0x3F.ino.hex:i</b></li>
-<li><b><a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> est une application Windows (outil .exe exécutable) avec une interface graphique simple </b>, qui permet de sélectionner le firmware - code machine (.hex), la plate-forme cible et peut afficher dynamiquement le port COM sur lequel se trouve l'appareil.</li> 
-<li> <b> En cliquant simplement sur Télécharger, le code machine peut être téléchargé automatiquement </b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a> utilise similaire à l'outil AVRDUDE d'Arduino IDE). La fenêtre XLoader vous informe de la réussite du téléchargement en indiquant le nombre d'octets téléchargés. </li>
-<b> <font color = "red"> Le firmware peut être téléchargé depuis le référentiel:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/encoder_dominator">ICI</a>. Le firmware se trouve dans le dossier Github du dépôt du projet /firmware/button_dominator/ divisé en fonction de l'adresse du convertisseur I2C (vous l'avez découvert de la sortie du scanner I2C à l'interface UART).
-Si vous utilisez Arduino Nano avec OLD Bootloader, il est nécessaire de télécharger le projet à 57600 bauds/s, car le baudrate 115200 n'est pas pris en charge !
+<b>Une version Shareware (.hex) est disponible pour le projet Bouton-poussoir configurable DOMINATOR.</b> La version permet de mesurer un maximum de 1 minute de temps pour chaque équipe. Lorsque ce temps est atteint, le chronomètre s'arrête.
+<b>Le but de la version est de vérifier la compatibilité avec votre matériel.</b> Vous devez attendre 30 secondes avant de pouvoir démarrer le jeu. Le jeu est lancé en appuyant sur le bouton de l'encodeur rotatif KY-040.
+La version shareware ne supporte que le mode de jeu DOMINATION, il n'est pas possible d'essayer le mode COUNTDOWN ou de configurer les fonctions avancées que contient la version complète.
+Le firmware peut être téléchargé sur l'Arduino Uno / Nano via XLoader ou AVRDUDE. Dans le cas des clones chinois Arduino Nano avec Old Bootloader, il est nécessaire de sélectionner une vitesse de téléchargement de 57600 baud/s.
+Avec le Bootloader standard, Arduino prend en charge une vitesse de téléchargement du firmware de 115200 baud/s.
+</p>
 </div>
 				<hr><h4>Firmware disponible - Bouton-poussoir configurable DOMINATOR</h4><hr>
 				<div class="table-responsive">          
@@ -365,7 +358,7 @@ Si vous utilisez Arduino Nano avec OLD Bootloader, il est nécessaire de téléc
 				<tbody>
 				<tr>
 				<td align="left">Shareware_CONFIGURABLE_DOMINATOR.hex</td>
-				<td align="center">Testez le firmware du projet Configurable Button Dominator, vous permet de mesurer le temps de 15 secondes pour chaque équipe. <b> Conçu pour un affichage de caractères LCD 16x2 ou 20x4 avec convertisseur I2C, qui communique à l'adresse 0x27</b></td>
+				<td align="center">Test du firmware du projet Bouton-poussoir configurable DOMINATOR, permet de mesurer le temps de 1 minute pour chaque équipe en mode DOMINATION. Pour occuper un point avec une équipe, il faut maintenir enfoncé le bouton de l'équipe pendant 5 secondes.</td>
 				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/encoder_dominator/Shareware_CONFIGURABLE_DOMINATOR.hex" class="btn btn-danger" role="button" download>Télécharger le micrologiciel</a></td>
 				</tr>
 				</tbody>
