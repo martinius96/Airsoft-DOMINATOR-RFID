@@ -6,6 +6,7 @@
 /*|Revision: 28. July 2022                          |*/
 /*|-------------------------------------------------|*/
 
+//Wirte an email to me if you want to purchase full version in .hex machine code
 
 //Template for writing RFID codes for RFID DOMINATION TIMER - Google SpreadSheet: https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing
 
