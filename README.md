@@ -56,7 +56,7 @@ The RFID Dominator system is tuned, it can be put into the game immediately. Fir
 * Buzzer
 * Compatible cards, keychains, wristbands with standard ISO/IEC 14443-A (13.56 MHz)
 # Screenshots of RFID DOMINATION TIMER
-![Device RFID DOMINATION TIMER 1.0](https://i.imgur.com/Rd5pgng.jpeg)
+![Device RFID DOMINATION TIMER 1.0](https://i.imgur.com/IC5wMzp.png)
 ![PCB - RFID DOMINATION TIMER 1.0](https://i.imgur.com/hnNxCyW.png)
 ![Schéma zapojenia - RFID DOMINATOR - Arduino - Airsoft](https://i.imgur.com/RoHeR7b.png)
 
