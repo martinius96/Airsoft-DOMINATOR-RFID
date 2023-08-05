@@ -167,23 +167,23 @@ table,thead,tbody,tfoot,tr, td,th{
     Vlastnosti časomier:
     <ul>
       <li>Mikrokontrolér ATmega328P (AVR) s možnosťou použitia na vývojových kitoch Arduino (Uno / Nano / Pro Mini).</li>
-      <li>LCD znakový displej s rozmermi 16x2 alebo 20x4, čipset HD44780, pre zobrazenie aktuálnych časov tímov.</li>
-      <li>Dynamické aktualizácie časov na displeji, pokiaľ je niektorý z tímov aktívny na obsadenom bode.</li>
-      <li>Stopky sú vybavené indikačnými LED diódami v farbách tímov, ktoré signalizujú aktívne tímy na bode a hlásičom, ktorý signalizuje priloženie karty (zmena na bode).</li>
+      <li>LCD znakový displej s rozmermi 16x2 alebo 20x4 pre zobrazenie aktuálnych časov tímov.</li>
+      <li>Dynamický výpis časov v príapde obsadenia bodu tímom.</li>
+      <li>Stopky sú vybavené indikačnými LED diódami vo farbách tímov, ktoré signalizujú aktívny tím na bode a hlásičom, ktorý signalizuje priloženie karty (zmena na bode).</li>
     </ul>
-    Herné tímy:
+    <b></b>Herné tímy:</b>
     <br>
     Do hry sú implementované tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>. Každý tím sa snaží obsadiť bod a udržať ho čo najdlhšie.
     <br>
-    Začiatok hry:
+    <b>Začiatok hry:</b>
     <br>
     Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>.
     <br>
-    Funkcia RFID čipov:
+    <b>Funkcia RFID čipov:<b>
     <br>
     Každý hráč tímu je vybavený RFID čipom, integrovaným v náramku, karte alebo kľúčenke. RFID čip vysiela svoj unikátny identifikátor - UID (unique ID), ktorý je načítaný RFID čítačkou a overený v logike systému priradenia k danému tímu.
     <br>
-    Mechanizmus zaznamenávania času na bode:
+    <b>Mechanizmus obsadenia bodu tímom:</b>
     <ul>
       <li><b><font color="#C0392B">Tím RED</font></b> obsadí bod, keď niektorý z jeho členov priloží svoju kartu k RFID čítačke. Buzzer ohlási zmenu na bode krátkym pípnutím. LED dióda tímu RED sa rozsvieti na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím, kým niektorý z hráčov <font color="#27AE60">tímu GRE</font>, <font color="#F39C12">Rozhodcu</font> alebo <font color="#3498DB">Erasera</font> nepriloží svoju kartu.</li>
       <li><b><font color="#27AE60">Ak bod obsadí hráč tímu GRE</font></b> a priloží kartu k RFID čítačke, buzzer ohlási zmenu krátkym pípnutím a LED dióda tímu GRE sa rozsvieti (LED dióda tímu RED zhasne). Aktuálny čas tímu RED sa zastaví a čas tímu GRE, ktorý bod obsadil, sa začne počítať.</li>
@@ -196,7 +196,7 @@ table,thead,tbody,tfoot,tr, td,th{
   </p>
 <hr>
 <p style="text-align: justify;">
-    <strong><span style="color: #F39C12;">Rozhodca aktivuje časovanie</span></strong>: Keď Rozhodca priloží svoju RFID kartu, bežiaci čas sa okamžite zastaví na aktuálnej hodnote a bod sa stane neutrálnym. LED dióda aktívneho tímu zhasne. Časovanie sa obnoví, ak kartu priloží člen <span style="color: #C0392B;">tímu RED</span> alebo <span style="color: #27AE60;">tímu GRE</span>. Tento typ karty je vhodný pre dočasné zastavenie hry, kontrolu zásahu hráča či zranenia, ale aj pre vyhodnotenie kola hry a respawn tímov pred pokračovaním.
+    <strong><span style="color: #F39C12;">Funkcia karty Rozhodcu</span></strong>: Keď Rozhodca priloží svoju RFID kartu, bežiaci čas sa okamžite zastaví na aktuálnej hodnote a bod sa stane neutrálnym. LED dióda aktívneho tímu zhasne. Časovanie sa obnoví, ak kartu priloží člen <span style="color: #C0392B;">tímu RED</span> alebo <span style="color: #27AE60;">tímu GRE</span>. Tento typ karty je vhodný pre dočasné zastavenie hry, kontrolu zásahu hráča či zranenia, ale aj pre vyhodnotenie kola hry a respawn tímov pred pokračovaním.
     <strong><span style="color: #3498DB;">Funkcia karty Eraser</span></strong>: Ak kartu priloží Eraser, oba časy sa zastavia a vynulujú na počiatočnú hodnotu 00:00:00, ktorá sa zobrazí na displeji. Eraser slúži pre reštart hry a inicializáciu novej hry bez nutnosti power-on cyklu zariadenia.
     RFID čítačka okamžite reaguje na priloženie RFID karty vrátane celej logiky projektu Dominator. Projekt je vhodný pre Airsoft akcie (MilSim, LARP), športové areály a Airsoft tímy, ktoré si môžu zariadenie Dominator zostrojiť s vlastným hardvérom. Firmvér je univerzálny a vychádza zo schémy zapojenia. Výhodou projektu RFID DOMINATOR je, že licencia oprávňuje prevádzkovateľa klonovať firmvér na ľubovoľný počet zariadení. DOMINATOR zariadenia fungujú nezávisle a reagujú na totožné RFID karty. Systém RFID Dominator možno nasadiť do hry okamžite. Nahrávanie firmvéru je rýchle cez grafické rozhranie programu <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> alebo cez nástroj AVRDUDE cez príkazový riadok / PowerShell.
   </p>
