@@ -168,25 +168,6 @@ table,thead,tbody,tfoot,tr, td,th{
 <div class="alert alert-info">
 	<strong>Pri záujme o plnú verziu projektu RFID DOMINATOR kontaktujte autora projektu na:</strong> <h4><font color="red">martinius96@gmail.com</font></h4>	
 </div>
-<!---<div class="alert alert-danger">
-	<strong>Hľadá sa Airsoft areál / športovisko s aktivitou, ktoré má záujem o pilotné mesačné testovanie prototypu RFID DOMINATOR (osadená DPS s hardvérom, 7 RFID kľúčeniek (3x RED, 3x BLU, 1x Rozhodca, 1 RFID karta (Eraser).</strong>
-</div>	--->	
-<span class="label label-default">Arduino</span>
-<span class="label label-primary">LCD</span>
-<span class="label label-success">RFID, NFC</span>
-<span class="label label-info">RC522</span>
-<span class="label label-warning">Stopky</span>
-<span class="label label-danger">Schéma</span>
-<span class="label label-default">Airsoft</span>
-<span class="label label-primary">Paintball</span>
-<span class="label label-success">DOMINATOR</span>
-<hr><center><h1>RFID DOMINATOR 1.0 - stopky pre Airsoft | Paintball</h1></center><hr>
-      <div class="alert alert-info">
-      <strong>Nová verzia projektu RFID DOMINATOR podporuje tieto typy firmvéru RFID čítačky NXP RC522:</strong>
-      <li>Firmware version: 0x12 = counterfeit chip - (neoriginálny NXP čip, náhrada)</li>
-      <li>Firmware version: 0x91 = Version 1.0 - (originálny NXP Semiconductors čip)</li>      
-      <li>Firmware version: 0x92 = Version 2.0 - (originálny NXP Semiconductors čip)</li>
-      </div>
 <hr><h2>Entity v hre RFID DOMINATOR pre Airsoft:</h2><hr>
  <div class="row">
   <div class="col-sm-3"><center><img src="https://i.imgur.com/gZ0cmGO.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID náramok štandardu ISO/IEC 14443-A - Tím RED" title="RFID náramok štandardu ISO/IEC 14443-A - Tím RED"><br><b><font color="#C0392B">Tím RED</font></b></center></div>
@@ -195,38 +176,45 @@ table,thead,tbody,tfoot,tr, td,th{
   <div class="col-sm-3"><center><img src="https://i.imgur.com/KO747G1.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID náramok štandardu ISO/IEC 14443-A - Eraser" title="RFID náramok štandardu ISO/IEC 14443-A - Eraser"><br><b><font color="#3498DB">Eraser</font></b></center></div>
 </div>	
 <hr><h4>Popis projektu RFID DOMINATOR pre Airsoft:</h4><hr>
-<p style="text-align: justify;">
-RFID DOMINATOR je časomiera na spôsob šachových hodín navrhnutá pre 2 tímy (až 4 tímy), ktoré proti sebe hrajú a snažia sa o obsadenie bodu a jeho udržanie po čo najdlhšiu dobu.
-Časomiera je vhodná pre Airsoft / Paintball herný mód DOMINATION, resp. Capture Hill, kde je nutné merať čas obsadenia bodu.
-Pozostávajú z mikrokontroléra ATmega328P (AVR), ktorý môže byť použitý samostatne, alebo osadený na vývojovom kite Arduino (Uno / Nano / Pro Mini).
-Pre vizualizáciu časov sa využíva LCD znakový displej (rozmer 16x2 alebo 20x4, čipset HD44780).
-Časy sú vypísané v dvoch riadkoch pod sebou a sú dynamicky aktualizované v prípade, že je na bode aktívny tím (bod obsadený niektorým tímom).
-Stopky sú vybavené indikačnými LED diódami vo farbách tímov, ktoré signalizujú aktívny tím na bode a hlásičom, ktorý oznamuje priloženie karty (zmena na bode).
-Do hry sú implementované tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>, ktoré proti sebe hrajú a snažia sa o obsadenie bodu a jeho následné udržanie po čo najdlhší čas.				
-Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b>, <b><font color="#27AE60">GRE tím</font></b>.			
-<b>Každý z členov tímu je vybavený RFID čipom, ktorý je integrovaný v náramku (alebo v karte / kľúčenke). 
-RFID čip vysiela svoj jedinečný identifikátor - UID (unique ID), ktorý je načítaný RFID čítačkou a overený v logike systému ku ktorej entite (tímu) patrí.</b>
-Jednotlivé náramky môžu byť farebne odlíšené (červené, zelené podľa tímu a funkcie entity), čo umožňuje ich rýchlejšiu distribúciu hráčom, ale aj ich archiváciu a uskladnenie podľa farieb.
-<b><font color="#C0392B">Tím RED obsadí bod v momente, keď člen tímu RED priloží svoju kartu k RFID čítačke. 
-Táto akcia spustí buzzer, ktorý ohlási zmenu na bode krátkym pípnutím.
-Následne sa rozsvieti LED dióda tímu RED na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím do momentu priloženia karty člena <font color="#27AE60">tímu GRE</font>, <font color="#F39C12">Rozhodcu</font>, alebo <font color="#3498DB">Erasera</font>.</font></b>
-<b><font color="#27AE60">V prípade, že bod obsadí hráč tímu GRE a priloží kartu k RFID čítačke, túto zmenu ohlási buzzer krátkym pípnutím, rozsvieti sa LED dióda tímu GRE <font color="#C0392B">(LED dióda tímu RED zhasne), aktuálny čas tímu RED sa zastaví</font> a počíta sa čas tímu GRE, ktorý bod obsadil.</font></b>
-</p>
+  <p style="text-align: justify;">
+    RFID DOMINATOR je časomiera navrhnutá pre hru DOMINATION, známu aj pod názvom Capture Hill, kde sa 2 až 4 tímy snažia obsadiť a udržať kontrolu nad bodom po čo najdlhšiu dobu. Pre dosiahnutie optimálnej prehľadnosti a prehľadu sme ju vybavili LCD znakovým displejom.
+    <br>
+    Vlastnosti časomier:
+    <ul>
+      <li>Mikrokontrolér ATmega328P (AVR) s možnosťou použitia na vývojových kitoch Arduino (Uno / Nano / Pro Mini).</li>
+      <li>LCD znakový displej s rozmermi 16x2 alebo 20x4, čipset HD44780, pre zobrazenie aktuálnych časov tímov.</li>
+      <li>Dynamické aktualizácie časov na displeji, pokiaľ je niektorý z tímov aktívny na obsadenom bode.</li>
+      <li>Stopky sú vybavené indikačnými LED diódami v farbách tímov, ktoré signalizujú aktívne tímy na bode a hlásičom, ktorý signalizuje priloženie karty (zmena na bode).</li>
+    </ul>
+    Herné tímy:
+    <br>
+    Do hry sú implementované tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>. Každý tím sa snaží obsadiť bod a udržať ho čo najdlhšie.
+    <br>
+    Začiatok hry:
+    <br>
+    Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>.
+    <br>
+    Funkcia RFID čipov:
+    <br>
+    Každý hráč tímu je vybavený RFID čipom, integrovaným v náramku, karte alebo kľúčenke. RFID čip vysiela svoj unikátny identifikátor - UID (unique ID), ktorý je načítaný RFID čítačkou a overený v logike systému priradenia k danému tímu.
+    <br>
+    Mechanizmus zaznamenávania času na bode:
+    <ul>
+      <li><b><font color="#C0392B">Tím RED</font></b> obsadí bod, keď niektorý z jeho členov priloží svoju kartu k RFID čítačke. Buzzer ohlási zmenu na bode krátkym pípnutím. LED dióda tímu RED sa rozsvieti na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím, kým niektorý z hráčov <font color="#27AE60">tímu GRE</font>, <font color="#F39C12">Rozhodcu</font> alebo <font color="#3498DB">Erasera</font> nepriloží svoju kartu.</li>
+      <li><b><font color="#27AE60">Ak bod obsadí hráč tímu GRE</font></b> a priloží kartu k RFID čítačke, buzzer ohlási zmenu krátkym pípnutím a LED dióda tímu GRE sa rozsvieti (LED dióda tímu RED zhasne). Aktuálny čas tímu RED sa zastaví a čas tímu GRE, ktorý bod obsadil, sa začne počítať.</li>
+    </ul>
+    Distribúcia a identifikácia tímov:
+    <br>
+    Jednotlivé náramky môžu byť farebne odlíšené, červené pre <b><font color="#C0392B">RED tím</font></b> a zelené pre <b><font color="#27AE60">GRE tím</font></b>. Táto farebná identifikácia umožňuje rýchlejšiu distribúciu náramkov hráčom a ich jednoduchú archiváciu podľa farieb.
+    <br>
+    Táto časomiera RFID DOMINATOR je ideálnym spoločníkom pre herný mód DOMINATION v Airsofte alebo Paintballe, kde prinesie do hry nový stupeň zábavy a konkurencie.
+  </p>
 <hr>
 <p style="text-align: justify;">
-<b><font color="#F39C12">Ak svoju RFID kartu priloží Rozhodca, bežiaci čas sa zastaví na aktuálnej hodnote. Bod sa stáva neutrálnym, LED dióda aktívneho tímu zhasne. 
-Zastavenie času trvá do momentu, kým priloží svoju kartu člen <font color="#C0392B">tímu RED</font>, alebo <font color="#27AE60">tímu GRE</font>.
-Tento typ karty je tak vhodný pre dočasné zastavenie prebiehajúcej hry, kontrolu zásahu hráča, či zranenia. 
-Zároveň môže byť karta použitá pri ukončení kola hry, pre vyhodnotenie kola, respawn tímov pred pokračovaním.</font></b>
-<b><font color="#3498DB">Ak kartu priloží Eraser, oba časy sa zastavia a zároveň sa vynulujú na počiatočnú hodnotu 00 hodín, 00 minút, 00 sekúnd, ktorá sa vypíše na displej.
-Karta Eraser slúži pre reštart hry, inicializáciu novej hry bez nutnosti power-on cyklu zariadenia.</font></b>
-RFID čítačka reaguje na priloženie RFID karty okamžite vrátane celej logiky projektu Dominator.
-Projekt je vhodný pre Airsoft akcie (MilSim, LARP), športové areály, čí Airsoft tímy, ktoré si môžu zariadenie Dominator zostrojiť s vlastným hardvérom. 
-Firmvér je univerzálny, ktorý vychádza zo schémy zapojenia, možno využiť aj dostupný DPS návrh pre výrobu dosky plošných spojov.
-<b>Výhodou projektu RFID DOMINATOR je, že licencia používania oprávňuje prevádzkovateľa klonovať firmvér na ľubovoľný počet RFID DOMINATOR zariadení. 
-DOMINATOR zariadenia fungujú nezávisle na sebe a reagujú na totožné RFID karty. 
-Systém RFID Dominator je možné nasadiť do hry okamžite. Nahrávanie firmvéru trvá do 10 sekúnd cez grafické rozhranie programu <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a>, alebo cez nástroj AVRDUDE, ktorý je možné spustiť cez príkazový riadok / PowerShell.</b>
-</p>
+    <strong><span style="color: #F39C12;">Rozhodca aktivuje časovanie</span></strong>: Keď Rozhodca priloží svoju RFID kartu, bežiaci čas sa okamžite zastaví na aktuálnej hodnote a bod sa stane neutrálnym. LED dióda aktívneho tímu zhasne. Časovanie sa obnoví, ak kartu priloží člen <span style="color: #C0392B;">tímu RED</span> alebo <span style="color: #27AE60;">tímu GRE</span>. Tento typ karty je vhodný pre dočasné zastavenie hry, kontrolu zásahu hráča či zranenia, ale aj pre vyhodnotenie kola hry a respawn tímov pred pokračovaním.
+    <strong><span style="color: #3498DB;">Funkcia karty Eraser</span></strong>: Ak kartu priloží Eraser, oba časy sa zastavia a vynulujú na počiatočnú hodnotu 00:00:00, ktorá sa zobrazí na displeji. Eraser slúži pre reštart hry a inicializáciu novej hry bez nutnosti power-on cyklu zariadenia.
+    RFID čítačka okamžite reaguje na priloženie RFID karty vrátane celej logiky projektu Dominator. Projekt je vhodný pre Airsoft akcie (MilSim, LARP), športové areály a Airsoft tímy, ktoré si môžu zariadenie Dominator zostrojiť s vlastným hardvérom. Firmvér je univerzálny a vychádza zo schémy zapojenia. Výhodou projektu RFID DOMINATOR je, že licencia oprávňuje prevádzkovateľa klonovať firmvér na ľubovoľný počet zariadení. DOMINATOR zariadenia fungujú nezávisle a reagujú na totožné RFID karty. Systém RFID Dominator možno nasadiť do hry okamžite. Nahrávanie firmvéru je rýchle cez grafické rozhranie programu <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> alebo cez nástroj AVRDUDE cez príkazový riadok / PowerShell.
+  </p>
 <hr><h4>Výpis časov na LCD znakovom displeji 20x4:</h4><hr>
 <center><img src="https://i.imgur.com/xqqKdEF.png" alt="LCD character display 20x4 - Arduino Domination Timer - DOMINATOR" style="display: block; max-width: 100%; height: auto;" title="LCD character display 20x4 - Arduino Domination Timer - DOMINATOR"></center>
 <hr><h4>Kompatibilný riadiaci hardvér pre RFID DOMINATOR:</h4><hr>
@@ -247,17 +235,17 @@ Systém RFID Dominator je možné nasadiť do hry okamžite. Nahrávanie firmvé
 <center><img src="https://i.imgur.com/IC5wMzp.png" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>   
 <hr><h4>Princíp funkčnosti projetku RFID DOMINATOR po hardvérovej stránke:</h4><hr>
 <p style="text-align: justify;">
-RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip ATmega328P) po SPI zbernici s hodinovým signálom (SCLK) 4 MHz.
-Čítačka NXP RC522 reaguje na RFID čip vo vzdialenosti približne 3 cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB (48 dB je použité vo finálnej aplikácii pre DOMINATOR).
-<b>Načítava UID (identifikátor) RFID čipov v dosahu, preposiela tento identifikátor Arduinu. 
-Arduino načítanú adresu karty porovná v multipodmienke, spustí pípnutie buzzra, aplikuje digitálne stavy na LED diódy</b>. 
-Logika systému sa nezávisle na priložení karty vykonáva každých 1000 ms - 1 Hz rutina (časované cez funkciu millis(), t.j. cez Timer 0). 
-V tejto rutine sa vykonáva kontrola aktívneho tímu s následným pripočítaním času. 
-Čas je dynamicky vykreslený na LCD znakovom displeji 20x4, alebo 16x2.
-Displej komunikuje s Arduinom po I2C zbernici s hodinovým signálom (SCL) 100 kHz - Standard Speed. 
-Prepis displeja tak trvá do cca 15 ms, pričom sa prepisuje iba riadok daného tímu, ktorý je na bode aktívny.
-<b>Pri vážnom záujme možno vytvoriť firmvér v strojovom kóde pre ATmega328P, alebo iný mikrokontróler na mieru aj pre iné typy RFID čítačiek: RDM6300, PN532, Wiegand W26, zvýšenie hodinového signálu I2C zbernice až na 400 kHz (Fast Speed).
-Možné rozšírenie firmvéru pre hru DOMINATOR na 3 alebo 4 tímy (na základe dohody).</b>
+    RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip ATmega328P) cez SPI zbernicu s hodinovým signálom (SCLK) 4 MHz.
+    Čítačka NXP RC522 reaguje na RFID čip vo vzdialenosti približne 3 cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB (48 dB je použité vo finálnej aplikácii pre DOMINATOR).
+    <b>Číta UID (identifikátor) RFID čipov v dosahu a preposiela tento identifikátor Arduinu. 
+    Arduino porovná načítanú adresu karty v multipodmienke, spustí pípnutie buzzra a nastaví digitálne stavy LED diód</b>. 
+    Logika systému funguje nezávisle na priložení karty a vykonáva sa každých 1000 ms - 1 Hz rutina (časovaná pomocou funkcie millis(), t.j. cez Timer 0). 
+    V tejto rutine sa kontroluje aktívny tím a prislúchajúci čas sa pripočíta. 
+    Čas je dynamicky vykreslený na LCD znakovom displeji 20x4 alebo 16x2.
+    Displej komunikuje s Arduinom cez I2C zbernicu s hodinovým signálom (SCL) 100 kHz - Standard Speed. 
+    Prepis displeja trvá cca 15 ms a prepisuje sa iba riadok daného tímu, ktorý je na bode aktívny.
+    <b>Pri vážnom záujme možno vytvoriť firmvér v strojovom kóde pre ATmega328P alebo iný mikrokontróler aj pre iné typy RFID čítačiek: RDM6300, PN532, Wiegand W26 a zvýšenie hodinového signálu I2C zbernice až na 400 kHz (Fast Speed).
+    Možné rozšírenie firmvéru pre hru DOMINATOR na 3 alebo 4 tímy.</b>
 </p>
 <center>
 	<img src="https://i.imgur.com/cliiDyX.png" alt="RFID Dominator - hra pre 4 tímy" style="display: block; max-width: 100%; height: auto;" title="RFID Dominator - hra pre 4 tímy">
