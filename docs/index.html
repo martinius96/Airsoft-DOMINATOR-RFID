@@ -1,541 +1,261 @@
 <!DOCTYPE html>
-<html lang="sk-SK">
-<head>
-	<!-- Primary Meta Tags -->
-	<title>RFID DOMINATOR 1.0 - časomiera pre Airsoft / Paintball</title>
-	<meta name="title" content="RFID DOMINATOR 1.0 - časomiera pre Airsoft / Paintball">
-	<meta name="description" content="Objavte pokročilý systém Airsoft DOMINATOR RFID, ktorý zlepšuje váš herný zážitok. Získajte lepšiu kontrolu, sledovanie v reálnom čase a strategické výhody na bojisku. Preskúmajte výhody technológie RFID pre nadšencov airsoftu.">
-	<meta name="keywords" content="dominator, arduino, rfid, systém, stopky, časomiera, airsoft, paintball, vybavenie, zážitok, hra">	
-	<meta name="robots" content="index, follow">
-	<link rel="icon" type="image/png" href="https://martinius96.github.io/termostat-ethernet/favicon.png">
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />	
-	<meta name="google-site-verification" content="UwZZh2EXv3iWUAi_1Z0hLxVCz6ySJ4UdY_BPoLtejwo" />    	
-	<meta property='fb:admins' content='100001242570317'>
-    	<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-    		window.smartlook||(function(d) {
-    			var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-    			var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
-    			c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
-    		})(document);
-    		smartlook('init', 'db50efe9fff280a17db52b82be221240cbbd3dbe');
-	</script>    
- <style>
-.aa_h2{
-  font:100 5rem/1 Roboto;
-  text-transform: uppercase;
-}
-table{
-   background: #fff;
-}
-table,thead,tbody,tfoot,tr, td,th{
-  text-align: center;
-  margin: auto;
-  border:1px solid #dedede;
-  padding: 1rem;
-  width: 50%;
-}
-.table    { display: table; width: 100%; }
-.tr       { display: table-row;  }
-.thead    { display: table-header-group }
-.tbody    { display: table-row-group }
-.tfoot    { display: table-footer-group }
-.col      { display: table-column }
-.colgroup { display: table-column-group }
-.td, .th   { display: table-cell; width: 50%; }
-.caption  { display: table-caption }
-
-.table,
-.thead,
-.tbody,
-.tfoot,
-.tr,
-.td,
-.th{
-  text-align: center;
-  margin: auto;
-  padding: 1rem;
-}
-.table{
-  background: #fff;
-  margin: auto;
-  border:none;
-  padding: 0;
-}
-
-.th{
-  font-weight: 700;
-  border:1px solid #dedede;
-  &:nth-child(odd){
-    border-right:none;
-  }
-}
-.td{
-  font-weight: 300;
-  border:1px solid #dedede;
-  border-top:none;
-  &:nth-child(odd){
-    border-right:none;
-  }
-}
-
-.aa_htmlTable{
-  background: tomato;
-  padding: 5rem;
-  display: table;
-  width: 100%;
-  height: 100vh;
-  vertical-align: middle;
-}
-.aa_css{
-  background: skyblue;
-  padding: 5rem;
-  display: table;
-  width: 100%;
-  height: 100vh;
-  vertical-align: middle;
-}
-
-.aa_ahmadawais{
-  display: table;
-  width: 100%;
-  font: 100 1.2rem/2 Roboto;
-  margin: 5rem auto;
-}
-   footer {   
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
-   background:#DC7633;
-   -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-} 
-	 h1 {
-		font-size: 1.5em;
-	}
-	 h2 {
-		font-size: 1.17em;
-	}
-  </style>
-</head>
-<body>
-	<div class="container">
-		<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      	<li class="active"><a href="index.html">RFID DOMINATOR 1.0</a></li>
-<li class=""><a href="dominator2.html">RFID DOMINATOR 2.0</a></li>
-<a href="de/index.html"><img src="https://futbalovysen.sk/wp-content/uploads/germany.png" alt="Germany.png, 2,2kB" title="Germany" height="32" width="32"></a>
-<a href="ru/index.html"><img src="https://futbalovysen.sk/wp-content/uploads/russia.png" alt="russia.png, 2,2kB" title="Russia" height="32" width="32"></a>	
-<a href="en/index.html"><img src="https://i2.wp.com/facsusa.com/wp-content/uploads/2017/05/Flag-of-England.png?ssl=1" alt="English.png, 2,2kB" title="English" height="32" width="32"></a>
-<a href="pl/index.html"><img src="https://i.imgur.com/OteBe4t.png" alt="poland.png, 2,2kB" title="Poland" height="32" width="32"></a>
-<a href="fr/index.html"><img src="https://i.imgur.com/vX7NaZ7.png" alt="French.png, 2,2kB" title="French" height="32" width="32"></a>
-<a href="es/index.html"><img src="https://i.imgur.com/BU7UFQg.png" alt="Spanish.png, 2,2kB" title="Spanish" height="32" width="32"></a>
-<!---
-<a href="it/index.html"><img src="https://www.flaticon.com/premium-icon/icons/svg/3015/3015784.svg" alt="Italy.png, 2,2kB" title="Italy" height="32" width="32"></a>
-<a href="da/index.html"><img src="https://image.flaticon.com/icons/svg/555/555607.svg" alt="Danish.png, 2,2kB" title="Danish" height="32" width="32"></a>
---->	
-  </ul>		    
- </div>
-</nav>  
-<div class="row">
-    			<div class="col-sm-12">
-<div class="alert alert-success">
-	<strong>Repozitár projektu - Firmvér Shareware pre RFID Dominator: </strong><a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware/rfid_dominator">Airsoft Domination Timer firmware</a>
-</div>	
-<div class="alert alert-info">
-	<strong>Pri záujme o plnú verziu projektu RFID DOMINATOR kontaktujte autora projektu na:</strong> <h4><font color="red">martinius96@gmail.com</font></h4>	
-</div>
-<hr><h2>Entity v hre RFID DOMINATOR pre Airsoft:</h2><hr>
- <div class="row">
-  <div class="col-sm-3"><center><img src="https://i.imgur.com/gZ0cmGO.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID náramok štandardu ISO/IEC 14443-A - Tím RED" title="RFID náramok štandardu ISO/IEC 14443-A - Tím RED"><br><b><font color="#C0392B">Tím RED</font></b></center></div>
-  <div class="col-sm-3"><center><img src="https://i.imgur.com/QypvsJO.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID náramok štandardu ISO/IEC 14443-A - Tím GRE" title="RFID náramok štandardu ISO/IEC 14443-A - Tím GRE"><br><b><font color="#27AE60">Tím GRE</font></b></center></div>
-  <div class="col-sm-3"><center><img src="https://i.imgur.com/i3HbebG.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID náramok štandardu ISO/IEC 14443-A - Rozhodca" title="RFID náramok štandardu ISO/IEC 14443-A - Rozhodca"><br><b><font color="#F39C12">Rozhodca</font></b></center></div>
-  <div class="col-sm-3"><center><img src="https://i.imgur.com/KO747G1.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID náramok štandardu ISO/IEC 14443-A - Eraser" title="RFID náramok štandardu ISO/IEC 14443-A - Eraser"><br><b><font color="#3498DB">Eraser</font></b></center></div>
-</div>	
-<hr><h4>Popis projektu RFID DOMINATOR pre Airsoft:</h4><hr>
-  <p style="text-align: justify;">
-    RFID DOMINATOR (Domination Timer) je časomiera navrhnutá pre hru DOMINATION, známu aj pod názvom Capture Hill, kde sa 2 až 4 tímy snažia obsadiť bod a udržaťho po čo najdlhšiu dobu.
-    <br>
-    <b>Vlastnosti stopiek:</b>
-    <ul>
-      <li>Vybavené mikrokontrolérom ATmega328P (AVR) s možnosťou použitia na vývojových kitoch Arduino (Uno / Nano / Pro Mini).</li>
-      <li>LCD znakový displej s rozmermi 16x2 alebo 20x4 pre zobrazenie aktuálnych časov tímov.</li>
-      <li>Dynamický výpis časov v prípade obsadenia bodu tímom.</li>
-      <li>Stopky sú vybavené indikačnými LED diódami vo farbách tímov, ktoré signalizujú aktívny tím na bode a hlásičom, ktorý signalizuje priloženie karty (zmena na bode).</li>
-    </ul>
-    <b></b>Herné tímy:</b>
-    <br>
-    Do hry sú implementované tímy - <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>. Každý tím sa snaží obsadiť bod a udržať ho čo najdlhšie.
-    <br>
-    <b>Začiatok hry:</b>
-    <br>
-    Na začiatku hry sú na displeji vypísané časy 00 hodín, 00 minút, 00 sekúnd pre <b><font color="#C0392B">RED tím</font></b> a <b><font color="#27AE60">GRE tím</font></b>.
-    <br>
-    <b>Funkcia RFID čipov:</b>
-    <br>
-    Každý hráč tímu je vybavený RFID čipom, integrovaným v náramku, karte alebo kľúčenke. RFID čip vysiela svoj unikátny identifikátor - UID (unique ID), ktorý je načítaný RFID čítačkou a overený v logike systému priradenia k danému tímu.
-    <br>
-    <b>Mechanizmus obsadenia bodu tímom:</b>
-    <ul>
-      <li><b><font color="#C0392B">Tím RED</font></b> obsadí bod, keď niektorý z jeho členov priloží svoju kartu k RFID čítačke. Buzzer ohlási zmenu na bode krátkym pípnutím. LED dióda tímu RED sa rozsvieti na tomto stanovišti a na displeji sa začne pripočítavať čas pre tento tím, kým niektorý z hráčov <font color="#27AE60">tímu GRE</font>, <font color="#F39C12">Rozhodcu</font> alebo <font color="#3498DB">Erasera</font> nepriloží svoju kartu.</li>
-      <li><b><font color="#27AE60">Ak bod obsadí hráč tímu GRE</font></b> a priloží kartu k RFID čítačke, buzzer ohlási zmenu krátkym pípnutím a LED dióda tímu GRE sa rozsvieti (LED dióda tímu RED zhasne). Aktuálny čas tímu RED sa zastaví a čas tímu GRE, ktorý bod obsadil, sa začne počítať.</li>
-    </ul>
-    Distribúcia kariet a identifikácia tímov:
-    <br>
-    Jednotlivé náramky (karty i kľúčenky) môžu byť farebne odlíšené, napr. červené pre <b><font color="#C0392B">RED tím</font></b> a zelené pre <b><font color="#27AE60">GRE tím</font></b>. Táto farebná identifikácia umožňuje rýchlejšiu distribúciu náramkov hráčom a ich jednoduchú archiváciu podľa farieb.
-    <br>
-    Táto časomiera RFID DOMINATOR je ideálnym spoločníkom pre herný mód DOMINATION v Airsofte alebo Paintballe, kde prinesie do hry nový stupeň zábavy a konkurencie.
-  </p>
-<hr>
-<p style="text-align: justify;">
-    <strong><span style="color: #F39C12;">Funkcia karty Rozhodcu</span></strong>: Keď Rozhodca priloží svoju RFID kartu, bežiaci čas sa okamžite zastaví na aktuálnej hodnote a bod sa stane neutrálnym. LED dióda aktívneho tímu zhasne. Časovanie sa obnoví, ak kartu priloží člen <span style="color: #C0392B;">tímu RED</span> alebo <span style="color: #27AE60;">tímu GRE</span>. Tento typ karty je vhodný pre dočasné zastavenie hry, kontrolu zásahu hráča či zranenia, ale aj pre vyhodnotenie kola hry a respawn tímov pred pokračovaním.
-    <strong><span style="color: #3498DB;">Funkcia karty Eraser</span></strong>: Ak kartu priloží Eraser, oba časy sa zastavia a vynulujú na počiatočnú hodnotu 00:00:00, ktorá sa zobrazí na displeji. Eraser slúži pre reštart hry a inicializáciu novej hry bez nutnosti power-on cyklu zariadenia.
-    RFID čítačka okamžite reaguje na priloženie RFID karty vrátane celej logiky projektu Dominator. Projekt je vhodný pre Airsoft akcie (MilSim, LARP), športové areály a Airsoft tímy, ktoré si môžu zariadenie Dominator zostrojiť s vlastným hardvérom. Firmvér je univerzálny a vychádza zo schémy zapojenia. Výhodou projektu RFID DOMINATOR je, že licencia oprávňuje prevádzkovateľa klonovať firmvér na ľubovoľný počet zariadení. DOMINATOR zariadenia fungujú nezávisle a reagujú na totožné RFID karty. Systém RFID Dominator možno nasadiť do hry okamžite. Nahrávanie firmvéru je rýchle cez grafické rozhranie programu <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> alebo cez nástroj AVRDUDE cez príkazový riadok / PowerShell.
-  </p>
-<hr><h4>Výpis časov na LCD znakovom displeji 20x4:</h4><hr>
-<center><img src="https://i.imgur.com/xqqKdEF.png" alt="LCD character display 20x4 - Arduino Domination Timer - DOMINATOR" style="display: block; max-width: 100%; height: auto;" title="LCD character display 20x4 - Arduino Domination Timer - DOMINATOR"></center>
-<hr><h4>Kompatibilný riadiaci hardvér pre RFID DOMINATOR:</h4><hr>
-<div class="row">
-<div class="col-sm-3"><center><img src="https://i.imgur.com/wtnzKqO.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler Arduino UNO" title="Riadiaci mikrokontróler Arduino UNO"><br><b>Arduino UNO</b><br><a href="https://techfun.sk/produkt/arduino-uno-r3-precizny-klon/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/XHC8DBe.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler Arduino Nano" title="Riadiaci mikrokontróler Arduino Nano"><br><b>Arduino Nano</b><br><a href="https://techfun.sk/produkt/arduino-nano-precizny-klon/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/4xX0BoE.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler ATmega328P DIP" title="Riadiaci mikrokontróler ATmega328P DIP"><br><b>ATmega328P - DIP28</b><br><a href="https://techfun.sk/produkt/atmega328p-pu/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
-<div class="col-sm-3"><center><img src="https://i.imgur.com/FANTMuW.png" width="128px" height="128px" style="border-radius: 50%;" alt="Riadiaci mikrokontróler ATmega328P SMD" title="Riadiaci mikrokontróler ATmega328P SMD"><br><b>ATmega328P - SMD</b><br><a href="https://techfun.sk/produkt/atmega328p-au-samostatny-cip/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
-</div>	
-<hr><h4>Kompatibilné periférie pre RFID DOMINATOR:</h4><hr>
-<div class="row">
-<div class="col-sm-2"><center><img src="https://i.imgur.com/KLImexp.png" width="128px" height="128px" style="border-radius: 50%;" alt="LCD znakový displej 16x2 / 20x4" title="LCD znakový displej 16x2 / 20x4"><br><b>LCD I2C displej 16x2 / 20x4</b><br><a href="https://techfun.sk/produkt/led-display-20x4-modre-podsvietenie-spajkovany-i2c-modul/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
-<div class="col-sm-2"><center><img src="https://i.imgur.com/PrVMhWG.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID čítačka NXP RC522" title="RFID čítačka NXP RC522"><br><b>RFID čítačka NXP RC522 (13,56 MHz)</b><br><a href="https://techfun.sk/produkt/citacka-rfid-rc522-klucenka-a-karta/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
-<div class="col-sm-4"><center><img src="https://i.imgur.com/gNZhqxF.png" width="128px" height="128px" style="border-radius: 50%;" alt="RFID čipy štandardu ISO/IEC 14443-A" title="RFID čipy štandardu ISO/IEC 14443-A"><br><b>RFID čipy štandardu ISO/IEC 14443-A</b><br><a href="https://techfun.sk/produkt/rfid-klucenka-a-karta/" class="btn btn-primary" role="button">Kúpiť Techfun.sk</a></center></div>
-<div class="col-sm-2"><center><img src="https://i.imgur.com/HPRdfXo.png" width="128px" height="128px" style="border-radius: 50%;" alt="Hlásič (buzzer)" title="Hlásič (buzzer)"><br><b>Hlásič</b><br><a href="https://techfun.sk/produkt/pasivny-buzzer-samostatne/" class="btn btn-primary" role="button"role="button">Kúpiť Techfun.sk</a></center></div>
-<div class="col-sm-2"><center><img src="https://i.imgur.com/Tz3cwNZ.png" width="128px" height="128px" style="border-radius: 50%;" alt="2x LED diódy" title="2x LED diódy"><br><b>2x LED diódy</b><br><a href="https://techfun.sk/produkt/led-ka-1-kus-3mm-rozne-farby/" class="btn btn-primary" role="button">Kúpiť Techfun.skk</a></center></div>
-</div>
-<center><img src="https://i.imgur.com/IC5wMzp.png" style="display: block; max-width: 100%; height: auto;" alt="RFID DOMINATOR - DOMINATION TIMER" title="RFID DOMINATOR - DOMINATION TIMER"></center>   
-<hr><h4>Princíp funkčnosti projetku RFID DOMINATOR po hardvérovej stránke:</h4><hr>
-<p style="text-align: justify;">
-    RFID čítačka NXP RC522 komunikuje s mikrokontrolérom (Arduino / samostatný čip ATmega328P) cez SPI zbernicu s hodinovým signálom (SCLK) 4 MHz.
-    Čítačka NXP RC522 reaguje na RFID čip vo vzdialenosti približne 3 cm od antény, pričom má konfigurovateľný zisk antény v rozsahu 18 až 48 dB (48 dB je použité vo finálnej aplikácii pre DOMINATOR).
-    <b>Číta UID (identifikátor) RFID čipov v dosahu a preposiela tento identifikátor Arduinu. 
-    Arduino porovná načítanú adresu karty v multipodmienke, spustí pípnutie buzzra a nastaví digitálne stavy LED diód</b>. 
-    Logika systému funguje nezávisle na priložení karty a vykonáva sa každých 1000 ms - 1 Hz rutina (časovaná pomocou funkcie millis(), t.j. cez Timer 0). 
-    V tejto rutine sa kontroluje aktívny tím a prislúchajúci čas sa pripočíta. 
-    Čas je dynamicky vykreslený na LCD znakovom displeji 20x4 alebo 16x2.
-    Displej komunikuje s Arduinom cez I2C zbernicu s hodinovým signálom (SCL) 100 kHz - Standard Speed. 
-    Prepis displeja trvá cca 15 ms a prepisuje sa iba riadok daného tímu, ktorý je na bode aktívny.
-    <b>Pri vážnom záujme možno vytvoriť firmvér v strojovom kóde pre ATmega328P alebo iný mikrokontróler aj pre iné typy RFID čítačiek: RDM6300, PN532, Wiegand W26 a zvýšenie hodinového signálu I2C zbernice až na 400 kHz (Fast Speed).
-    Možné rozšírenie firmvéru pre hru DOMINATOR na 3 alebo 4 tímy.</b>
-</p>
-<center>
-	<img src="https://i.imgur.com/cliiDyX.png" alt="RFID Dominator - hra pre 4 tímy" style="display: block; max-width: 100%; height: auto;" title="RFID Dominator - hra pre 4 tímy">
-</center>
-<div class="alert alert-success">
-      <strong>Maximálny rozsah času, ktorý môže byť vypísaný na displej: </strong>99 hodín, 59 minút a 59 sekúnd. - pri pretečení sa budú pozície času prepisovať nesprávne.
-      </div>
-      <div class="alert alert-info">
-      <strong>Spotreba: cca 50 mAh pri 5V napájaní. </strong>Vhodné napájať cez powerbanku, nabíjačku od telefónu s USB výstupom.
-      </div>
-      <hr><h4>Určenie projektu RFID DOMINATOR:</h4><hr>
-      <p style="text-align: justify;">
-      Projekt RFID DOMINATOR je z hľadiska jeho univerzálnosti vhodný pre implementáciu do Airsoft / Paintball hromadných akcií a s možnosťou klonovania firmvéru je tak možné do herného poľa osadiť X DOMINATOR bodov s identickým firmvérom, o ktoré môžu hráči hrať s rovnakými RFID kartami.
-      Klonované DOMINATOR body fungujú nezávisle na sebe.
-      DOMINATOR sa hodí aj pre tímy, športové areály a ihriská ktoré tak môžu týmto zariadením rozšíriť ponúkané služby a herné módy pre rôzny počet hráčov.
-      Ak sú RFID karty, náramky, respektíve kľúčenky farebne odlíšené, je veľmi ľahké a univerzálne ich distribuovať hráčom na základe ich tímu a taktiež aj ich skladovanie.
-      <b>Samotný RFID čip je chránený v plastovom puzdre, nevadí mu blato, špina, voda, mráz, je plne bezúdržbový.</b>
-      Čip nemá batériu - je pasívny. Nabije ho RFID čítačka elektrickým poľom a umožní mu vyslať UID - identifikátor ak je v dosahu RFID čítačky.
-      DOMINATOR je vhodný pre herné módy s rovnakým počtom hráčov v oboch tímoch, napr. DOMINATION, Capture Point (Points v prípade viac klonovaných DOMINATOR bodov).
-      Využitie je predovšetkým pre športy Airsoft, Paintball.
-      </p>
-      <hr><h4>Ukážka funkčnosti - RFID DOMINATOR:</h4><hr><center><iframe width="80%" height="315" src="https://www.youtube.com/embed/T01WlkE91S4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-<hr><center><h2>Doska Plošných Spojov - (DPS) - RFID DOMINATOR</h2></center><hr>
-<div class="alert alert-info">
-	<strong>DPS návrh počíta s využitím dosky Arduino Nano</strong>
-</div>					
-<li>DPS je obojstranná s prekovmi, rozmery: 104x101 mm</li>				
-<hr><h4>Výroba DPS pre RFID DOMINATOR</h4><hr>
-<p style="text-align: justify;">
-DPS návrh pre projekt RFID DOMINATOR (1.0) je dostupný vo formáte .lppz (LibrePCB).
-Archív je možné nahrať na webstránky nemeckej firmy AISLER, ktorá vie plošný spoj vyrobiť strojovo vrátane vŕtania, prekovenia otvorov.
-Štandardná cena výroby je 23€ za tri kusy, čo je minimálny odber (7€/kus).
-Cena je aj s poštovým a nízkou prioritou s doručením do 3 týždňov od objednania.
-Na DPS sa odporúča využiť pin headre, nakoľko je tak možné v prípade poruchy vymeniť hardvér bez nutnosti spájkovania.
-Dištančné stĺpiky je možné nahradiť aj závitovými tyčami.
-Krabička pre projekt nie je navrhnutá. DPS je možné osadiť do krabičky, alebo na stenu skrz 4 montážne otvory v rohoch DPS.
-Výrobu je možné realizovať aj u čínskych výrobcov - JLCPCB / PCBWAY...
-</p>
-<center>
-	<img src="https://i.imgur.com/hnNxCyW.png" alt="DPS pre Airsoft DOMINATOR - AISLER" style="display: block; max-width: 100%; height: auto;" title="DPS pre Airsoft DOMINATOR - AISLER">
-	<img src="https://i.imgur.com/x1rLDaR.png" alt="Osadená DPS s komponentami pre RFID Dominator" style="display: block; max-width: 100%; height: auto;" title="Osadená DPS s komponentami pre RFID Dominator">
-</center>        							
-<hr><h4>Pin headre v DPS návrhu:</h4><hr>
-<li>2x female pin-header 15-pin (pre Arduino Nano)</li>
-<li>1x female pin-header 8-pin (pre RFID čítačku NXP RC522)</li>
-<li>1x female 90° pin-header 4-pin (pre I2C prevodník LCD displeja 20x4)</li>
-<hr><h4>Distančné stĺpiky v DPS návrhu:</h4><hr>
-<li>4x distančný stĺpik pre znakový LCD displej 20x4 (M3 15x6 mm), 4x skrutka M3, 4x matka M3</li>
-<li>2x distančný stĺpik pre RFID NXP RC522 (M3 15x6 mm), 2x skrutka M3, 2x matka M3</li>
-<li>2x montážne otvory (M3 skrutka / závitová tyč)</li>
-<hr><h4>Rozmery súčiastok:</h4><hr>
-<div class="alert alert-danger">
-	<strong>PDF dokument s rozmermi súčiastok použitých pre osadenie na DPS je dostupný: </strong><a href="pdf/Rozmery_SUCIASTOK.pdf">TU</a>
-</div>
-<hr><h3>Tabuľkové zapojenie vývodov - RFID DOMINATOR - plne odpovedá schéme zapojenia:</h3><hr>
-<div class="table-responsive">   
-<table class="table" style="border: 1px solid black;">
-<thead>
-<tr>
-<td align="left" style="background-color:#27AE60"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
-<td align="right" style="background-color:#27AE60"><strong>NXP RFID RC522</strong></td>
-</tr>
-<tr>
-<td align="left" style="background-color:#27AE60">GND</td>
-<td align="right" style="background-color:#27AE60">GND</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#27AE60">3V3</td>
-<td align="right" style="background-color:#27AE60">3V3</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#27AE60">D9</td>
-<td align="right" style="background-color:#27AE60">RST</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#27AE60">D10</td>
-<td align="right" style="background-color:#27AE60">SDA (SS)</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#27AE60">D11 (Hardware MOSI)</td>
-<td align="right" style="background-color:#27AE60">MOSI</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#27AE60">D12 (Hardware MISO)</td>
-<td align="right" style="background-color:#27AE60">MISO</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#27AE60">D13 (Hardware SCK)</td>
-<td align="right" style="background-color:#27AE60">SCK</td>
-</tr>					
-<tr>
-<td align="left" style="background-color:#C0392B"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
-<td align="right" style="background-color:#C0392B"><strong>I2C prevodník pre LCD displej</strong></td>
-</tr>
-<tr>
-<td align="left" style="background-color:#C0392B">GND</td>
-<td align="right" style="background-color:#C0392B">GND</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#C0392B">5V</td>
-<td align="right" style="background-color:#C0392B">Vcc</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#C0392B">A4 (Hardware SDA)</td>
-<td align="right" style="background-color:#C0392B">SDA</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#C0392B">A5 (Hardware SCL)</td>
-<td align="right" style="background-color:#C0392B">SCL</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#F8C471"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
-<td align="right" style="background-color:#F8C471"><strong>Hlásič (piezomenič)</strong></td>
-</tr>
-<tr>
-<td align="left" style="background-color:#F8C471">GND</td>
-<td align="right" style="background-color:#F8C471">GND</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#F8C471">D5</td>
-<td align="right" style="background-color:#F8C471">IN</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#5DADE2"><strong>Arduino Uno / Nano (ATmega328P)</strong></td>
-<td align="right" style="background-color:#5DADE2"><strong>LED diódy</strong></td>
-</tr>
-<tr>
-<td align="left" style="background-color:#5DADE2">GND</td>
-<td align="right" style="background-color:#5DADE2">GND</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#5DADE2">D4</td>
-<td align="right" style="background-color:#5DADE2">IN (RED)</td>
-</tr>
-<tr>
-<td align="left" style="background-color:#5DADE2">D3</td>
-<td align="right" style="background-color:#5DADE2">IN (GREEN)</td>
-</tr>
-</tbody>
-</table>				</div>
-<hr><center><h2>Schéma zapojenia - RFID DOMINATOR:</h2></center><hr>
-<img src="https://i.imgur.com/N8eDgcW.png" alt="Airsoft Dominator RFID" style="display: block; max-width: 100%; height: auto;" alt="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici" title="Schéma zapojenia - RFID DOMINATOR (verzia 2) s mikrokontrolérom Arduino Uno a čítačkou RC522 a LCD znakovým displejom komunikujúcim po I2C zbernici">  
-<hr><center><h2>Testovací program (Shareware) - RFID DOMINATOR so strojovým kódom</h2></center><hr>
-<div class="alert alert-info">
-<p style="text-align: justify;" style="word-wrap:break-word;">
-<b>K projektu RFID DOMINATOR je dostupná Shareware verzia vo forme strojového kódu (.hex) pre mikrokontróler Arduino (ATmega328P t.j. Arduino Uno / Nano / Pro Mini).</b> 
-Verzia umožňuje pri spustení pred herným režimom zaznamenať celkom 4 ľubovoľné RFID karty. 
-K jednej entite je vždy priradená jedna karta.
-Na priloženie karty ku konkrétnej entite vyzve hláška na LCD displeji.
-Po priložení poslednej karty sa spustí herný režim DOMINATION so stopkami.
-Je možné vyskúšať hernú mechaniku a reakciu NXP RC522 čítačky na RFID karty s vizualizáciou času na displej. 
-Merať je možné maximálne 15 sekúnd hry pre každý tím s možnosťou jeho resetu kartou Eraser a opätovným meraním 15 sekúnd donekonečna.
-<b>Cieľom verzie je overiť kompatibilitu s vašim hardvérom.</b> 
-Strojový kód je možné nahrať do mikrokontroléra Arduino Uno / Nano cez softvér AVRDUDE - súčasť Arduino IDE, prípadne s GUI rozhraním cez <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> - ľahšie na použitie.</p>
-<li>AVRDUDE je nutné spustiť cez CMD (príkazový riadok) je nainštalované s prostredím Arduino IDE. Nachádza sa v C:/Users/User/Documents/ArduinoData/packages/arduino/tools/avrdude/6.X.X-arduino/bin</li>
-<b><center>Vzorový príkaz pre nahratie programu do Arduino Uno / Nano (ATmega328P):</center></b>
-<li><b>avrdude -CC: avrdude.conf -v -patmega328p -carduino -PCOM21 -b115200 -D -Uflash:w:sketch.ino.hex:i</b></li>
-<li><b><a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> je Windows aplikácia (spusiteľný .exe nástroj) s jednoduchým grafickým rozhraním</b>, ktoré umožňuje výber firmvéru - strojového kódu (.hex), cieľovej platformy a vie dynamicky ukázať COM port, na ktorom sa zariadenie nachádza.</li> 
-<li><b>Jednoduchým kliknutím na Upload je možné strojový kód automatizovane nahrať</b> (<a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoader</a> využíva podobne ako Arduino IDE nástroj AVRDUDE). Okno <a href="https://www.hobbytronics.co.uk/arduino-xloader">XLoadera</a> informuje o úspešnom uploade formou výpisu počtu uploadovaných bajtov.</li>	
-<b><font color="red">Firmvér Shareware verzie projektu RFID Dominator je možné stiahnuť z repozitáru:</font></b> <a href="https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/firmware">Firmvér dostupný TU</a>. 
-Firmvér je v priečinku Github repozitáru projektu /rfid_dominator/ rozdelený podľa adresy I2C prevodníka (zistili ste z I2C scanner výstupu na UART rozhranie).
-Nahrávanie programu trvá maximálne 10 sekúnd. Následne sa firmvér automaticky nabootuje a je ho možné vyskúšať.
-V prípade plnej verzie projektu RFID Dominator je ho možné prevádzkovať trvale bez obmedzení času a s väčším počtom RFID kariet.
-</div>
-				<hr><h4>Dostupný firmvér (Shareware) - RFID DOMINATOR</h4><hr>
-				<div class="table-responsive">          
- 				<table class="table" style="border: 1px solid black;">
-				<thead>
-				<tr>
-				<td align="left" style="background-color:#2ECC71"><strong>Názov firmvéru (v priečinku rfid_dominator)</strong></td>
-				<td align="center" style="background-color:#2ECC71"><strong>Funkčnosť</strong></td>
-				<td align="right" style="background-color:#2ECC71"><strong>Stiahnuť</strong></td>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-				<td align="left">Shareware_RFID_DOMINATOR.hex</td>
-				<td align="center">Testovací firmvér projektu RFID Dominator, umožňuje merať čas 15 sekúnd pre každý tím. <b>Určené pre LCD znakový displej rozmeru 16x2, alebo 20x4 s I2C prevodníkom</b></td>
-				<td align="right"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/rfid_dominator/Shareware_RFID_DOMINATOR.hex" target="_blank" class="btn btn-danger" download title="Click here to download the file">Stiahnuť firmvér</a></td>
-				</tr>
-				</tbody>
-				</table>
-				</div>	
-<hr><h4>Ukážka funkčnosti - Shareware RFID DOMINATOR:</h4><hr><center><iframe width="80%" height="315" src="https://www.youtube.com/embed/b_2SLzjmOFU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>			
-<center>
-	<img src="https://i.imgur.com/hA3iK0O.png" title="RFID Dominator pre Airsoft / Paintball - shareware firmvér Arduino" alt="RFID Dominator pre Airsoft / Paintball - shareware firmvér Arduino" style="display: block; max-width: 100%; height: auto;">
-</center>
-<div class="alert alert-danger">
-      <strong>V prípade čínskych klonov Arduino Nano, ktoré majú "Old Bootloader" je nutné nahrávať firmvér rýchlosťou 57600 baud/s! Pri iných verziách s novším Bootloaderom 115200 baud/s.</strong>
- </div>			
-<div style="background: #52BE80; ">	
-<hr><center><h3>Program pre načítanie UID adries RFID kariet pre DOMINATOR</h3></center><hr>
-<p style="text-align: justify;">
-<b>Program slúži na načítanie identifikátorov (UID) RFID tagov, kariet, ktoré budú použité v programe pre RFID DOMINATOR</b> - <b><font color="red">tento zdrojový kód nereprezentuje RFID DOMINATOR, ani jeho logiku!</font></b>.
-Výpis UID RFID karty sa realizuje do sériového (UART) monitoru - použitá rýchlosť 9600 baud/s (znakov za sekundu).
-<b>Výpis je vhodné ukladať a prepísať do prehľadného .xls (EXCEL) dokumentu, ktorý uľahčí správu priradených RFID kariet ku konkrétnym tímom a entitám pre finálnu aplikáciu RFID DOMINATOR, ktorej strojový kód je viazaný na dodané UID kariet.</b>				
-Pre úspešné nahratie zdrojového kódu pre načítanie UID kariet je nutné importovať knižnicu MFRC522 do vášho prostredia Arduino IDE.
-</p>
-<hr><center><h4>Dostupné knižnice pre mikrokontroléry (Arduino)</h4></center><hr>
-<div class="alert alert-danger" style="word-wrap:break-word;">
-	Archív knižnice (.zip) rozbaliť do <strong>C:/Používatelia/[Používateľ]/Dokumenty/Arduino/libraries</strong>
-</div>
-<div class="table-responsive">   
-<table class="table" style="border: 1px solid black;">
-<thead>
-<tr>
-<th style="width: 25%">Názov knižnice</th>
-<th style="width: 50%">Funkcia knižnice</th>
-<th style="width: 25%">Stiahnuť</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="width: 25%"><b>MFRC522</b></td>
-<td style="width: 50%">
-<p style="text-align: justify;">
-Knižnica pre AVR mikrokontroléry (ATmega) Arduino Uno / Nano / Mega. 
-Umožňuje komunikovať s RFID čítačkou NXP RC522 po SPI zbernici. 
-</p>
-</td>
-<td style="width: 25%"><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/src/MFRC522" class="btn btn-success" role="button">Stiahnuť</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr><h4>Príklad uložených UID RFID kariet - Excel dokument .xls:</h4><hr>				
-<center><img src="https://i.imgur.com/p88Ku8G.png" style="display: block; max-width: 100%; height: auto;" alt="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente" title="Fyzické UID RFID kariet uložené v prehľadnom Excel dokumente"></center> 				
-<center><img src="https://i.imgur.com/V1CSbOe.png" style="display: block; max-width: 100%; height: auto;" alt="Programová implementácia - DOMINATION TIMER RFID" title="Programová implementácia - DOMINATION TIMER RFID"></center>
-<b>Šablóna pre uloženie identifikátorov (UID) RFID kariet: </b>
-<a href="https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing" class="btn btn-danger" role="button">On-line šablóna Google Tabuľky</a>
-<a href="Excel_Template/DOMINATOR_Blank_Template.xlsx" class="btn btn-success" role="button">Offline šablóna .xlsx</a>
-<pre style="background: #52BE80;">
-/*|-------------------------------------------------|*/
-/*|Title: Reading RFID cards UID (unique identifier)|*/
-/*|Compatible for Arduino Uno / Nano / ATmega328P   |*/
-/*|Author: Martin Chlebovec (martinius96@gmail.com) |*/
-/*|E-mail: martinius96@gmail.com                    |*/
-/*|Revision: 28. July 2022                          |*/
-/*|-------------------------------------------------|*/
-
-
-//Template for writing RFID codes for RFID DOMINATION TIMER - Google SpreadSheet: https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing
-
-#include &lt;SPI.h>
-#include &lt;MFRC522.h>
-#define SS_PIN 10
-#define RST_PIN 9
-MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
-void setup() {
-  Serial.begin(9600);
-  Serial.println(F("Reading of RFID cards for RFID Domination Timer"));
-  SPI.begin();
-  rfid.PCD_Init(); // Init MFRC522
-  rfid.PCD_SetAntennaGain(rfid.RxGain_max);
-  rfid.PCD_DumpVersionToSerial(); //Write version of Firmware to UART
-}
-
-void loop() {
-  if (rfid.PICC_IsNewCardPresent() && rfid.PICC_ReadCardSerial()) {
-    dump_byte_array(rfid.uid.uidByte, rfid.uid.size);
-    rfid.PICC_HaltA();
-    rfid.PCD_StopCrypto1();
-  }
-}
-
-void dump_byte_array(byte *buffer, byte bufferSize) {
-  for (byte i = 0; i &lt; bufferSize; i++) {
-  }
-  Serial.print(F("Detected UID (code) of RFID CARD: "));
-  unsigned long code = 10000 * buffer[4] + 1000 * buffer[3] + 100 * buffer[2] + 10 * buffer[1] + buffer[0]; //finalny kod karty
-  Serial.println(code);
-}
-</pre>
-<hr><h4>Použitia výstupu programu do hlavnej RFID Dominator aplikácie:</h4><hr>
-<p style="text-align: justify;">
-<b>Zaznamenané UID RFID kariet pre RED, GRE, rozhodcu a erasera sú vložené do polí. 
-Polia môžu byť ľahko škálovateľné pre rozšírenie počtu hráčov, rozhodcov...
-UID je potrebné dodať v .xls výstupe. Možno použiť verejnú šablónu pre Google Tabuľky vyššie nad zdrojovým kódom (ikona Google SpreadSheet).</b>
-Celé polia sú uložené do flash pamäte mikrokontroléru ako rad-only segmenty, teda polia nemusia bežať v RAM pamäti zaberať tak operačnú pamäť, ktorú DOMINATOR využíva pre plynulé počítanie časov.
-Zároveň sú polia nerozšíriteľné za behu programu. Ich nastavenie, veľkosť je fixné pre konkrétnu aplikáciu na mieru.
-Štandardný program RFID DOMINATOR-a pre 10x UID pre RED i GRE tím a 2x UID pre Rozhodcu a Erasera (celkovo 24x UID) zaberá 9512 bajtov flash pamäte, t.j. 30% a  501 bajtov pamäte RAM, t.j. 24%.
-Statické reťazce (const) premenné uložené do PROGMEM - flash pamäte mikrokontroléra.
-Pre statické výpisy na UART monitor, prípadne na LCD znakový displej použité F makro.
-</p>
-<hr>	
-</div>
-<footer>
-<div class="row">
-      <div class="col-sm-3">
-<center><font color="#566573">Autor: <a href="mailto:martinius96@gmail.com" id="a">Martin Chlebovec</font></a></center>
-</div>
-      <div class="col-sm-3">
-<center><font color="#566573">Grid systém: <a href="https://startbootstrap.com/template/bare">Bootstrap Bare</a></font></center>		
-</div>
-      <div class="col-sm-3">
-<center><font color="#566573">Ikony (MIT): <a href="https://www.flaticon.com/">Flaticon</a></font></center>			
-</div>
-      <div class="col-sm-3">	
-<a href="https://www.facebook.com/martin.s.chlebovec"><img src="https://www.endy.sk/wp-content/uploads/facebook-logo.png" style="height: 24px; width: 24px; border-radius: 50px;"></a>
-<a href="https://paypal.me/chlebovec/5"><img src="https://ps.w.org/easy-paypal-shopping-cart/assets/icon-256x256.png" style="height: 24px; width: 24px; border-radius: 50px;"></a></center></th>							 
-</div>
-</div>
-</footer>
-</div>
-		</div>
-</div>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Creative - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Your Favorite Place for Free Bootstrap Themes</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
+                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">We've got what you need!</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
+                        <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">At Your Service</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Sturdy Themes</h3>
+                            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Up to Date</h3>
+                            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Ready to Publish</h3>
+                            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Made with Love</h3>
+                            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call to action-->
+        <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">Let's Get In Touch!</h2>
+                        <hr class="divider" />
+                        <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Full name</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Email address</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <label for="phone">Phone number</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                            <!-- Message input-->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Message</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
+                        <div>+1 (555) 123-4567</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
 </html>
