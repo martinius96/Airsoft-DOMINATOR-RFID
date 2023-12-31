@@ -1,4 +1,4 @@
-# RFID Domination Time for Airsoft
+# RFID Domination Timer for Airsoft
 * DEMO firmware (machine .hex) code using which you can test your hardware, if it is compatible for Full application
 * Compatible with Arduino Uno, Nano. Visit https://github.com/martinius96/Airsoft-DOMINATOR-RFID/tree/master/Schematics for schematics
 * You will see basic output on LCD screen to check if it supports current library
