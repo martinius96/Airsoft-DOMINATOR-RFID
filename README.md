@@ -19,7 +19,7 @@ This action triggers a buzzer that announces the change of point with a short be
 Subsequently, the LED of the RED team at this station will light up and the display will start adding the time for this team until the member's <font color = "#27AE60"> team card is inserted </font>, <font color = "#F39C12"> Referee </font>, or <font color = "#3498DB"> Eraser </font>. </font> </b>
 <b> <font color = "#27AE60"> If the point is occupied by a GRE player and the card is attached to an RFID reader, the buzzer will announce this change with a short beep, the GRE LED will light up <font color = "#C0392B"> (RED LED turns off), RED's current time stops </font>, and GRE's time is scored. </font> </b>
 </p>
-<hr>
+![IMG_20230723_011918](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/f6bb4645-8ff7-43fc-8630-38718446cdf3)
 <p align="justify">
 <b> <font color = "#F39C12"> If the Referee attaches his RFID card, the running time will stop at the current value. The point becomes neutral, the active team's LED goes out.
 The stoppage lasts until a member of the <font color = "#C0392B"> RED team </font> or <font color = "#27AE60"> the GRE team </font> presents their card.
@@ -33,12 +33,19 @@ Firmware is universal, which is based on the wiring diagram, it is also possible
 <b> The advantage of the RFID Domination timer project is that the usage license authorizes the user to clone and create X points with the same configuration via machine code.
 Machine code (.hex) is a compiled firmware format for the RFID Dominator project for supplied UID RFID cards that are embedded in the code before compilation.
 It is thus possible to place any number of independently operating RFID Domination timer points in the game, which respond to identical RFID cards according to a uniform configuration.
-The RFID Dominator system is tuned, it can be put into the game immediately. Firmware uploads within 10 seconds via <a href="https://www.hobbytronics.co.uk/arduino-xloader"> XLoader </a>. </b>
+The RFID Dominator system is tuned, it can be put into the game immediately. Firmware uploads within 10 seconds via <a href="[https://www.hobbytronics.co.uk/arduino-xloader](https://github.com/binaryupdates/xLoader)"> XLoader </a>. </b>
 </p>
 
+![OSD4](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/394512af-de1e-42cc-aa64-076f4aa261e3)
+# Two PCB designs
+* RFID Domination Timer comes with two designs for 2 or 4 team firmware support
+* Both supports Arduino Nano only!
+* 1.0 - 2 teams option in a single game
+* 2.0 - 2, 3 or 4 teams option in a single game
+![4](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/57f393b2-7760-40be-aa35-f53038750cc9)
 
 **Hardware used for RFID Domination Timer:**
-* Arduino Uno / Nano or ATmega328P chip (Arduino Nano is used at PCB)
+* Arduino Uno / Nano or ATmega328P chip with 16 MHz external oscillator
 * NXP RFID RC522 reader
 * 2x / 4x LED diodes (V1.0 or V2.0)
 * 2x resistors for LED (also there can be used 2x I2C pullup rezistor for LCD display)
