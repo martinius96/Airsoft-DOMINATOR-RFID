@@ -19,7 +19,7 @@ This action triggers a buzzer that announces the change of point with a short be
 Subsequently, the LED of the RED team at this station will light up and the display will start adding the time for this team until the member's <font color = "#27AE60"> team card is inserted </font>, <font color = "#F39C12"> Referee </font>, or <font color = "#3498DB"> Eraser </font>. </font> </b>
 <b> <font color = "#27AE60"> If the point is occupied by a GRE player and the card is attached to an RFID reader, the buzzer will announce this change with a short beep, the GRE LED will light up <font color = "#C0392B"> (RED LED turns off), RED's current time stops </font>, and GRE's time is scored. </font> </b>
 </p>
-![IMG_20230723_011918](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/f6bb4645-8ff7-43fc-8630-38718446cdf3)
+<img src="[https://i.imgur.com/jsUlZY2.png](https://i.imgur.com/H4SWDQK.jpg)" style="display: block; max-width: 100%; height: auto;" alt="RFID Domination Timer 2.0 for Airsoft, Paintball, Nerf wars" title="RFID Domination Timer 2.0 for Airsoft, Paintball, Nerf wars"> 
 <p align="justify">
 <b> <font color = "#F39C12"> If the Referee attaches his RFID card, the running time will stop at the current value. The point becomes neutral, the active team's LED goes out.
 The stoppage lasts until a member of the <font color = "#C0392B"> RED team </font> or <font color = "#27AE60"> the GRE team </font> presents their card.
