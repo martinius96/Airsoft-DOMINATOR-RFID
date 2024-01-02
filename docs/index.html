@@ -224,13 +224,30 @@ If team is active on the point, time is counting, until there will be attached w
                         <div>martinius96@gmail.com</div>
                     </div>
                 </div>
-                			    <h3 class="h4 mb-2">List of supported hardware:</h3>
-			    	<li>Arduino Nano (Uno, or standalone ATmega328P with external 16 MHz oscillator)</li>
-				<li>LCD 2004A (20x4) with I2C converter (16x2 can be used too for Timer 1.0)</li>			    	
-				<li>NXP RFID RC522 (13.56 MHz)</li>
-				<li>ISO/IEC 14443-A RFID wristbands, cards (MiFare 1K tags)</li>
-				<li>5V Buzzer with 7,62 mm pitch</li>
-				<li>5mm LEDs, resistors</li>
+                			    <h3 class="h4 mb-2">List of supported hardware (PCB compatible):</h3>
+<ul>
+    <li>Arduino Nano</li>
+    <li>LCD 2004A (20x4) with I2C converter, 5V operated</li>
+    <li>NXP RFID RC522 (13.56 MHz), 3V3 opreated</li>
+    <li>ISO/IEC 14443-A RFID wristbands, cards (MiFare 1K tags)</li>
+    <li>5V Buzzer with 7.62 mm pitch</li>
+    <li>5mm LEDs, resistors</li>
+    <li>
+        Possible swaps:
+        <ul>
+            <li>Uno, or standalone AVR ATmega328P chip with external 16 MHz oscillator</li>
+            <li>LCD swap for 1602A (16x2) LCD screen, compatible only for RFID Domination Timer 1.0</li>
+            <!-- Add more second-level items as needed -->
+        </ul>
+    </li>
+    <li>
+        Optional:
+        <ul>
+            <li>Pullup resistors for I2C bus: SDA, SCL signals</li>
+            <!-- Add more second-level items as needed -->
+        </ul>
+    </li>
+</ul>
             </div>
         </section>
 <div id="portfolio">
