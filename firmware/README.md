@@ -1,5 +1,5 @@
 # RFID Domination Timer for Airsoft
-* Download firmware: https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/RFID_DOMINATOR.hex
+* Download firmware (click on icon Download raw file): https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/RFID_DOMINATOR.hex
 * DEMO firmware (machine .hex) code using which you can test your hardware, if it is compatible for Full application
 * Compatible with Arduino Uno, Nano, connect everything based on schematics:
 ![RFID_DOMINATOR_2 0_Schematics](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/b89e8991-9109-4cb8-963a-dc8c8cafa119)
