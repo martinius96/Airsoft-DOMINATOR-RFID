@@ -2,7 +2,7 @@
 * Open link: https://github.com/martinius96/Airsoft-DOMINATOR-RFID/blob/master/firmware/RFID_DOMINATOR.hex
 * Click on ... then, Download
 ![image](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/fa148ef1-d3ce-43cc-b4db-3a2ba0c95624)
-* DEMO firmware (machine .hex) code using which you can test your hardware, if it is compatible for Full application
+* Download firmware is DEMO application - executable .hex for ATmega328P. It will test your display and mainly RFID reader
 * Compatible with Arduino Uno, Nano, connect everything based on schematics:
 ![RFID_DOMINATOR_2 0_Schematics](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/b89e8991-9109-4cb8-963a-dc8c8cafa119)
 * You will see basic output on LCD screen to check if it supports current library
