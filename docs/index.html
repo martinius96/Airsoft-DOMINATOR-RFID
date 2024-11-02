@@ -290,13 +290,26 @@ Powered by an 8-bit AVR ATmega microcontroller, it displays timing information f
             <li>Uno, or standalone AVR ATmega328P chip with external 16 MHz oscillator - <u>not compatible with PCB design</u></li>
             <!-- Add more second-level items as needed -->
 <br>
-	<h5 class="h5 mb-2">Optional components:</h6>
+	<h5 class="h5 mb-2">Other components:</h6>
     <li data-bs-toggle="tooltip" data-bs-html="true" title='<img src=https://i.imgur.com/3gs2h5I.png alt="Pullup THT resistors for I2C bus: SDA, SCL signals (10K)" style="width: 100px;">'>Pullup THT resistors for I2C bus: SDA, SCL signals (10K)</li>
 	<li data-bs-toggle="tooltip" data-bs-html="true" title='<img src=https://i.imgur.com/aRwzpvo.png" alt="Standoff Spacer Screws, 10 mm base + 6 mm M3 thread (plastic / brass) / threaded rod can be used (if unit mounted on the wall)" style="width: 100px;">'>Standoff Spacer Screws, 10 mm base + 6 mm M3 thread (plastic / brass) / threaded rod can be used (if unit mounted on the wall)</li>
 <li data-bs-toggle="tooltip" data-bs-html="true" title='<img src=https://i.imgur.com/oxqAnya.png alt="Custom 3D printed enclosure 124 x 123 x 46 mm" style="width: 100px;">'>Custom 3D printed enclosure 124 x 123 x 46 mm</li>
 <li data-bs-toggle="tooltip" data-bs-html="true" title='<img src=https://i.imgur.com/oT5TrgP.png alt="25 mm Tie-down belt / strap" style="width: 100px;">'>25 mm Tie-down belt / strap</li>  
-<li>Phillips screwdriver Ø 3 mm</li>        
-    <!-- Add more second-level items as needed -->
+<li>Phillips screwdriver Ø 3 mm (to be able to set contrast through the 3D printed PLA enclosure ingame)</li>        
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">AT commands set</h2>
+                        <hr class="divider" />
+                    </div>
+                </div>
+<li>AT (Check communication, baudrate)</li>
+<li>AT+CMD (Get all supported commands in the firmware)</li>
+<li>AT+BUZZER=1 or AT+BUZZER=0 (Enable or Disable buzzer)</li>
+<li>AT+BUZZERFREQ=2000 (Set buzzer frequency to 2000 Hz)</li>
+<li>AT+GAMEMODE=0 (Set game mode DOMINATION, COUNTDOWN)</li>
+<li>AT+MAXTIME=1 (Set maximum playtime per team)</li>
+<li>AT+TEST (Check all peripherals: RFID, LEDs, buzzer)</li>
+<li>...</li>
             </div>
         </section>
         <!-- Footer-->
