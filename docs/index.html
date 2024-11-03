@@ -295,21 +295,26 @@ Powered by an 8-bit AVR ATmega microcontroller, it displays timing information f
 	<li data-bs-toggle="tooltip" data-bs-html="true" title='<img src=https://i.imgur.com/aRwzpvo.png" alt="Standoff Spacer Screws, 10 mm base + 6 mm M3 thread (plastic / brass) / threaded rod can be used (if unit mounted on the wall)" style="width: 100px;">'>Standoff Spacer Screws, 10 mm base + 6 mm M3 thread (plastic / brass) / threaded rod can be used (if unit mounted on the wall)</li>
 <li data-bs-toggle="tooltip" data-bs-html="true" title='<img src=https://i.imgur.com/oxqAnya.png alt="Custom 3D printed enclosure 124 x 123 x 46 mm" style="width: 100px;">'>Custom 3D printed enclosure 124 x 123 x 46 mm</li>
 <li data-bs-toggle="tooltip" data-bs-html="true" title='<img src=https://i.imgur.com/oT5TrgP.png alt="25 mm Tie-down belt / strap" style="width: 100px;">'>25 mm Tie-down belt / strap</li>  
-<li>Phillips screwdriver Ø 3 mm (to be able to set contrast through the 3D printed PLA enclosure ingame)</li>        
-                <div class="row gx-4 gx-lg-5 justify-content-center">
+<li>Phillips screwdriver Ø 3 mm (to be able to set contrast through the 3D printed PLA enclosure ingame)</li>                   
+  <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6 text-center">
-                        <h2 class="mt-0">AT commands set</h2>
+                        <h2 class="mt-0">AT commands set (comming soon)</h2>
                         <hr class="divider" />
                     </div>
                 </div>
 <li>AT (Check UART communication, baudrate 9600 8N1)</li>
+<li>AT+RST (Restart the unit)</li>
 <li>AT+CMD (Get all supported commands in the firmware)</li>
 <li>AT+BUZZER=1 or AT+BUZZER=0 (Enable or Disable buzzer)</li>
-<li>AT+BUZZERFREQ=2000 (Set buzzer frequency to 2000 Hz)</li>
-<li>AT+GAMEMODE=0 (Set game mode DOMINATION, COUNTDOWN)</li>
-<li>AT+MAXTIME=1 (Set maximum playtime per team)</li>
+<li>AT+BUZZER=? (Get actual buzzer state)</li>
+<li>AT+FREQ=2000 (Set buzzer frequency to 2000 Hz)</li>
+<li>AT+FREQ=? (Get actual buzzer frequency in Hz)</li>
+<li>AT+GAMEMODE=0 or AT+GAMEMODE=1 (Set game mode DOMINATION, COUNTDOWN)</li>
+<li>AT+GAMEMODE=? (Get the actual game mode)</li>
+<li>AT+MAXTIME=1 (Set maximum playtime per team, 0 means unlimited)</li>
 <li>AT+TEST (Check all peripherals: RFID, LEDs, buzzer)</li>
 <li>AT+INFO (Get info about current firmware, UIDs)</li>
+<li>AT+FACTORY (Revert firmware to the factory state)</li>
 <li>...</li>
             </div>
         </section>
