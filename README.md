@@ -1,6 +1,6 @@
-# RFID Domination Timer for Airsoft & Paintball - Capture Point Timer with RFID Technology
+# RFID Domination Stopwatch for Airsoft & Paintball - Capture Point Stopwatch with RFID Technology
 
-The **RFID Domination Timer** is a versatile **game timer** for **Airsoft** and **Paintball** players, designed to track team progress in **domination-style** game modes like **Capture the Point**. It uses **RFID technology** to monitor team control and provides real-time feedback with **LED indicators** and **buzzer notifications**.
+The **RFID DOMINATOR** is a versatile **stopwatch** for **Airsoft** and **Paintball** players, designed to track team progress in **domination-style** game modes like **Capture the Point**. It uses **RFID technology** to monitor team control and provides real-time feedback with **LED indicators** and **buzzer notifications**.
 
 ## Key Features:
 - **RFID Technology**: Tracks players using RFID cards/wristbands to control the game point.
@@ -21,7 +21,7 @@ The **RFID Domination Timer** is a versatile **game timer** for **Airsoft** and 
 
 For more details, visit the project's [official website](https://martinius96.github.io/Airsoft-DOMINATOR-RFID/).
 
-![RFID Domination Timer Setup for Airsoft or Paintball Game](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/394512af-de1e-42cc-aa64-076f4aa261e3)
+![RFID Domination Stopwatch Setup for Airsoft or Paintball Game](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/394512af-de1e-42cc-aa64-076f4aa261e3)
 
 ## Contact:
 For inquiries or custom versions, email: **martinius96@gmail.com**.
