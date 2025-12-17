@@ -12,6 +12,5 @@
 * When firmware is running, open Serial monitor and attach RFID card
 ![Xloader RFID Domination Timer](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/2d9a7d48-d481-4709-8518-fbe1c855f050)
 ![COM port - Arduino](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/9846c27b-1347-4698-bc73-6e4f8c4c5041)
-<img width="350" height="172" alt="image" src="https://github.com/user-attachments/assets/01bde242-de81-49ad-a785-de62ebb73871" />
 ![Wiring diagram](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/1091d942-7b9f-4901-9732-278d84dae347)
-
+<img width="350" height="172" alt="image" src="https://github.com/user-attachments/assets/01bde242-de81-49ad-a785-de62ebb73871" />
