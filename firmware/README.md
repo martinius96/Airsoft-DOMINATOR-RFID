@@ -10,6 +10,8 @@
 * Its for testing of basic functionality. You can still reset time using ERASER card let it run for 15 seconds again
 * If upload process ends with an error, probably bad baudrate was set
 * When firmware is running, open Serial monitor and attach RFID card
+* Once you see UID of currently attached RFID card, save it into Template: https://docs.google.com/spreadsheets/d/1EHpdJi8v84eJ-6ExEPT6JuPkxI9Tfbm8v85zGRFvJ1Q/edit?usp=sharing
+* After all UIDs present in Template, export them and send it to me to get full firmware tailor-made for your RFID cards 
 ![Xloader RFID Domination Timer](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/2d9a7d48-d481-4709-8518-fbe1c855f050)
 ![COM port - Arduino](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/9846c27b-1347-4698-bc73-6e4f8c4c5041)
 ![Wiring diagram](https://github.com/martinius96/Airsoft-DOMINATOR-RFID/assets/14253034/1091d942-7b9f-4901-9732-278d84dae347)
