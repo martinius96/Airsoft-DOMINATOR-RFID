@@ -427,8 +427,8 @@ int valueinarray(unsigned long val, const unsigned long arr[], size_t len);
 byte error, address;
 void setup() {
   Serial.begin(9600); //Start UART bus at 9600 baud/s
-  Serial.println(F("RFID Domination Timer 2.0 - 22nd December 2025"));
-  Serial.println(F("DOMINATOR owner: Jayden Wolff Goncaruc, https://airsoftarena.md/"));
+  Serial.println(F("RFID Domination Timer 2.0 - freeware 9th February 2026"));
+  Serial.println(F("Creator: Martin Chlebovec (martinius96@gmail.com)"));
   SPI.begin(); //Standard SPI speed for RC522 --> 4 MHz
   Wire.begin(); //Standard I2C speed for LCD screen --> 100 kHz
   for (address = 1; address &lt; 127; address++ ) //this cycle will scan I2C bus and set LCD display automatically with any I2C address
