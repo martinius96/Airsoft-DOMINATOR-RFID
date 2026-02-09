@@ -19,10 +19,33 @@
 <meta name="twitter:title" content="RFID Domination Timer: Ultimate Stopwatch for Airsoft & Paintball Games">
 <meta name="twitter:description" content="Boost your Airsoft, Paintball, or tactical gameplay with the RFID Domination Timer. Features RFID-enabled team time tracking and customizable game modes.">
 <meta name="twitter:image" content="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/assets/img/portfolio/fullsize/1.jpg">
-
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/arduino-light.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/arduino.min.js"></script>
 <!-- Canonical URL -->
 <link rel="canonical" href="https://martinius96.github.io/Airsoft-DOMINATOR-RFID/">
+  <style>
+  pre {
+  counter-reset: line-numbering;
+  background: #2c3e50;
+  padding: 12px 0px 14px 0;
+  color: #ecf0f1;
+  line-height: 100%;
+}
 
+pre .line::before {
+  content: counter(line-numbering);
+  counter-increment: line-numbering;
+  padding-right: 1em;
+  /* space after numbers */
+  padding-left: 8px;
+  width: 1.5em;
+  text-align: right;
+  opacity: 0.5;
+  color: white;
+}
+  </style>
         <meta name="author" content="Martin Chlebovec" />
         <meta name="robots" content="index, follow">
         <!-- Favicon-->
@@ -316,6 +339,26 @@
 <li>AT+FACTORY (Revert firmware to the factory state)</li>
 <li>...</li>
 	---!>
+            </div>
+        </section>
+
+	  <section class="page-section" id="software">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">Software</h2>
+                        <hr class="divider" />
+                    </div>
+                </div>
+<h5 class="h5 mb-2">RFID DOMINATOR - source code:</h5>
+	<h6>Minimal version, 1 card per team</h6>
+<pre><code> 
+
+
+void loop() {
+
+}
+</code></pre>
             </div>
         </section>
         <!-- Footer-->
