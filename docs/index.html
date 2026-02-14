@@ -419,11 +419,8 @@ LiquidCrystal_I2C* lcd;
 //user-defined functions declaration
 void updateLCD();
 void updateLCD2();
-void updateLCD3();
-void updateLCD4();
 void tickClock();
 void tick();
-int valueinarray(unsigned long val, const unsigned long arr[], size_t len);
 byte error, address;
 void setup() {
   Serial.begin(9600); //Start UART bus at 9600 baud/s
