@@ -359,7 +359,8 @@ pre .line::before {
 //BLUE AND YELLOW TEAM, MINIMAL FUNCTIONALITY, ONE CARD / WRISTBAND PER TEAM
 //BUZZER NOT INCLUDED, only 20x4 LCD screen supported
 //Author: Martin Chlebovec (martinius96@gmail.com)
-//Revision --> 9th February 2026
+//Revision --> 20th February 2026
+//Project info: https://your-iot.github.io/DOMINATOR/
 
 //Installation instructions:
 //Download library MFRC522 from: https://github.com/miguelbalboa/rfid/releases/tag/1.4.11 (Click on Source code (zip))
@@ -385,10 +386,10 @@ pre .line::before {
 MFRC522 rfid(SS_PIN, RST_PIN);
 
 //Known RFID cards UIDs based on teams (You can see UID of your cards in Serial monitor when attached)
-const unsigned long TEAM_BLU = 15651; //BLUE TEAM UID
-const unsigned long TEAM_YEL = 11787; //YELLOW TEAM UID
-const unsigned long TEAM_REFEREE = 30990; //REFEREE GROUP UID
-const unsigned long TEAM_ERASER = 29201; //ERASER GROUP UID
+const unsigned long TEAM_BLU = 4321; //BLUE TEAM UID --> BLUE CARD
+const unsigned long TEAM_YEL = 17933; //YELLOW TEAM UID --> YELLOW CARD
+const unsigned long TEAM_REFEREE = 7921; //REFEREE GROUP UID --> GREEN CARD
+const unsigned long TEAM_ERASER = 4294948592; //ERASER GROUP UID --> RED CARD
 
 unsigned long code; //UID --> RFID CARD ADDRESS
 boolean run = false; //is BLU team active on DOMINATION TIMER?
@@ -427,6 +428,7 @@ void setup() {
   Serial.begin(9600); //Start UART bus at 9600 baud/s
   Serial.println(F("RFID Domination Timer 2.0 - freeware 9th February 2026"));
   Serial.println(F("Creator: Martin Chlebovec (martinius96@gmail.com)"));
+  Serial.println(F("Project info: https://your-iot.github.io/DOMINATOR/"));
   SPI.begin(); //Standard SPI speed for RC522 --> 4 MHz
   Wire.begin(); //Standard I2C speed for LCD screen --> 100 kHz
   for (address = 1; address &lt; 127; address++ ) //this cycle will scan I2C bus and set LCD display automatically with any I2C address
@@ -451,7 +453,7 @@ void setup() {
   rfid.PCD_Init(); // Init MFRC522
   rfid.PCD_SetAntennaGain(rfid.RxGain_max);
   rfid.PCD_DumpVersionToSerial(); //Write version of Firmware to UART
-  lcd->begin();
+  lcd->begin(); //Not valid for Wokwi simulator, valid for LiquidCrystal_I2C library from @fdebrabander
   lcd->backlight(); //backlight on
   lcd->clear();
   lcd->setCursor(0, 0);
@@ -512,6 +514,9 @@ void loop() {
       rfid.PCD_StopCrypto1();
 
       if (code == TEAM_BLU) { // WAS CARD FROM TEAM BLUE?
+        if (!run) {
+          timer = millis();
+        }
         Serial.println(F("Detected card from team BLU"));
         digitalWrite(BLU_LED, HIGH);
         digitalWrite(RED_LED, LOW);
@@ -522,6 +527,9 @@ void loop() {
       }
 
       if (code == TEAM_YEL) { //WAS CARD FROM TEAM YELLOW?
+        if (!run2) {
+          timer = millis();
+        }
         Serial.println(F("Detected card from team YEL"));
         digitalWrite(BLU_LED, LOW);
         digitalWrite(RED_LED, LOW);
@@ -565,7 +573,7 @@ void loop() {
 }
 
 void tickClock() {
-  if ((millis() - timer) >= 1000 || timer == 0) { //Timer for counting time each 1000 ms (second resolution)
+  if ((millis() - timer) >= 1000) { //Timer for counting time each 1000 ms (second resolution)
     timer = millis();
     //Serial.println(timer); //UNCOMMENT TO GET TIMER PRECISION INFO, if couting in 1000 ms or more
     if (once == false) {
@@ -576,13 +584,13 @@ void tickClock() {
     if (error != 0) {
       Serial.println("Display is not communicating");
       // Communication error, re-initialize the communication with the LCD
-      lcd->begin();
+      lcd->begin(); //Not valid for Wokwi simulator, valid for LiquidCrystal_I2C library from @fdebrabander
       lcd->backlight();
       lcd->setCursor(0, 0);
       lcd->print(F("BLU   :  :  ")); //BLU TEAM IN ROW 1
       updateLCD();
       lcd->setCursor(0, 1);
-      lcd->print(F("YEL   :  :  ")); //RED TEAM IN ROW 2
+      lcd->print(F("YEL   :  :  ")); //YEL TEAM IN ROW 2
       updateLCD2();
     }
     tick();
@@ -592,34 +600,37 @@ void tickClock() {
 }
 void tick() {
   if (run) {
-    updateLCD(); //print team 1 numbers (BLUE)
-    if (second == 59) {
+    //  updateLCD(); //print team 1 numbers (BLUE)
+    second++;
+    if (second >= 60)
+    {
       second = 0;
       minute++;
-    } else {
-      second++;
+      if (minute >= 60)
+      {
+        minute = 0;
+        hour++;
+      }
     }
-    if (minute == 60) {
-      minute = 0;
-      hour++;
-
-    }
+    updateLCD();
   }
 }
 
 void tick2() {
   if (run2) {
-    updateLCD2(); //print team 2 numbers (YELLOW)
-    if (second2 == 59) {
+    //   updateLCD2(); //print team 2 numbers (YELLOW)
+    second2++;
+    if (second2 >= 60)
+    {
       second2 = 0;
       minute2++;
-    } else {
-      second2++;
+      if (minute2 >= 60)
+      {
+        minute2 = 0;
+        hour2++;
+      }
     }
-    if (minute2 == 60) {
-      minute2 = 0;
-      hour2++;
-    }
+    updateLCD2();
   }
 }
 
